@@ -9,7 +9,7 @@ using ContosoCrafts.WebSite.Services;
 namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
-    /// Dhruv Patel
+    /// Ritu Priya
     /// </summary>
     public class IndexModel : PageModel
     {
