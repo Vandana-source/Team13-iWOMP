@@ -22,8 +22,18 @@
 
   <ItemGroup>
     <None Remove="Site Images\" />
+    <None Remove="Site Images\Benches\" />
+    <None Remove="Site Images\Restrooms\" />
+    <None Remove="Site Images\Chairs\" />
+    <None Remove="Site Images\Picnic Tables\" />
+    <None Remove="Site Images\Logo\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Site Images\" />
+    <Folder Include="Site Images\Benches\" />
+    <Folder Include="Site Images\Restrooms\" />
+    <Folder Include="Site Images\Chairs\" />
+    <Folder Include="Site Images\Picnic Tables\" />
+    <Folder Include="Site Images\Logo\" />
   </ItemGroup>
 </Project>
