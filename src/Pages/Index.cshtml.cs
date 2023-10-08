@@ -11,7 +11,7 @@ namespace ContosoCrafts.WebSite.Pages
     /// <summary>
     /// Ritu Priya
     /// </summary>
-    public class IndexModel : PageModel
+    /*public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
 
@@ -29,5 +29,5 @@ namespace ContosoCrafts.WebSite.Pages
         {
             Products = ProductService.GetProducts();
         }
-    }
+    }*/
 }
