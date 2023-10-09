@@ -13,6 +13,7 @@
       2,
       1,
       5,
+      5,
       5
     ]
   },
@@ -95,7 +96,9 @@
     "Url": "https://www.instagram.com/p/BNm6hZzDoEF/",
     "Title": "U Village",
     "Description": "Still some time to enter the pin/sticker giveaway! ",
-    "Ratings": null
+    "Ratings": [
+      5
+    ]
   },
   {
     "Id": "vogueandcode-hipster-dev-bro",
@@ -120,7 +123,7 @@
     "Maker": "vogueandcode",
     "img": "SiteImages/Restrooms/SeattleCentralCollege.jpg",
     "Url": "https://www.vogueandcode.com/shop/ruby-sis-2",
-    "Title": "Seattle Central College: All-Gender & Family",
+    "Title": "Seattle Central College: All-Gender \u0026 Family",
     "Description": "Styled in a dashiki, Ruby Sis is listening to music while coding in her favorite language, Ruby!",
     "Ratings": null
   },
@@ -140,6 +143,15 @@
     "Url": "https://www.instagram.com/p/BEXlpiZCnJ3",
     "Title": "Floppy Crop",
     "Description": "Used up the Diskette fabric today to make 2 of these crops.",
+    "Ratings": null
+  },
+  {
+    "Id": "Sine_day",
+    "Maker": "sine",
+    "img": "SiteImages/Others/Sine_day.jpg",
+    "Url": "https://www.seattleu.edu/science-innovation/sinegal-center-facilities/other-resources/",
+    "Title": "Sinegal Building",
+    "Description": "Cool place to sit in front of Sinegal building.",
     "Ratings": null
   }
 ]
