@@ -146,9 +146,9 @@
     "Ratings": null
   },
   {
-    "Id": "Sine_day",
-    "Maker": "sine",
-    "img": "SiteImages/Others/Sine_day.jpg",
+    "Id": "SinegalBuilding",
+    "Maker": "SingegalBuilding",
+    "img": "SiteImages/Others/SinegalBuilding.jpg",
     "Url": "https://www.seattleu.edu/science-innovation/sinegal-center-facilities/other-resources/",
     "Title": "Sinegal Building",
     "Description": "Cool place to sit in front of Sinegal building.",
@@ -164,11 +164,11 @@
     "Ratings": null
   },
   {
-    "Id": "Library",
+    "Id": "LemieuxLibrary",
     "Maker": "Library",
-    "img": "SiteImages/Others/Lib.jpg",
+    "img": "SiteImages/Others/LemieuxLibrary.jpg",
     "Url": "https://pfeifferpartners.com/projects/seattle-university-a-a-lemieux-library-and-mcgoldrick-learning-commons-renovation-and-expansion/",
-    "Title": "Library",
+    "Title": "Lemieux Library",
     "Description": "Surrounding the books.",
     "Ratings": null
   }
