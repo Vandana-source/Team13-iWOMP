@@ -12,6 +12,7 @@
   <ItemGroup>
     <Content Remove="wwwroot\SiteImages\" />
     <Content Remove="wwwroot\SiteImages\Benches\" />
+    <Content Remove="wwwroot\SiteImages\Restrooms\" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="wwwroot\data\products.json">
@@ -27,5 +28,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\SiteImages\" />
     <Folder Include="wwwroot\SiteImages\Benches\" />
+    <Folder Include="wwwroot\SiteImages\Restrooms\" />
   </ItemGroup>
 </Project>
