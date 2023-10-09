@@ -171,5 +171,14 @@
     "Title": "Lemieux Library",
     "Description": "Surrounding the books.",
     "Ratings": null
+  },
+  {
+    "Id": "KubotaGardens",
+    "Maker": "KubotaGardens",
+    "img": "SiteImages/Others/KubotaGardens.jpg",
+    "Url": "https://www.seattleu.edu/media/grounds-landscaping-and-atheltic-fields/significant-gardens/significantgardens_slider01-1130x727.jpg",
+    "Title": "Kubota Gardens",
+    "Description": "Kubota Gardens.",
+    "Ratings": null
   }
 ]
