@@ -62,9 +62,9 @@ a {
 
 /* CSS for the button */
 .btn-primary {
-    background-color: #252152;
-    color: #fff;
-    border-color: #252152;
+    background-color: #bacec1;
+    color: #000000e6;
+    border-color: #bacec1;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -73,8 +73,8 @@ a {
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #e9a8a6;
-    border-color: #e9a8a6;
+    background-color: #bacec1;
+    border-color: #bacec1;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -143,13 +143,13 @@ ul {
     background: -webkit-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
     background: -o-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
     background: -moz-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
-    background: linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
+    background: linear-gradient(110deg, #f3f3f3 70%, #bacec1 60%);
 }
 .bg-footer {
     background: -webkit-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: -o-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
+    background: linear-gradient(110deg, #bacec1 60%, #f3f3f3 60%);
 }
 img{
     float: right;
