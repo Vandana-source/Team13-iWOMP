@@ -20,12 +20,14 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card-columns .card-img {
-  height: 330px;
-  vertical-align: bottom;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  opacity: .8;
+    width: 330px; /* Adjust the width and height as needed */
+    height: 330px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    opacity: .8;
+    margin-top: 20px; /* Add some spacing to the top */
 }
 
 .modal .card-img {
@@ -58,11 +60,17 @@ a {
    color: #0366d6;
 }
 
+/* CSS for the button */
 .btn-primary {
-    color: #fff;
     background-color: #252152;
+    color: #fff;
     border-color: #252152;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
 .btn-primary:hover {
     color: #fff;
     background-color: #e9a8a6;
@@ -147,4 +155,29 @@ img{
     float: right;
     max-width:75px;
     max-height:75px;
+}
+
+/* CSS for the homecard */
+.homecard {
+    display: flex;
+    flex-direction: column; /* Arrange elements in a column */
+    justify-content: space-between; /* Add space between elements */
+    align-items: center;
+    height: 350px; /* Adjust the height as needed */
+    background-color: #f0f0f0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+/* Hover effect for the homecard */
+.homecard:hover {
+    background-color: rgba(37,33,82,.12); /* Change the background color on hover */
+    transform: scale(1.05); /* Add a slight zoom effect */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
+}
+
+/* CSS for the small text */
+.text-muted {
+    font-size: 12px;
+    color: #888;
 }
