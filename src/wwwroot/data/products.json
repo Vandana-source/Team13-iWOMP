@@ -153,5 +153,14 @@
     "Title": "Sinegal Building",
     "Description": "Cool place to sit in front of Sinegal building.",
     "Ratings": null
+  },
+  {
+    "Id": "ESports",
+    "Maker": "Esports",
+    "img": "SiteImages/Others/Esports.jpg",
+    "Url": "https://seattlespectator.com/2023/04/12/e-for-everyone-esports-room-opens-in-student-center/",
+    "Title": "ESPORTS",
+    "Description": "A heaven for all the gamers.",
+    "Ratings": null
   }
 ]
