@@ -162,5 +162,14 @@
     "Title": "ESPORTS",
     "Description": "A heaven for all the gamers.",
     "Ratings": null
+  },
+  {
+    "Id": "Library",
+    "Maker": "Library",
+    "img": "SiteImages/Others/Lib.jpg",
+    "Url": "https://pfeifferpartners.com/projects/seattle-university-a-a-lemieux-library-and-mcgoldrick-learning-commons-renovation-and-expansion/",
+    "Title": "Library",
+    "Description": "Surrounding the books.",
+    "Ratings": null
   }
 ]
