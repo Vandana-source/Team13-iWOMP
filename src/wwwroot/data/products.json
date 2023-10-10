@@ -1,32 +1,5 @@
 [
   {
-    "Id": "jenlooper-cactus",
-    "Maker": "@jenlooper",
-    "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
-    "Url": "https://www.hackster.io/agent-hawking-1/the-quantified-cactus-an-easy-plant-soil-moisture-sensor-e65393",
-    "Title": "Seattle University Rhododendron Bench",
-    "Description": "This project is a good learning project to get comfortable with soldering and programming an Arduino.",
-    "Ratings": [
-      5,
-      5,
-      3,
-      2,
-      1,
-      5,
-      5,
-      5
-    ]
-  },
-  {
-    "Id": "jenlooper-light",
-    "Maker": "jenlooper",
-    "img": "/SiteImages/Benches/UWLanderBench.jpeg",
-    "Url": "https://www.hackster.io/agent-hawking-1/book-light-dee7e4",
-    "Title": "University of Washington: Maple Hall Pedestrian Walkway",
-    "Description": "Use craft items you have around the house, plus two LEDs and a LilyPad battery holder, to create a useful book light for reading in the dark.",
-    "Ratings": null
-  },
-  {
     "Id": "jenlooper-lightshow",
     "Maker": "@jenlooper",
     "img": "/SiteImages/Restrooms/pike-place-market-public.jpg",
@@ -51,15 +24,6 @@
     "Url": "https://twitter.com/sailorhg/status/1090107740049952770",
     "Title": "Life On Mars Disco",
     "Description": "Visualization of sailor scouts sorted by bubblesort algorithm by their planet\u0027s distance from the sun",
-    "Ratings": null
-  },
-  {
-    "Id": "sailorhg-corsage",
-    "Maker": "sailorhg",
-    "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
-    "Url": "https://twitter.com/sailorhg/status/1090113666911891456",
-    "Title": "Arboretum Marsh",
-    "Description": "Light-up corsage I made with my summer intern.",
     "Ratings": null
   },
   {
@@ -125,24 +89,6 @@
     "Url": "https://www.vogueandcode.com/shop/ruby-sis-2",
     "Title": "Seattle Central College: All-Gender \u0026 Family",
     "Description": "Styled in a dashiki, Ruby Sis is listening to music while coding in her favorite language, Ruby!",
-    "Ratings": null
-  },
-  {
-    "Id": "selinazawacki-moon",
-    "Maker": "selinazawacki",
-    "img": "https://user-images.githubusercontent.com/41929050/61567057-142c1c80-aa33-11e9-9781-9e442418eaab.png",
-    "Url": "https://www.instagram.com/p/BFktVYPinKQ/",
-    "Title": "Holographic Dark Moon Necklace",
-    "Description": "Not sure if I\u0027ll be making more, get it while I have it in the store.",
-    "Ratings": null
-  },
-  {
-    "Id": "selinazawacki-shirt",
-    "Maker": "selinazawacki",
-    "img": "https://user-images.githubusercontent.com/41929050/61567058-142c1c80-aa33-11e9-89fb-b4f30d84d69d.png",
-    "Url": "https://www.instagram.com/p/BEXlpiZCnJ3",
-    "Title": "Floppy Crop",
-    "Description": "Used up the Diskette fabric today to make 2 of these crops.",
     "Ratings": null
   },
   {
