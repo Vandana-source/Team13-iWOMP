@@ -189,5 +189,14 @@
     "Title": "Great Wheel",
     "Description": "It adds an entirely new sightseeing perspective, thanks to its location perched on the end of Pier 57.",
     "Ratings": null
+  },
+  {
+    "Id": "Ferry",
+    "Maker": "Ferry",
+    "img": "SiteImages/Others/Ferry.jpg",
+    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
+    "Title": "Ferry",
+    "Description": " Enjoy the breathtaking views from the bow of the boat as you cruise to the nearby communities of Bainbridge Island or Bremerton.",
+    "Ratings": null
   }
 ]
