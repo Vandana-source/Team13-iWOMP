@@ -225,5 +225,14 @@
     "Title": "Pike Place Market",
     "Description": "The market added its historic MarketFront expansion in 2017, featuring an open-air plaza and fantastic views of Elliott Bay.",
     "Ratings": null
+  },
+  {
+    "Id": "PublicLibrary",
+    "Maker": "PublicLibrary",
+    "img": "SiteImages/Others/PublicLibrary.jpg",
+    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
+    "Title": "Central Public Library",
+    "Description": "You’ve never seen a library quite like this—Seattle Central Library’s architecturally distinct structure boasts enough glass to cover more than five football stadiums.",
+    "Ratings": null
   }
 ]
