@@ -198,5 +198,14 @@
     "Title": "Ferry",
     "Description": " Enjoy the breathtaking views from the bow of the boat as you cruise to the nearby communities of Bainbridge Island or Bremerton.",
     "Ratings": null
+  },
+  {
+    "Id": "Aquarium",
+    "Maker": "Aquarium",
+    "img": "SiteImages/Others/Aquarium.jpg",
+    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
+    "Title": "Aquarium",
+    "Description": "meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
+    "Ratings": null
   }
 ]
