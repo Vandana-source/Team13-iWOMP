@@ -216,5 +216,14 @@
     "Title": "Mono-Rail",
     "Description": "The designated historic landmark can reach a top speed of 45 miles per hour and weaves between skyscrapers above the city streets.",
     "Ratings": null
+  },
+  {
+    "Id": "PikePlaceMarket",
+    "Maker": "PikePlaceMarket",
+    "img": "SiteImages/Others/PikePlaceMarket.jpg",
+    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
+    "Title": "Pike Place Market",
+    "Description": "The market added its historic MarketFront expansion in 2017, featuring an open-air plaza and fantastic views of Elliott Bay.",
+    "Ratings": null
   }
 ]
