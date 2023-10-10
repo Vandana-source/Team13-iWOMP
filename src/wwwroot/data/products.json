@@ -207,5 +207,14 @@
     "Title": "Aquarium",
     "Description": "meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
     "Ratings": null
+  },
+  {
+    "Id": "Monorail",
+    "Maker": "Monorail",
+    "img": "SiteImages/Others/Monorail.jpg",
+    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
+    "Title": "Mono-Rail",
+    "Description": "The designated historic landmark can reach a top speed of 45 miles per hour and weaves between skyscrapers above the city streets.",
+    "Ratings": null
   }
 ]
