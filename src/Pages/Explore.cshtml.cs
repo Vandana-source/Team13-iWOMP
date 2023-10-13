@@ -8,14 +8,11 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Pages
 {
-    /// <summary>
-    /// Ritu Priya
-    /// </summary>
-    public class IndexModel : PageModel
+    public class ExploreModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ILogger<ExploreModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger,
+        public ExploreModel(ILogger<ExploreModel> logger,
             JsonFileProductService productService)
         {
             _logger = logger;
