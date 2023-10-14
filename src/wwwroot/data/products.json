@@ -24,6 +24,14 @@
     "Ratings": null
   },
   {
+    "Id": "woordworth-bench",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/woodworthbench.jpeg",
+    "Title": "Woodworh Apartments Outdoor Bench",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
     "Id": "uw-maple-hell",
     "LocationType": "bench",
     "img": "/SiteImages/Benches/UWMapleBench.jpeg",
