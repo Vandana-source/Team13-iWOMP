@@ -3,7 +3,15 @@
     "Id": "arboretum-bench",
     "LocationType": "bench",
     "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
-    "Title": "Arboretum Walk",
+    "Title": "Arboretum Marsh Walk",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
+    "Id": "stanley-park",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/StanleyPark.jpeg",
+    "Title": "Stanley Park",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
   },
@@ -12,6 +20,22 @@
     "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/pike-place-market-public.jpg",
     "Title": "Pike Place Market",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
+    "Id": "seattle-university-fern",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/SeattleUniversityFern.jpeg",
+    "Title": "Seattle University Ferns",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
+    "Id": "broadway-bench",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/BroadwayBench.jpeg",
+    "Title": "Bench on Broadway",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
   },
@@ -71,6 +95,7 @@
     "Description": "custom molded heart shaped LED with sprinkles.",
     "Ratings": null
   },
+
   {
     "Id": "stoop-brewing-cap-hill",
     "LocationType": "restroom",
@@ -88,6 +113,14 @@
     "Ratings": [
       5
     ]
+  },
+  {
+    "Id": "aroboretum-walk",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/ArboretumWalk.jpeg",
+    "Title": "Arboretum Walk",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
   },
   {
     "Id": "cloudburst-brewing-ballard",
