@@ -151,7 +151,7 @@ ul {
     background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: linear-gradient(110deg, #bacec1 60%, #f3f3f3 60%);
 }
-img{
+.homeimage{
     float: right;
     max-width:75px;
     max-height:75px;
@@ -202,4 +202,62 @@ img{
 .location-text {
     width: 100%; /* Takes up the full width of the .location-content, matching the image's width */
     text-align: left; /* Text starts at the left edge */
+}
+
+.vertical-bars {
+    display: inline;
+    margin: 0 5px; /* Adjust the margin as needed to control the spacing */
+    border-left: 1px solid #000; /* Vertical bar styling */
+    padding-left: 5px;
+}
+
+.acolor {
+    color: #000;
+}
+
+.container2 {
+    width: 80%; /* Adjust the width of the container as needed */
+    margin: 0 auto; /* Horizontally center the container on the page */
+    padding: 20px; /* Add padding to create space on the left and right */
+}
+
+.horizontal-line {
+    position: absolute;
+    border: none;
+    border-top: 2px solid #000; /* Black color */
+    width: 100px; /* Adjust the width of the line as needed */
+}
+
+.description {
+    width: 684px;
+    top: 0;
+    left: 0;
+    font-family: "Helvetica-Bold", Helvetica;
+    font-weight: 400;
+    color: #1a1717;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    letter-spacing: 0.8px;
+}
+
+.text-wrapper {
+    width: 684px;
+    top: 0;
+    left: 0;
+    font-weight: 700;
+    font-size: 36px;
+    font-family: "Helvetica-Bold", Helvetica;
+    color: #1a1717;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.space {
+    margin: 7px;
+}
+
+.read-img {
+    width: 825px;
+    height: 450px;
 }
