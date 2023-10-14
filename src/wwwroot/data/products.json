@@ -56,6 +56,14 @@
     "Ratings": null
   },
   {
+    "Id": "kubota-gardens-bench",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/KubotaGardenBench.jpeg",
+    "Title": "Kubota Gardens (Bench)",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
     "Id": "uw-maple-hell",
     "LocationType": "bench",
     "img": "/SiteImages/Benches/UWMapleBench.jpeg",
