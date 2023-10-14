@@ -3,7 +3,6 @@
     "Id": "arboretum-bench",
     "LocationType": "bench",
     "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
-    "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
     "Title": "Arboretum Walk",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
@@ -12,7 +11,6 @@
     "Id": "pike-place-market",
     "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/pike-place-market-public.jpg",
-    "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
     "Title": "Pike Place Market",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
@@ -21,7 +19,6 @@
     "Id": "seattle-university-rhododendron",
     "LocationType": "bench",
     "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
-    "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
     "Title": "Seattle University Rhorodendron Bench",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
@@ -30,7 +27,6 @@
     "Id": "uw-maple-hell",
     "LocationType": "bench",
     "img": "/SiteImages/Benches/UWMapleBench.jpeg",
-    "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
     "Title": "UW Maple Hall Promenade",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
@@ -39,7 +35,6 @@
     "Id": "columbia-tower-club",
     "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/ColumbiaTower.jpg",
-    "Url": "https://www.hackster.io/agent-hawking-1/create-a-compact-survival-kit-38bfdb",
     "Title": "Columbia Tower Club",
     "Description": "Use an Altoids tin with Chibitronics sticker LEDs to create a light-up compact that doubles as a survival kit for the young hipster",
     "Ratings": null
@@ -48,7 +43,6 @@
     "Id": "life-on-mars",
     "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/LifeOnMars.jpg",
-    "Url": "https://twitter.com/sailorhg/status/1090107740049952770",
     "Title": "Life On Mars Disco",
     "Description": "Visualization of sailor scouts sorted by bubblesort algorithm by their planet\u0027s distance from the sun",
     "Ratings": null
@@ -57,7 +51,6 @@
     "Id": "la-dive-bar",
     "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/LADiveBar.jpeg",
-    "Url": "https://twitter.com/sailorhg/status/1090122822007963648",
     "Title": "LA Dive Bar",
     "Description": "Pastel hardware kits complete with custom manufactured pastel alligator clips.",
     "Ratings": null
@@ -66,7 +59,6 @@
     "Id": "starbucks-reserve",
     "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/StarbucksRoastery.jpg",
-    "Url": "https://twitter.com/sailorhg/status/1090117277540745216",
     "Title": "Starbucks Reserve",
     "Description": "custom molded heart shaped LED with sprinkles.",
     "Ratings": null
@@ -75,7 +67,6 @@
     "Id": "stoop-brewing-cap-hill",
     "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/StoopBrewingCapHill.jpg",
-    "Url": "https://www.instagram.com/p/BNvESj-j8PI/",
     "Title": "Stoop Brewing (Capitol Hill)",
     "Description": "Black sweatshirt hoody with the Sick of the Internet logo.",
     "Ratings": null
@@ -84,7 +75,6 @@
     "Id": "u-village",
     "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/UniversityVillage.jpeg",
-    "Url": "https://www.instagram.com/p/BNm6hZzDoEF/",
     "Title": "U Village",
     "Description": "Still some time to enter the pin/sticker giveaway! ",
     "Ratings": [
@@ -95,7 +85,6 @@
     "Id": "cloudburst-brewing-ballard",
     "LocationType": "restroom",
     "img": "SiteImages/Restrooms/CloudburstBrewing.jpg",
-    "Url": "https://www.vogueandcode.com/shop/hipster-dev-bro",
     "Title": "Cloudburst Brewing (Ballard)",
     "Description": "Hipster Dev is busy coding away while styled in a camo jacket and orange beanie.",
     "Ratings": null
@@ -104,7 +93,6 @@
     "Id": "cal-anderson-park",
     "LocationType": "restroom",
     "img": "SiteImages/Restrooms/CalAnderson.jpg",
-    "Url": "https://www.vogueandcode.com/shop/pretty-girls-code-tee",
     "Title": "Cal Anderson Park Public Restrooms",
     "Description": "Everyone\u2019s favorite design is finally here on a tee! The Pretty Girls Code crew-neck tee is available in a soft pink with red writing.",
     "Ratings": null
@@ -113,7 +101,6 @@
     "Id": "seattle-central-college",
     "LocationType": "restroom",
     "img": "SiteImages/Restrooms/SeattleCentralCollege.jpg",
-    "Url": "https://www.vogueandcode.com/shop/ruby-sis-2",
     "Title": "Seattle Central College: All-Gender \u0026 Family",
     "Description": "Styled in a dashiki, Ruby Sis is listening to music while coding in her favorite language, Ruby!",
     "Ratings": null
@@ -122,7 +109,6 @@
     "Id": "Sinegal-Building",
     "LocationType": "other",
     "img": "SiteImages/Others/SinegalBuilding.jpg",
-    "Url": "https://www.seattleu.edu/science-innovation/sinegal-center-facilities/other-resources/",
     "Title": "Sinegal Building",
     "Description": "Cool place to sit in front of Sinegal building.",
     "Ratings": null
@@ -131,7 +117,6 @@
     "Id": "ESports",
     "LocationType": "other",
     "img": "SiteImages/Others/Esports.jpg",
-    "Url": "https://seattlespectator.com/2023/04/12/e-for-everyone-esports-room-opens-in-student-center/",
     "Title": "ESPORTS",
     "Description": "A heaven for all the gamers.",
     "Ratings": null
@@ -140,7 +125,6 @@
     "Id": "LemieuxLibrary",
     "LocationType": "other",
     "img": "SiteImages/Others/LemieuxLibrary.jpg",
-    "Url": "https://pfeifferpartners.com/projects/seattle-university-a-a-lemieux-library-and-mcgoldrick-learning-commons-renovation-and-expansion/",
     "Title": "Lemieux Library",
     "Description": "Surrounding the books.",
     "Ratings": null
@@ -149,7 +133,6 @@
     "Id": "KubotaGardens",
     "LocationType": "other",
     "img": "SiteImages/Others/KubotaGardens.jpg",
-    "Url": "https://www.seattleu.edu/media/grounds-landscaping-and-atheltic-fields/significant-gardens/significantgardens_slider01-1130x727.jpg",
     "Title": "Kubota Gardens",
     "Description": "Kubota Gardens.",
     "Ratings": null
@@ -158,7 +141,6 @@
     "Id": "GreatWheel",
     "LocationType": "other",
     "img": "SiteImages/Others/Great-Wheel.jpg",
-    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Great Wheel",
     "Description": "It adds an entirely new sightseeing perspective, thanks to its location perched on the end of Pier 57.",
     "Ratings": null
@@ -167,7 +149,6 @@
     "Id": "Ferry",
     "LocationType": "other",
     "img": "SiteImages/Others/Ferry.jpg",
-    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Ferry",
     "Description": " Enjoy the breathtaking views from the bow of the boat as you cruise to the nearby communities of Bainbridge Island or Bremerton.",
     "Ratings": null
@@ -176,7 +157,6 @@
     "Id": "Aquarium",
     "LocationType": "other",
     "img": "SiteImages/Others/Aquarium.jpg",
-    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Aquarium",
     "Description": "meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
     "Ratings": null
@@ -185,7 +165,6 @@
     "Id": "Monorail",
     "LocationType": "other",
     "img": "SiteImages/Others/Monorail.jpg",
-    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Mono-Rail",
     "Description": "The designated historic landmark can reach a top speed of 45 miles per hour and weaves between skyscrapers above the city streets.",
     "Ratings": null
@@ -194,7 +173,6 @@
     "Id": "PikePlaceMarket",
     "LocationType": "other",
     "img": "SiteImages/Others/PikePlaceMarket.jpg",
-    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Pike Place Market",
     "Description": "The market added its historic MarketFront expansion in 2017, featuring an open-air plaza and fantastic views of Elliott Bay.",
     "Ratings": null
@@ -203,7 +181,6 @@
     "Id": "PublicLibrary",
     "LocationType": "other",
     "img": "SiteImages/Others/PublicLibrary.jpg",
-    "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Central Public Library",
     "Description": "You’ve never seen a library quite like this—Seattle Central Library’s architecturally distinct structure boasts enough glass to cover more than five football stadiums.",
     "Ratings": null
