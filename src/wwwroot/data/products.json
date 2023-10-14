@@ -59,7 +59,15 @@
     "Id": "kubota-gardens-bench",
     "LocationType": "bench",
     "img": "/SiteImages/Benches/KubotaGardenBench.jpeg",
-    "Title": "Kubota Gardens (Bench)",
+    "Title": "Kobuta Gardens (Bench)",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
+    "Id": "seattle-u-bench",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/SeattleU.jpeg",
+    "Title": "Seattle University Fountain",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
   },
