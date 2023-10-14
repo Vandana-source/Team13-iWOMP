@@ -3,7 +3,7 @@
     "Id": "arboretum-bench",
     "LocationType": "bench",
     "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
-    "Title": "Arboretum Walk",
+    "Title": "Arboretum Marsh Walk",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
   },
@@ -105,6 +105,14 @@
     "Ratings": [
       5
     ]
+  },
+  {
+    "Id": "aroboretum-walk",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/ArboretumWalk.jpeg",
+    "Title": "Arboretum Walk",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
   },
   {
     "Id": "cloudburst-brewing-ballard",
