@@ -16,6 +16,14 @@
     "Ratings": null
   },
   {
+    "Id": "seattle-university-ferm",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/SeattleUniversityFern.jpeg",
+    "Title": "Seattle University Ferns",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
     "Id": "seattle-university-rhododendron",
     "LocationType": "bench",
     "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
