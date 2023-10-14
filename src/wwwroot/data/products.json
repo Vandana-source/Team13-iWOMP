@@ -1,7 +1,16 @@
 [
   {
+    "Id": "arboretum-bench",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
+    "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
+    "Title": "Arboretum Walk",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
     "Id": "pike-place-market",
-    "Maker": "@jenlooper",
+    "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/pike-place-market-public.jpg",
     "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
     "Title": "Pike Place Market",
@@ -9,8 +18,26 @@
     "Ratings": null
   },
   {
+    "Id": "seattle-university-rhododendron",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
+    "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
+    "Title": "Seattle University Rhorodendron Bench",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
+    "Id": "uw-maple-hell",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/UWMapleBench.jpeg",
+    "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
+    "Title": "UW Maple Hall Promenade",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
     "Id": "columbia-tower-club",
-    "Maker": "jenlooper",
+    "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/ColumbiaTower.jpg",
     "Url": "https://www.hackster.io/agent-hawking-1/create-a-compact-survival-kit-38bfdb",
     "Title": "Columbia Tower Club",
@@ -19,7 +46,7 @@
   },
   {
     "Id": "life-on-mars",
-    "Maker": "sailorhg",
+    "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/LifeOnMars.jpg",
     "Url": "https://twitter.com/sailorhg/status/1090107740049952770",
     "Title": "Life On Mars Disco",
@@ -28,7 +55,7 @@
   },
   {
     "Id": "la-dive-bar",
-    "Maker": "sailorhg",
+    "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/LADiveBar.jpeg",
     "Url": "https://twitter.com/sailorhg/status/1090122822007963648",
     "Title": "LA Dive Bar",
@@ -37,7 +64,7 @@
   },
   {
     "Id": "starbucks-reserve",
-    "Maker": "sailorhg",
+    "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/StarbucksRoastery.jpg",
     "Url": "https://twitter.com/sailorhg/status/1090117277540745216",
     "Title": "Starbucks Reserve",
@@ -46,7 +73,7 @@
   },
   {
     "Id": "stoop-brewing-cap-hill",
-    "Maker": "selinazawacki",
+    "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/StoopBrewingCapHill.jpg",
     "Url": "https://www.instagram.com/p/BNvESj-j8PI/",
     "Title": "Stoop Brewing (Capitol Hill)",
@@ -55,7 +82,7 @@
   },
   {
     "Id": "u-village",
-    "Maker": "selinazawacki",
+    "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/UniversityVillage.jpeg",
     "Url": "https://www.instagram.com/p/BNm6hZzDoEF/",
     "Title": "U Village",
@@ -66,7 +93,7 @@
   },
   {
     "Id": "cloudburst-brewing-ballard",
-    "Maker": "vogueandcode",
+    "LocationType": "restroom",
     "img": "SiteImages/Restrooms/CloudburstBrewing.jpg",
     "Url": "https://www.vogueandcode.com/shop/hipster-dev-bro",
     "Title": "Cloudburst Brewing (Ballard)",
@@ -75,7 +102,7 @@
   },
   {
     "Id": "cal-anderson-park",
-    "Maker": "vogueandcode",
+    "LocationType": "restroom",
     "img": "SiteImages/Restrooms/CalAnderson.jpg",
     "Url": "https://www.vogueandcode.com/shop/pretty-girls-code-tee",
     "Title": "Cal Anderson Park Public Restrooms",
@@ -84,7 +111,7 @@
   },
   {
     "Id": "seattle-central-college",
-    "Maker": "vogueandcode",
+    "LocationType": "restroom",
     "img": "SiteImages/Restrooms/SeattleCentralCollege.jpg",
     "Url": "https://www.vogueandcode.com/shop/ruby-sis-2",
     "Title": "Seattle Central College: All-Gender \u0026 Family",
@@ -93,7 +120,7 @@
   },
   {
     "Id": "Sinegal-Building",
-    "Maker": "SingegalBuilding",
+    "LocationType": "other",
     "img": "SiteImages/Others/SinegalBuilding.jpg",
     "Url": "https://www.seattleu.edu/science-innovation/sinegal-center-facilities/other-resources/",
     "Title": "Sinegal Building",
@@ -102,7 +129,7 @@
   },
   {
     "Id": "ESports",
-    "Maker": "Esports",
+    "LocationType": "other",
     "img": "SiteImages/Others/Esports.jpg",
     "Url": "https://seattlespectator.com/2023/04/12/e-for-everyone-esports-room-opens-in-student-center/",
     "Title": "ESPORTS",
@@ -111,7 +138,7 @@
   },
   {
     "Id": "LemieuxLibrary",
-    "Maker": "Library",
+    "LocationType": "other",
     "img": "SiteImages/Others/LemieuxLibrary.jpg",
     "Url": "https://pfeifferpartners.com/projects/seattle-university-a-a-lemieux-library-and-mcgoldrick-learning-commons-renovation-and-expansion/",
     "Title": "Lemieux Library",
@@ -120,7 +147,7 @@
   },
   {
     "Id": "KubotaGardens",
-    "Maker": "KubotaGardens",
+    "LocationType": "other",
     "img": "SiteImages/Others/KubotaGardens.jpg",
     "Url": "https://www.seattleu.edu/media/grounds-landscaping-and-atheltic-fields/significant-gardens/significantgardens_slider01-1130x727.jpg",
     "Title": "Kubota Gardens",
@@ -129,7 +156,7 @@
   },
   {
     "Id": "GreatWheel",
-    "Maker": "GreatWheel",
+    "LocationType": "other",
     "img": "SiteImages/Others/Great-Wheel.jpg",
     "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Great Wheel",
@@ -138,7 +165,7 @@
   },
   {
     "Id": "Ferry",
-    "Maker": "Ferry",
+    "LocationType": "other",
     "img": "SiteImages/Others/Ferry.jpg",
     "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Ferry",
@@ -147,7 +174,7 @@
   },
   {
     "Id": "Aquarium",
-    "Maker": "Aquarium",
+    "LocationType": "other",
     "img": "SiteImages/Others/Aquarium.jpg",
     "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Aquarium",
@@ -156,7 +183,7 @@
   },
   {
     "Id": "Monorail",
-    "Maker": "Monorail",
+    "LocationType": "other",
     "img": "SiteImages/Others/Monorail.jpg",
     "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Mono-Rail",
@@ -165,7 +192,7 @@
   },
   {
     "Id": "PikePlaceMarket",
-    "Maker": "PikePlaceMarket",
+    "LocationType": "other",
     "img": "SiteImages/Others/PikePlaceMarket.jpg",
     "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Pike Place Market",
@@ -174,7 +201,7 @@
   },
   {
     "Id": "PublicLibrary",
-    "Maker": "PublicLibrary",
+    "LocationType": "other",
     "img": "SiteImages/Others/PublicLibrary.jpg",
     "Url": "https://visitseattle.org/things-to-do/sightseeing/top-25-attractions/",
     "Title": "Central Public Library",
