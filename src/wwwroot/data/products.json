@@ -8,6 +8,14 @@
     "Ratings": null
   },
   {
+    "Id": "stanley-park",
+    "LocationType": "bench",
+    "img": "/SiteImages/Benches/StanleyPark.jpeg",
+    "Title": "Stanley Park",
+    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Ratings": null
+  },
+  {
     "Id": "pike-place-market",
     "LocationType": "restroom",
     "img": "/SiteImages/Restrooms/pike-place-market-public.jpg",
