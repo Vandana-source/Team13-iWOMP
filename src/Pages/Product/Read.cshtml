@@ -9,11 +9,12 @@
 
 <h1>Read</h1>
 
-<div class="content">
-    <h5 class="title" id="productTitle">@Model.Product.Title</h5>
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="content">
 
-    <img class="card-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
-
-    <p class="card-text">@Model.Product.Description</p>
-
+        <img class="location-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
+        <h5 class="title" id="productTitle">@Model.Product.Title</h5> 
+        <p class="location-text">@Model.Product.Description</p>
+    </div>
 </div>
+
