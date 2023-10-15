@@ -145,7 +145,7 @@
     "LocationType": "Restroom",
     "img": "SiteImages/Restrooms/CloudburstBrewing.jpg",
     "Title": "Cloudburst Brewing (Ballard)",
-    "Description": "Another solid brewery bathroom. The sinks are located outside.",
+    "Description": "Another solid brewery bathroom. Here, the sinks are situated outside.",
     "Ratings": null
   },
   {
@@ -153,7 +153,7 @@
     "LocationType": "Restroom",
     "img": "SiteImages/Restrooms/CalAnderson.jpg",
     "Title": "Cal Anderson Park",
-    "Description": "Everyone\u2019s favorite design is finally here on a tee! The Pretty Girls Code crew-neck tee is available in a soft pink with red writing.",
+    "Description": "A public restroom located in one of Seattle's busiest parks.",
     "Ratings": null
   },
   {
@@ -161,7 +161,7 @@
     "LocationType": "Restroom",
     "img": "SiteImages/Restrooms/SeattleCentralCollege.jpg",
     "Title": "Seattle Central College",
-    "Description": "Styled in a dashiki, Ruby Sis is listening to music while coding in her favorite language, Ruby!",
+    "Description": "A gender-neutral, multi-stall layout located on the 4th floor",
     "Ratings": null
   },
   {
