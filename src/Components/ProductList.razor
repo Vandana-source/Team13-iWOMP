@@ -11,6 +11,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">@product.Title</h5>
+            <p class="card-text">@product.LocationType</p>
         </div>
         <div class="card-footer">
             <small class="text-muted"><button @onclick="(e => SelectProduct(product.Id))" 
