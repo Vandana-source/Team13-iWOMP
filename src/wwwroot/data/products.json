@@ -20,8 +20,7 @@
     "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/pike-place-market-public.jpg",
     "Title": "Pike Place Market",
-    "Description": "While it can get quite crowded, this restroom provides a convenient option within the bustling Pike",
-                    "+" : "Place Market.",
+    "Description": "While it can get quite crowded, this restroom provides a convenient option within the bustling Pike Place Market.",
     "Ratings": null
   },
   {
@@ -45,8 +44,7 @@
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
     "Title": "Seattle University Rhorodendrons",
-    "Description": "Located in front of the Administration building, this bench surrounds you with blooms of flowers",
-                    "+": "every spring",
+    "Description": "Located in front of the Administration building, this bench surrounds you with blooms of flowers every spring",
     "Ratings": null
   },
   {
@@ -61,7 +59,7 @@
     "Id": "kubota-gardens-bench",
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/KubotaGardenBench.jpeg",
-    "Title": "Kobuta Gardens",
+    "Title": "Kobuta Gardens Bench",
     "Description": "A zen, overgrown bench located in one of Seattle's best public gardens.",
     "Ratings": null
   },
@@ -113,7 +111,6 @@
     "Description": "A softly lit, gender-neutral space with a panoramic view overlooking the roastery below.",
     "Ratings": null
   },
-
   {
     "Id": "stoop-brewing-cap-hill",
     "LocationType": "Restroom",
@@ -143,7 +140,7 @@
   {
     "Id": "cloudburst-brewing-ballard",
     "LocationType": "Restroom",
-    "img": "SiteImages/Restrooms/CloudburstBrewing.jpg",
+    "img": "/SiteImages/Restrooms/CloudburstBrewing.jpg",
     "Title": "Cloudburst Brewing (Ballard)",
     "Description": "Another solid brewery bathroom. Here, the sinks are situated outside.",
     "Ratings": null
@@ -151,7 +148,7 @@
   {
     "Id": "cal-anderson-park",
     "LocationType": "Restroom",
-    "img": "SiteImages/Restrooms/CalAnderson.jpg",
+    "img": "/SiteImages/Restrooms/CalAnderson.jpg",
     "Title": "Cal Anderson Park",
     "Description": "A public restroom located in one of Seattle's busiest parks.",
     "Ratings": null
@@ -167,7 +164,7 @@
   {
     "Id": "Sinegal-Building",
     "LocationType": "Other",
-    "img": "SiteImages/Others/SinegalBuilding.jpg",
+    "img": "/SiteImages/Others/SinegalBuilding.jpg",
     "Title": "Sinegal Building",
     "Description": "Cool place to sit in front of Sinegal building.",
     "Ratings": null
@@ -183,7 +180,7 @@
   {
     "Id": "LemieuxLibrary",
     "LocationType": "Other",
-    "img": "SiteImages/Others/LemieuxLibrary.jpg",
+    "img": "/SiteImages/Others/LemieuxLibrary.jpg",
     "Title": "Lemieux Library",
     "Description": "Surrounding the books.",
     "Ratings": null
@@ -191,7 +188,7 @@
   {
     "Id": "KubotaGardens",
     "LocationType": "Other",
-    "img": "SiteImages/Others/KubotaGardens.jpg",
+    "img": "/SiteImages/Others/KubotaGardens.jpg",
     "Title": "Kubota Gardens",
     "Description": "Kubota Gardens.",
     "Ratings": null
@@ -199,7 +196,7 @@
   {
     "Id": "GreatWheel",
     "LocationType": "Other",
-    "img": "SiteImages/Others/Great-Wheel.jpg",
+    "img": "/SiteImages/Others/Great-Wheel.jpg",
     "Title": "Great Wheel",
     "Description": "It adds an entirely new sightseeing perspective, thanks to its location perched on the end of Pier 57.",
     "Ratings": null
@@ -207,7 +204,7 @@
   {
     "Id": "Ferry",
     "LocationType": "Other",
-    "img": "SiteImages/Others/Ferry.jpg",
+    "img": "/SiteImages/Others/Ferry.jpg",
     "Title": "Ferry",
     "Description": " Enjoy the breathtaking views from the bow of the boat as you cruise to the nearby communities of Bainbridge Island or Bremerton.",
     "Ratings": null
@@ -215,7 +212,7 @@
   {
     "Id": "Aquarium",
     "LocationType": "Other",
-    "img": "SiteImages/Others/Aquarium.jpg",
+    "img": "/SiteImages/Others/Aquarium.jpg",
     "Title": "Aquarium",
     "Description": "meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
     "Ratings": null
@@ -223,7 +220,7 @@
   {
     "Id": "Monorail",
     "LocationType": "Other",
-    "img": "SiteImages/Others/Monorail.jpg",
+    "img": "/SiteImages/Others/Monorail.jpg",
     "Title": "Mono-Rail",
     "Description": "The designated historic landmark can reach a top speed of 45 miles per hour and weaves between skyscrapers above the city streets.",
     "Ratings": null
@@ -231,7 +228,7 @@
   {
     "Id": "PikePlaceMarket",
     "LocationType": "Other",
-    "img": "SiteImages/Others/PikePlaceMarket.jpg",
+    "img": "/SiteImages/Others/PikePlaceMarket.jpg",
     "Title": "Pike Place Market",
     "Description": "The market added its historic MarketFront expansion in 2017, featuring an open-air plaza and fantastic views of Elliott Bay.",
     "Ratings": null
@@ -239,7 +236,7 @@
   {
     "Id": "PublicLibrary",
     "LocationType": "Other",
-    "img": "SiteImages/Others/PublicLibrary.jpg",
+    "img": "/SiteImages/Others/PublicLibrary.jpg",
     "Title": "Central Public Library",
     "Description": "You’ve never seen a library quite like this—Seattle Central Library’s architecturally distinct structure boasts enough glass to cover more than five football stadiums.",
     "Ratings": null
