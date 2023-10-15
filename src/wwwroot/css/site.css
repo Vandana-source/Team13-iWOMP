@@ -279,3 +279,31 @@ ul {
     font-size: 24px;
     color: #0074d9; /* Blue color */
 }
+
+th {
+    background-color: #bacec1;
+    color: #000;
+    position: sticky;
+    top: 0;
+}
+
+/* Hover effect for rows */
+tr:hover {
+    background-color: #bacec1;
+}
+
+/* Hover effect for columns */
+td:hover::before {
+    position: absolute;
+    background-color: #f3f3f3;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+    transform: translateX(-50%);
+    display: none;
+}
+
+td:hover::before {
+    display: block;
+}
