@@ -4,15 +4,15 @@
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
     "Title": "Arboretum Marsh Walk",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "A small bench located along the Arboretum trail's floating walkway near Foster Island.",
     "Ratings": null
   },
   {
-    "Id": "stanley-park",
+    "Id": "louisa-boren-lookout",
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/StanleyPark.jpeg",
     "Title": "Stanley Park",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "This bench offers breathtaking northwest-facing views of Lake Washington.",
     "Ratings": null
   },
   {
@@ -20,7 +20,8 @@
     "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/pike-place-market-public.jpg",
     "Title": "Pike Place Market",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "While it can get quite crowded, this restroom provides a convenient option within the bustling Pike",
+                    "+" : "Place Market.",
     "Ratings": null
   },
   {
@@ -28,7 +29,7 @@
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/SeattleUniversityFern.jpeg",
     "Title": "Seattle University Ferns",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "A quiet spot to sit behind Seattle University's administration building.",
     "Ratings": null
   },
   {
@@ -36,7 +37,7 @@
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/BroadwayBench.jpeg",
     "Title": "Bench on Broadway",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "A bench along north Broadway near the bus stop.",
     "Ratings": null
   },
   {
@@ -44,7 +45,8 @@
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
     "Title": "Seattle University Rhorodendrons",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "Located in front of the Administration building, this bench surrounds you with blooms of flowers",
+                    "+": "every spring",
     "Ratings": null
   },
   {
@@ -52,7 +54,7 @@
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/woodworthbench.jpeg",
     "Title": "Woodworh Apartments",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "Modern seating outside WoodWorth apartments across from Drip Tea Market.",
     "Ratings": null
   },
   {
@@ -60,7 +62,7 @@
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/KubotaGardenBench.jpeg",
     "Title": "Kobuta Gardens",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "A zen, overgrown bench located in one of Seattle's best public gardens.",
     "Ratings": null
   },
   {
@@ -68,7 +70,7 @@
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/SeattleU.jpeg",
     "Title": "Seattle University Fountain",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "Peaceful people watching underneath trees on the upper mall next to the quad.",
     "Ratings": null
   },
   {
@@ -76,7 +78,7 @@
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/UWMapleBench.jpeg",
     "Title": "UW Maple Hall Promenade",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "The curvy wood on University of Washington's Maple Hall Promenade makes for good sitting.'",
     "Ratings": null
   },
   {
@@ -84,7 +86,7 @@
     "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/ColumbiaTower.jpg",
     "Title": "Columbia Tower Club",
-    "Description": "Use an Altoids tin with Chibitronics sticker LEDs to create a light-up compact that doubles as a survival kit for the young hipster",
+    "Description": "Frequently acclaimed as a hidden gem among Seattle's restrooms, this lavatory for women offers a stunning cityscape view from the 76th floor.",
     "Ratings": null
   },
   {
@@ -92,7 +94,7 @@
     "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/LifeOnMars.jpg",
     "Title": "Life On Mars Disco",
-    "Description": "Visualization of sailor scouts sorted by bubblesort algorithm by their planet\u0027s distance from the sun",
+    "Description": "This disco bathroom behind door No. 2 is a groovy spot for selfies and handwashing",
     "Ratings": null
   },
   {
@@ -100,7 +102,7 @@
     "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/LADiveBar.jpeg",
     "Title": "LA Dive Bar",
-    "Description": "Pastel hardware kits complete with custom manufactured pastel alligator clips.",
+    "Description": "Another selfie favorite, this bathroom will have you seeing red.",
     "Ratings": null
   },
   {
@@ -108,7 +110,7 @@
     "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/StarbucksRoastery.jpg",
     "Title": "Starbucks Reserve",
-    "Description": "custom molded heart shaped LED with sprinkles.",
+    "Description": "A softly lit, gender-neutral space with a panoramic view overlooking the roastery below.",
     "Ratings": null
   },
 
@@ -117,7 +119,7 @@
     "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/StoopBrewingCapHill.jpg",
     "Title": "Stoop Brewing (Capitol Hill)",
-    "Description": "Black sweatshirt hoody with the Sick of the Internet logo.",
+    "Description": "A classic gender neutral bathroom with plenty of stalls for everyone to go",
     "Ratings": null
   },
   {
@@ -125,7 +127,7 @@
     "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/UniversityVillage.jpeg",
     "Title": "U Village",
-    "Description": "Still some time to enter the pin/sticker giveaway! ",
+    "Description": "Private stalls with floor to ceiling doors and individual sinks make this spot a favorite rest stop among local shoppers.",
     "Ratings": [
       5
     ]
@@ -135,7 +137,7 @@
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/ArboretumWalk.jpeg",
     "Title": "Arboretum Walk",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "Description": "This small memorial bench provides a pleasant spot to sit along Azalea Way.",
     "Ratings": null
   },
   {
@@ -143,7 +145,7 @@
     "LocationType": "Restroom",
     "img": "SiteImages/Restrooms/CloudburstBrewing.jpg",
     "Title": "Cloudburst Brewing (Ballard)",
-    "Description": "Hipster Dev is busy coding away while styled in a camo jacket and orange beanie.",
+    "Description": "Another solid brewery bathroom. The sinks are located outside.",
     "Ratings": null
   },
   {
