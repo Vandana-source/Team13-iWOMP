@@ -71,9 +71,22 @@ a {
     transition: background-color 0.3s ease;
 }
 
+.btn-danger {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 .btn-primary:hover {
     color: #fff;
     background-color: #bacec1;
+    border-color: #bacec1;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: crimson;
     border-color: #bacec1;
 }
 
