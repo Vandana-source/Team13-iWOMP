@@ -1,7 +1,7 @@
 [
   {
     "Id": "arboretum-bench",
-    "LocationType": "bench",
+    "LocationType": "Bench",
     "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
     "Title": "Arboretum Marsh Walk",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -9,7 +9,7 @@
   },
   {
     "Id": "stanley-park",
-    "LocationType": "bench",
+    "LocationType": "Bench",
     "img": "/SiteImages/Benches/StanleyPark.jpeg",
     "Title": "Stanley Park",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -17,7 +17,7 @@
   },
   {
     "Id": "pike-place-market",
-    "LocationType": "restroom",
+    "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/pike-place-market-public.jpg",
     "Title": "Pike Place Market",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -25,7 +25,7 @@
   },
   {
     "Id": "seattle-university-fern",
-    "LocationType": "bench",
+    "LocationType": "Bench",
     "img": "/SiteImages/Benches/SeattleUniversityFern.jpeg",
     "Title": "Seattle University Ferns",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -33,7 +33,7 @@
   },
   {
     "Id": "broadway-bench",
-    "LocationType": "bench",
+    "LocationType": "Bench",
     "img": "/SiteImages/Benches/BroadwayBench.jpeg",
     "Title": "Bench on Broadway",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -41,7 +41,7 @@
   },
   {
     "Id": "seattle-university-rhododendron",
-    "LocationType": "bench",
+    "LocationType": "Bench",
     "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
     "Title": "Seattle University Rhorodendron Bench",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -49,7 +49,7 @@
   },
   {
     "Id": "woordworth-bench",
-    "LocationType": "bench",
+    "LocationType": "Bench",
     "img": "/SiteImages/Benches/woodworthbench.jpeg",
     "Title": "Woodworh Apartments Outdoor Bench",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -57,7 +57,7 @@
   },
   {
     "Id": "kubota-gardens-bench",
-    "LocationType": "bench",
+    "LocationType": "Bench",
     "img": "/SiteImages/Benches/KubotaGardenBench.jpeg",
     "Title": "Kobuta Gardens (Bench)",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -65,7 +65,7 @@
   },
   {
     "Id": "seattle-u-bench",
-    "LocationType": "bench",
+    "LocationType": "Bench",
     "img": "/SiteImages/Benches/SeattleU.jpeg",
     "Title": "Seattle University Fountain",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -73,7 +73,7 @@
   },
   {
     "Id": "uw-maple-hell",
-    "LocationType": "bench",
+    "LocationType": "Bench",
     "img": "/SiteImages/Benches/UWMapleBench.jpeg",
     "Title": "UW Maple Hall Promenade",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -81,7 +81,7 @@
   },
   {
     "Id": "columbia-tower-club",
-    "LocationType": "restroom",
+    "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/ColumbiaTower.jpg",
     "Title": "Columbia Tower Club",
     "Description": "Use an Altoids tin with Chibitronics sticker LEDs to create a light-up compact that doubles as a survival kit for the young hipster",
@@ -89,7 +89,7 @@
   },
   {
     "Id": "life-on-mars",
-    "LocationType": "restroom",
+    "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/LifeOnMars.jpg",
     "Title": "Life On Mars Disco",
     "Description": "Visualization of sailor scouts sorted by bubblesort algorithm by their planet\u0027s distance from the sun",
@@ -97,7 +97,7 @@
   },
   {
     "Id": "la-dive-bar",
-    "LocationType": "restroom",
+    "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/LADiveBar.jpeg",
     "Title": "LA Dive Bar",
     "Description": "Pastel hardware kits complete with custom manufactured pastel alligator clips.",
@@ -105,7 +105,7 @@
   },
   {
     "Id": "starbucks-reserve",
-    "LocationType": "restroom",
+    "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/StarbucksRoastery.jpg",
     "Title": "Starbucks Reserve",
     "Description": "custom molded heart shaped LED with sprinkles.",
@@ -114,7 +114,7 @@
 
   {
     "Id": "stoop-brewing-cap-hill",
-    "LocationType": "restroom",
+    "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/StoopBrewingCapHill.jpg",
     "Title": "Stoop Brewing (Capitol Hill)",
     "Description": "Black sweatshirt hoody with the Sick of the Internet logo.",
@@ -122,7 +122,7 @@
   },
   {
     "Id": "u-village",
-    "LocationType": "restroom",
+    "LocationType": "Restroom",
     "img": "/SiteImages/Restrooms/UniversityVillage.jpeg",
     "Title": "U Village",
     "Description": "Still some time to enter the pin/sticker giveaway! ",
@@ -132,7 +132,7 @@
   },
   {
     "Id": "aroboretum-walk",
-    "LocationType": "bench",
+    "LocationType": "Bench",
     "img": "/SiteImages/Benches/ArboretumWalk.jpeg",
     "Title": "Arboretum Walk",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
@@ -140,7 +140,7 @@
   },
   {
     "Id": "cloudburst-brewing-ballard",
-    "LocationType": "restroom",
+    "LocationType": "Restroom",
     "img": "SiteImages/Restrooms/CloudburstBrewing.jpg",
     "Title": "Cloudburst Brewing (Ballard)",
     "Description": "Hipster Dev is busy coding away while styled in a camo jacket and orange beanie.",
@@ -148,7 +148,7 @@
   },
   {
     "Id": "cal-anderson-park",
-    "LocationType": "restroom",
+    "LocationType": "Restroom",
     "img": "SiteImages/Restrooms/CalAnderson.jpg",
     "Title": "Cal Anderson Park Public Restrooms",
     "Description": "Everyone\u2019s favorite design is finally here on a tee! The Pretty Girls Code crew-neck tee is available in a soft pink with red writing.",
@@ -156,7 +156,7 @@
   },
   {
     "Id": "seattle-central-college",
-    "LocationType": "restroom",
+    "LocationType": "Restroom",
     "img": "SiteImages/Restrooms/SeattleCentralCollege.jpg",
     "Title": "Seattle Central College: All-Gender \u0026 Family",
     "Description": "Styled in a dashiki, Ruby Sis is listening to music while coding in her favorite language, Ruby!",
@@ -164,7 +164,7 @@
   },
   {
     "Id": "Sinegal-Building",
-    "LocationType": "other",
+    "LocationType": "Other",
     "img": "SiteImages/Others/SinegalBuilding.jpg",
     "Title": "Sinegal Building",
     "Description": "Cool place to sit in front of Sinegal building.",
@@ -172,7 +172,7 @@
   },
   {
     "Id": "ESports",
-    "LocationType": "other",
+    "LocationType": "Other",
     "img": "SiteImages/Others/Esports.jpg",
     "Title": "ESPORTS",
     "Description": "A heaven for all the gamers.",
@@ -180,7 +180,7 @@
   },
   {
     "Id": "LemieuxLibrary",
-    "LocationType": "other",
+    "LocationType": "Other",
     "img": "SiteImages/Others/LemieuxLibrary.jpg",
     "Title": "Lemieux Library",
     "Description": "Surrounding the books.",
@@ -188,7 +188,7 @@
   },
   {
     "Id": "KubotaGardens",
-    "LocationType": "other",
+    "LocationType": "Other",
     "img": "SiteImages/Others/KubotaGardens.jpg",
     "Title": "Kubota Gardens",
     "Description": "Kubota Gardens.",
@@ -196,7 +196,7 @@
   },
   {
     "Id": "GreatWheel",
-    "LocationType": "other",
+    "LocationType": "Other",
     "img": "SiteImages/Others/Great-Wheel.jpg",
     "Title": "Great Wheel",
     "Description": "It adds an entirely new sightseeing perspective, thanks to its location perched on the end of Pier 57.",
@@ -204,7 +204,7 @@
   },
   {
     "Id": "Ferry",
-    "LocationType": "other",
+    "LocationType": "Other",
     "img": "SiteImages/Others/Ferry.jpg",
     "Title": "Ferry",
     "Description": " Enjoy the breathtaking views from the bow of the boat as you cruise to the nearby communities of Bainbridge Island or Bremerton.",
@@ -212,7 +212,7 @@
   },
   {
     "Id": "Aquarium",
-    "LocationType": "other",
+    "LocationType": "Other",
     "img": "SiteImages/Others/Aquarium.jpg",
     "Title": "Aquarium",
     "Description": "meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
@@ -220,7 +220,7 @@
   },
   {
     "Id": "Monorail",
-    "LocationType": "other",
+    "LocationType": "Other",
     "img": "SiteImages/Others/Monorail.jpg",
     "Title": "Mono-Rail",
     "Description": "The designated historic landmark can reach a top speed of 45 miles per hour and weaves between skyscrapers above the city streets.",
@@ -228,7 +228,7 @@
   },
   {
     "Id": "PikePlaceMarket",
-    "LocationType": "other",
+    "LocationType": "Other",
     "img": "SiteImages/Others/PikePlaceMarket.jpg",
     "Title": "Pike Place Market",
     "Description": "The market added its historic MarketFront expansion in 2017, featuring an open-air plaza and fantastic views of Elliott Bay.",
@@ -236,7 +236,7 @@
   },
   {
     "Id": "PublicLibrary",
-    "LocationType": "other",
+    "LocationType": "Other",
     "img": "SiteImages/Others/PublicLibrary.jpg",
     "Title": "Central Public Library",
     "Description": "You’ve never seen a library quite like this—Seattle Central Library’s architecturally distinct structure boasts enough glass to cover more than five football stadiums.",
