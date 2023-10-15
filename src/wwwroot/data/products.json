@@ -43,7 +43,7 @@
     "Id": "seattle-university-rhododendron",
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
-    "Title": "Seattle University Rhorodendron Bench",
+    "Title": "Seattle University Rhorodendrons",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
   },
@@ -51,7 +51,7 @@
     "Id": "woordworth-bench",
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/woodworthbench.jpeg",
-    "Title": "Woodworh Apartments Outdoor Bench",
+    "Title": "Woodworh Apartments",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
   },
@@ -59,7 +59,7 @@
     "Id": "kubota-gardens-bench",
     "LocationType": "Bench",
     "img": "/SiteImages/Benches/KubotaGardenBench.jpeg",
-    "Title": "Kobuta Gardens (Bench)",
+    "Title": "Kobuta Gardens",
     "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
     "Ratings": null
   },
@@ -150,7 +150,7 @@
     "Id": "cal-anderson-park",
     "LocationType": "Restroom",
     "img": "SiteImages/Restrooms/CalAnderson.jpg",
-    "Title": "Cal Anderson Park Public Restrooms",
+    "Title": "Cal Anderson Park",
     "Description": "Everyone\u2019s favorite design is finally here on a tee! The Pretty Girls Code crew-neck tee is available in a soft pink with red writing.",
     "Ratings": null
   },
@@ -158,7 +158,7 @@
     "Id": "seattle-central-college",
     "LocationType": "Restroom",
     "img": "SiteImages/Restrooms/SeattleCentralCollege.jpg",
-    "Title": "Seattle Central College: All-Gender \u0026 Family",
+    "Title": "Seattle Central College",
     "Description": "Styled in a dashiki, Ruby Sis is listening to music while coding in her favorite language, Ruby!",
     "Ratings": null
   },
