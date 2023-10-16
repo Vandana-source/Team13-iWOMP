@@ -31,7 +31,7 @@ namespace ContosoCrafts.WebSite.Services
                     new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
-                    });
+                    }).OrderBy(x => x.Id);
             }
         }
 
