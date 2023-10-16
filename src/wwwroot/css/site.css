@@ -53,6 +53,8 @@ a.navbar-brand {
     font-size: xx-large;
     text-align: center;
     word-break: break-all;
+
+
 }
 
 /* Provide sufficient contrast against white background */
@@ -94,6 +96,7 @@ a {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+
 }
 
 /* Sticky footer styles
@@ -157,6 +160,7 @@ ul {
     background: -o-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
     background: -moz-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
     background: linear-gradient(110deg, #f3f3f3 70%, #bacec1 60%);
+  
 }
 .bg-footer {
     background: -webkit-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
@@ -209,7 +213,7 @@ ul {
     width: 100%; /* Takes up the full width of the .location-content */
     height: auto;
     max-height: 400px; /* Adjust if needed */
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .location-text {

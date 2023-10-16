@@ -2,6 +2,7 @@
   {
     "Id": "arboretum-bench",
     "LocationType": "Bench",
+    "Neighborhood": "Madison Park", 
     "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
     "Title": "Arboretum Marsh Walk",
     "Description": "A small bench located along the Arboretum trail's floating walkway near Foster Island.",
@@ -10,6 +11,7 @@
   {
     "Id": "louisa-boren-lookout",
     "LocationType": "Bench",
+    "Neighborhood": "Capitol Hill",
     "img": "/SiteImages/Benches/StanleyPark.jpeg",
     "Title": "Stanley Park",
     "Description": "This bench offers breathtaking northwest-facing views of Lake Washington.",
@@ -18,6 +20,7 @@
   {
     "Id": "pike-place-market",
     "LocationType": "Restroom",
+    "Neighborhood": "Downtown",
     "img": "/SiteImages/Restrooms/pike-place-market-public.jpg",
     "Title": "Pike Place Market",
     "Description": "While it can get quite crowded, this restroom provides a convenient option within the bustling Pike Place Market.",
@@ -26,6 +29,7 @@
   {
     "Id": "seattle-university-fern",
     "LocationType": "Bench",
+    "Neighborhood": "First Hill",
     "img": "/SiteImages/Benches/SeattleUniversityFern.jpeg",
     "Title": "Seattle University Ferns",
     "Description": "A quiet spot to sit behind Seattle University's administration building.",
@@ -34,6 +38,7 @@
   {
     "Id": "broadway-bench",
     "LocationType": "Bench",
+    "Neighborhood": "Capitol Hill",
     "img": "/SiteImages/Benches/BroadwayBench.jpeg",
     "Title": "Bench on Broadway",
     "Description": "A bench along north Broadway near the bus stop.",
@@ -42,6 +47,7 @@
   {
     "Id": "seattle-university-rhododendron",
     "LocationType": "Bench",
+    "Neighborhood": "First Hill",
     "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
     "Title": "Seattle University Rhorodendrons",
     "Description": "Located in front of the Administration building, this bench surrounds you with blooms of flowers every spring",
@@ -50,6 +56,7 @@
   {
     "Id": "woordworth-bench",
     "LocationType": "Bench",
+    "Neighborhood": "Capitol Hill",
     "img": "/SiteImages/Benches/woodworthbench.jpeg",
     "Title": "Woodworth Apartments",
     "Description": "Modern seating outside WoodWorth apartments across from Drip Tea Market.",
@@ -58,6 +65,7 @@
   {
     "Id": "kubota-gardens-bench",
     "LocationType": "Bench",
+    "Neighborhood": "Rainier Beach",
     "img": "/SiteImages/Benches/KubotaGardenBench.jpeg",
     "Title": "Kobuta Gardens Bench",
     "Description": "A zen, overgrown bench located in one of Seattle's best public gardens.",
@@ -66,6 +74,7 @@
   {
     "Id": "seattle-u-bench",
     "LocationType": "Bench",
+    "Neighborhood": "First Hill",
     "img": "/SiteImages/Benches/SeattleU.jpeg",
     "Title": "Seattle University Fountain",
     "Description": "Peaceful people watching underneath trees on the upper mall next to the quad.",
@@ -74,6 +83,7 @@
   {
     "Id": "uw-maple-hell",
     "LocationType": "Bench",
+    "Neighborhood":  "University District",
     "img": "/SiteImages/Benches/UWMapleBench.jpeg",
     "Title": "UW Maple Hall Promenade",
     "Description": "The curvy wood on University of Washington's Maple Hall Promenade makes for good sitting.'",
@@ -82,6 +92,7 @@
   {
     "Id": "columbia-tower-club",
     "LocationType": "Restroom",
+    "Neighborhood":  "Downtown",
     "img": "/SiteImages/Restrooms/ColumbiaTower.jpg",
     "Title": "Columbia Tower Club",
     "Description": "Frequently acclaimed as a hidden gem among Seattle's restrooms, this lavatory for women offers a stunning cityscape view from the 76th floor.",
@@ -90,6 +101,7 @@
   {
     "Id": "life-on-mars",
     "LocationType": "Restroom",
+    "Neighborhood" : "Capitol Hill",
     "img": "/SiteImages/Restrooms/LifeOnMars.jpg",
     "Title": "Life On Mars Disco",
     "Description": "This disco bathroom behind door No. 2 is a groovy spot for selfies and handwashing",
