@@ -213,10 +213,11 @@
   {
     "Id": "KubotaGardens",
     "LocationType": "Other",
-    "Neighborhood":  "First Hill",
+    "Neighborhood": "First Hill",
     "img": "/SiteImages/Others/KubotaGardens.jpg",
     "Title": "Kubota Gardens",
     "Description": "Kubota Gardens.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86088.83536823383!2d-122.42154343592374!3d47.60132069075505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906b55f88ce2fd%3A0x49891d06a68b5cf9!2sKubota%20Legacy%20Garden!5e0!3m2!1sen!2sus!4v1697478493692!5m2!1sen!2sus",
     "Ratings": null
   },
   {
