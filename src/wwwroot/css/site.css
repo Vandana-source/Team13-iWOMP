@@ -1,9 +1,9 @@
 ﻿.checked {
-  color: orange;
+    color: orange;
 }
 
 .fa-star {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
@@ -31,17 +31,18 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .modal .card-img {
-  height: 500px;
-  vertical-align: bottom;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+    height: 500px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .card-columns .card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
 }
+
 .card-footer {
     background: #fbfafd;
 }
@@ -53,13 +54,11 @@ a.navbar-brand {
     font-size: xx-large;
     text-align: center;
     word-break: break-all;
-
-
 }
 
 /* Provide sufficient contrast against white background */
 a {
-   color: #0366d6;
+    color: #0366d6;
 }
 
 /* CSS for the button */
@@ -93,59 +92,64 @@ a {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
+
 p {
     font-family: 'Nunito', sans-serif;
 }
+
 h1 {
     font-family: 'Nunito', sans-serif;
 }
+
 ul {
     font-family: 'Nunito', sans-serif;
 }
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -160,18 +164,19 @@ ul {
     background: -o-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
     background: -moz-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
     background: linear-gradient(110deg, #f3f3f3 70%, #bacec1 60%);
-  
 }
+
 .bg-footer {
     background: -webkit-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: -o-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: linear-gradient(110deg, #bacec1 60%, #f3f3f3 60%);
 }
-.homeimage{
+
+.homeimage {
     float: right;
-    max-width:75px;
-    max-height:75px;
+    max-width: 75px;
+    max-height: 75px;
 }
 
 /* CSS for the homecard */
@@ -186,12 +191,12 @@ ul {
     border-radius: 5px;
 }
 
-/* Hover effect for the homecard */
-.homecard:hover {
-    background-color: rgba(37,33,82,.12); /* Change the background color on hover */
-    transform: scale(1.05); /* Add a slight zoom effect */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
-}
+    /* Hover effect for the homecard */
+    .homecard:hover {
+        background-color: rgba(37,33,82,.12); /* Change the background color on hover */
+        transform: scale(1.05); /* Add a slight zoom effect */
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
+    }
 
 /* CSS for the small text */
 .text-muted {
@@ -213,7 +218,7 @@ ul {
     width: 100%; /* Takes up the full width of the .location-content */
     height: auto;
     max-height: 400px; /* Adjust if needed */
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .location-text {
@@ -281,7 +286,7 @@ ul {
 
 .read-icon {
     font-size: 24px;
-    color: #0074d9; /* Blue color */
+    color: #0074d9; /* Blue color */ 
 }
 
 th {

@@ -110,6 +110,7 @@
   {
     "Id": "la-dive-bar",
     "LocationType": "Restroom",
+    "Neighborhood": "Capitol Hill",
     "img": "/SiteImages/Restrooms/LADiveBar.jpeg",
     "Title": "LA Dive Bar",
     "Description": "Another selfie favorite, this bathroom will have you seeing red.",
@@ -118,6 +119,7 @@
   {
     "Id": "starbucks-reserve",
     "LocationType": "Restroom",
+    "Neighborhood": "Capitol Hill",
     "img": "/SiteImages/Restrooms/StarbucksRoastery.jpg",
     "Title": "Starbucks Reserve",
     "Description": "A softly lit, gender-neutral space with a panoramic view overlooking the roastery below.",
@@ -126,6 +128,7 @@
   {
     "Id": "stoop-brewing-cap-hill",
     "LocationType": "Restroom",
+    "Neighborhood": "Ballard",
     "img": "/SiteImages/Restrooms/StoopBrewingCapHill.jpg",
     "Title": "Stoop Brewing (Capitol Hill)",
     "Description": "A classic gender neutral bathroom with plenty of stalls for everyone to go",
@@ -134,6 +137,7 @@
   {
     "Id": "u-village",
     "LocationType": "Restroom",
+    "Neighborhood": "University District",
     "img": "/SiteImages/Restrooms/UniversityVillage.jpeg",
     "Title": "U Village",
     "Description": "Private stalls with floor to ceiling doors and individual sinks make this spot a favorite rest stop among local shoppers.",
@@ -144,6 +148,7 @@
   {
     "Id": "aroboretum-walk",
     "LocationType": "Bench",
+    "Neighborhood": "Madison Park",
     "img": "/SiteImages/Benches/ArboretumWalk.jpeg",
     "Title": "Arboretum Walk",
     "Description": "This small memorial bench provides a pleasant spot to sit along Azalea Way.",
@@ -152,6 +157,7 @@
   {
     "Id": "cloudburst-brewing-ballard",
     "LocationType": "Restroom",
+    "Neighborhood": "Ballard",
     "img": "/SiteImages/Restrooms/CloudburstBrewing.jpg",
     "Title": "Cloudburst Brewing (Ballard)",
     "Description": "Another solid brewery bathroom. Here, the sinks are situated outside.",
@@ -160,6 +166,7 @@
   {
     "Id": "cal-anderson-park",
     "LocationType": "Restroom",
+    "Neighborhood": "Capitol Hill",
     "img": "/SiteImages/Restrooms/CalAnderson.jpg",
     "Title": "Cal Anderson Park",
     "Description": "A public restroom located in one of Seattle's busiest parks.",
@@ -168,6 +175,7 @@
   {
     "Id": "seattle-central-college",
     "LocationType": "Restroom",
+    "Neighborhood": "Capitol Hill",
     "img": "SiteImages/Restrooms/SeattleCentralCollege.jpg",
     "Title": "Seattle Central College",
     "Description": "A gender-neutral, multi-stall layout located on the 4th floor",
@@ -176,6 +184,7 @@
   {
     "Id": "Sinegal-Building",
     "LocationType": "Other",
+    "Neighborhood": "First Hill",
     "img": "/SiteImages/Others/SinegalBuilding.jpg",
     "Title": "Sinegal Building",
     "Description": "Cool place to sit in front of Sinegal building.",
@@ -184,6 +193,7 @@
   {
     "Id": "ESports",
     "LocationType": "Other",
+    "Neighborhood": "First Hill",
     "img": "SiteImages/Others/Esports.jpg",
     "Title": "ESPORTS",
     "Description": "A heaven for all the gamers.",
@@ -192,6 +202,7 @@
   {
     "Id": "LemieuxLibrary",
     "LocationType": "Other",
+    "Neighborhood":  "First Hill",
     "img": "/SiteImages/Others/LemieuxLibrary.jpg",
     "Title": "Lemieux Library",
     "Description": "Surrounding the books.",
@@ -200,6 +211,7 @@
   {
     "Id": "KubotaGardens",
     "LocationType": "Other",
+    "Neighborhood":  "First Hill",
     "img": "/SiteImages/Others/KubotaGardens.jpg",
     "Title": "Kubota Gardens",
     "Description": "Kubota Gardens.",
@@ -208,6 +220,7 @@
   {
     "Id": "GreatWheel",
     "LocationType": "Other",
+    "Neighborhood":  "Waterfront",
     "img": "/SiteImages/Others/Great-Wheel.jpg",
     "Title": "Great Wheel",
     "Description": "It adds an entirely new sightseeing perspective, thanks to its location perched on the end of Pier 57.",
@@ -216,6 +229,7 @@
   {
     "Id": "Ferry",
     "LocationType": "Other",
+    "Neighborhood":  "",
     "img": "/SiteImages/Others/Ferry.jpg",
     "Title": "Ferry",
     "Description": " Enjoy the breathtaking views from the bow of the boat as you cruise to the nearby communities of Bainbridge Island or Bremerton.",
@@ -224,6 +238,7 @@
   {
     "Id": "Aquarium",
     "LocationType": "Other",
+    "Neighborhood": "Downtown",
     "img": "/SiteImages/Others/Aquarium.jpg",
     "Title": "Aquarium",
     "Description": "meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
@@ -232,6 +247,7 @@
   {
     "Id": "Monorail",
     "LocationType": "Other",
+    "Neighborhood":  "",
     "img": "/SiteImages/Others/Monorail.jpg",
     "Title": "Mono-Rail",
     "Description": "The designated historic landmark can reach a top speed of 45 miles per hour and weaves between skyscrapers above the city streets.",
@@ -239,6 +255,7 @@
   },
   {
     "Id": "PikePlaceMarket",
+    "Neighborhood":  "Downtown,",
     "LocationType": "Other",
     "img": "/SiteImages/Others/PikePlaceMarket.jpg",
     "Title": "Pike Place Market",
@@ -248,6 +265,7 @@
   {
     "Id": "PublicLibrary",
     "LocationType": "Other",
+    "Neighborhood":  "Downtown",
     "img": "/SiteImages/Others/PublicLibrary.jpg",
     "Title": "Central Public Library",
     "Description": "You’ve never seen a library quite like this—Seattle Central Library’s architecturally distinct structure boasts enough glass to cover more than five football stadiums.",
