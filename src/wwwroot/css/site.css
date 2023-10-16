@@ -179,6 +179,17 @@ ul {
     max-height: 75px;
 }
 
+/*CSS form body h1*/
+h1.h1-heading {
+    text-align: center;
+    color: firebrick;
+    font-weight: 700;
+}
+
+.homepageformat {
+    text-align: center;
+}
+
 /* CSS for the homecard */
 .homecard {
     display: flex;
@@ -191,12 +202,24 @@ ul {
     border-radius: 5px;
 }
 
-    /* Hover effect for the homecard */
-    .homecard:hover {
-        background-color: rgba(37,33,82,.12); /* Change the background color on hover */
-        transform: scale(1.05); /* Add a slight zoom effect */
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
-    }
+.card-img-bench {
+    background-image: url('/Bench.png');
+}
+
+.card-img-restroom {
+    background-image: url('/Restrooms.png');
+}
+
+.card-img-others {
+    background-image: url('/Others.jpg');
+}
+
+/* Hover effect for the homecard */
+.homecard:hover {
+    background-color: rgba(37,33,82,.12); /* Change the background color on hover */
+    transform: scale(1.05); /* Add a slight zoom effect */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
+}
 
 /* CSS for the small text */
 .text-muted {
@@ -286,7 +309,7 @@ ul {
 
 .read-icon {
     font-size: 24px;
-    color: #0074d9; /* Blue color */ 
+    color: #0074d9; /* Blue color */
 }
 
 th {
