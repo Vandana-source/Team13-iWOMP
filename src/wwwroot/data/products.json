@@ -2,11 +2,12 @@
   {
     "Id": "arboretum-bench",
     "LocationType": "Bench",
-    "Neighborhood": "Madison Park", 
+    "Neighborhood": "Madison Park",
     "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
     "Title": "Arboretum Marsh Walk",
     "Description": "A small bench located along the Arboretum trail's floating walkway near Foster Island.",
     "Ratings": null
+
   },
   {
     "Id": "louisa-boren-lookout",
@@ -24,6 +25,7 @@
     "img": "/SiteImages/Restrooms/pike-place-market-public.jpg",
     "Title": "Pike Place Market",
     "Description": "While it can get quite crowded, this restroom provides a convenient option within the bustling Pike Place Market.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10759.481033374652!2d-122.3408492!3d47.6092124!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906b4420a757a5%3A0xca804ef90f8c50e8!2sPUBLIC%20RESTROOM!5e0!3m2!1sen!2sus!4v1697477363397!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -220,19 +222,21 @@
   {
     "Id": "GreatWheel",
     "LocationType": "Other",
-    "Neighborhood":  "Waterfront",
+    "Neighborhood": "Waterfront",
     "img": "/SiteImages/Others/Great-Wheel.jpg",
     "Title": "Great Wheel",
     "Description": "It adds an entirely new sightseeing perspective, thanks to its location perched on the end of Pier 57.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2690.028382475856!2d-122.34509952345697!3d47.606137788009114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aadf98c7f51%3A0xa5209073def1dac6!2sThe%20Seattle%20Great%20Wheel!5e0!3m2!1sen!2sus!4v1697478022176!5m2!1sen!2sus",
     "Ratings": null
   },
   {
     "Id": "Ferry",
     "LocationType": "Other",
-    "Neighborhood":  "",
+    "Neighborhood": "",
     "img": "/SiteImages/Others/Ferry.jpg",
     "Title": "Ferry",
     "Description": " Enjoy the breathtaking views from the bow of the boat as you cruise to the nearby communities of Bainbridge Island or Bremerton.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10761.125043255322!2d-122.34944284793558!3d47.601220434371356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aaff3190823%3A0xab1484dea3fd0b99!2sSeattle%20Ferry%20Toll%20Booth!5e0!3m2!1sen!2sus!4v1697478213442!5m2!1sen!2sus",
     "Ratings": null
   },
   {
