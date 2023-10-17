@@ -66,6 +66,7 @@
     "img": "/SiteImages/Benches/woodworthbench.jpeg",
     "Title": "Woodworth Apartments",
     "Description": "Modern seating outside WoodWorth apartments across from Drip Tea Market.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1128.7844831321654!2d-122.32049209884066!3d47.61266328831693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906acc039789d1%3A0xf3105e767dbfe237!2s1225%2010th%20Ave%2C%20Seattle%2C%20WA%2098122!5e0!3m2!1sen!2sus!4v1697527218231!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -89,10 +90,11 @@
   {
     "Id": "uw-maple-hell",
     "LocationType": "Bench",
-    "Neighborhood":  "University District",
+    "Neighborhood": "University District",
     "img": "/SiteImages/Benches/UWMapleBench.jpeg",
     "Title": "UW Maple Hall Promenade",
     "Description": "The curvy wood on University of Washington's Maple Hall Promenade makes for good sitting.'",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d703.080111798597!2d-122.31563591604363!3d47.65560382551845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1697526363788!5m2!1sen!2sus"
     "Ratings": null
   },
   {
@@ -107,10 +109,11 @@
   {
     "Id": "life-on-mars",
     "LocationType": "Restroom",
-    "Neighborhood" : "Capitol Hill",
+    "Neighborhood": "Capitol Hill",
     "img": "/SiteImages/Restrooms/LifeOnMars.jpg",
     "Title": "Life On Mars Disco",
     "Description": "This disco bathroom behind door No. 2 is a groovy spot for selfies and handwashing",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.6080158826853!2d-122.32493478789145!3d47.614311187324674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906b810cdc1c39%3A0x4290d427de0c3e04!2sLife%20On%20Mars!5e0!3m2!1sen!2sus!4v1697526212014!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -120,6 +123,7 @@
     "img": "/SiteImages/Restrooms/LADiveBar.jpeg",
     "Title": "LA Dive Bar",
     "Description": "Another selfie favorite, this bathroom will have you seeing red.",
+    "MAPURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.6293199430347!2d-122.32507358789137!3d47.61389698735316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906b80cfd18cab%3A0xbeba7fb0c58f5ae3!2sLa%20Dive!5e0!3m2!1sen!2sus!4v1697526251000!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -129,6 +133,7 @@
     "img": "/SiteImages/Restrooms/StarbucksRoastery.jpg",
     "Title": "Starbucks Reserve",
     "Description": "A softly lit, gender-neutral space with a panoramic view overlooking the roastery below.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.621965694055!2d-122.33067492360654!3d47.61403997119042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906acdccf44db1%3A0x6da0c1f2d7a6736e!2sStarbucks%20Reserve%20Roastery!5e0!3m2!1sen!2sus!4v1697526297372!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -208,10 +213,11 @@
   {
     "Id": "LemieuxLibrary",
     "LocationType": "Other",
-    "Neighborhood":  "First Hill",
+    "Neighborhood": "First Hill",
     "img": "/SiteImages/Others/LemieuxLibrary.jpg",
     "Title": "Lemieux Library",
     "Description": "Surrounding the books.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1537.645729474107!2d-122.31985514270448!3d47.60901764136185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ac8edb7b5cd%3A0xec4dfa3d98cbf036!2sLemieux%20Library%20and%20McGoldrick%20Learning%20Commons!5e0!3m2!1sen!2sus!4v1697526581387!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -251,6 +257,7 @@
     "img": "/SiteImages/Others/Aquarium.jpg",
     "Title": "Aquarium",
     "Description": "meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.9634603446284!2d-122.34553072360696!3d47.60740017118983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aad8804fa43%3A0x6b99e65de2d47683!2sSeattle%20Aquarium!5e0!3m2!1sen!2sus!4v1697526521423!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -274,10 +281,11 @@
   {
     "Id": "PublicLibrary",
     "LocationType": "Other",
-    "Neighborhood":  "Downtown",
+    "Neighborhood": "Downtown",
     "img": "/SiteImages/Others/PublicLibrary.jpg",
     "Title": "Central Public Library",
     "Description": "You’ve never seen a library quite like this—Seattle Central Library’s architecturally distinct structure boasts enough glass to cover more than five football stadiums.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86077.65735675086!2d-122.35808647301589!3d47.60811315256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490415b59cb97e7%3A0xb3a044a779f5fdd2!2sSeattle%20Public%20Library%20-%20Central%20Library!5e0!3m2!1sen!2sus!4v1697527070419!5m2!1sen!2sus",
     "Ratings": null
   }
 ]
