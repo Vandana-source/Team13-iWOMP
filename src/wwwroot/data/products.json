@@ -57,6 +57,7 @@
     "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
     "Title": "Seattle University Rhorodendrons",
     "Description": "Located in front of the Administration building, this bench surrounds you with blooms of flowers every spring",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1128.818749179834!2d-122.31991126665478!3d47.61107576979763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1697527353136!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -76,6 +77,7 @@
     "img": "/SiteImages/Benches/KubotaGardenBench.jpeg",
     "Title": "Kobuta Gardens Bench",
     "Description": "A zen, overgrown bench located in one of Seattle's best public gardens.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.7984254984376!2d-122.27131144522816!3d47.513316720344456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54904265ecbd6c03%3A0xdf35b61a9d4c1a2e!2sKubota%20Garden!5e0!3m2!1sen!2sus!4v1697527567002!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -85,6 +87,7 @@
     "img": "/SiteImages/Benches/SeattleU.jpeg",
     "Title": "Seattle University Fountain",
     "Description": "Peaceful people watching underneath trees on the upper mall next to the quad.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d180.28453130964962!2d-122.31934252829927!3d47.610073895156866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sseattle%20university!5e0!3m2!1sen!2sus!4v1697527743190!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -100,10 +103,11 @@
   {
     "Id": "columbia-tower-club",
     "LocationType": "Restroom",
-    "Neighborhood":  "Downtown",
+    "Neighborhood": "Downtown",
     "img": "/SiteImages/Restrooms/ColumbiaTower.jpg",
     "Title": "Columbia Tower Club",
     "Description": "Frequently acclaimed as a hidden gem among Seattle's restrooms, this lavatory for women offers a stunning cityscape view from the 76th floor.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2690.112276276644!2d-122.33305872360711!3d47.60450647118956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ab0c78fe38b%3A0xcbea89a401a3352c!2sColumbia%20Tower%20Club!5e0!3m2!1sen!2sus!4v1697527949683!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -143,6 +147,7 @@
     "img": "/SiteImages/Restrooms/StoopBrewingCapHill.jpg",
     "Title": "Stoop Brewing (Capitol Hill)",
     "Description": "A classic gender neutral bathroom with plenty of stalls for everyone to go",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.685743455457!2d-122.32310762360662!3d47.612799971190306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906b1d9bf7658f%3A0x3f57a4daece51308!2sStoup%20Brewing%20-%20Capitol%20Hill!5e0!3m2!1sen!2sus!4v1697528177198!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -181,6 +186,7 @@
     "img": "/SiteImages/Restrooms/CalAnderson.jpg",
     "Title": "Cal Anderson Park",
     "Description": "A public restroom located in one of Seattle's busiest parks.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9944.629362140164!2d-122.34184127838036!3d47.62111120344604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906b28a0f08e8b%3A0xcfefeb4d60de24b4!2sRestroom!5e0!3m2!1sen!2sus!4v1697528226678!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -271,11 +277,12 @@
   },
   {
     "Id": "PikePlaceMarket",
-    "Neighborhood":  "Downtown,",
+    "Neighborhood": "Downtown,",
     "LocationType": "Other",
     "img": "/SiteImages/Others/PikePlaceMarket.jpg",
     "Title": "Pike Place Market",
     "Description": "The market added its historic MarketFront expansion in 2017, featuring an open-air plaza and fantastic views of Elliott Bay.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5379.687572397515!2d-122.34735353141961!3d47.609727117429976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ab2c151d6cb%3A0x60441d5f633e9f1c!2sPike%20Place%20Market%2C%20Seattle%2C%20WA!5e0!3m2!1sen!2sus!4v1697527428381!5m2!1sen!2sus",
     "Ratings": null
   },
   {
