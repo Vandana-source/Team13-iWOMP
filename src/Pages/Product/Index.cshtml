@@ -1,28 +1,83 @@
 ﻿@page
 @model ContosoCrafts.WebSite.Pages.Product.IndexModel
 @{
-    ViewData["Title"] = "Index page";
+	ViewData["Title"] = "Index page";
 }
 
 <div class="container">
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Places</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var product in Model.Products)
-            {
-                <tr>
-                    <td>@product.Title</td>
-                    <td><a class="font-weight-bold" asp-page="Read" asp-route-id="@product.Id">
-                            <span class="read-icon">📖</span>
-                        Read</a>
-                     </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+	<table class="table table-bordered table-hover table">
+		<thead>
+			<tr>
+				<th colspan="2">Benches</th>
+			</tr>
+		</thead>
+		@foreach (var product in Model.Products)
+		{
+			<tbody>
+				@if (product.LocationType == "Bench")
+				{
+					<tr>
+						<td>@product.Title</td>
+						<td>
+							<a class="font-weight-bold" asp-page="Read" asp-route-id="@product.Id">
+								<span class="read-icon">📖</span>Read
+							</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		}
+	</table>
+</div>
+
+<div class="container">
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th colspan="2">Restrooms</th>
+			</tr>
+		</thead>
+		@foreach (var product in Model.Products)
+		{
+			<tbody>
+				@if (product.LocationType == "Restroom")
+				{
+					<tr>
+						<td>@product.Title</td>
+						<td>
+							<a class="font-weight-bold" asp-page="Read" asp-route-id="@product.Id">
+								<span class="read-icon">📖</span>Read
+							</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		}
+	</table>
+</div>
+
+<div class="container">
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th colspan="2">Other Places</th>
+			</tr>
+		</thead>
+		@foreach (var product in Model.Products)
+		{
+			<tbody>
+				@if (product.LocationType == "Other")
+				{
+					<tr>
+						<td>@product.Title</td>
+						<td>
+							<a class="font-weight-bold" asp-page="Read" asp-route-id="@product.Id">
+								<span class="read-icon">📖</span>Read
+							</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		}
+	</table>
 </div>
