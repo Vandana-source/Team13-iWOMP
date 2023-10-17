@@ -157,6 +157,7 @@
     "img": "/SiteImages/Restrooms/UniversityVillage.jpeg",
     "Title": "U Village",
     "Description": "Private stalls with floor to ceiling doors and individual sinks make this spot a favorite rest stop among local shoppers.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.9872322031238!2d-122.31821340895917!3d47.60693794047622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ac67671105b%3A0xa4acf6178ed9b929!2sUniversity%20Recreation!5e0!3m2!1sen!2sus!4v1697556986691!5m2!1sen!2sus"
     "Ratings": [
       5
     ]
@@ -168,6 +169,7 @@
     "img": "/SiteImages/Benches/ArboretumWalk.jpeg",
     "Title": "Arboretum Walk",
     "Description": "This small memorial bench provides a pleasant spot to sit along Azalea Way.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.470858967956!2d-122.29838952360524!3d47.63641617119252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549014c6f6b93c81%3A0xa24e5c167a647e8a!2sWashington%20Park%20Arboretum!5e0!3m2!1sen!2sus!4v1697556826709!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -177,6 +179,7 @@
     "img": "/SiteImages/Restrooms/CloudburstBrewing.jpg",
     "Title": "Cloudburst Brewing (Ballard)",
     "Description": "Another solid brewery bathroom. Here, the sinks are situated outside.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686.8486277568054!2d-122.38905562360357!3d47.66793697119558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490151d0d89a5c3%3A0xec8b4da1143e2c05!2sCloudburst%20On%20Shilshole!5e0!3m2!1sen!2sus!4v1697556868991!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -196,6 +199,7 @@
     "img": "/SiteImages/Restrooms/SeattleCentralCollege.jpg",
     "Title": "Seattle Central College",
     "Description": "A gender-neutral, multi-stall layout located on the 4th floor",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.4837839741367!2d-122.3241767878913!3d47.61672648715781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906accc351c149%3A0xdc1a5c338dd4395c!2sSeattle%20Central%20College!5e0!3m2!1sen!2sus!4v1697557055289!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -205,6 +209,7 @@
     "img": "/SiteImages/Others/SinegalBuilding.jpg",
     "Title": "Sinegal Building",
     "Description": "Cool place to sit in front of Sinegal building.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.8072871926897!2d-122.32050413789176!3d47.61043678759224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906bc0121b1b49%3A0x4285d7477777511a!2sCenter%20for%20Science%20and%20Innovation%2C%20Seattle%20University!5e0!3m2!1sen!2sus!4v1697557096244!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -214,6 +219,7 @@
     "img": "/SiteImages/Others/Esports.jpg",
     "Title": "ESPORTS",
     "Description": "A heaven for all the gamers.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1344.986379839867!2d-122.31675749324107!3d47.607219351138845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ac67671105b%3A0xa4acf6178ed9b929!2sUniversity%20Recreation!5e0!3m2!1sen!2sus!4v1697557157589!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -269,10 +275,11 @@
   {
     "Id": "Monorail",
     "LocationType": "Other",
-    "Neighborhood":  "",
+    "Neighborhood": "",
     "img": "/SiteImages/Others/Monorail.jpg",
     "Title": "Mono-Rail",
     "Description": "The designated historic landmark can reach a top speed of 45 miles per hour and weaves between skyscrapers above the city streets.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21517.887913280963!2d-122.3748582601547!3d47.61182305113889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490150157d3d481%3A0x303ffe1c1260ea35!2sSeattle%20Monorail!5e0!3m2!1sen!2sus!4v1697557200050!5m2!1sen!2sus",
     "Ratings": null
   },
   {
