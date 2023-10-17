@@ -14,7 +14,6 @@
     <Content Remove="wwwroot\SiteImages\Benches\" />
     <Content Remove="wwwroot\SiteImages\Restrooms\" />
     <Content Remove="wwwroot\SiteImages\Others\" />
-    <Content Remove="wwwroot\SiteImages\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="wwwroot\data\products.json">
@@ -32,6 +31,5 @@
     <Folder Include="wwwroot\SiteImages\Benches\" />
     <Folder Include="wwwroot\SiteImages\Restrooms\" />
     <Folder Include="wwwroot\SiteImages\Others\" />
-    <Folder Include="wwwroot\SiteImages\Tables\" />
   </ItemGroup>
 </Project>
