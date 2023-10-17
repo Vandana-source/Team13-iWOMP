@@ -303,8 +303,13 @@ h1.h1-heading {
 }
 
 .read-img {
-    width: 825px;
-    height: 450px;
+    /*width: 825px;
+    height: 450px;*/
+    width: 76%; /* Set the container's width to 100% of the window */
+    height: 100vh; /* Set the container's height to 100% of the viewport height */
+    background-image: url('your-image.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Scale the background image to cover the container */
+    background-position: center;
 }
 
 .read-icon {
@@ -312,16 +317,51 @@ h1.h1-heading {
     color: #0074d9; /* Blue color */
 }
 
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+table {
+    animation: fadeIn 1.5s;
+}
+
 th {
     background-color: #bacec1;
     color: #000;
     position: sticky;
     top: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Set alternate background colors for odd and even rows */
+tr {
+    background-color: #f2f2f2; /* Light gray for odd rows */
 }
 
 /* Hover effect for rows */
 tr:hover {
     background-color: #bacec1;
+}
+
+td {
+    width: 70%;
 }
 
 /* Hover effect for columns */
