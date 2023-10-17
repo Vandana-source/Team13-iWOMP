@@ -5,6 +5,7 @@
     "Neighborhood": "Madison Park",
     "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
     "Title": "Arboretum Marsh Walk",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167.99736372562646!2d-122.2923553180163!3d47.64638650305963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549014c69cf8b989%3A0x9b1291d8daf22aa0!2sArboretum%20Sewer%20Trestle%2C%20Seattle%2C%20WA%2098112!5e0!3m2!1sen!2sus!4v1697525141342!5m2!1sen!2sus",
     "Description": "A small bench located along the Arboretum trail's floating walkway near Foster Island.",
     "Ratings": null
 
@@ -16,6 +17,7 @@
     "img": "/SiteImages/Benches/StanleyPark.jpeg",
     "Title": "Stanley Park",
     "Description": "This bench offers breathtaking northwest-facing views of Lake Washington.",
+    "MapURL":  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.5722430776973!2d-122.31738390321044!3d47.634445700000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549014d96b3fb84f%3A0xfd385b16cfcf4c9b!2sLouisa%20Boren%20Lookout!5e0!3m2!1sen!2sus!4v1697525204495!5m2!1sen!2sus"
     "Ratings": null
   },
   {
@@ -35,6 +37,7 @@
     "img": "/SiteImages/Benches/SeattleUniversityFern.jpeg",
     "Title": "Seattle University Ferns",
     "Description": "A quiet spot to sit behind Seattle University's administration building.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d623.5444539411116!2d-122.32014362738293!3d47.61086160065453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1697525292818!5m2!1sen!2sus",
     "Ratings": null
   },
   {
@@ -44,6 +47,7 @@
     "img": "/SiteImages/Benches/BroadwayBench.jpeg",
     "Title": "Bench on Broadway",
     "Description": "A bench along north Broadway near the bus stop.",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2119.7536344147265!2d-122.32187471288643!3d47.62218586908304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490152ddbfb6675%3A0x7e0711ae2b260d10!2s422%20Broadway%20E%2C%20Seattle%2C%20WA%2098102!5e0!3m2!1sen!2sus!4v1697525423809!5m2!1sen!2sus",
     "Ratings": null
   },
   {
