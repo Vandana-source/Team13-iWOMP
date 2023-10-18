@@ -217,7 +217,7 @@
     "LocationType": "Other",
     "Neighborhood": "First Hill",
     "img": "/SiteImages/Others/Esports.jpg",
-    "Title": "ESPORTS",
+    "Title": "ESPORTS Gaming Center",
     "Description": "A heaven for all the gamers.",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1344.986379839867!2d-122.31675749324107!3d47.607219351138845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ac67671105b%3A0xa4acf6178ed9b929!2sUniversity%20Recreation!5e0!3m2!1sen!2sus!4v1697557157589!5m2!1sen!2sus",
     "Ratings": null
@@ -247,7 +247,7 @@
     "LocationType": "Other",
     "Neighborhood": "Waterfront",
     "img": "/SiteImages/Others/Great-Wheel.jpg",
-    "Title": "Great Wheel",
+    "Title": "Great Wheel near Pier",
     "Description": "It adds an entirely new sightseeing perspective, thanks to its location perched on the end of Pier 57.",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2690.028382475856!2d-122.34509952345697!3d47.606137788009114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aadf98c7f51%3A0xa5209073def1dac6!2sThe%20Seattle%20Great%20Wheel!5e0!3m2!1sen!2sus!4v1697478022176!5m2!1sen!2sus",
     "Ratings": null
@@ -257,7 +257,7 @@
     "LocationType": "Other",
     "Neighborhood": "",
     "img": "/SiteImages/Others/Ferry.jpg",
-    "Title": "Ferry",
+    "Title": "Ferry Rides",
     "Description": " Enjoy the breathtaking views from the bow of the boat as you cruise to the nearby communities of Bainbridge Island or Bremerton.",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10761.125043255322!2d-122.34944284793558!3d47.601220434371356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aaff3190823%3A0xab1484dea3fd0b99!2sSeattle%20Ferry%20Toll%20Booth!5e0!3m2!1sen!2sus!4v1697478213442!5m2!1sen!2sus",
     "Ratings": null
@@ -267,7 +267,7 @@
     "LocationType": "Other",
     "Neighborhood": "Downtown",
     "img": "/SiteImages/Others/Aquarium.jpg",
-    "Title": "Aquarium",
+    "Title": "Seattle Aquarium",
     "Description": "Meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.9634603446284!2d-122.34553072360696!3d47.60740017118983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aad8804fa43%3A0x6b99e65de2d47683!2sSeattle%20Aquarium!5e0!3m2!1sen!2sus!4v1697526521423!5m2!1sen!2sus",
     "Ratings": null
