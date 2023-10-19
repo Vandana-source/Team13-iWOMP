@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="~/css/site.css" />
 <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
 <body>
     <a class="font-weight-bold acolor" asp-page="/Explore">Restrooms</a>
     <span class="vertical-bars"></span>
@@ -22,10 +23,15 @@
     <a class="font-weight-bold acolor" asp-page="/Explore">Other Places</a>
     <br />
     <br />
+
     <div class="container">
         <div class="text-center">
-            <img class="align-content-center read-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
+            <!-- Image Wrapper -->
+            <div class="image-wrapper">
+                <img class="align-content-center read-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
+            </div>
         </div>
+
         <div class="container2">
             <h5 class="font-weight-bold" id="productTitle">@Model.Product.Title</h5>
             <hr class="horizontal-line"></hr>
@@ -85,5 +91,4 @@
     <!--<div class="text-center">
         <h5>OTHER PLACES YOU MAY LOVE</h5>
     </div>-->
-
 </body>
