@@ -301,5 +301,15 @@
     "Description": "You’ve never seen a library quite like this—Seattle Central Library’s architecturally distinct structure boasts enough glass to cover more than five football stadiums.",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86077.65735675086!2d-122.35808647301589!3d47.60811315256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490415b59cb97e7%3A0xb3a044a779f5fdd2!2sSeattle%20Public%20Library%20-%20Central%20Library!5e0!3m2!1sen!2sus!4v1697527070419!5m2!1sen!2sus",
     "Ratings": null
+  },
+  {
+    "Id": "GoldenGardensTable1",
+    "LocationType": "Table",
+    "Neighborhood": "",
+    "img": "/SiteImages/Tables/GoldenGardens.jpeg",
+    "Title": "",
+    "Description":"",
+    "MapURL": "",
+    "Ratings": null
   }
 ]
