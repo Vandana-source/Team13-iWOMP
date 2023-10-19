@@ -260,11 +260,6 @@ h1.h1-heading {
     color: #000;
 }
 
-.container2 {
-    width: 80%; /* Adjust the width of the container as needed */
-    margin: 0 auto; /* Horizontally center the container on the page */
-    padding: 20px; /* Add padding to create space on the left and right */
-}
 
 .horizontal-line {
     position: absolute;
@@ -302,14 +297,21 @@ h1.h1-heading {
     margin: 7px;
 }
 
+.image-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* 9/16 = 0.5625 or 56.25% */
+    position: relative;
+}
+
 .read-img {
-    /*width: 825px;
-    height: 450px;*/
-    width: 76%; /* Set the container's width to 100% of the window */
-    height: 100vh; /* Set the container's height to 100% of the viewport height */
-    background-image: url('your-image.jpg'); /* Replace with your image URL */
-    background-size: cover; /* Scale the background image to cover the container */
-    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .read-icon {
