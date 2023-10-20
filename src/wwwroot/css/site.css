@@ -319,6 +319,13 @@ h1.h1-heading {
     color: #0074d9; /* Blue color */
 }
 
+.read-googlemap {
+    width: 600px;
+    height: 450px;
+    border: 0;
+    /* Add other desired CSS properties */
+}
+
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
@@ -385,3 +392,4 @@ td:hover::before {
 h3.header-contactus {
     font: bold;
 }
+
