@@ -82,7 +82,9 @@
             </span>
 
             <br /><br />
-            <iframe src="@Model.Product.MapURL" class=".read-googlemap"></iframe>
+            <div class="map-container">
+                <iframe src="@Model.Product.MapURL" style="border:0; width: 100%;" allowfullscreen></iframe>
+            </div>
             <br /><br />
 
             <div class="row">
