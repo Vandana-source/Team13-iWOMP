@@ -80,7 +80,11 @@
                 escription
                 <br />@Model.Product.Description
             </span>
+
             <br /><br />
+            <iframe src="@Model.Product.MapURL" class=".read-googlemap"></iframe>
+            <br /><br />
+
             <div class="row">
                 <a asp-page="Update" asp-route-id="@Model.Product.Id" class="btn btn-primary">Update</a> &nbsp; &nbsp;
                 <a asp-page="Delete" asp-route-id="@Model.Product.Id" class="btn btn-danger">Delete</a>
