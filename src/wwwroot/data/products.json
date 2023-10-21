@@ -542,7 +542,7 @@
     },
     {
         "Id": "SculptureParkLoveandLossTable1",
-        "LocationType": "Table1",
+        "LocationType": "Table",
         "img": "/SiteImages/Tables/SculptureParkLoveandLoss.jpeg"
     }
 
