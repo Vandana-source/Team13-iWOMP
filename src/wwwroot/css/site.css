@@ -291,6 +291,7 @@ h1.h1-heading {
     color: #1a1717;
     letter-spacing: 0;
     line-height: normal;
+
 }
 
 .space {
@@ -321,22 +322,24 @@ h1.h1-heading {
 
 }
 
+.map-container {
+    padding-top: 20px;
+}
+
 
 .read-googlemap {
     position: relative;
-    padding-bottom: 70%; /* 16:9 Aspect Ratio */
     height: 0;
     overflow: hidden;
 }
 
-    .read-googlemap iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 500px;
-        
-    }
+.read-googlemap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+}
 
 @keyframes slideIn {
     from {
