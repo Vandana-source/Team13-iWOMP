@@ -527,7 +527,7 @@
     },
     {
         "Id": "SAMOlympicSculptureParkTable1",
-        "LocationType": "Table1",
+        "LocationType": "Table",
         "img": "/SiteImages/Tables/SAMOlympicSculpturePark.jpeg"
     }
 
