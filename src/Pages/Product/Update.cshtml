@@ -1,0 +1,69 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@using ContosoCrafts.WebSite.Models
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.Product.UpdateModel
+
+@{
+    ViewData["Title"] = "Update page";
+}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <form>
+                <div class="form-group">
+                    <label for="titleGroupExampleInput">Title</label>
+                    <input type="text" class="form-control" id="titleGroupExampleInput" value="@Model.Product.Title">
+                </div>
+                <div class="form-group">
+                    <label for="locationTypeFormControlSelect1">Location Type</label>
+                    <select class="form-control" id="locationTypeFormControlSelect1">
+                        @if (Model.Product.LocationType == "Bench")
+                        {
+                            <option selected>Bench</option>
+                            <option>Other</option>
+                            <option>Restroom</option>
+                            <option>Table</option>
+                        }
+                        @if (Model.Product.LocationType == "Other")
+                        {
+                            <option selected>Other</option>
+                            <option>Bench</option>
+                            <option>Restroom</option>
+                            <option>Table</option>
+                        }
+                        @if (Model.Product.LocationType == "Restroom")
+                        {
+                            <option selected>Restroom</option>
+                            <option>Bench</option>
+                            <option>Other</option>
+                            <option>Table</option>
+                        }
+                        @if (Model.Product.LocationType == "Table")
+                        {
+                            <option selected>Table</option>
+                            <option>Bench</option>
+                            <option>Other</option>
+                            <option>Restroom</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="descriptionFormControlTextarea1">Description</label>
+                    <textarea class="form-control" id="descriptionFormControlTextarea1" rows="3">@Model.Product.Description</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imageFormControlFile1">Image</label>
+                    <input type="file" class="form-control-file" id="imageFormControlFile1">
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
