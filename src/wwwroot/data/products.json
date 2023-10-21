@@ -512,7 +512,7 @@
     },
     {
         "Id": "RanchoBravoTable1",
-        "LocationType": "Table1",
+        "LocationType": "Table",
         "img": "/SiteImages/Tables/RanchoBravo.jpeg"
     }
 
