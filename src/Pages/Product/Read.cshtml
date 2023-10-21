@@ -90,7 +90,7 @@
             <div class="row">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateModal">
                     Update
-                </button>
+                </button>&nbsp; &nbsp
                 <a asp-page="Delete" asp-route-id="@Model.Product.Id" class="btn btn-danger">Delete</a>
             </div>
         </div>
@@ -113,11 +113,33 @@
                 </button>
             </div>
             <div class="modal-body">
-                Data
+                <form>
+                    <div class="form-group">
+                        <label for="titleGroupExampleInput">Title</label>
+                        <input type="text" class="form-control" id="titleGroupExampleInput" placeholder="Type a new title">
+                    </div>
+                    <div class="form-group">
+                        <label for="locationTypeFormControlSelect1">Location Type</label>
+                        <select class="form-control" id="locationTypeFormControlSelect1">
+                            <option>Bench</option>
+                            <option>Other</option>
+                            <option>Restroom</option>
+                            <option>Table</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="descriptionFormControlTextarea1">Description</label>
+                        <textarea class="form-control" id="descriptionFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageFormControlFile1">Image</label>
+                        <input type="file" class="form-control-file" id="imageFormControlFile1">
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Save</button>
             </div>
         </div>
     </div>
