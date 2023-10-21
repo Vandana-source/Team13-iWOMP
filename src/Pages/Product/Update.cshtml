@@ -63,6 +63,10 @@
                     <label for="imageFormControlFile1">Image</label>
                     <input type="file" class="form-control-file" id="imageFormControlFile1">
                 </div>
+                <div class="row">
+                    <a asp-page="Save" asp-route-id="@Model.Product.Id" class="btn btn-primary">Save</a>&nbsp; &nbsp
+                    <a asp-page="Read" asp-route-id="@Model.Product.Id" class="btn btn-danger">Cancel</a>
+                </div>
             </form>
         </main>
     </div>
