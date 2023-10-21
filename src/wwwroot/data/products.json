@@ -500,21 +500,21 @@
         "OpeningHours": null,
         "LastUpdated": "0001-01-01T00:00:00"
     },
-    {
-        "Id": "LincolnParkShelter5Table1",
-        "LocationType": "Table",
-        "img": "/SiteImages/Tables/LincolnParkShelter5.jpeg",
-        "Title": "Lincoln Park Shelters5",
-        "Description": "",
-        "Neighborhood": "",
-        "MapURL": "",
-        "FunFacts": null,
-        "Address": null,
-        "Ratings": null,
-        "Accessibility": null,
-        "OpeningHours": null,
-        "LastUpdated": "0001-01-01T00:00:00"
-    },
+  {
+    "Id": "LincolnParkShelter5Table1",
+    "LocationType": "Table",
+    "img": "/SiteImages/Tables/LincolnParkShelter5.jpeg",
+    "Title": "Lincoln Park Shelters 5",
+    "Description": "These tables offer cover, proding shelter from rain and sun in West Seattle's Lincoln Park. The park itself is 135 acres of trees and forest trails that hugs the Puget Sound shoreline.",
+    "Neighborhood": "West Seattle",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21552.646496745518!2d-122.42257372838844!3d47.527289673487964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490414b859d1a01%3A0x5569c2ca6cba8552!2sLincoln%20Park%2C%20Shelter%20%234!5e0!3m2!1sen!2sus!4v1697932191402!5m2!1sen!2sus",
+    "FunFacts": null,
+    "Address": null,
+    "Ratings": null,
+    "Accessibility": null,
+    "OpeningHours": null,
+    "LastUpdated": "0001-01-01T00:00:00"
+  },
     {
         "Id": "RanchoBravoTable1",
         "LocationType": "Table",
