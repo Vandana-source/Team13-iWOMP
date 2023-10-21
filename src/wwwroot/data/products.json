@@ -543,7 +543,8 @@
     {
         "Id": "SculptureParkLoveandLossTable1",
         "LocationType": "Table",
-        "img": "/SiteImages/Tables/SculptureParkLoveandLoss.jpeg"
+        "img": "/SiteImages/Tables/SculptureParkLoveandLoss.jpeg",
+        "Title": "Sculpture Park Love and Loss"
     }
 
 ]
