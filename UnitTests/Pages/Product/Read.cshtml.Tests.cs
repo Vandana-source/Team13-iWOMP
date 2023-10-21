@@ -56,7 +56,7 @@ namespace UnitTests.Pages.Product.Read
 
             var mockWebHostEnvironment = new Mock<IWebHostEnvironment>();
             mockWebHostEnvironment.Setup(m => m.EnvironmentName).Returns("Hosting:UnitTestEnvironment");
-            mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net5.0/wwwroot");
+            mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net7.0/wwwroot");
             mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
 
             var MockLoggerDirect = Mock.Of<ILogger<IndexModel>>();
@@ -78,11 +78,11 @@ namespace UnitTests.Pages.Product.Read
             // Arrange
 
             // Act
-            pageModel.OnGet("jenlooper-cactus");
+            pageModel.OnGet("GreatWheel");
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual("The Quantified Cactus: An Easy Plant Soil Moisture Sensor", pageModel.Product.Title);
+            Assert.AreEqual("Great Wheel near Pier", pageModel.Product.Title);
         }
         #endregion OnGet
     }
