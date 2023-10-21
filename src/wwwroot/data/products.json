@@ -528,7 +528,8 @@
     {
         "Id": "SAMOlympicSculptureParkTable1",
         "LocationType": "Table",
-        "img": "/SiteImages/Tables/SAMOlympicSculpturePark.jpeg"
+        "img": "/SiteImages/Tables/SAMOlympicSculpturePark.jpeg",
+        "Title": "SAM Olympic Sculpture Park"
     }
 
 ]
