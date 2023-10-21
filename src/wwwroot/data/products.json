@@ -545,20 +545,20 @@
         "OpeningHours": null,
         "LastUpdated": "0001-01-01T00:00:00"
     },
-    {
-        "Id": "SculptureParkLoveandLossTable1",
-        "LocationType": "Table",
-        "img": "/SiteImages/Tables/SculptureParkLoveandLoss.jpeg",
-        "Title": "Sculpture Park Love and Loss",
-        "Description": "",
-        "Neighborhood": "",
-        "MapURL": "",
-        "FunFacts": null,
-        "Address": null,
-        "Ratings": null,
-        "Accessibility": null,
-        "OpeningHours": null,
-        "LastUpdated": "0001-01-01T00:00:00"
-    }
+  {
+    "Id": "SculptureParkLoveandLossTable1",
+    "LocationType": "Table",
+    "img": "/SiteImages/Tables/SculptureParkLoveandLoss.jpeg",
+    "Title": "Sculpture Park Love and Loss",
+    "Description": "In 2005-2006, Roy McMakin created the punny art installation \"Love and Loss\" for the Olympic Sculpture Park. The piece not only serves as a visual attraction but also provides a spot to sit. It's located near the bike trail along the park's edge.",
+    "Neighborhood": "",
+    "MapURL": "",
+    "FunFacts": null,
+    "Address": null,
+    "Ratings": null,
+    "Accessibility": null,
+    "OpeningHours": null,
+    "LastUpdated": "0001-01-01T00:00:00"
+  }
 
 ]
