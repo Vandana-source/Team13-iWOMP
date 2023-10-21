@@ -57,7 +57,7 @@ namespace UnitTests.Pages.Index
 
             var mockWebHostEnvironment = new Mock<IWebHostEnvironment>();
             mockWebHostEnvironment.Setup(m => m.EnvironmentName).Returns("Hosting:UnitTestEnvironment");
-            mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net5.0/wwwroot");
+            mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net7.0/wwwroot");
             mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
 
             var MockLoggerDirect = Mock.Of<ILogger<IndexModel>>();
@@ -65,8 +65,10 @@ namespace UnitTests.Pages.Index
 
             productService = new JsonFileProductService(mockWebHostEnvironment.Object);
 
-            pageModel = new IndexModel(MockLoggerDirect, productService)
+            pageModel = new IndexModel(MockLoggerDirect)
             {
+                PageContext = pageContext,
+                TempData = tempData,
             };
         }
 
@@ -74,7 +76,7 @@ namespace UnitTests.Pages.Index
 
         #region OnGet
         [Test]
-        public void OnGet_Valid_Should_Return_Products()
+        public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
             // Arrange
 
@@ -83,7 +85,6 @@ namespace UnitTests.Pages.Index
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(15, pageModel.Products.ToList().Count);
         }
         #endregion OnGet
     }
