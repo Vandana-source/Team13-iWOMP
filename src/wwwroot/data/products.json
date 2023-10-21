@@ -529,7 +529,16 @@
         "Id": "SAMOlympicSculptureParkTable1",
         "LocationType": "Table",
         "img": "/SiteImages/Tables/SAMOlympicSculpturePark.jpeg",
-        "Title": "SAM Olympic Sculpture Park"
+        "Title": "SAM Olympic Sculpture Park",
+        "Description": "",
+        "Neighborhood": "",
+        "MapURL": "",
+        "FunFacts": null,
+        "Address": null,
+        "Ratings": null,
+        "Accessibility": null,
+        "OpeningHours": null,
+        "LastUpdated": "0001-01-01T00:00:00"
     }
 
 ]
