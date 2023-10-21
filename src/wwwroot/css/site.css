@@ -214,6 +214,10 @@ h1.h1-heading {
     background-image: url('/Others.jpg');
 }
 
+.card-img-tables {
+    background-image: url('/Table.png');
+}
+
 /* Hover effect for the homecard */
 .homecard:hover {
     background-color: rgba(37,33,82,.12); /* Change the background color on hover */
