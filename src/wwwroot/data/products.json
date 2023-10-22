@@ -579,6 +579,15 @@
         "Id": "SeattleUQuadTable1",
         "LocationType": "Table",
         "img": "/SiteImages/Tables/SeattleUQuad.jpeg",
-        "Title": "Seattle University Quad"
+        "Title": "Seattle University Quad",
+        "Description": "",
+        "Neighborhood": "",
+        "MapURL": "",
+        "FunFacts": null,
+        "Address": null,
+        "Ratings": null,
+        "Accessibility": null,
+        "OpeningHours": null,
+        "LastUpdated": "0001-01-01T00:00:00"
     }
 ]
