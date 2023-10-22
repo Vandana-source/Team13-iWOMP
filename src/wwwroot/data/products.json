@@ -574,5 +574,10 @@
         "Accessibility": null,
         "OpeningHours": null,
         "LastUpdated": "0001-01-01T00:00:00"
+    },
+    {
+        "Id": "SeattleUQuadTable1",
+        "LocationType": "Table1",
+        "img": "/SiteImages/Tables/SeattleUQuad.jpeg"
     }
 ]
