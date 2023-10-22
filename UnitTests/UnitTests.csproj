@@ -17,4 +17,10 @@
     <ProjectReference Include="..\src\ContosoCrafts.WebSite.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
 </Project>
