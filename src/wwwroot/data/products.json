@@ -562,7 +562,7 @@
   },
   {
     "Id": "SeattleUAdminBldTable1",
-    "LocationType": "Table1",
+    "LocationType": "Table",
     "img": "/SiteImages/Tables/SeattleUAdminBld.jpeg"
   }
 ]
