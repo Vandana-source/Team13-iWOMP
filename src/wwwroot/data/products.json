@@ -578,6 +578,7 @@
     {
         "Id": "SeattleUQuadTable1",
         "LocationType": "Table",
-        "img": "/SiteImages/Tables/SeattleUQuad.jpeg"
+        "img": "/SiteImages/Tables/SeattleUQuad.jpeg",
+        "Title": "Seattle University Quad"
     }
 ]
