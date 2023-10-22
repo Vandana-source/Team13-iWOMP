@@ -577,7 +577,7 @@
     },
     {
         "Id": "SeattleUQuadTable1",
-        "LocationType": "Table1",
+        "LocationType": "Table",
         "img": "/SiteImages/Tables/SeattleUQuad.jpeg"
     }
 ]
