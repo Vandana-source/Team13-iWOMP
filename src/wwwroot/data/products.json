@@ -564,6 +564,15 @@
         "Id": "SeattleUAdminBldTable1",
         "LocationType": "Table",
         "img": "/SiteImages/Tables/SeattleUAdminBld.jpeg",
-        "Title": "Seattle University Admin Building"
+        "Title": "Seattle University Admin Building",
+        "Description\": \"\",": null,
+        "Neighborhood": "",
+        "MapURL": "",
+        "FunFacts": null,
+        "Address": null,
+        "Ratings": null,
+        "Accessibility": null,
+        "OpeningHours": null,
+        "LastUpdated": "0001-01-01T00:00:00"
     }
 ]
