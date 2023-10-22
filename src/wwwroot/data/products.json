@@ -560,9 +560,10 @@
     "OpeningHours": null,
     "LastUpdated": "0001-01-01T00:00:00"
   },
-  {
-    "Id": "SeattleUAdminBldTable1",
-    "LocationType": "Table",
-    "img": "/SiteImages/Tables/SeattleUAdminBld.jpeg"
-  }
+    {
+        "Id": "SeattleUAdminBldTable1",
+        "LocationType": "Table",
+        "img": "/SiteImages/Tables/SeattleUAdminBld.jpeg",
+        "Title": "Seattle University Admin Building"
+    }
 ]
