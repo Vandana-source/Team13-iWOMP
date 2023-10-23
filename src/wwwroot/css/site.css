@@ -418,3 +418,8 @@ h3.header-contactus {
     font: bold;
 }
 
+/* Css for Update Page*/
+.button-row {
+    display: flex;
+    margin: 20px 0;
+}
