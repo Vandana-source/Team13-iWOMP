@@ -565,9 +565,9 @@
     "LocationType": "Table",
     "img": "/SiteImages/Tables/SeattleUAdminBld.jpeg",
     "Title": "Seattle University Admin Building",
-    "Description": "",
+    "Description": "This table sits in a secluded patch of greenery behind Seattle University's administration building. It feels like an oasis in the busy city.",
     "Neighborhood": "",
-    "MapURL": "",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.7743050172244!2d-122.32218492360678!3d47.611078071190235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ac947f06101%3A0x9540c3cf67e76e3!2sAdministration%20Building!5e0!3m2!1sen!2sus!4v1698081929769!5m2!1sen!2sus",
     "FunFacts": null,
     "Address": null,
     "Ratings": null,
@@ -579,15 +579,81 @@
     "Id": "SeattleUQuadTable1",
     "LocationType": "Table",
     "img": "/SiteImages/Tables/SeattleUQuad.jpeg",
-    "Title": "Seattle University Quad",
-    "Description": "",
+    "Title": "Seattle University Green",
+    "Description": "These tables look upon Seattle University's green, which is a large grassy field. They offer a good place to meet with friends on a nice day. Sit here to watch students picnic on the green, or engage in sports like volleyball.",
     "Neighborhood": "",
-    "MapURL": "",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1171.2629803551306!2d-122.31908306954777!3d47.61088657970933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ac947f06101%3A0x9540c3cf67e76e3!2sAdministration%20Building!5e0!3m2!1sen!2sus!4v1698082023329!5m2!1sen!2sus",
     "FunFacts": null,
     "Address": null,
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
     "LastUpdated": "0001-01-01T00:00:00"
+  },
+
+  {
+    "Id": "GoldenGardens",
+    "LocationType": "Table",
+    "img": "/SiteImages/Tables/GoldenGardens.jpeg",
+    "Title": "Golden Gardens",
+    "Description": "These tables sit along the waterfront in Ballard's public Golden Gardens Park. The park includes wetlands, beaches, and hiking trails. It is a popular place in the summer for picnics and other gatherings. Facing west, sunsets here can feel magical.",
+    "Neighborhood": "",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2685.6332143949876!2d-122.40896388888355!3d47.69154273990544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549017c7ae2d9273%3A0x5e08236d4601c27d!2sGolden%20Gardens%20Beach!5e0!3m2!1sen!2sus!4v1698082784105!5m2!1sen!2sus",
+    "FunFacts": null,
+    "Address": null,
+    "Ratings": null,
+    "Accessibility": null,
+    "OpeningHours": null,
+    "LastUpdated": "0001-01-01T00:00:00"
+  },
+
+  {
+    "Id": "UWReadingRoom",
+    "LocationType": "Table",
+    "img": "/SiteImages/Tables/UWReadingRoom.jpeg",
+    "Title": "UW Reading Room (Suzzallo)",
+    "Description": "University of Washington's famous reading room gives off Harry Potter vibes. Located in the Suzzallo Library, it is the only silent study room in the library. Flanked by books on all sides, the vaulted ceilings contribute to the magical atmosphere. It is truly a \"cathedrals of learning.\"",
+    "Neighborhood": "",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.4748858646003!2d-122.31234870851038!3d47.65577032187636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549014ec45555555%3A0x6c6be15ffe62e371!2sSuzzallo%20and%20Allen%20Libraries!5e0!3m2!1sen!2sus!4v1698082883366!5m2!1sen!2sus",
+    "FunFacts": null,
+    "Address": null,
+    "Ratings": null,
+    "Accessibility": null,
+    "OpeningHours": null,
+    "LastUpdated": "0001-01-01T00:00:00"
+  },
+
+  {
+    "Id": "UWSciencePromenade",
+    "LocationType": "Table",
+    "img": "/SiteImages/Tables/UWSciencePromenade.jpeg",
+    "Title": "UW Science Promenade",
+    "Description": "This seating area is beautiful in the spring when the trees bloom and fill with leaves. It's convenient seating near the Department of Physics and features many public artworks.",
+    "Neighborhood": "",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10750.39107694077!2d-122.32626673954364!3d47.65338272496477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549014f2764fa479%3A0xa925c77c124796b6!2sDepartment%20of%20Physics!5e0!3m2!1sen!2sus!4v1698083779604!5m2!1sen!2sus",
+    "FunFacts": null,
+    "Address": null,
+    "Ratings": null,
+    "Accessibility": null,
+    "OpeningHours": null,
+    "LastUpdated": "0001-01-01T00:00:00"
+  },
+
+  {
+    "Id": "SeattleURainGarden",
+    "LocationType": "Table",
+    "img": "/SiteImages/Tables/SeattleURainGarden.jpeg",
+    "Title": "Seattle U Rain Garden",
+    "Description": "This cute little picnic table sits underneath the trees. It is a good spot for lunch, meeting friends, and people watching students on their way to and from class.",
+    "Neighborhood": "",
+    "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1091.5124409717791!2d-122.31964163666072!3d47.61128760768684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aceba287171%3A0x24734747bd722600!2sJapanese%20American%20Remembrance%20Garden!5e0!3m2!1sen!2sus!4v1698084026035!5m2!1sen!2sus",
+    "Address": null,
+    "Ratings": null,
+    "Accessibility": null,
+    "OpeningHours": null,
+    "LastUpdated": "0001-01-01T00:00:00"
   }
+
+
+
 ]
