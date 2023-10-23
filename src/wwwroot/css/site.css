@@ -423,3 +423,7 @@ h3.header-contactus {
     display: flex;
     margin: 20px 0;
 }
+
+h1.update-page-title {
+    margin: 10px;
+}
