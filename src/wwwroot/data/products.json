@@ -639,6 +639,15 @@
         "Id": "UWReadingRoomTable1",
         "LocationType": "Table",
         "img": "/SiteImages/Tables/UWReadingRoom.jpeg",
-        "Title": "UW Reading Room"
+        "Title": "UW Reading Room",
+        "Description": "",
+        "Neighborhood": "",
+        "MapURL": "",
+        "FunFacts": null,
+        "Address": null,
+        "Ratings": null,
+        "Accessibility": null,
+        "OpeningHours": null,
+        "LastUpdated": "0001-01-01T00:00:00"
     }
 ]
