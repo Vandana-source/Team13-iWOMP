@@ -143,25 +143,7 @@
     "OpeningHours": null,
     "LastUpdated": "0001-01-01T00:00:00"
   },
-  {
-    "Id": "GoldenGardensTable1",
-    "LocationType": "Table",
-    "img": "/SiteImages/Tables/GoldenGardens.jpeg",
-    "Url": null,
-    "Title": "",
-    "Description": "",
-    "Neighborhood": "",
-    "MapURL": "",
-    "FunFacts": null,
-    "Address": null,
-    "Ratings": [
-      1,
-      1
-    ],
-    "Accessibility": null,
-    "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
-  },
+ 
   {
     "Id": "GreatWheel",
     "LocationType": "Other",
