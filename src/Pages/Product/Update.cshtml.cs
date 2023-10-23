@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
-
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
@@ -24,11 +24,24 @@ namespace ContosoCrafts.WebSite.Pages.Product
         }
 
         // The data to show
-        public ProductModel Product;
+        [BindProperty]
+        public ProductModel Product { get; set; }
 
         public void OnGet(string id)
         {
             Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            ProductService.UpdateData(Product);
+
+            return RedirectToPage("./Index");
         }
     }
 }
