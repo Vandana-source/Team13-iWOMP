@@ -233,6 +233,12 @@ h1.h1-heading {
 
 /* CSS for read page*/
 
+.option-bar {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto 15px;
+}
+
 .location-content {
     display: flex;
     flex-direction: column;
