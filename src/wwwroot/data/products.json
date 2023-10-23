@@ -654,6 +654,15 @@
         "Id": "UWSciencePromenadeTable1",
         "LocationType": "Table",
         "img": "/SiteImages/Tables/UWSciencePromenade.jpeg",
-        "Title": "UW Science Promenade"
+        "Title": "UW Science Promenade",
+        "Description": "",
+        "Neighborhood": "",
+        "MapURL": "",
+        "FunFacts": null,
+        "Address": null,
+        "Ratings": null,
+        "Accessibility": null,
+        "OpeningHours": null,
+        "LastUpdated": "0001-01-01T00:00:00"
     }
 ]
