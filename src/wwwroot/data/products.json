@@ -653,6 +653,7 @@
     {
         "Id": "UWSciencePromenadeTable1",
         "LocationType": "Table",
-        "img": "/SiteImages/Tables/UWSciencePromenade.jpeg"
+        "img": "/SiteImages/Tables/UWSciencePromenade.jpeg",
+        "Title": "UW Science Promenade"
     }
 ]
