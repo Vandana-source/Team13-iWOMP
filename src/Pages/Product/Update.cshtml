@@ -1,73 +1,98 @@
 ﻿@page "{id}"
 @using ContosoCrafts.WebSite.Services
-@using ContosoCrafts.WebSite.Models
 @inject JsonFileProductService ProductService
 @model ContosoCrafts.WebSite.Pages.Product.UpdateModel
 
 @{
     ViewData["Title"] = "Update page";
 }
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <main role="main" class="pb-3">
-            <form>
-                <div class="form-group">
-                    <label for="titleGroupExampleInput">Title</label>
-                    <input type="text" class="form-control" id="titleGroupExampleInput" value="@Model.Product.Title">
-                </div>
-                <div class="form-group">
-                    <label for="locationTypeFormControlSelect1">Location Type</label>
-                    <select class="form-control" id="locationTypeFormControlSelect1">
-                        @if (Model.Product.LocationType == "Bench")
-                        {
-                            <option selected>Bench</option>
-                            <option>Other</option>
-                            <option>Restroom</option>
-                            <option>Table</option>
-                        }
-                        @if (Model.Product.LocationType == "Other")
-                        {
-                            <option selected>Other</option>
-                            <option>Bench</option>
-                            <option>Restroom</option>
-                            <option>Table</option>
-                        }
-                        @if (Model.Product.LocationType == "Restroom")
-                        {
-                            <option selected>Restroom</option>
-                            <option>Bench</option>
-                            <option>Other</option>
-                            <option>Table</option>
-                        }
-                        @if (Model.Product.LocationType == "Table")
-                        {
-                            <option selected>Table</option>
-                            <option>Bench</option>
-                            <option>Other</option>
-                            <option>Restroom</option>
-                        }
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="descriptionFormControlTextarea1">Description</label>
-                    <textarea class="form-control" id="descriptionFormControlTextarea1" rows="3">@Model.Product.Description</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="imageFormControlFile1">Image</label>
-                    <input type="file" class="form-control-file" id="imageFormControlFile1">
-                </div>
-                <div class="row">
-                    <a asp-page="Save" asp-route-id="@Model.Product.Id" class="btn btn-primary">Save</a>&nbsp; &nbsp
-                    <a asp-page="Read" asp-route-id="@Model.Product.Id" class="btn btn-danger">Cancel</a>
-                </div>
-            </form>
-        </main>
-    </div>
-</body>
+<h1>Update Place</h1>
+
+<div class="container">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @Html.HiddenFor(x=>x.Product.Id)
+
+        <div class="form-group">
+            <label asp-for="Product.Title" class="control-label"></label>
+            <input asp-for="Product.Title" class="form-control" />
+            <span asp-validation-for="Product.Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" asp-for="Product.LocationType"></label>
+            <select class="form-control" asp-for="Product.LocationType">
+                @if (Model.Product.LocationType == "Bench")
+                {
+                    <option selected>Bench</option>
+                    <option>Other</option>
+                    <option>Restroom</option>
+                    <option>Table</option>
+                }
+                @if (Model.Product.LocationType == "Other")
+                {
+                    <option selected>Other</option>
+                    <option>Bench</option>
+                    <option>Restroom</option>
+                    <option>Table</option>
+                }
+                @if (Model.Product.LocationType == "Restroom")
+                {
+                    <option selected>Restroom</option>
+                    <option>Bench</option>
+                    <option>Other</option>
+                    <option>Table</option>
+                }
+                @if (Model.Product.LocationType == "Table")
+                {
+                    <option selected>Table</option>
+                    <option>Bench</option>
+                    <option>Other</option>
+                    <option>Restroom</option>
+                }
+            </select>
+            <span class="text-danger" asp-validation-for="Product.LocationType"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Product.Neighborhood" class="control-label"></label>
+            <input asp-for="Product.Neighborhood" class="form-control" />
+            <span asp-validation-for="Product.Neighborhood" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" asp-for="Product.Description"></label>
+            <input class="form-control" asp-for="Product.Description">
+            <span class="text-danger" asp-validation-for="Product.Description"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" asp-for="Product.MapURL"></label>
+            <input class="form-control" asp-for="Product.MapURL">
+            <span class="text-danger" asp-validation-for="Product.MapURL"></span>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary">
+            </div>
+            &nbsp; &nbsp
+            <div class="form-group">
+                <a class="btn btn-danger" asp-page="Read" asp-route-id="@Model.Product.Id">Cancel</a>
+            </div>
+        </div>
+        
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+
+
+
