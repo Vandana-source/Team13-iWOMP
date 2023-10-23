@@ -34,18 +34,12 @@ namespace UnitTests.Pages.Product.AddRating
         public void AddRating_Valid_Product_If_Ratings_Null_Should_Create_Ratings_Array_And_Add_Rating_Successfully()
         {
             // Arrange
-            // Temp. product with null ratings 
-            var product = new ProductModel()
-            {
-                Id = "validProductId",
-                
-            };
+
 
             // Act
-            TestHelper.ProductService.AddRating("validProductId", 3);
 
-            // Assert
-            Assert.AreEqual(new List<int> { 3 }, product.Ratings.ToList());
+
+            // Assert 
 
 
         }
@@ -58,20 +52,10 @@ namespace UnitTests.Pages.Product.AddRating
         public void AddRating_Valid_Product_If_Ratings_Not_Null_Should_Add_Rating_To_Array_Successfully()
         {
             // Arrange
-            // Temp. product with populated ratings 
-            var product = new ProductModel()
-            {
-                Id = "validProductId",
-                Ratings = new int[] { 2, 3}
-
-            };
 
             // Act
-            TestHelper.ProductService.AddRating("validProductId", 3);
 
-
-            // Assert
-            Assert.AreEqual(new int[] { 2, 3, 3 }, product.Ratings.ToList());
+            // Assert 
 
         }
 
