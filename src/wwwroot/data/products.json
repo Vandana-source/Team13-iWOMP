@@ -637,7 +637,7 @@
     },
     {
         "Id": "UWReadingRoomTable1",
-        "LocationType": "Table1",
+        "LocationType": "Table",
         "img": "/SiteImages/Tables/UWReadingRoom.jpeg"
     }
 ]
