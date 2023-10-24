@@ -140,5 +140,27 @@ namespace UnitTests.Pages.Product.AddRating
 
         #endregion AddRating
 
+        #region UpdateData
+
+        /// <summary>
+        /// Testing valid usage of UpdateData method
+        /// </summary>
+        [Test]
+        public void UpdateData_Valid_Updated_Value_Matches_Should_Return_true()
+        {
+            // Arrange
+            var data = TestHelper.ProductService.GetProducts().FirstOrDefault();
+            var data1 = data;
+            data1.Title = "Test";
+
+            // Act
+            var result = TestHelper.ProductService.UpdateData(data1);
+
+            // Assert
+            Assert.AreEqual(data1.Title, result.Title);
+        }
+
+        #endregion UpdateData
+
     }
 }
