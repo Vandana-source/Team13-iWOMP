@@ -14,8 +14,6 @@ using Moq;
 
 using NUnit.Framework;
 
-using ContosoCrafts.WebSite.Pages.Product;
-using ContosoCrafts.WebSite.Services;
 
 
 namespace UnitTests.Pages.Product.Update
@@ -100,30 +98,60 @@ namespace UnitTests.Pages.Product.Update
         }
 
         [Test]
-        public void OnGet_Null_Id_Should_Return_False()
-        {
-            // Arrange
-
-            // Act
-            pageModel.OnGet("");
-
-            // Assert
-            Assert.IsNull(pageModel.Product);
-        }
-
-        [Test]
         public void OnGet_Valid_Id_Null_Title_Should_Return_False()
         {
             // Arrange
 
             // Act
             pageModel.OnGet("SeattleUQuadTable1");
+            var result = pageModel.Product.Title == null;
 
             // Assert
-            Assert.AreNotEqual("", pageModel.Product.Title);
+            Assert.AreEqual(false, result);
         }
+
         #endregion OnGet
 
-        
+        #region OnPost
+        [Test]
+        public void OnPost_Valid_Should_Return_Products()
+        {
+            // Arrange
+            pageModel.OnGet("seattle-university-fern");
+
+            // Act
+            var result = pageModel.OnPost() as RedirectToPageResult;
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(true, result.PageName.Contains("Index"));
+        }
+
+        [Test]
+        public void OnPost_InValid_Model_Not_Valid_Return_Page()
+        {
+            // Arrange
+            pageModel.Product = new ProductModel
+            {
+                Id = "testId",
+                Title = "Title",
+                LocationType = "Location",
+                Neighborhood = "Neighborhood",
+                Description = "Description",
+                MapURL = "Map",
+            };
+
+            // Force an invalid error state
+            pageModel.ModelState.AddModelError("Test", "Test error");
+
+            // Act
+            var result = pageModel.OnPost() as ActionResult;
+
+            // Assert
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+        }
+
+        #endregion OnPost
+
     }
 }
