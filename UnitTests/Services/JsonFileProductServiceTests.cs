@@ -27,7 +27,7 @@ namespace UnitTests.Pages.Product.AddRating
 
         #region AddRating
         /// <summary>
-        ///Testing to check if a invalid product null will return false
+        /// Testing to check if a invalid product null will return false
         /// </summary>
         [Test]
         public void AddRating_Invalid_Product_Null_Should_Return_False()
@@ -50,7 +50,7 @@ namespace UnitTests.Pages.Product.AddRating
             // Arrange
 
             // Act
-            var result = TestHelper.ProductService.AddRating(null, 1);
+            var result = TestHelper.ProductService.AddRating("", 1);
 
             // Assert
             Assert.AreEqual(false, result);
