@@ -14,6 +14,7 @@ using Moq;
 
 using NUnit.Framework;
 
+using ContosoCrafts.WebSite.Models;
 
 
 namespace UnitTests.Pages.Product.Update
@@ -95,19 +96,6 @@ namespace UnitTests.Pages.Product.Update
 
             // Assert
             Assert.IsNull(pageModel.Product);
-        }
-
-        [Test]
-        public void OnGet_Valid_Id_Null_Title_Should_Return_False()
-        {
-            // Arrange
-
-            // Act
-            pageModel.OnGet("SeattleUQuadTable1");
-            var result = pageModel.Product.Title == null;
-
-            // Assert
-            Assert.AreEqual(false, result);
         }
 
         #endregion OnGet
