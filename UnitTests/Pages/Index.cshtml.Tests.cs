@@ -19,8 +19,13 @@ using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Pages.Index
 {
+
+    /// <summary>
+    /// Class that has unit test cases related to Index page
+    /// </summary>
     public class IndexTests
     {
+        // Creating an instance
         #region TestSetup
         public static IUrlHelperFactory urlHelperFactory;
         public static DefaultHttpContext httpContextDefault;
@@ -34,6 +39,9 @@ namespace UnitTests.Pages.Index
 
         public static IndexModel pageModel;
 
+        /// <summary>
+        /// Initializing test
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -74,6 +82,9 @@ namespace UnitTests.Pages.Index
 
         #endregion TestSetup
 
+        /// <summary>
+        /// Test case to validate that on valid activity a valid RequestId is returned
+        /// </summary>
         #region OnGet
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
