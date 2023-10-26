@@ -32,6 +32,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// </summary>
         public void OnGet()
         {
+            // This method fetches all the data from the JsonFileProductService.cs
             Products = ProductService.GetProducts();
         }
     }
