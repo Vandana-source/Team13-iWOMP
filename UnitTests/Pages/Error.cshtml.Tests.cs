@@ -19,8 +19,13 @@ using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Pages.Error
 {
+
+    /// <summary>
+    /// Class containing unit test cases for Error page
+    /// </summary>
     public class ErrorTests
     {
+        // Creating an instance
         #region TestSetup
         public static IUrlHelperFactory urlHelperFactory;
         public static DefaultHttpContext httpContextDefault;
@@ -34,6 +39,9 @@ namespace UnitTests.Pages.Error
 
         public static ErrorModel pageModel;
 
+        /// <summary>
+        /// Initializing test
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -78,6 +86,10 @@ namespace UnitTests.Pages.Error
         #endregion TestSetup
 
         #region OnGet
+
+        /// <summary>
+        /// Test case to validate that on valid activity a valid RequestId is returned
+        /// </summary>
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
@@ -97,6 +109,9 @@ namespace UnitTests.Pages.Error
             Assert.AreEqual(activity.Id, pageModel.RequestId);
         }
 
+        /// <summary>
+        /// Test case to validate that on invalid activity, traceidentifier returns a RequestId
+        /// </summary>
         [Test]
         public void OnGet_InValid_Activity_Null_Should_Return_TraceIdentifier()
         {
