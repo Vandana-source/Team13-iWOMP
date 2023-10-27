@@ -1,0 +1,75 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.Product.CreateModel
+
+@{
+    ViewData["Title"] = "Create page";
+}
+
+<body class="crud">
+
+    <h1 class="font-weight-bold">Create</h1>
+
+    <div class="container">
+        <form method="post">
+
+            @Html.HiddenFor(x=>x.Product.Id)
+
+            <div class="form-group">
+                <label class="control-label" asp-for="Product.Title"></label>
+                <input class="form-control" asp-for="Product.Title" required placeholder="Enter Title">
+                <span class="text-danger" asp-validation-for="Product.Title"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" asp-for="Product.LocationType"></label>
+                <select class="form-control" asp-for="Product.LocationType">
+                    <option selected>Table</option>
+                    <option>Bench</option>
+                    <option>Restroom</option>
+                    <option>Other</option>
+                </select>
+                <span class="text-danger" asp-validation-for="Product.LocationType"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" asp-for="Product.Neighborhood"></label>
+                <input class="form-control" asp-for="Product.Neighborhood" required placeholder="Enter Neighborhood">
+                <span class="text-danger" asp-validation-for="Product.Neighborhood"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" asp-for="Product.Image">Image</label>
+                <input class="form-control" asp-for="Product.Image" required placeholder="Enter Image">
+                <span class="text-danger" asp-validation-for="Product.Image"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" asp-for="Product.Description">Description</label>
+                <input class="form-control" asp-for="Product.Description" required placeholder="Enter Description">
+                <span class="text-danger" asp-validation-for="Product.Description"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" asp-for="Product.MapURL"></label>
+                <input class="form-control" asp-for="Product.MapURL" required placeholder="Enter google map URL">
+                <span class="text-danger" asp-validation-for="Product.MapURL"></span>
+            </div>
+
+            <div class="button-row">
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary">
+                </div>
+                &nbsp; &nbsp
+                <div class="form-group">
+                    <a class="btn btn-danger" asp-page="Index">Cancel</a>
+                </div>
+            </div>
+
+            <input name="__RequestVerificationToken" type="hidden" value="">
+
+        </form>
+    </div>
+
+</body>
