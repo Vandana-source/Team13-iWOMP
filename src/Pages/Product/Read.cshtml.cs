@@ -7,13 +7,16 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
+    /// <summary>
+    /// Razor page model for reading product details
+    /// </summary>
     public class ReadModel : PageModel
     {
         // Data middletier
         public JsonFileProductService ProductService { get; }
 
         /// <summary>
-        /// Defualt Construtor
+        /// Default Construtor
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="productService"></param>
@@ -31,6 +34,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <param name="id"></param>
         public void OnGet(string id)
         {
+            // Fetches the product with the specified ID from the service.
             Product  = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
         }
     }
