@@ -19,8 +19,12 @@ using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Pages.Explore
 {
+    /// <summary>
+    /// Class containing unit test cases for Explore page
+    /// </summary>
     public class ExploreTests
     {
+        // Creating an instance
         #region TestSetup
         public static IUrlHelperFactory urlHelperFactory;
         public static DefaultHttpContext httpContextDefault;
@@ -34,6 +38,9 @@ namespace UnitTests.Pages.Explore
 
         public static ExploreModel pageModel;
 
+        /// <summary>
+        /// Initializing test
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -60,6 +67,7 @@ namespace UnitTests.Pages.Explore
             mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net7.0/wwwroot");
             mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
 
+            // Initializing ILogger to write log messages
             var MockLoggerDirect = Mock.Of<ILogger<ExploreModel>>();
             JsonFileProductService productService;
 
@@ -72,6 +80,10 @@ namespace UnitTests.Pages.Explore
 
         #endregion TestSetup
 
+        /// <summary>
+        /// Test to validate OnGet method
+        /// Returns Products if valid
+        /// </summary>
         #region OnGet
         [Test]
         public void OnGet_Valid_Should_Return_Products()
