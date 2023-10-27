@@ -18,6 +18,9 @@ using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Pages.Product.Read
 {
+    /// <summary>
+    /// Unit testing for Read page
+    /// </summary>
     public class ReadTests
     {
         #region TestSetup
@@ -32,7 +35,10 @@ namespace UnitTests.Pages.Product.Read
         public static PageContext pageContext;
 
         public static ReadModel pageModel;
-
+        
+        /// <summary>
+        /// Set up test intialize
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -70,7 +76,10 @@ namespace UnitTests.Pages.Product.Read
         }
 
         #endregion TestSetup
-
+        
+        /// <summary>
+        /// Tests OnGet with a valid product, should return valid product data
+        /// </summary>
         #region OnGet
         [Test]
         public void OnGet_Valid_Should_Return_Products()
