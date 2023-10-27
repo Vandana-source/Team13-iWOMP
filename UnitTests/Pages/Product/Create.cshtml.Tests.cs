@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using ContosoCrafts.WebSite.Pages.Product;
+using System.Reflection;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -19,6 +20,9 @@ using ContosoCrafts.WebSite.Models;
 
 namespace UnitTests.Pages.Product.Create
 {
+    /// <summary>
+    /// Unit testing for Create Page
+    /// </summary>
     public class CreateTests
     {
         #region TestSetup
@@ -34,6 +38,9 @@ namespace UnitTests.Pages.Product.Create
 
         public static CreateModel pageModel;
 
+        /// <summary>
+        /// Set up test intialize
+        /// </summary> 
         [SetUp]
         public void TestInitialize()
         {
@@ -72,8 +79,28 @@ namespace UnitTests.Pages.Product.Create
 
         #endregion TestSetup
 
-        #region OnPost
+        #region OnGet
 
+        /// <summary>
+        /// Checks if OnGet working for the create page 
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
+        {
+            // Arrange
+
+            // Act
+            pageModel.OnGet();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+        }
+
+#       endregion OnGet
+
+        #region OnPost
         /// <summary>
         /// Tests the OnPost method to ensure that a valid product creation
         /// results in a valid model state and returns to the index page. 
@@ -81,7 +108,6 @@ namespace UnitTests.Pages.Product.Create
         [Test]
         public void OnPost_Valid_Should_Create_Product_Return_To_Index()
         {
-
             // Arrange
             // Create new product 
             pageModel.Product = new ProductModel
