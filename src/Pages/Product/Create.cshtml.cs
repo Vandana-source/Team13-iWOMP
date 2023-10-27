@@ -30,9 +30,10 @@ namespace ContosoCrafts.WebSite.Pages.Product
         public ProductModel Product { get; set; }
 
         /// <summary>
-        /// REST Get request
+        /// Handles the GET request for the Create page.
+        /// Currently, no specific action is required before rendering the view.
+        /// This method is kept for clarity and potential future use.
         /// </summary>
-        /// <param name="id"></param>
         public void OnGet()
         {
         }
