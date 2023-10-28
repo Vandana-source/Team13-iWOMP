@@ -1,6 +1,101 @@
-@page
-@model ContosoCrafts.WebSite.Pages.Product.Delete
+@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.Product.UpdateModel
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Delete Page";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<h1 class="update-page-title">Delete Place</h1>
+
+<div class="container">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @Html.HiddenFor(x=>x.Product.Id)
+
+        <div class="form-group">
+            <label asp-for="Product.Title" class="control-label"></label>
+            <input asp-for="Product.Title" class="form-control" />
+            <span asp-validation-for="Product.Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" asp-for="Product.LocationType"></label>
+            <select class="form-control" asp-for="Product.LocationType">
+                @if (Model.Product.LocationType == "Bench")
+                {
+                    <option selected>Bench</option>
+                    <option>Other</option>
+                    <option>Restroom</option>
+                    <option>Table</option>
+                }
+                @if (Model.Product.LocationType == "Other")
+                {
+                    <option selected>Other</option>
+                    <option>Bench</option>
+                    <option>Restroom</option>
+                    <option>Table</option>
+                }
+                @if (Model.Product.LocationType == "Restroom")
+                {
+                    <option selected>Restroom</option>
+                    <option>Bench</option>
+                    <option>Other</option>
+                    <option>Table</option>
+                }
+                @if (Model.Product.LocationType == "Table")
+                {
+                    <option selected>Table</option>
+                    <option>Bench</option>
+                    <option>Other</option>
+                    <option>Restroom</option>
+                }
+            </select>
+            <span class="text-danger" asp-validation-for="Product.LocationType"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Product.Neighborhood" class="control-label"></label>
+            <input asp-for="Product.Neighborhood" class="form-control" />
+            <span asp-validation-for="Product.Neighborhood" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" asp-for="Product.Description"></label>
+            <input class="form-control" asp-for="Product.Description">
+            <span class="text-danger" asp-validation-for="Product.Description"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" asp-for="Product.MapURL"></label>
+            <input class="form-control" asp-for="Product.MapURL">
+            <span class="text-danger" asp-validation-for="Product.MapURL"></span>
+        </div>
+        <br/>
+        <br/>
+        <h1>Are you sure?</h1>
+        <div class="button-row">
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-primary">
+            </div>
+            &nbsp; &nbsp
+            <div class="form-group">
+                <a class="btn btn-danger" asp-page="Index" asp-route-id="@Model.Product.Id">Cancel</a>
+            </div>
+        </div>
+        
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
