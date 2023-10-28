@@ -31,9 +31,9 @@
                 @if (Model.Product.LocationType == "Bench")
                 {
                     <option selected>Bench</option>
-                    <option>Other</option>
                     <option>Restroom</option>
                     <option>Table</option>
+                    <option>Other</option>
                 }
                 @if (Model.Product.LocationType == "Other")
                 {
@@ -46,15 +46,15 @@
                 {
                     <option selected>Restroom</option>
                     <option>Bench</option>
-                    <option>Other</option>
                     <option>Table</option>
+                    <option>Other</option>
                 }
                 @if (Model.Product.LocationType == "Table")
                 {
                     <option selected>Table</option>
                     <option>Bench</option>
-                    <option>Other</option>
                     <option>Restroom</option>
+                    <option>Other</option>
                 }
             </select>
             <span class="text-danger" asp-validation-for="Product.LocationType"></span>
