@@ -1,11 +1,22 @@
+using System.Linq;
+
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ContosoCrafts.WebSite.Pages.Product;
+using ContosoCrafts.WebSite.Models;
+using ContosoCrafts.WebSite.Services;
+using Microsoft.AspNetCore.Mvc;
 
-public class Delete : PageModel
+namespace ContosoCrafts.WebSite.Pages.Product
+
 {
-    public void OnGet()
+    public class DeleteModel : PageModel
     {
+        public JsonFileProductService ProductService { get; }
         
+        public DeleteModel(JsonFileProductService productService)
+        {
+            ProductService = productService;
+        }
     }
+
 }
