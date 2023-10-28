@@ -21,14 +21,19 @@ namespace ContosoCrafts.WebSite.Services
 
         private string JsonFileName
         {
-            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); }
+            get
+            {
+                return Path.Combine(WebHostEnvironment.WebRootPath, "data",
+                    "products.json");
+            }
         }
 
         public IEnumerable<ProductModel> GetProducts()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<ProductModel[]>(jsonFileReader.ReadToEnd(),
+                return JsonSerializer.Deserialize<ProductModel[]>(
+                    jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
@@ -86,7 +91,8 @@ namespace ContosoCrafts.WebSite.Services
         public ProductModel UpdateData(ProductModel data)
         {
             var products = GetProducts();
-            var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
+            var productData =
+                products.FirstOrDefault(x => x.Id.Equals(data.Id));
 
             // Update the data to the new passed in values
             productData.Title = data.Title;
@@ -136,5 +142,28 @@ namespace ContosoCrafts.WebSite.Services
             return productModel;
         }
 
+        /// <summary>
+        /// Delete a product
+        /// </summary>
+        public ProductModel DeleteData(ProductModel productModel)
+        {
+            // Get the current set, and append the new record to it
+            var products = GetProducts();
+            var productData =
+                products.FirstOrDefault(x => x.Id.Equals(productModel.Id));
+            
+            // Exclude chosen ID from new list 
+            var newDataSet = 
+                GetProducts().Where(x => x.Id.Equals(productModel.Id) == false);
+            
+            // Save list without the product 
+            SaveData(newDataSet);
+           
+            return productData; 
+            
+        }
+
+
     }
+
 }
