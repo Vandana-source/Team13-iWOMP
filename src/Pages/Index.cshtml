@@ -1,71 +1,92 @@
 ﻿@page
 @using ContosoCrafts.WebSite.Components
 @model IndexModel
+
 @{
     ViewData["Title"] = "Home page";
 }
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Contoso Crafts</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Oi:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Grand+Hotel&family=Oi&family=Pacifico&family=Syncopate:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <main role="main" class="pb-3">
             <h1 class="h1-heading">Tired of the daily Grind?</h1>
             <p class="homepageformat">
-                <strong>Let's Take a Break</strong> from your worries and mellow out !!
+                <strong>Let's Take a Break</strong> from your worries and mellow out!!
                 <br />
-                Get ready to explore the nearest <em>benches</em> and <em>restrooms</em> present in and around Seattle.
+                Get ready to explore the nearest <em>benches</em>, <em>restrooms</em>, <em>tables</em>, and other nice spots
+                present in and around Seattle.
                 <br />
                 We've covered the most serene and creative <em>benches</em> along with their fun facts, so come branch
-                out and find your new favorite spot to unwind.<br /><br />
+                out and find your new favorite spot to unwind.
             </p>
             <div class="homepageformat">
                 <a asp-page="/Explore" class="btn btn-primary">Ready to Explore?</a>
             </div>
-            <br /><br />
-            <div class="card-columns col d-flex justify-content-center">
-                <div class="homecard">
-                    <div class="card-img card-img-bench"></div>
-                    <br />
-                    <a asp-page="/Explore" class="btn btn-primary">
-                        Explore Benches
-                    </a>
-                </div>
-                <div class="homecard">
-                    <div class="card-img card-img-restroom"></div>
-                    <br />
-                    <a asp-page="/Explore" class="btn btn-primary">
-                        Explore Restrooms
-                    </a>
-                </div>
-                <div class="homecard">
-                    <div class="card-img card-img-others"></div>
-                    <br />
-                    <a asp-page="/Explore" class="btn btn-primary">
-                        Explore Other Places
-                    </a>
-                </div>
-                <div class="homecard">
-                    <div class="card-img card-img-tables"></div>
-                    <br />
-                    <a asp-page="/Explore" class="btn btn-primary">
-                        Explore Tables
-                    </a>
+        </main>
+
+        <!-- Cards Section -->
+        <div class="row">
+            <!-- Each Card -->
+            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+                <div class="card homecard card-img-bench">
+                    <div class="homecard-content">
+                        <h2 class="homecard-title">Benches</h2>
+                        <button class="btn-homecard">Explore Benches</button>
+                    </div>
                 </div>
             </div>
-        </main>
+            
+            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+                <div class="card homecard card-img-restroom">
+                    <div class="homecard-content">
+                        <h2 class="homecard-title">Restrooms</h2>
+                        <button class="btn-homecard">Explore Restrooms</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+                <div class="card homecard card-img-tables">
+                    <div class="homecard-content">
+                        <h2 class="homecard-title">Tables</h2>
+                        <button class="btn-homecard">Explore Tables</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+                <div class="card homecard card-img-others">
+                    <div class="homecard-content">
+                        <h2 class="homecard-title">Other</h2>
+                        <button class="btn-homecard">Explore Other Places</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="_framework/blazor.server.js"></script>
 </body>
+
 </html>
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-<script src="_framework/blazor.server.js"></script>
