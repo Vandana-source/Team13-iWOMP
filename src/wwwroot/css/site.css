@@ -307,7 +307,9 @@ h1.h1-heading {
     0 16px 16px rgba(0,0,0,0.1);
     background-size: cover;
     background-position: center;
-    
+    border: .1rem solid #cbbace;
+    border-radius: .25rem;
+
 }
 
 .homecard:before {
