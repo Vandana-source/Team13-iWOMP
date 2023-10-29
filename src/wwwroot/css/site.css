@@ -6,6 +6,60 @@
     cursor: pointer;
 }
 
+/* bar for the homepage */
+.homepage-container{
+    position: relative; /* This sets the reference point for absolute positioning of child elements */
+    width: 100%; /* or any desired width */
+    height: auto; /* or any desired height */
+}
+
+.color-rectangle {
+    width: 500%;
+    height: 18vw;
+    margin-left: -100%;
+    margin-top: -2.2%;
+    background-color: #29392e;
+    position: relative;
+}
+
+.index-textcontainer {
+    display: flex;
+    justify-content: space-between; /* This will space out the two divs to the far ends of the container */
+    align-items: center; /* This will vertically center the texts if they are of different sizes */
+}
+
+
+.left-indextext {
+    font-family: 'Lato', sans-serif;
+    font-size: 4vw;
+    color: #cebac7;
+    margin-top: 3vw;
+    top: 1.5vw;
+    left: 0;
+    transform: none;
+    position: absolute;
+    z-index: 2;
+    right: 49%;
+}
+
+.right-indextext {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3vw;
+    color: #cec1ba;
+    margin-top: 3vw;
+    top: 0;
+    left: 52%; /* Moving the text box to the right side, starting from the center. Adjust as needed. */
+    position: absolute;
+    z-index: 2;
+    text-align: justify-all; /* Making the text justified */
+    width: 50%; /* Setting a width for the text box so the text can be justified within. Adjust as needed. */
+    transform: none;
+}
+
+.left-text, .right-indextext {
+    flex: 1; 
+}
+
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 .card-columns .card:hover .card-img {
@@ -229,7 +283,7 @@ h1.h1-heading {
     font-family: 'Pacifico', cursive;
     height: 50px; /* Adjust this value to fit your design needs */
     bottom: 10px;
-    text-shadow: 2px 2px 2px #101713;
+    text-shadow: 2px 2px 2px #395041;
 }
 
 
@@ -253,6 +307,7 @@ h1.h1-heading {
     0 16px 16px rgba(0,0,0,0.1);
     background-size: cover;
     background-position: center;
+    
 }
 
 .homecard:before {
@@ -266,6 +321,15 @@ h1.h1-heading {
     background-position: 0 0;
     transition: transform calc(var(--d) * 1.5) var(--e);
     pointer-events: none;
+    background-image: linear-gradient(to bottom,
+    rgba(16,23,18, 0) 0%,
+    rgba(16,23,18, 0.01) 30%,
+    rgba(16,23,18, 0.02) 50%,
+    rgba(16,23,18, 0.05) 60%,
+    rgba(16,23,18, 0.1) 70%,
+    rgba(16,23,18, 0.2) 80%,
+    rgba(16,23,18, 0.6) 90%,
+    rgba(16,23,18, 1) 100%);
 }
 .homecard:after {
     content: "";
@@ -277,22 +341,15 @@ h1.h1-heading {
     height: 200%;
     pointer-events: none;
     background-image: linear-gradient(to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.0045) 11.7%,
-    rgba(0, 0, 0, 0.017) 22.1%,
-    rgba(0, 0, 0, 0.036) 31.2%,
-    rgba(0, 0, 0, 0.0615) 39.4%,
-    rgba(0, 0, 0, 0.091) 46.6%,
-    rgba(0, 0, 0, 0.1245) 53.1%,
-    rgba(0, 0, 0, 0.16) 58.9%,
-    rgba(0, 0, 0, 0.197) 64.3%,
-    rgba(0, 0, 0, 0.234) 69.3%,
-    rgba(0, 0, 0, 0.27) 74.1%,
-    rgba(0, 0, 0, 0.3035) 78.8%,
-    rgba(0, 0, 0, 0.334) 83.6%,
-    rgba(0, 0, 0, 0.25) 88.7%,
-    rgba(0, 0, 0, 0.15) 94.1%,
-    rgba(0, 0, 0, 0.05) 100%);
+    rgba(16,23,18, 0.6) 0%,
+    rgba(16,23,18, 0.4) 10%,
+    rgba(16,23,18, 0.2) 30%,
+    rgba(16,23,18, 0.1) 50%,
+    rgba(16,23,18, 0.05) 60%,
+    rgba(16,23,18, 0.1) 70%,
+    rgba(16,23,18, 0.2) 80%,
+    rgba(16,23,18, 0.6) 90%,
+    rgba(16,23,18, 1) 100%);
 
     transform: translateY(-50%);
     transition: transform calc(var(--d) * 2) var(--e);
@@ -350,7 +407,7 @@ h1.h1-heading {
     flex-direction: column;
     width: 110%;
     padding: 1rem;
-    bottom: -90%; /* Initially, it's pushed outside the card. */
+    bottom: -80%; /* Initially, it's pushed outside the card. */
     left: 10%;
     transform: translateX(-10%); /* This centers the content. */
     transition: bottom 0.3s ease; /* Smooth transition */
@@ -379,9 +436,9 @@ h1.h1-heading {
     pointer-events: auto;
 }
 
-
 .card-img-bench {
-    background-image: url('/bench1.jpeg');
+    background-image:
+            url('/bench1.jpeg');
 }
 
 .card-img-restroom {
@@ -532,6 +589,8 @@ h1.h1-heading {
 
 }
 
+/*CSS for iframe component*/
+
 iframe {
     border: 0;
     width: 100%;
@@ -607,6 +666,7 @@ td {
 /* Hover effect for columns */
 td:hover::before {
     position: absolute;
+    opacity: 0.8;
     background-color: #f3f3f3;
     color: #fff;
     padding: 5px;
