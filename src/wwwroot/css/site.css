@@ -642,6 +642,21 @@ h1.update-page-title {
 }
 
 
+/* CSS for the Explore page map */
+.map-toggler {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.map-toggler i {
+    transition: transform 0.3s; /* Adds a smooth transition to the rotation */
+}
+
+.map-toggler:hover i {
+    transform: rotate(180deg); /* Makes the icon spin when hovered */
+}
+
+
 
 
 
