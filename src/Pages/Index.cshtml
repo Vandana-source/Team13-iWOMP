@@ -7,7 +7,7 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8" />
@@ -21,72 +21,83 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Oi:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Grand+Hotel&family=Oi&family=Pacifico&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <main role="main" class="pb-3">
-            <h1 class="h1-heading">Tired of the daily Grind?</h1>
-            <p class="homepageformat">
-                <strong>Let's Take a Break</strong> from your worries and mellow out!!
-                <br />
-                Get ready to explore the nearest <em>benches</em>, <em>restrooms</em>, <em>tables</em>, and other nice spots
-                present in and around Seattle.
-                <br />
-                We've covered the most serene and creative <em>benches</em> along with their fun facts, so come branch
-                out and find your new favorite spot to unwind.
-            </p>
-            <div class="homepageformat">
-                <a asp-page="/Explore" class="btn btn-primary">Ready to Explore?</a>
-            </div>
-        </main>
 
-        <!-- Cards Section -->
-        <div class="row">
-            <!-- Each Card -->
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card homecard card-img-bench">
-                    <div class="homecard-content">
-                        <h2 class="homecard-title">Benches</h2>
-                        <button class="btn-homecard">Explore Benches</button>
-                    </div>
+<div class="homepage-container">
+
+    <div class="color-rectangle"></div> <!-- This is the background rectangle -->
+
+    <!-- These texts will overlay the rectangle -->
+    <div class="left-indextext">Tired of the daily grind?</div>
+    <div class="right-indextext"><strong>Let's Take A break</strong>from your worries and mellow out!!
+    <br/>
+                Get ready to explore the nearest <em>benches</em>, <em>restrooms</em>, <em>tables</em>,
+    <br/>       and other nice spots present in and around Seattle.
+    <br/>
+    <br/>       We've covered the most serene and creative <em>places</em> along with
+    <br/>       their fun facts, so come branch
+                out and find your new favorite 
+    <br/>       spot to unwind.
+    </div>
+</div>
+<div class="container">
+    <main role="main" class="pb-3"> 
+        <p class="homepageformat">
+        </p>
+        <div class="homepageformat py-3">
+            <a asp-page="/Explore" class="btn btn-primary">Ready to Explore?</a>
+        </div>
+    </main>
+
+    <!-- Cards Section -->
+    <div class="row">
+        <!-- Each Card -->
+        <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div class="card homecard card-img-bench">
+                <div class="homecard-content">
+                    <h2 class="homecard-title">Benches</h2>
+                    <button class="btn-homecard">Explore Benches</button>
                 </div>
             </div>
-            
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card homecard card-img-restroom">
-                    <div class="homecard-content">
-                        <h2 class="homecard-title">Restrooms</h2>
-                        <button class="btn-homecard">Explore Restrooms</button>
-                    </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div class="card homecard card-img-restroom">
+                <div class="homecard-content">
+                    <h2 class="homecard-title">Restrooms</h2>
+                    <button class="btn-homecard">Explore Restrooms</button>
                 </div>
             </div>
-            
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card homecard card-img-tables">
-                    <div class="homecard-content">
-                        <h2 class="homecard-title">Tables</h2>
-                        <button class="btn-homecard">Explore Tables</button>
-                    </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div class="card homecard card-img-tables">
+                <div class="homecard-content">
+                    <h2 class="homecard-title">Tables</h2>
+                    <button class="btn-homecard">Explore Tables</button>
                 </div>
             </div>
-            
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card homecard card-img-others">
-                    <div class="homecard-content">
-                        <h2 class="homecard-title">Other</h2>
-                        <button class="btn-homecard">Explore Other Places</button>
-                    </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div class="card homecard card-img-others">
+                <div class="homecard-content">
+                    <h2 class="homecard-title">Other</h2>
+                    <button class="btn-homecard">Explore Other Places</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Scripts -->
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="_framework/blazor.server.js"></script>
+<!-- Scripts -->
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="_framework/blazor.server.js"></script>
 </body>
 
 </html>
