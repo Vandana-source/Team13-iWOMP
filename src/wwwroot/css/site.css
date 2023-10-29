@@ -27,7 +27,7 @@ for details on configuring this project to bundle and minify static web assets. 
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
     opacity: .8;
-    margin-top: 20px; /* Add some spacing to the top */
+   
 }
 
 .modal .card-img {
@@ -90,6 +90,29 @@ a {
     background-color: crimson;
     border-color: #bacec1;
 }
+
+
+.btn-homecard {
+    cursor: pointer;
+    margin-top: 5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.6rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: #ceb9c6;
+    border: none;
+}
+
+.btn-homecard:hover {
+    background-color: #ceb9c6;
+}
+.btn-homecard:focus {
+    outline: 1px dashed #cecbb9;
+    outline-offset: 3px;
+}
+
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
@@ -179,6 +202,8 @@ ul {
     max-height: 75px;
 }
 
+
+
 /*CSS form body h1*/
 h1.h1-heading {
     text-align: center;
@@ -190,24 +215,176 @@ h1.h1-heading {
     text-align: center;
 }
 
-/* CSS for the homecard */
-.homecard {
-    display: flex;
-    flex-direction: column; /* Arrange elements in a column */
-    justify-content: space-between; /* Add space between elements */
+.homecard:hover,
+.homecard:focus-within {
     align-items: center;
-    height: 350px; /* Adjust the height as needed */
-    background-color: #f0f0f0;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
 }
 
+
+
+.homecard-title {
+    font-size: 2rem;
+    line-height: 1.5;
+    font-weight: bold; 
+    font-family: 'Pacifico', cursive;
+    height: 50px; /* Adjust this value to fit your design needs */
+    bottom: 10px;
+    text-shadow: 2px 2px 2px #101713;
+}
+
+/* CSS for the homecard */
+.homecard {
+    margin: 0.3rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 2rem;
+    width: 20vw;
+    height: 25vw;
+    text-align: center;
+    color: whitesmoke;
+    background-color: whitesmoke;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1),
+    0 2px 2px rgba(0,0,0,0.1),
+    0 4px 4px rgba(0,0,0,0.1),
+    0 8px 8px rgba(0,0,0,0.1),
+    0 16px 16px rgba(0,0,0,0.1);
+    background-size: cover;
+    background-position: center;
+}
+
+.homecard:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-size: cover;
+    background-position: 0 0;
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
+}
+.homecard:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.0045) 11.7%,
+    rgba(0, 0, 0, 0.017) 22.1%,
+    rgba(0, 0, 0, 0.036) 31.2%,
+    rgba(0, 0, 0, 0.0615) 39.4%,
+    rgba(0, 0, 0, 0.091) 46.6%,
+    rgba(0, 0, 0, 0.1245) 53.1%,
+    rgba(0, 0, 0, 0.16) 58.9%,
+    rgba(0, 0, 0, 0.197) 64.3%,
+    rgba(0, 0, 0, 0.234) 69.3%,
+    rgba(0, 0, 0, 0.27) 74.1%,
+    rgba(0, 0, 0, 0.3035) 78.8%,
+    rgba(0, 0, 0, 0.334) 83.6%,
+    rgba(0, 0, 0, 0.25) 88.7%,
+    rgba(0, 0, 0, 0.15) 94.1%,
+    rgba(0, 0, 0, 0.05) 100%);
+
+    transform: translateY(-50%);
+    transition: transform calc(var(--d) * 2) var(--e);
+}
+
+.homecard:hover:before,
+.homecard:focus-within:before {
+    transform: translateY(-4%);
+}
+.homecard:hover:after,
+.homecard:focus-within:after {
+    transform: translateY(-50%);
+}
+.homecard:hover .content,
+.homecard:focus-within .content {
+    transform: translateY(0);
+}
+.homecard:hover .content > *:not(.title),
+.homecard:focus-within .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+}
+
+.homecard:focus-within:before, .homecard:focus-within:after,
+.homecard:focus-within .content,
+.homecard:focus-within .content > *:not(.title) {
+    transition-duration: 0s;
+}
+
+@media (max-width: 599px) {
+    .homecard {
+        width: 80vw;
+        height: 80vw;  /* Match width for 1:1 aspect ratio */
+    }
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+    .homecard {
+        width: 50vw;
+        height: 50vw;  /* Match width for 1:1 aspect ratio */
+    }
+}
+
+:root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --font-serif: "Cardo", serif;
+}
+
+
+.homecard-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 110%;
+    padding: 1rem;
+    bottom: -90%; /* Initially, it's pushed outside the card. */
+    left: 10%;
+    transform: translateX(-10%); /* This centers the content. */
+    transition: bottom 0.3s ease; /* Smooth transition */
+    z-index: 1;
+}
+
+.homecard-content > * + * {
+    margin-top: 6rem;
+}
+
+/* On hover, slide the content up */
+.homecard:hover .homecard-content {
+    bottom: 10px; /* Adjust according to how much you want to slide it up */
+}
+
+
+/* This ensures the hover effect is applied only to the card and not its children */
+.homecard * {
+    pointer-events: none;
+}
+.homecard {
+    pointer-events: auto;
+}
+
+.homecard .btn-homecard {
+    pointer-events: auto;
+}
+
+
 .card-img-bench {
-    background-image: url('/Bench.png');
+    background-image: url('/bench1.jpeg');
 }
 
 .card-img-restroom {
-    background-image: url('/Restrooms.png');
+    background-image: url('/Restroom1.jpg');
 }
 
 .card-img-others {
@@ -215,8 +392,30 @@ h1.h1-heading {
 }
 
 .card-img-tables {
-    background-image: url('/Table.png');
+    background-image: url('/Table2.jpeg');
 }
+
+
+.homecard:hover .text-overlay {
+    transform: translateY(0); /* Slight zoom on hover */
+}
+
+
+.homecard .card-img-top {
+    height: 40vw; /* This will set the height relative to the viewport width */
+    object-fit: cover;  /* This will keep the image proportions while covering the space */
+}
+
+.card-body {
+    opacity: 0;  /* Hide it initially */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.homecard:hover .card-body {
+    opacity: 1;  /* Show it on hover */
+}
+
+
 
 /* Hover effect for the homecard */
 .homecard:hover {
@@ -440,3 +639,10 @@ h1.update-page-title {
     font-size: 2.5em;
     font-weight: bold;
 }
+
+
+
+
+
+
+
