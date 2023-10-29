@@ -3,6 +3,9 @@
 @using Microsoft.AspNetCore.Components.Web
 @inject JsonFileProductService ProductService
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
 <div class="card-columns">
     @foreach (var product in ProductService.GetProducts())
     {
@@ -45,6 +48,17 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">@selectedProduct.Description</p>
+                            <!-- Button to toggle the map -->
+                                        <div class="d-flex align-items-center justify-content-between map-toggler" data-toggle="collapse" data-target="#mapCollapse" aria-expanded="false" aria-controls="mapCollapse">
+                                            <span>Show Map</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                            <i class="fas fa-chevron-up d-none"></i> <!-- Initially hidden -->
+                                        </div>
+                            
+                                        <!-- The Map wrapped inside a collapsible div -->
+                                        <div class="collapse" id="mapCollapse">
+                                            <iframe src="@selectedProduct.MapURL" allowfullscreen></iframe>
+                                        </div>
                         </div>
                     </div>
                 </div>
