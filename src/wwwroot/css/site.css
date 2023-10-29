@@ -232,6 +232,7 @@ h1.h1-heading {
     text-shadow: 2px 2px 2px #101713;
 }
 
+
 /* CSS for the homecard */
 .homecard {
     margin: 0.3rem;
@@ -406,7 +407,7 @@ h1.h1-heading {
     object-fit: cover;  /* This will keep the image proportions while covering the space */
 }
 
-.card-body {
+.homecard-body {
     opacity: 0;  /* Hide it initially */
     transition: opacity 0.3s ease; /* Smooth transition */
 }
