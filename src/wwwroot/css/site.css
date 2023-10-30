@@ -13,6 +13,7 @@
     height: auto; /* or any desired height */
 }
 
+
 .color-rectangle {
     width: 500%;
     height: 18vw;
@@ -26,16 +27,18 @@
     display: flex;
     justify-content: space-between; /* This will space out the two divs to the far ends of the container */
     align-items: center; /* This will vertically center the texts if they are of different sizes */
+    margin-bottom: 2vw; 
 }
 
 
 .left-indextext {
     font-family: 'Lato', sans-serif;
-    font-size: 4vw;
+    font-size: 4.3vw;
     color: #cebac7;
-    margin-top: 3vw;
-    top: 1.5vw;
+    margin-top: 1.1vw;
+    top: 1vw;
     left: 0;
+    text-align: left;
     transform: none;
     position: absolute;
     z-index: 2;
@@ -46,9 +49,9 @@
     font-family: 'Lato', sans-serif;
     font-size: 1.3vw;
     color: #cec1ba;
-    margin-top: 3vw;
+    margin-top: 2.6vw;
     top: 0;
-    left: 52%; /* Moving the text box to the right side, starting from the center. Adjust as needed. */
+    left: 60%; /* Moving the text box to the right side, starting from the center. Adjust as needed. */
     position: absolute;
     z-index: 2;
     text-align: justify-all; /* Making the text justified */
