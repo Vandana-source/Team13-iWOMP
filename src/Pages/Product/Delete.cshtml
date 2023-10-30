@@ -22,60 +22,31 @@
 
         <div class="form-group">
             <label asp-for="Product.Title" class="control-label"></label>
-            <input asp-for="Product.Title" class="form-control" />
+            <input asp-for="Product.Title" class="form-control" readonly/>
             <span asp-validation-for="Product.Title" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label class="control-label" asp-for="Product.LocationType"></label>
-            <select class="form-control" asp-for="Product.LocationType">
-                @if (Model.Product.LocationType == "Bench")
-                {
-                    <option selected>Bench</option>
-                    <option>Other</option>
-                    <option>Restroom</option>
-                    <option>Table</option>
-                }
-                @if (Model.Product.LocationType == "Other")
-                {
-                    <option selected>Other</option>
-                    <option>Bench</option>
-                    <option>Restroom</option>
-                    <option>Table</option>
-                }
-                @if (Model.Product.LocationType == "Restroom")
-                {
-                    <option selected>Restroom</option>
-                    <option>Bench</option>
-                    <option>Other</option>
-                    <option>Table</option>
-                }
-                @if (Model.Product.LocationType == "Table")
-                {
-                    <option selected>Table</option>
-                    <option>Bench</option>
-                    <option>Other</option>
-                    <option>Restroom</option>
-                }
-            </select>
-            <span class="text-danger" asp-validation-for="Product.LocationType"></span>
+            <label asp-for="Product.LocationType" class="control-label"></label>
+            <input asp-for="Product.LocationType" class="form-control" readonly />
+            <span asp-validation-for="Product.LocationType" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="Product.Neighborhood" class="control-label"></label>
-            <input asp-for="Product.Neighborhood" class="form-control" />
+            <input asp-for="Product.Neighborhood" class="form-control" readonly/>
             <span asp-validation-for="Product.Neighborhood" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label class="control-label" asp-for="Product.Description"></label>
-            <input class="form-control" asp-for="Product.Description">
+            <input class="form-control" asp-for="Product.Description" readonly>
             <span class="text-danger" asp-validation-for="Product.Description"></span>
         </div>
 
         <div class="form-group">
             <label class="control-label" asp-for="Product.MapURL"></label>
-            <input class="form-control" asp-for="Product.MapURL">
+            <input class="form-control" asp-for="Product.MapURL" readonly>
             <span class="text-danger" asp-validation-for="Product.MapURL"></span>
         </div>
         <br/>
@@ -87,7 +58,7 @@
             </div>
             &nbsp; &nbsp
             <div class="form-group">
-                <a class="btn btn-danger" asp-page="Index" asp-route-id="@Model.Product.Id">Cancel</a>
+                <a class="btn btn-danger" asp-page="Index">Cancel</a>
             </div>
         </div>
         
