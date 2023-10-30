@@ -8,13 +8,19 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Pages
 {
+    /// <summary>
+    /// Represents the code-behind for the ContactUs Razor Page.
+    /// </summary>
     public class ExploreModel : PageModel
     {
+        // Declare a private field to hold a logger instance
         private readonly ILogger<ExploreModel> _logger;
 
+        // Constructor for ExploreModel, takes a logger as a dependency
         public ExploreModel(ILogger<ExploreModel> logger,
             JsonFileProductService productService)
         {
+            // Initiate the logger field with the injected logger
             _logger = logger;
             ProductService = productService;
         }
@@ -24,6 +30,7 @@ namespace ContosoCrafts.WebSite.Pages
 
         public void OnGet()
         {
+            // This method fetches all the data from the JsonFileProductService.cs
             Products = ProductService.GetProducts();
         }
     }
