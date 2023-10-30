@@ -26,7 +26,17 @@ namespace ContosoCrafts.WebSite.Pages.Product
             Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
         }
 
-        
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            ProductService.DeleteData(Product);
+
+            
+        }
     }
 
 }
