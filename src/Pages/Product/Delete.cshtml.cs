@@ -17,6 +17,16 @@ namespace ContosoCrafts.WebSite.Pages.Product
         {
             ProductService = productService;
         }
+
+        [BindProperty]
+        public ProductModel Product { get; set; }
+
+        public void OnGet(string id)
+        {
+            Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+        }
+
+        
     }
 
 }
