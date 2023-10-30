@@ -19,6 +19,9 @@ using ContosoCrafts.WebSite.Models;
 
 namespace UnitTests.Pages.Product.Update
 {
+    /// <summary>
+    /// Unit testing for Update page
+    /// </summary>
     public class UpdateTests
     {
         #region TestSetup
@@ -33,6 +36,10 @@ namespace UnitTests.Pages.Product.Update
         public static PageContext pageContext;
 
         public static UpdateModel pageModel;
+
+        /// <summary>
+        /// Set up test intialize
+        /// </summary>
 
         [SetUp]
         public void TestInitialize()
@@ -72,6 +79,9 @@ namespace UnitTests.Pages.Product.Update
 
         #endregion TestSetup
 
+        /// <summary>
+        /// Tests OnGet with a valid product, should return valid product data
+        /// </summary>
         #region OnGet
         [Test]
         public void OnGet_Valid_Should_Return_Products()
@@ -86,6 +96,9 @@ namespace UnitTests.Pages.Product.Update
             Assert.AreEqual("Seattle University Green", pageModel.Product.Title);
         }
 
+        /// <summary>
+        /// Tests OnGet with a Invalid product, should return null
+        /// </summary>
         [Test]
         public void OnGet_InValid_Should_Not_Return_Products()
         {
@@ -100,6 +113,10 @@ namespace UnitTests.Pages.Product.Update
 
         #endregion OnGet
 
+
+        /// <summary>
+        /// Tests OnPost with a Valid product, it redirects to the "Index Page"
+        /// </summary>
         #region OnPost
         [Test]
         public void OnPost_Valid_Should_Return_Products()
@@ -115,6 +132,8 @@ namespace UnitTests.Pages.Product.Update
             Assert.AreEqual(true, result.PageName.Contains("Index"));
         }
 
+        /// <summary>
+        /// Tests OnPost with a Invalid product,return invalid page
         [Test]
         public void OnPost_InValid_Model_Not_Valid_Return_Page()
         {
