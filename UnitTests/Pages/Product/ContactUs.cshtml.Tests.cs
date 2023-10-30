@@ -19,11 +19,11 @@ using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Pages.ContactUs
 {
+    // <summary>
+    /// Unit testing for ContactUs page
+    /// </summary>
 	public class ContactUs
 	{
-        //public ContactUs()
-        //{
-        //}
         #region TestSetup
         public static IUrlHelperFactory urlHelperFactory;
         public static DefaultHttpContext httpContextDefault;
@@ -37,6 +37,9 @@ namespace UnitTests.Pages.ContactUs
 
         public static ContactUsModel pageModel;
 
+        /// <summary>
+        /// Set up test intialize
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -80,6 +83,9 @@ namespace UnitTests.Pages.ContactUs
 
         #endregion TestSetup
 
+        /// <summary>
+        /// Tests OnGet with a valid product, should return valid product data
+        /// </summary>
         #region OnGet
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
