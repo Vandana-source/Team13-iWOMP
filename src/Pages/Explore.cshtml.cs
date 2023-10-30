@@ -9,7 +9,7 @@ using ContosoCrafts.WebSite.Services;
 namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
-    /// Represents the code-behind for the ContactUs Razor Page.
+    /// Represents the code-behind for the Explore Razor Page.
     /// </summary>
     public class ExploreModel : PageModel
     {
