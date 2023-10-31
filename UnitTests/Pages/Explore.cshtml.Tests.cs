@@ -91,7 +91,7 @@ namespace UnitTests.Pages.Explore
             // Arrange
 
             // Act
-            pageModel.OnGet();
+            pageModel.OnGet("All");
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
