@@ -1,10 +1,12 @@
 using System.Linq;
-
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using ContosoCrafts.WebSite.Services;
+using ContosoCrafts.WebSite.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
+using System;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
@@ -14,26 +16,19 @@ namespace ContosoCrafts.WebSite.Pages.Product
     /// </summary>
     public class UpdateModel : PageModel
     {
-        // Data middletier
-        // Service to handle product data operations
         public JsonFileProductService ProductService { get; }
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        /// <summary>
-        /// Defualt Construtor
-        /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="productService"></param>
-        public UpdateModel(JsonFileProductService productService)
+        [BindProperty] public ProductModel Product { get; set; }
+
+        [BindProperty] public IFormFile UploadedFile { get; set; }
+
+        public UpdateModel(JsonFileProductService productService,
+            IWebHostEnvironment hostingEnvironment)
         {
             ProductService = productService;
+            _hostingEnvironment = hostingEnvironment;
         }
-
-        //// <summary>
-        /// Constructor that initializes the UpdateModel with the required services.
-        /// </summary>
-        [BindProperty]
-        public ProductModel Product { get; set; }
-
 
         /// <summary>
         /// Method executed on GET request to the Update page.
@@ -42,7 +37,8 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// </summary>
         public void OnGet(string id)
         {
-            Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+            Product = ProductService.GetProducts()
+                .FirstOrDefault(m => m.Id.Equals(id));
         }
 
         /// <summary>
@@ -51,14 +47,78 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// </summary>
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return Page();
             }
+            // To get the old filepath before replacing for later deletion 
+            var existingProduct = ProductService.GetProducts()
+                .FirstOrDefault(m => m.Id.Equals(Product.Id));
 
+            // Capture the old image path right after fetching the product
+            string oldImagePath = Product?.Image;
+
+            // If the uploaded file works: save 
+            if (UploadedFile != null && UploadedFile.Length > 0)
+            {
+                // Define the directory based on LocationType
+                string subDirectory = Product.LocationType switch
+                {
+                    "Table" => "Tables",
+                    "Bench" => "Benches",
+                    "Restroom" => "Restrooms",
+                    _ => "Others"
+                };
+
+                // Builds the correct file path based on LocationType
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" +
+                                        UploadedFile.FileName;
+                string savePath = Path.Combine(_hostingEnvironment.WebRootPath,
+                    "SiteImages", subDirectory, uniqueFileName);
+
+                // Creates a directory if none exists 
+                Directory.CreateDirectory(Path.GetDirectoryName(savePath));
+
+                // Try to delete the old image using the captured path
+                if (!string.IsNullOrEmpty(oldImagePath))
+                {
+                    string fullPath = Path.Combine(
+                        _hostingEnvironment.WebRootPath,
+                        oldImagePath.TrimStart('/'));
+                    FileInfo fileInfo = new FileInfo(fullPath);
+                    if (fileInfo.Exists)
+                    {
+                        try
+                        {
+                            // Delete the file 
+                            fileInfo.Delete();
+                        }
+                        catch (Exception ex)
+                        {
+                            // Otherwise: error
+                            Console.WriteLine(
+                                $"Error deleting file: {ex.Message}");
+                        }
+                    }
+                }
+
+                // Creates a new filepath and saves it to the file 
+                using var fileStream =
+                    new FileStream(savePath, FileMode.Create);
+                UploadedFile.CopyTo(fileStream);
+
+                Product.Image = Path.Combine("/SiteImages", subDirectory,
+                    uniqueFileName);
+                ProductService.UpdateData(Product);
+
+                // Returns to the index page 
+                return RedirectToPage("./Index");
+            }
+
+            // Saves the updated data & return to index 
             ProductService.UpdateData(Product);
-
             return RedirectToPage("./Index");
         }
     }
 }
+
