@@ -18,8 +18,14 @@ using ContosoCrafts.WebSite.Models;
 
 namespace UnitTests.Pages.Product.Delete
 {
-	public class Delete
+    /// <summary>
+    /// Class containing unit test cases for delete page
+    /// </summary>
+	public class DeleteTests
 	{
+        /// <summary>
+        /// Creating instance to the model
+        /// </summary>
         #region TestSetup
         public static IUrlHelperFactory urlHelperFactory;
         public static DefaultHttpContext httpContextDefault;
@@ -75,54 +81,102 @@ namespace UnitTests.Pages.Product.Delete
 
         #endregion TestSetup
 
-        #region DeleteData
+        #region OnGet
+
+        /// <summary>
+        /// Testing OnGet valid should return all products
+        /// </summary>
         [Test]
-        public void DeleteData_Valid_Delete_Product_Should_Return_True()
+        public void OnGet_Valid_Should_Return_Products()
         {
-            // Arrange
-            var product = new ProductModel
-            {
-                Id = "Aquarium",
-                Title = "Seattle Aquariu",
-                LocationType = "Other",
-                Neighborhood = "Downtown",
-                Description = "Meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
-                MapURL= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.9634603446284!2d-122.34553072360696!3d47.60740017118983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aad8804fa43%3A0x6b99e65de2d47683!2sSeattle%20Aquarium!5e0!3m2!1sen!2sus!4v1697526521423!5m2!1sen!2sus"
-            };
+            //Arrange
 
             //Act
-                var result = TestHelper.ProductService.DeleteData(product);
+            pageModel.OnGet("Aquarium");
 
-            //Assert 
-                Assert.AreEqual(true, result);
+            //Asset
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual("Seattle Aquarium", pageModel.Product.Title);
         }
 
 
 
-       [Test]
-       public void DeleteData_Invalid_Delete_Product_Should_Return_False()
-       {
-            // Arrange
-            var product = new ProductModel
+        /// <summary>
+        /// Testing OnGet for invalid should return false
+        /// </summary>
+        [Test]
+        public void OnGet_Invalid_Should_Return_False()
+        {
+            //Arrange
+
+            //Act
+            pageModel.OnGet("Test");
+
+            //Asset
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+        }
+
+        #endregion OnGet
+
+        #region OnPost
+
+        /// <summary>
+        /// Testing OnPost invalid model and not valid return to page
+        /// </summary>
+        [Test]
+        public void OnPost_InValid_Model_NotValid_Return_Page()
+        {
+            //Arrange
+
+            //Act
+            pageModel.ModelState.AddModelError("-light", "");
+            var result = pageModel.OnPost() as ActionResult;
+
+            //Assert
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+        }
+
+        /// <summary>
+        /// Testing OnPost for valid model return changed page
+        /// </summary>
+        [Test]
+        public void OnPost_Valid_Model_Return_Changed_Page()
+        {
+            //Arrange
+
+            //Act
+            pageModel.ModelState.AddModelError(" ", " ");
+            var result = pageModel.OnPost() as ActionResult;
+
+            //Assert
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+        }
+
+        /// <summary>
+        /// Testing OnPost for valid should return true
+        /// </summary>
+        [Test]
+        public void OnPost_Valid_Should_Return_True()
+        {
+            //Arrange
+            pageModel.Product = new ProductModel
             {
-                Id = "testId",
-                Title = "Title",
-                LocationType = "Location",
-                Neighborhood = "Neighborhood",
-                Description = "Description",
-                MapURL = "Map",
+                Title = "test",
+                Image = "test",
+                Description = "test",
             };
 
-            // Act
-            var result = TestHelper.ProductService.DeleteData(product);
+            //Act
+            var result = pageModel.OnPost() as RedirectToPageResult;
 
-            // Assert
-            Assert.AreEqual(false, result);
+            //Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(true, result.PageName.Contains("Index"));
+        }
+
+        #endregion OnPost
+
     }
-
-        #endregion DeleteData
-
-	}
 }
 
 
