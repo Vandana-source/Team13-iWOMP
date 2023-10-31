@@ -51,6 +51,9 @@ namespace ContosoCrafts.WebSite.Models
 
         // Date and time when the product information was last updated.
         public DateTime LastUpdated { get; set; }
+        
+        // An integer level representing the noise level 
+        public int NoiseLevel { get; set; }
 
         // Overrides the ToString method to serialize the object to JSON.
         public override string ToString() => JsonSerializer.Serialize<ProductModel>(this);
