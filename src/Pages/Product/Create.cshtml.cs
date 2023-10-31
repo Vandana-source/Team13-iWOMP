@@ -74,7 +74,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
                     new FileStream(savePath, FileMode.Create);
                 UploadedFile
                     .CopyTo(
-                        fileStream); // Note: Using the synchronous method here
+                        fileStream); 
 
                 // Update the Product.Image property with the relative path to the saved file
                 Product.Image = Path.Combine("/SiteImages", subDirectory, uniqueFileName);
@@ -83,7 +83,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
                 ProductService.CreateData(Product);
 
                 // Redirect to a success or product listing page after saving
-                return RedirectToPage("Index"); // Assuming you have an Index page for listing products
+                return RedirectToPage("Index"); 
             }
 
             // Stay on the same page if no file was uploaded or there was an issue
