@@ -161,6 +161,5 @@ namespace UnitTests.Pages.Product.AddRating
         }
 
         #endregion UpdateData
-
     }
 }
