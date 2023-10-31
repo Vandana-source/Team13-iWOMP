@@ -7,11 +7,12 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+    
     /// <summary>
     /// Get the root path for ProductsController file
     /// </summary>
+    [ApiController]
+    [Route("[controller]")]
     public class ProductsController : ControllerBase
     {
 
@@ -27,20 +28,22 @@ namespace ContosoCrafts.WebSite.Controllers
         // Getter for ProductService
         public JsonFileProductService ProductService { get; }
 
-        [HttpGet]
+        
         /// <summary>
         /// GetProducts method is used to get the list of all the products, it parses the JSON file and converts into products model list
         /// </summary>
         /// <returns>List of Product Model</returns>
+        [HttpGet]
         public IEnumerable<ProductModel> Get()
         {
             return ProductService.GetProducts();
         }
 
-        [HttpPatch]
+        
         /// <summary>
         /// Add rating to specific product selected
         /// </summary>
+        [HttpPatch]
         public ActionResult Patch([FromBody] RatingRequest request)
         {
             // Adding rating
