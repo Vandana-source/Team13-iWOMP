@@ -19,6 +19,9 @@ using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Pages.Privacy
 {
+    // <summary>
+    /// Unit testing for Privacy page
+    /// </summary>
     public class PrivacyTests
     {
         #region TestSetup
@@ -34,6 +37,9 @@ namespace UnitTests.Pages.Privacy
 
         public static PrivacyModel pageModel;
 
+        /// <summary>
+        /// Set up test intialize
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -77,6 +83,9 @@ namespace UnitTests.Pages.Privacy
 
         #endregion TestSetup
 
+        /// <summary>
+        /// Tests OnGet with a valid product, should return valid product data
+        /// </summary>
         #region OnGet
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
