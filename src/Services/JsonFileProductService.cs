@@ -91,8 +91,7 @@ namespace ContosoCrafts.WebSite.Services
         public ProductModel UpdateData(ProductModel data)
         {
             var products = GetProducts();
-            var productData =
-                products.FirstOrDefault(x => x.Id.Equals(data.Id));
+            var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
 
             // Update the data to the new passed in values
             productData.Title = data.Title;
@@ -100,6 +99,8 @@ namespace ContosoCrafts.WebSite.Services
             productData.Neighborhood = data.Neighborhood;
             productData.Description = data.Description;
             productData.MapURL = data.MapURL;
+            productData.Image = data.Image;
+            productData.NoiseLevel = data.NoiseLevel;
 
             SaveData(products);
 
