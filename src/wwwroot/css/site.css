@@ -42,7 +42,7 @@
     transform: none;
     position: absolute;
     z-index: 2;
-    right: 55%;
+    right: auto;
 }
 
 .right-indextext {
