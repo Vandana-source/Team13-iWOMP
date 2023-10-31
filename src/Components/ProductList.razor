@@ -94,7 +94,14 @@
 @code
 {
 
-    
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (selectedProduct == null)
+        {
+            selectedProduct = ProductService.GetProducts().First();
+        }
+    }
 
     [Parameter]
     public IEnumerable<ProductModel> Products { get; set; }
