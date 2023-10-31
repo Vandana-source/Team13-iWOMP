@@ -22,8 +22,8 @@ namespace UnitTests.Pages.ContactUs
     // <summary>
     /// Unit testing for ContactUs page
     /// </summary>
-	public class ContactUs
-	{
+	public class ContactUsTests
+    {
         #region TestSetup
         public static IUrlHelperFactory urlHelperFactory;
         public static DefaultHttpContext httpContextDefault;
@@ -66,7 +66,7 @@ namespace UnitTests.Pages.ContactUs
 
             var mockWebHostEnvironment = new Mock<IWebHostEnvironment>();
             mockWebHostEnvironment.Setup(m => m.EnvironmentName).Returns("Hosting:UnitTestEnvironment");
-            mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net5.0/wwwroot");
+            mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net7.0/wwwroot");
             mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
 
             var MockLoggerDirect = Mock.Of<ILogger<ContactUsModel>>();
