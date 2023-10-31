@@ -9,11 +9,19 @@ using System;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
+    /// <summary>
+    /// Page for creating new product entries.
+    /// </summary>
     public class CreateModel : PageModel
     {
         public JsonFileProductService ProductService { get; }
         private readonly IWebHostEnvironment _hostingEnvironment;
 
+        /// <summary>
+        /// Constructor for CreateModel.
+        /// </summary>
+        /// <param name="productService">The JSON product data service.</param>
+        /// <param name="hostingEnvironment">The hosting environment service.</param>
         [BindProperty] public ProductModel Product { get; set; }
         [BindProperty] public IFormFile UploadedImage { get; set; }
 
@@ -26,10 +34,17 @@ namespace ContosoCrafts.WebSite.Pages.Product
 
         public IFormFile UploadedFile { get; set; }
 
+        /// <summary>
+        /// Handles HTTP GET requests to the page.
+        /// </summary>
         public void OnGet()
         {
         }
 
+        /// <summary>
+        /// Handles HTTP POST requests when the form is submitted.
+        /// </summary>
+        /// <returns>An IActionResult representing the response to the POST request.</returns>
         public IActionResult OnPost()
         {
             if (UploadedFile != null && UploadedFile.Length > 0)
