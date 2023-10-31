@@ -77,14 +77,12 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card-columns .card-img {
-    width: 330px; /* Adjust the width and height as needed */
-    height: 330px;
+    height: 330px; /* Adjust the height as needed */
     vertical-align: bottom;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
     opacity: .8;
-   
 }
 
 .modal .card-img {
