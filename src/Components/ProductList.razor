@@ -5,13 +5,11 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-
 <div class="card-columns">
-    @foreach (var product in ProductService.GetProducts())
+    @foreach (var product in Products)
     {
         <div class="card">
-            <div class="card-img" style="background-image: url('@product.Image');">
-            </div>
+            <div class="card-img" style="background-image: url('@product.Image');"></div>
             <div class="card-body">
                 <h5 class="card-title">@product.Title</h5>
                 <h7>Neighborhood: </h7>
@@ -30,9 +28,9 @@
     }
 </div>
 
+
 <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-
         @if (selectedProduct != null)
         {
             <div class="modal-content">
@@ -44,21 +42,23 @@
                 </div>
                 <div class="modal-body">
                     <div class="card">
-                        <div class="card-img" style="background-image: url('@selectedProduct.Image');">
-                        </div>
+                        <div class="card-img" style="background-image: url('@selectedProduct.Image');"></div>
                         <div class="card-body">
                             <p class="card-text">@selectedProduct.Description</p>
                             <!-- Button to toggle the map -->
-                                        <div class="d-flex align-items-center justify-content-between map-toggler" data-toggle="collapse" data-target="#mapCollapse" aria-expanded="false" aria-controls="mapCollapse">
-                                            <span>Show Map</span>
-                                            <i class="fas fa-chevron-down"></i>
-                                            <i class="fas fa-chevron-up d-none"></i> <!-- Initially hidden -->
-                                        </div>
-                            
-                                        <!-- The Map wrapped inside a collapsible div -->
-                                        <div class="collapse" id="mapCollapse">
-                                            <iframe src="@selectedProduct.MapURL" allowfullscreen></iframe>
-                                        </div>
+                            <div class="d-flex align-items-center justify-content-between map-toggler"
+                                 data-toggle="collapse"
+                                 data-target="#mapCollapse"
+                                 aria-expanded="false"
+                                 aria-controls="mapCollapse">
+                                <span>Show Map</span>
+                                <i class="fas fa-chevron-down"></i>
+                                <i class="fas fa-chevron-up d-none"></i>
+                            </div>
+                            <!-- The Map wrapped inside a collapsible div -->
+                            <div class="collapse" id="mapCollapse">
+                                <iframe src="@selectedProduct.MapURL" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,6 +93,26 @@
 
 @code
 {
+
+    
+
+    [Parameter]
+    public IEnumerable<ProductModel> Products { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        Console.WriteLine($"Number of products: {Products?.Count() ?? 0}");
+        if (Products != null)
+        {
+            foreach (var product in Products)
+            {
+                Console.WriteLine(product.Title);
+            }
+        }
+    }
+
+
     ProductModel selectedProduct;
     string selectedProductId;
 
