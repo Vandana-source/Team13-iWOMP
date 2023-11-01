@@ -97,6 +97,23 @@ namespace UnitTests.Pages.Explore
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, pageModel.Products.ToList().Count > 10);
         }
+
+        /// <summary>
+        /// Test to validate OnGet method
+        /// Returns Products if valid
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_Benches_Should_Return_Only_Benches()
+        {
+            // Arrange
+
+            // Act
+            pageModel.OnGet("Bench");
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(true, pageModel.Products.ToList().Count > 7);
+        }
         #endregion OnGet
     }
 }
