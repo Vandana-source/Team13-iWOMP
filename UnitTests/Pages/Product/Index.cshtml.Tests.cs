@@ -19,8 +19,12 @@ using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Pages.Product.Index
 {
+    /// <summary>
+    /// Class containing unit test cases to Index Page
+    /// </summary>
     public class IndexTests
     {
+        // Creating an instance
         #region TestSetup
         public static IUrlHelperFactory urlHelperFactory;
         public static DefaultHttpContext httpContextDefault;
@@ -34,6 +38,9 @@ namespace UnitTests.Pages.Product.Index
 
         public static IndexModel pageModel;
 
+        /// <summary>
+        /// Test initializing 
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -73,6 +80,9 @@ namespace UnitTests.Pages.Product.Index
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// On making a get call the request should return all the products
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Products()
         {
@@ -85,6 +95,7 @@ namespace UnitTests.Pages.Product.Index
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, pageModel.Products.ToList().Count > 25);
         }
+
         #endregion OnGet
     }
 }
