@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
@@ -47,16 +48,20 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// </summary>
         public IActionResult OnPost()
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
             // To get the old filepath before replacing for later deletion 
             var existingProduct = ProductService.GetProducts()
                 .FirstOrDefault(m => m.Id.Equals(Product.Id));
-
+            if (Product.Image == null)
+            {
+                // Capture the old image path right after fetching the product
+                Product.Image = existingProduct.Image;
+            }
             // Capture the old image path right after fetching the product
-            string oldImagePath = Product?.Image;
+            string oldImagePath = existingProduct.Image;
 
             // If the uploaded file works: save 
             if (UploadedFile != null && UploadedFile.Length > 0)
@@ -86,20 +91,13 @@ namespace ContosoCrafts.WebSite.Pages.Product
                         _hostingEnvironment.WebRootPath,
                         oldImagePath.TrimStart('/'));
                     FileInfo fileInfo = new FileInfo(fullPath);
+
                     if (fileInfo.Exists)
                     {
-                        try
-                        {
-                            // Delete the file 
-                            fileInfo.Delete();
-                        }
-                        catch (Exception ex)
-                        {
-                            // Otherwise: error
-                            Console.WriteLine(
-                                $"Error deleting file: {ex.Message}");
-                        }
+                        // Delete the file 
+                        fileInfo.Delete();
                     }
+
                 }
 
                 // Creates a new filepath and saves it to the file 
