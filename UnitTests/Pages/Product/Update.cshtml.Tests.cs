@@ -163,6 +163,9 @@ namespace UnitTests.Pages.Product.Update
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
         }
 
+        /// <summary>
+        /// Testing valid image file and location type should store image in correct directory and redirect to Index page
+        /// </summary>
         [Test]
         public void OnPost_Valid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Redirect_To_Index()
         {
@@ -215,8 +218,11 @@ namespace UnitTests.Pages.Product.Update
             }
         }
 
+        /// <summary>
+        /// Testing valid image file and dummy image redirect to Index page
+        /// </summary>
         [Test]
-        public void OnPost_InValid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Redirect_To_Index()
+        public void OnPost_Valid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Redirect_To_Index_Page()
         {
             // Arrange
 
@@ -255,6 +261,9 @@ namespace UnitTests.Pages.Product.Update
 
         }
 
+        /// <summary>
+        /// Testing valid image file and image null should save existing image back in JSON and redirect to Index page
+        /// </summary>
         [Test]
         public void OnPost_Valid_File_And_Image_Null_Should_Save_Existing_Image_And_Redirect_To_Index()
         {
