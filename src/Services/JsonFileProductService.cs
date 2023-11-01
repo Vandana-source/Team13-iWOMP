@@ -10,15 +10,24 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace ContosoCrafts.WebSite.Services
 {
+    /// <summary>
+    /// Service class write to handle operations related to ProductModel
+    /// </summary>
     public class JsonFileProductService
     {
+        /// <summary>
+        /// Setting the web hosting environment
+        /// </summary>
+        /// <param name="webHostEnvironment"></param>
         public JsonFileProductService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
 
+        // Assigned IWebHostEnvironment to the public property
         public IWebHostEnvironment WebHostEnvironment { get; }
 
+        // Gets the combined path of JSON file
         private string JsonFileName
         {
             get
@@ -28,6 +37,10 @@ namespace ContosoCrafts.WebSite.Services
             }
         }
 
+        /// <summary>
+        /// REST call to read all data from the JSON files
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<ProductModel> GetProducts()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
@@ -41,6 +54,15 @@ namespace ContosoCrafts.WebSite.Services
             }
         }
 
+        /// <summary>
+        /// Add rating
+        /// Take in the product ID and the rating
+        /// If the rating does not exist, add it
+        /// Save the update
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="rating"></param>
+        /// <returns></returns>
         public bool AddRating(string productId, int rating)
         {
             // If the ProductID is invalid, return
@@ -87,7 +109,13 @@ namespace ContosoCrafts.WebSite.Services
             return true;
         }
 
-
+        /// <summary>
+        /// Find the data record
+        /// Update the fields
+        /// Save to the data store
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public ProductModel UpdateData(ProductModel data)
         {
             var products = GetProducts();
@@ -108,6 +136,10 @@ namespace ContosoCrafts.WebSite.Services
 
         }
 
+        /// <summary>
+        /// Save all products data to storage
+        /// </summary>
+        /// <param name="products"></param>
         private void SaveData(IEnumerable<ProductModel> products)
         {
             using (var outputStream = File.Create(JsonFileName))
