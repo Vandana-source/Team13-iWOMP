@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.IO;
 using ContosoCrafts.WebSite.Pages.Product;
+using System.Text;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -72,7 +74,7 @@ namespace UnitTests.Pages.Product.Update
 
             productService = new JsonFileProductService(mockWebHostEnvironment.Object);
 
-            pageModel = new UpdateModel(productService)
+            pageModel = new UpdateModel(productService, mockWebHostEnvironment.Object)
             {
             };
         }
@@ -122,7 +124,7 @@ namespace UnitTests.Pages.Product.Update
         public void OnPost_Valid_Should_Return_Products()
         {
             // Arrange
-            pageModel.OnGet("seattle-university-fern");
+            pageModel.OnGet("Aquarium");
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
@@ -147,6 +149,8 @@ namespace UnitTests.Pages.Product.Update
                 Neighborhood = "Neighborhood",
                 Description = "Description",
                 MapURL = "Map",
+                Image = "Image",
+                NoiseLevel = 2
             };
 
             // Force an invalid error state
@@ -157,6 +161,137 @@ namespace UnitTests.Pages.Product.Update
 
             // Assert
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
+        }
+
+        [Test]
+        public void OnPost_Valid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Redirect_To_Index()
+        {
+            // Data for testing
+            var testCases = new List<(string LocationType, string ExpectedSubDirectory)>
+                {
+                    ("Table", "Tables"),
+                    ("Bench", "Benches"),
+                    ("Restroom", "Restrooms"),
+                    ("UnknownType", "Others") // default case
+                };
+
+            // Loop through the test case scenarios and test them
+            foreach (var testCase in testCases)
+            {
+                // Arrange
+
+                // Mock the IFormFile
+                var mockFormFile = new Mock<IFormFile>();
+                var content = "Dummy file content";
+                var fileName = "test.txt";
+                var byteArray = Encoding.UTF8.GetBytes(content);
+                var stream = new MemoryStream(byteArray);
+
+                // Set up the files
+                mockFormFile.Setup(f => f.FileName).Returns(fileName);
+                mockFormFile.Setup(f => f.Length).Returns(stream.Length);
+                mockFormFile.Setup(m => m.OpenReadStream()).Returns(stream);
+
+                pageModel.UploadedFile = mockFormFile.Object;
+
+                // Set up product for this iteration
+                pageModel.Product = new ProductModel
+                {
+                    Id = "cal-anderson-park",
+                    LocationType = testCase.LocationType,
+                    Image = "/SiteImages/Restrooms/CalAnderson.jpg"
+                };
+
+                // Act
+                var result = pageModel.OnPost() as RedirectToPageResult;
+
+                // Assert on correct sub-directory
+                string expectedPath = Path.Combine("/SiteImages", testCase.ExpectedSubDirectory);
+                bool isExpectedSubDirectory = pageModel.Product.Image.Contains(expectedPath);
+                Assert.AreEqual(true, isExpectedSubDirectory, $"Failed for LocationType: {testCase.LocationType}");
+
+                // Assert on correct redirection
+                Assert.AreEqual("./Index", result.PageName);
+            }
+        }
+
+        [Test]
+        public void OnPost_InValid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Redirect_To_Index()
+        {
+            // Arrange
+
+            // Mock the IFormFile
+            var mockFormFile = new Mock<IFormFile>();
+            var content = "Dummy file content";
+            var fileName = "test.txt";
+            var byteArray = Encoding.UTF8.GetBytes(content);
+            var stream = new MemoryStream(byteArray);
+
+            // Set up the files
+            mockFormFile.Setup(f => f.FileName).Returns(fileName);
+            mockFormFile.Setup(f => f.Length).Returns(stream.Length);
+            mockFormFile.Setup(m => m.OpenReadStream()).Returns(stream);
+
+            pageModel.UploadedFile = mockFormFile.Object;
+
+            // Set up product for this iteration
+            pageModel.Product = new ProductModel
+            {
+                Id = "cal-anderson-park",
+                LocationType = "Restroom",
+                Image = "dummy"
+            };
+
+            // Act
+            var result = pageModel.OnPost() as RedirectToPageResult;
+
+            // Assert on correct sub-directory
+            string expectedPath = Path.Combine("/SiteImages", "Restroom");
+            bool isExpectedSubDirectory = pageModel.Product.Image.Contains(expectedPath);
+            Assert.AreEqual(true, isExpectedSubDirectory, $"Failed for LocationType: Restroom");
+
+            // Assert on correct redirection
+            Assert.AreEqual("./Index", result.PageName);
+
+        }
+
+        [Test]
+        public void OnPost_Valid_File_And_Image_Null_Should_Save_Existing_Image_And_Redirect_To_Index()
+        {
+            // Arrange
+
+            // Mock the IFormFile
+            var mockFormFile = new Mock<IFormFile>();
+            var content = "Dummy file content";
+            var fileName = "test.txt";
+            var byteArray = Encoding.UTF8.GetBytes(content);
+            var stream = new MemoryStream(byteArray);
+
+            // Set up the files
+            mockFormFile.Setup(f => f.FileName).Returns(fileName);
+            mockFormFile.Setup(f => f.Length).Returns(stream.Length);
+            mockFormFile.Setup(m => m.OpenReadStream()).Returns(stream);
+
+            pageModel.UploadedFile = mockFormFile.Object;
+
+            // Set up product for this iteration
+            pageModel.Product = new ProductModel
+            {
+                Id = "cal-anderson-park",
+                LocationType = "Restroom",
+                Image = null
+            };
+
+            // Act
+            var result = pageModel.OnPost() as RedirectToPageResult;
+
+            // Assert on correct sub-directory
+            string expectedPath = Path.Combine("/SiteImages", "Restrooms");
+            bool isExpectedSubDirectory = pageModel.Product.Image.Contains(expectedPath);
+            Assert.AreEqual(true, isExpectedSubDirectory, $"Failed for LocationType: Restroom");
+
+            // Assert on correct redirection
+            Assert.AreEqual("./Index", result.PageName);
         }
 
         #endregion OnPost
