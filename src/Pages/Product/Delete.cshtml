@@ -18,11 +18,11 @@
 <div class="container">
     <form method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        @Html.HiddenFor(x=>x.Product.Id)
+        @Html.HiddenFor(x => x.Product.Id)
 
         <div class="form-group">
             <label asp-for="Product.Title" class="control-label"></label>
-            <input asp-for="Product.Title" class="form-control" readonly/>
+            <input asp-for="Product.Title" class="form-control" readonly />
             <span asp-validation-for="Product.Title" class="text-danger"></span>
         </div>
 
@@ -34,8 +34,20 @@
 
         <div class="form-group">
             <label asp-for="Product.Neighborhood" class="control-label"></label>
-            <input asp-for="Product.Neighborhood" class="form-control" readonly/>
+            <input asp-for="Product.Neighborhood" class="form-control" readonly />
             <span asp-validation-for="Product.Neighborhood" class="text-danger"></span>
+        </div>
+
+        <label class="form-label">Noise Level Rating : (1 is Good, 10 is Bad)</label>
+        <div class="d-flex flex-row align-items-center">
+            @for (int i = 1; i <= 10; i++)
+            {
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Product.NoiseLevel"
+                           id="@("rating" + i)" value="@i" asp-for="Product.NoiseLevel">
+                    <label class="form-check-label" for="@("rating" + i)">@i</label>
+                </div>
+            }
         </div>
 
         <div class="form-group">
@@ -49,8 +61,8 @@
             <input class="form-control" asp-for="Product.MapURL" readonly>
             <span class="text-danger" asp-validation-for="Product.MapURL"></span>
         </div>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <h1>Are you sure?</h1>
         <div class="button-row">
             <div class="form-group">
@@ -61,7 +73,7 @@
                 <input type="submit" value="Delete" class="btn btn-danger">
             </div>
         </div>
-        
+
     </form>
 </div>
 
