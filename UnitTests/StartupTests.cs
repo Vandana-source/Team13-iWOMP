@@ -42,7 +42,7 @@ namespace UnitTests.Pages.Startup
         /// errors and the resultant web host is valid.
         /// </summary>
         [Test]
-        public void Startup_ConfigureServices_Valid_Defaut_Should_Pass()
+        public void Startup_ConfigureServices_Valid_Default_Should_Pass()
         {
             // Create a default web host builder and set it to use the derived
             // Startup class for testing.
