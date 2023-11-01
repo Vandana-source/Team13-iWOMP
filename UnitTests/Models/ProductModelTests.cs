@@ -14,6 +14,9 @@ namespace UnitTests.Models.ToString
     /// </summary>
     public class ProductModelTests
     {
+        /// <summary>
+        /// Testing Json to String serializer
+        /// </summary>
         [Test]
         public void Validate_Json_ToString()
         {
