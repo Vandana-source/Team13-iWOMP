@@ -39,6 +39,18 @@
                 <span class="text-danger" asp-validation-for="Product.Neighborhood"></span>
             </div>
 
+            <label class="form-label">Noise Level Rating : (1 is Good, 10 is Bad)</label>
+            <div class="d-flex flex-row align-items-center">
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Product.NoiseLevel"
+                               id="@("rating" + i)" value="@i" asp-for="Product.NoiseLevel">
+                        <label class="form-check-label" for="@("rating" + i)">@i</label>
+                    </div>
+                }
+            </div>
+
             <div class="form-group">
                 <label class="control-label">Image</label>
                 <input type="file" class="form-control" asp-for="UploadedFile" accept="image/*" required>
