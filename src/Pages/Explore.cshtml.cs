@@ -18,9 +18,6 @@ namespace ContosoCrafts.WebSite.Pages
         //Logger 
         private readonly ILogger<ExploreModel> _logger;
 
-        //Location Type of product
-        public string LocationType { get; set; }
-
         /// <summary>
         /// Default Constructor
         /// </summary>
