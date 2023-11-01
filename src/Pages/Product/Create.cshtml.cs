@@ -23,7 +23,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <param name="productService">The JSON product data service.</param>
         /// <param name="hostingEnvironment">The hosting environment service.</param>
         [BindProperty] public ProductModel Product { get; set; }
-        [BindProperty] public IFormFile UploadedImage { get; set; }
+      
 
         public CreateModel(JsonFileProductService productService,
             IWebHostEnvironment hostingEnvironment)
