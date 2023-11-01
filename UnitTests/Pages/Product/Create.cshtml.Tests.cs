@@ -117,7 +117,7 @@ namespace UnitTests.Pages.Product.Create
         /// Tests switch statement path with Benches, Table, Restrooms, Other
         /// </summary>
         [Test]
-            public void OnPost_Valid_File_And_LocationType_Should_Save_InCorrect_SubDirectory_And_Redirect_To_Index()
+            public void OnPost_Valid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Redirect_To_Index()
             {
                 // Data for testing
                 var testCases = new List<(string LocationType, string ExpectedSubDirectory)>
