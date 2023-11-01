@@ -92,11 +92,11 @@ namespace UnitTests.Pages.Product.Delete
             //Arrange
 
             //Act
-            pageModel.OnGet("Aquarium");
+            pageModel.OnGet("arboretum-bench");
 
             //Asset
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual("Seattle Aquarium", pageModel.Product.Title);
+            Assert.AreEqual("Arboretum Marsh Walk", pageModel.Product.Title);
         }
 
 
