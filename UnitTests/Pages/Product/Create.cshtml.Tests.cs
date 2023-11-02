@@ -258,4 +258,3 @@ namespace UnitTests.Pages.Product.Create
         #endregion UploadImage
     }
 }
-
