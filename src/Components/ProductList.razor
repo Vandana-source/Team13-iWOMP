@@ -18,143 +18,80 @@
             </div>
             <div class="card-footer">
                 <small class="text-muted">
-                    <button @onclick="(e => SelectProduct(product.Id))"
-                            data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                    <!-- Updated data-target to point to a unique modal ID based on the product ID -->
+                    <button data-toggle="modal" data-target="#productModal-@product.Id" class="btn btn-primary">
                         More Info
                     </button>
                 </small>
             </div>
         </div>
-    }
-</div>
 
-
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        @if (selectedProduct != null)
-        {
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="productTitle">@selectedProduct.Title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="card">
-                        <div class="card-img" style="background-image: url('@selectedProduct.Image');"></div>
-                        <div class="card-body">
-                            <p class="card-text">@selectedProduct.Description</p>
-                            <!-- Button to toggle the map -->
-                            <div class="d-flex align-items-center justify-content-between map-toggler"
-                                 data-toggle="collapse"
-                                 data-target="#mapCollapse"
-                                 aria-expanded="false"
-                                 aria-controls="mapCollapse">
-                                <span>Show Map</span>
-                                <i class="fas fa-chevron-down"></i>
-                                <i class="fas fa-chevron-up d-none"></i>
-                            </div>
-                            <!-- The Map wrapped inside a collapsible div -->
-                            <div class="collapse" id="mapCollapse">
-                                <iframe src="@selectedProduct.MapURL" allowfullscreen></iframe>
+        <!-- Unique modal for each product -->
+        <div class="modal fade" id="productModal-@product.Id" tabindex="-1" role="dialog" aria-labelledby="productTitle-@product.Id" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productTitle-@product.Id">@product.Title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <div class="card-img" style="background-image: url('@product.Image');"></div>
+                            <div class="card-body">
+                                <p class="card-text">@product.Description</p>
+                                <!-- Button to toggle the map -->
+                                <div class="d-flex align-items-center justify-content-between map-toggler"
+                                     data-toggle="collapse"
+                                     data-target="#mapCollapse-@product.Id"
+                                     aria-expanded="false"
+                                     aria-controls="mapCollapse-@product.Id">
+                                    <span>Show Map</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                    <i class="fas fa-chevron-up d-none"></i>
+                                </div>
+                                <!-- The Map wrapped inside a collapsible div -->
+                                <div class="collapse" id="mapCollapse-@product.Id">
+                                    <iframe src="@product.MapURL" allowfullscreen></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    @if (voteCount == 0)
-                    {
-                        <span>Be the first to vote!</span>
-                    }
-                    else
-                    {
-                        <span>@voteCount @voteLabel</span>
-                    }
-                    @for (int i = 1; i < 6; i++)
-                    {
-                        var currentStar = i;
-                        if (i <= currentRating)
+                    <div class="modal-footer">
+                        @if (product.Ratings == null || !product.Ratings.Any())
                         {
-                            <span class="fa fa-star checked" @onclick="(e => SubmitRating(currentStar))"></span>
+                            <span>Be the first to vote!</span>
                         }
                         else
                         {
-                            <span class="fa fa-star" @onclick="(e => SubmitRating(currentStar))"></span>
+                            <span>@product.Ratings.Count() @(product.Ratings.Count() == 1 ? "Vote" : "Votes")</span>
                         }
-                    }
+                        <!-- Updated the for loop to use product ID -->
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            var currentStar = i;
+                            <span class="fa fa-star @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
+                        }
+                    </div>
                 </div>
             </div>
-        }
-    </div>
+        </div>
+    }
 </div>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-@code
-{
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        if (selectedProduct == null)
-        {
-            selectedProduct = ProductService.GetProducts().First();
-        }
-    }
-
+@code {
     [Parameter]
     public IEnumerable<ProductModel> Products { get; set; }
 
-    protected override void OnParametersSet()
+    void SubmitRating(string productId, int rating)
     {
-        base.OnParametersSet();
-        Console.WriteLine($"Number of products: {Products?.Count() ?? 0}");
-        if (Products != null)
-        {
-            foreach (var product in Products)
-            {
-                Console.WriteLine(product.Title);
-            }
-        }
-    }
+        System.Console.WriteLine($"Rating received for product {productId}: {rating}");
+        ProductService.AddRating(productId, rating);
 
-
-    ProductModel selectedProduct;
-    string selectedProductId;
-
-    void SelectProduct(string productId)
-    {
-        selectedProductId = productId;
-        selectedProduct = ProductService.GetProducts().First(x => x.Id == productId);
-        GetCurrentRating();
-    }
-
-    int currentRating = 0;
-    int voteCount = 0;
-    string voteLabel;
-
-    void GetCurrentRating()
-    {
-        if (selectedProduct.Ratings == null)
-        {
-            currentRating = 0;
-            voteCount = 0;
-        }
-        else
-        {
-            voteCount = selectedProduct.Ratings.Count();
-            voteLabel = voteCount > 1 ? "Votes" : "Vote";
-            currentRating = selectedProduct.Ratings.Sum() / voteCount;
-        }
-
-        System.Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
-    }
-
-    void SubmitRating(int rating)
-    {
-        System.Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
-        ProductService.AddRating(selectedProductId, rating);
-        SelectProduct(selectedProductId);
+        // After adding rating, you might want to refresh the product's details
+        // You would need to implement logic to refresh product details if necessary
     }
 }
