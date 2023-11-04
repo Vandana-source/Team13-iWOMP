@@ -718,9 +718,6 @@ h1.update-page-title {
     transform: rotate(180deg); /* Makes the icon spin when hovered */
 }
 
-
-
-
-
-
-
+h3.header-about {
+    font: bold;
+}
