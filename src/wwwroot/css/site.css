@@ -43,6 +43,7 @@
     position: absolute;
     z-index: 2;
     right: auto;
+    line-height: 1.2;
 }
 
 .right-indextext {
