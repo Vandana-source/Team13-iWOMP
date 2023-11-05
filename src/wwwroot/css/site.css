@@ -109,6 +109,7 @@ a.navbar-brand {
     font-family: 'Pacifico', cursive;
     text-align: center;
     word-break: break-all;
+    font-size: 3vw;
 }
 
 /* Provide sufficient contrast against white background */
