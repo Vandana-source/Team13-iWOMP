@@ -7,22 +7,21 @@
 
 <div class="btn-group dropright">
     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Location Type
+        Location Type: @Model.CurrentFilter
     </button>
     <ul class="dropdown-menu">
-        <li><a href="/Explore?LocationType=All" class="btn">All</a></li>
-        <li><a href="/Explore?LocationType=Bench" class="btn">Benches</a></li>
-        <li><a href="/Explore?LocationType=Restroom" class="btn">Restrooms</a></li>
-        <li><a href="/Explore?LocationType=Table" class="btn">Tables</a></li>
-        <li><a href="/Explore?LocationType=Other" class="btn">Other Places</a></li>
+        <li><a href="/Explore?LocationType=All" class="btn @(Model.CurrentFilter == "All" ? "active" : "")">All</a></li>
+        <li><a href="/Explore?LocationType=Bench" class="btn @(Model.CurrentFilter == "Bench" ? "active" : "")">Benches</a></li>
+        <li><a href="/Explore?LocationType=Restroom" class="btn @(Model.CurrentFilter == "Restroom" ? "active" : "")">Restrooms</a></li>
+        <li><a href="/Explore?LocationType=Table" class="btn @(Model.CurrentFilter == "Table" ? "active" : "")">Tables</a></li>
+        <li><a href="/Explore?LocationType=Other" class="btn @(Model.CurrentFilter == "Other" ? "active" : "")">Other Places</a></li>
     </ul>
 </div>
-<br /><br />
-
+<br />
+<br />
 
 @(await Html.RenderComponentAsync<ProductList>(
     RenderMode.ServerPrerendered, new { Products = Model.Products }))
-
 
 <script src="_framework/blazor.server.js"></script>
 <script src="js/site.js"></script>
