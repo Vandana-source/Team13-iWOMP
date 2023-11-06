@@ -16,7 +16,7 @@
 
 <div class="container">
     <form method="post" enctype="multipart/form-data">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div asp-validation-summary="All" class="text-danger"></div>
         @Html.HiddenFor(x => x.Product.Id)
 
         <div class="form-group">
@@ -92,7 +92,8 @@
 
         <div class="form-group">
             <label for="imageFormControlFile1" asp-for="Product.Image"></label><br />
-            <input type="file" id="imageFormControlFile1" name="UploadedFile">
+            <input type="file" id="imageFormControlFile1" name="UploadedFile" asp-for="Product.Image" accept=".jpg, .jpeg, .png, .gif, .bmp">
+            <span class="text-danger" asp-validation-for="UploadedFile"></span>
         </div>
 
         <div class="button-row">
