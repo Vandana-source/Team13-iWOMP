@@ -594,8 +594,6 @@ h1.h1-heading {
 .read-icon {
     font-size: 24px;
     color: #0074d9; /* Blue color */
-
-
 }
 
 /*CSS for iframe component*/
@@ -669,7 +667,7 @@ tr:hover {
 }
 
 td {
-    width: 70%;
+    width: 25%;
 }
 
 /* Hover effect for columns */
