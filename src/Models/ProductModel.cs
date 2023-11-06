@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -25,7 +26,8 @@ namespace ContosoCrafts.WebSite.Models
         // Title of the product.
         public string Title { get; set; }
 
-        // Description of the product.
+        //Validating the string length of Description to be between 25 and 1000 characters
+        [StringLength(maximumLength: 1000, MinimumLength = 25, ErrorMessage = "The Description should have a length of more than {2} and less than {1}")]
         public string Description { get; set; }
 
         // Neighborhood where the product is located.
