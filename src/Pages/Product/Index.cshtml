@@ -4,12 +4,14 @@
     ViewData["Title"] = "Index page";
 }
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 <div class="container" id="benches-section">
     <a class="font-weight-bold" asp-page="Create">+ Create </a>
     <table class="table table-bordered table-hover table">
         <thead>
             <tr>
-                <th colspan="2">Benches</th>
+                <th colspan="4">Benches</th>
             </tr>
         </thead>
         @foreach (var product in Model.Products)
@@ -25,6 +27,18 @@
 
                             </a>
                         </td>
+                        <td>
+                            <a class="font-weight-bold" asp-page="Update" asp-route-id="@product.Id">
+                                <center><span class="read-icon fas fa-pencil-alt"></span> Update</center>
+
+                            </a>
+                        </td>
+                        <td>
+                            <a class="font-weight-bold" asp-page="Delete" asp-route-id="@product.Id">
+                                <center><span class="read-icon fas fa-trash-alt"></span> Delete</center>
+
+                            </a>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -37,7 +51,7 @@
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th colspan="2">Restrooms</th>
+                <th colspan="4">Restrooms</th>
             </tr>
         </thead>
         @foreach (var product in Model.Products)
@@ -52,6 +66,18 @@
                                 <center><span class="read-icon">📖</span>Read</center>
                             </a>
                         </td>
+                        <td>
+                            <a class="font-weight-bold" asp-page="Update" asp-route-id="@product.Id">
+                                <center><span class="read-icon fas fa-pencil-alt"></span> Update</center>
+
+                            </a>
+                        </td>
+                        <td>
+                            <a class="font-weight-bold" asp-page="Delete" asp-route-id="@product.Id">
+                                <center><span class="read-icon fas fa-trash-alt"></span> Delete</center>
+
+                            </a>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -60,11 +86,11 @@
 </div>
 
 <div class="container" id="other-places-section">
-    <a class ="font-weight-bold" asp-page="Create">+ Create </a>
+    <a class="font-weight-bold" asp-page="Create">+ Create </a>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th colspan="2">Other Places</th>
+                <th colspan="4">Other Places</th>
             </tr>
         </thead>
         @foreach (var product in Model.Products)
@@ -79,6 +105,18 @@
                                 <center><span class="read-icon">📖</span>Read</center>
                             </a>
                         </td>
+                        <td>
+                            <a class="font-weight-bold" asp-page="Update" asp-route-id="@product.Id">
+                                <center><span class="read-icon fas fa-pencil-alt"></span> Update</center>
+
+                            </a>
+                        </td>
+                        <td>
+                            <a class="font-weight-bold" asp-page="Delete" asp-route-id="@product.Id">
+                                <center><span class="read-icon fas fa-trash-alt"></span> Delete</center>
+
+                            </a>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -86,12 +124,12 @@
     </table>
 </div>
 
-<div class="container"  id="tables-section">
+<div class="container" id="tables-section">
     <a class="font-weight-bold" asp-page="Create">+ Create </a>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th colspan="2">Tables</th>
+                <th colspan="4">Tables</th>
             </tr>
         </thead>
         @foreach (var product in Model.Products)
@@ -104,6 +142,18 @@
                         <td>
                             <a class="font-weight-bold" asp-page="Read" asp-route-id="@product.Id">
                                 <center><span class="read-icon">📖</span>Read</center>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="font-weight-bold" asp-page="Update" asp-route-id="@product.Id">
+                                <center><span class="read-icon fas fa-pencil-alt"></span> Update</center>
+
+                            </a>
+                        </td>
+                        <td>
+                            <a class="font-weight-bold" asp-page="Delete" asp-route-id="@product.Id">
+                                <center><span class="read-icon fas fa-trash-alt"></span> Delete</center>
+
                             </a>
                         </td>
                     </tr>
