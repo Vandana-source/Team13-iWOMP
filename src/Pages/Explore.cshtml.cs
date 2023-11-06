@@ -35,6 +35,9 @@ namespace ContosoCrafts.WebSite.Pages
         //Collection of products
         public IEnumerable<ProductModel> Products { get; private set; }
 
+        //Property to tarck the currently selected filter
+        public string CurrentFilter { get; set; }
+
         /// <summary>
         /// REST OnGet, return all data based on the locationtype 
         /// </summary>
@@ -47,11 +50,13 @@ namespace ContosoCrafts.WebSite.Pages
             {
                 // Filter products based on location
                 Products = allProducts.Where(p => p.LocationType == LocationType);
+                CurrentFilter = LocationType; //Update the current filter
             }
             else
             {
                 // Returns all products
                 Products = allProducts.Take(36);
+                CurrentFilter = "All"; //Update the current filter to "All"
             }
         }
 
