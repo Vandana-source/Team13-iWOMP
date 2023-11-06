@@ -13,7 +13,7 @@
 
     <div class="container">
         <form method="post" enctype="multipart/form-data">
-
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @Html.HiddenFor(x => x.Product.Id)
 
             <div class="form-group">
@@ -52,13 +52,13 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label">Image</label>
+                <label class="control-label"></label>
                 <input type="file" class="form-control" asp-for="UploadedFile" accept="image/*" required>
                 <span class="text-danger" asp-validation-for="UploadedFile"></span>
             </div>
 
             <div class="form-group">
-                <label class="control-label" asp-for="Product.Description">Description</label>
+                <label class="control-label" asp-for="Product.Description"></label>
                 <input class="form-control" asp-for="Product.Description" required placeholder="Enter Description">
                 <span class="text-danger" asp-validation-for="Product.Description"></span>
             </div>
@@ -79,9 +79,14 @@
                 </div>
             </div>
 
-            <input name="__RequestVerificationToken" type="hidden" value="">
 
         </form>
     </div>
 
 </body>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
