@@ -60,6 +60,14 @@ namespace ContosoCrafts.WebSite.Pages.Product
                 // Capture the old image path right after fetching the product
                 Product.Image = existingProduct.Image;
             }
+
+            string fileExtension = Path.GetExtension(UploadedFile.FileName).ToLower();
+            if (!IsAllowedImageExtension(fileExtension))
+            {
+                // Display an error message and redirect back to the page.
+                ModelState.AddModelError("imageFile", "Please select a valid image file (jpg, jpeg, png, gif, or bmp).");
+                return Page();
+            }
             // Capture the old image path right after fetching the product
             string oldImagePath = existingProduct.Image;
 
@@ -116,6 +124,12 @@ namespace ContosoCrafts.WebSite.Pages.Product
             // Saves the updated data & return to index 
             ProductService.UpdateData(Product);
             return RedirectToPage("./Index");
+        }
+
+        private bool IsAllowedImageExtension(string extension)
+        {
+            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".bmp" };
+            return allowedExtensions.Contains(extension);
         }
     }
 }
