@@ -52,8 +52,8 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label"></label>
-                <input type="file" class="form-control" asp-for="UploadedFile" accept="image/*" required>
+                <label class="control-label" asp-for="Product.Image"></label><br />
+                <input type="file" asp-for="UploadedFile" accept="image/*" required>
                 <span class="text-danger" asp-validation-for="UploadedFile"></span>
             </div>
 
