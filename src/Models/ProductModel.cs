@@ -24,6 +24,7 @@ namespace ContosoCrafts.WebSite.Models
         public string Url { get; set; }
 
         // Title of the product.
+        // Validating the string length of Title to be between 5 and 100 characters
         [StringLength(maximumLength: 100, MinimumLength = 5, ErrorMessage = "The Title should have a length of more than {2} and less than {1}")]
         public string Title { get; set; }
 
