@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
@@ -10,18 +8,10 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Pages
 {
-    /// <summary>
-    /// Explore Page will return all the data to show according to filter
-    /// </summary>
     public class ExploreModel : PageModel
     {
-        //Logger 
         private readonly ILogger<ExploreModel> _logger;
 
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        /// <param name="productService"></param>
         public ExploreModel(ILogger<ExploreModel> logger,
             JsonFileProductService productService)
         {
@@ -29,36 +19,12 @@ namespace ContosoCrafts.WebSite.Pages
             ProductService = productService;
         }
 
-        // Data Service
         public JsonFileProductService ProductService { get; }
-
-        //Collection of products
         public IEnumerable<ProductModel> Products { get; private set; }
 
-        //Property to tarck the currently selected filter
-        public string CurrentFilter { get; set; }
-
-        /// <summary>
-        /// REST OnGet, return all data based on the locationtype 
-        /// </summary>
-        public void OnGet(string LocationType)
+        public void OnGet()
         {
-            var allProducts = ProductService.GetProducts();
-
-            // Check if location type is All or not
-            if (!LocationType.Equals("All"))
-            {
-                // Filter products based on location
-                Products = allProducts.Where(p => p.LocationType == LocationType);
-                CurrentFilter = LocationType; //Update the current filter
-            }
-            else
-            {
-                // Returns all products
-                Products = allProducts.Take(36);
-                CurrentFilter = "All"; //Update the current filter to "All"
-            }
+            Products = ProductService.GetProducts();
         }
-
     }
 }
