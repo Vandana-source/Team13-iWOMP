@@ -10,11 +10,16 @@
         Location Type: @Model.CurrentFilter
     </button>
     <ul class="dropdown-menu">
-        <li><a href="/Explore?LocationType=All" class="btn @(Model.CurrentFilter == "All" ? "active" : "")">All</a></li>
-        <li><a href="/Explore?LocationType=Bench" class="btn @(Model.CurrentFilter == "Bench" ? "active" : "")">Benches</a></li>
-        <li><a href="/Explore?LocationType=Restroom" class="btn @(Model.CurrentFilter == "Restroom" ? "active" : "")">Restrooms</a></li>
-        <li><a href="/Explore?LocationType=Table" class="btn @(Model.CurrentFilter == "Table" ? "active" : "")">Tables</a></li>
-        <li><a href="/Explore?LocationType=Other" class="btn @(Model.CurrentFilter == "Other" ? "active" : "")">Other Places</a></li>
+        <li><a href="/Explore?LocationType=All" class="btn @(Model.CurrentFilter == "All" ? "active" : "")">
+            <i class="fas fa-star"></i> All</a></li>
+        <li><a href="/Explore?LocationType=Bench" class="btn @(Model.CurrentFilter == "Bench" ? "active" : "")">
+            <i class="fas fa-chair"></i> Benches</a></li>
+        <li><a href="/Explore?LocationType=Restroom" class="btn @(Model.CurrentFilter == "Restroom" ? "active" : "")">
+            <i class="fas fa-restroom"></i> Restrooms</a></li>
+        <li><a href="/Explore?LocationType=Table" class="btn @(Model.CurrentFilter == "Table" ? "active" : "")">
+            <i class="fas fa-couch"></i> Tables</a></li>
+        <li><a href="/Explore?LocationType=Other" class="btn @(Model.CurrentFilter == "Other" ? "active" : "")">
+            <i class="fas fa-ellipsis-h"></i> Other Places</a></li>
     </ul>
 </div>
 <br />
