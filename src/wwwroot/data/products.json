@@ -484,7 +484,7 @@
   {
     "Id": "starbucks-reserve",
     "LocationType": "Restroom",
-    "img": "/SiteImages/Restrooms/StarbucksRoastery.jpg",
+    "img": "/SiteImages/ResizeRestrooms/StarbucksRoastery.webp",
     "Url": null,
     "Title": "Starbucks Reserve",
     "Description": "A softly lit, gender-neutral space with a panoramic view overlooking the roastery below.",
@@ -500,7 +500,7 @@
   {
     "Id": "stoop-brewing-cap-hill",
     "LocationType": "Restroom",
-    "img": "/SiteImages/Restrooms/StoopBrewingCapHill.jpg",
+    "img": "/SiteImages/ResizeRestrooms/StoopBrewingCapHill.webp",
     "Url": null,
     "Title": "Stoop Brewing (Capitol Hill)",
     "Description": "A classic gender neutral bathroom with plenty of stalls for everyone to go",
@@ -516,7 +516,7 @@
   {
     "Id": "u-village",
     "LocationType": "Restroom",
-    "img": "/SiteImages/Restrooms/UniversityVillage.jpeg",
+    "img": "/SiteImages/ResizeRestrooms/UniversityVillage.webp",
     "Url": null,
     "Title": "U Village",
     "Description": "Private stalls with floor to ceiling doors and individual sinks make this spot a favorite rest stop among local shoppers.",
