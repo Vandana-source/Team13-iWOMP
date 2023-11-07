@@ -61,19 +61,19 @@ namespace ContosoCrafts.WebSite.Pages.Product
                 Product.Image = existingProduct.Image;
             }
 
-            string fileExtension = Path.GetExtension(UploadedFile.FileName).ToLower();
-            if (!IsAllowedImageExtension(fileExtension))
-            {
-                // Display an error message and redirect back to the page.
-                ModelState.AddModelError("imageFile", "Please select a valid image file (jpg, jpeg, png, gif, or bmp).");
-                return Page();
-            }
             // Capture the old image path right after fetching the product
             string oldImagePath = existingProduct.Image;
 
             // If the uploaded file works: save 
             if (UploadedFile != null && UploadedFile.Length > 0)
             {
+                string fileExtension = Path.GetExtension(UploadedFile.FileName).ToLower();
+                if (!IsAllowedImageExtension(fileExtension))
+                {
+                    // Display an error message and redirect back to the page.
+                    ModelState.AddModelError("imageFile", "Please select a valid image file (jpg, jpeg, png, gif, or bmp).");
+                    return Page();
+                }
                 // Define the directory based on LocationType
                 string subDirectory = Product.LocationType switch
                 {
