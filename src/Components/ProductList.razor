@@ -5,23 +5,27 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+<div id="neighborhoodDropdown" style="position: sticky; top: 0; background-color: white; z-index: 1; display: flex; padding-bottom: 2vw;">
+    <div style="margin-right: 1vw;">
+        <select @onchange="OnNeighborhoodChanged">
+            <option value="">Location</option>
+            @foreach (var neighborhood in Neighborhoods)
+            {
+                <option value="@neighborhood">@neighborhood</option>
+            }
+        </select>
+    </div>
+    <div>
+        <select @onchange="OnLocationTypeChanged">
+            <option value="">Location Type</option>
+            @foreach (var location in LocationTypes)
+            {
+                <option value="@location">@location</option>
+            }
+        </select>
+    </div>
+</div>
 
-<select @onchange="OnNeighborhoodChanged">
-    <option value="">Location</option>
-    @foreach (var neighborhood in Neighborhoods)
-    {
-        <option value="@neighborhood">@neighborhood</option>
-    }
-</select>
-
-<!-- Location type filter -->
-<select @onchange="OnLocationTypeChanged">
-    <option value="">Location Type</option>
-    @foreach (var location in LocationTypes)
-    {
-        <option value="@location">@location</option>
-    }
-</select>
 
 <div class="card-columns">
     @foreach (var product in FilteredProducts)
