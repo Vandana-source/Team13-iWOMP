@@ -186,7 +186,7 @@ namespace UnitTests.Pages.Product.Update
                 // Mock the IFormFile
                 var mockFormFile = new Mock<IFormFile>();
                 var content = "Dummy file content";
-                var fileName = "test.txt";
+                var fileName = "test.jpg";
                 var byteArray = Encoding.UTF8.GetBytes(content);
                 var stream = new MemoryStream(byteArray);
 
@@ -229,7 +229,7 @@ namespace UnitTests.Pages.Product.Update
             // Mock the IFormFile
             var mockFormFile = new Mock<IFormFile>();
             var content = "Dummy file content";
-            var fileName = "test.txt";
+            var fileName = "test.jpg";
             var byteArray = Encoding.UTF8.GetBytes(content);
             var stream = new MemoryStream(byteArray);
 
@@ -272,7 +272,7 @@ namespace UnitTests.Pages.Product.Update
             // Mock the IFormFile
             var mockFormFile = new Mock<IFormFile>();
             var content = "Dummy file content";
-            var fileName = "test.txt";
+            var fileName = "test.jpg";
             var byteArray = Encoding.UTF8.GetBytes(content);
             var stream = new MemoryStream(byteArray);
 
@@ -301,6 +301,48 @@ namespace UnitTests.Pages.Product.Update
 
             // Assert on correct redirection
             Assert.AreEqual("./Index", result.PageName);
+        }
+
+        [Test]
+        public void OnPost_Invalid_File_Should_Stay_On_Page()
+        {
+            // Arrange
+
+            // Mock the IFormFile
+            var mockFormFile = new Mock<IFormFile>();
+            var content = "Dummy file content";
+            var fileName = "test.pdf";
+            var byteArray = Encoding.UTF8.GetBytes(content);
+            var stream = new MemoryStream(byteArray);
+
+            // Set up the files
+            mockFormFile.Setup(f => f.FileName).Returns(fileName);
+            mockFormFile.Setup(f => f.Length).Returns(stream.Length);
+            mockFormFile.Setup(m => m.OpenReadStream()).Returns(stream);
+
+            pageModel.UploadedFile = mockFormFile.Object;
+
+            // Set up product for this iteration
+            pageModel.Product = new ProductModel
+            {
+                Id = "cal-anderson-park",
+                LocationType = "Restroom",
+                Image = null
+            };
+
+            // Act
+            var result = pageModel.OnPost() as PageResult;
+
+            // Assert on correct sub-directory
+            string expectedPath = Path.Combine("/SiteImages", "Restrooms");
+            bool isExpectedSubDirectory = pageModel.Product.Image.Contains(expectedPath);
+            Assert.AreEqual(true, isExpectedSubDirectory, $"Failed for LocationType: Restroom");
+
+            // Assert on correct redirection
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+
+            var isPageResultType = result is PageResult;
+            Assert.AreEqual(true, isPageResultType);
         }
 
         #endregion OnPost
