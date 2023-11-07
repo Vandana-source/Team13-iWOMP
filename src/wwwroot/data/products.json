@@ -20,7 +20,7 @@
   {
     "Id": "arboretum-bench",
     "LocationType": "Bench",
-    "img": "/SiteImages/Benches/ArboretumMarshIslandBench.jpeg",
+    "img": "/SiteImages/ResizeBenches/ArboretumMarshIslandBench.webp",
     "Url": null,
     "Title": "Arboretum Marsh Walk",
     "Description": "A small bench located along the Arboretum trail\u0027s floating walkway near Foster Island.",
@@ -36,7 +36,7 @@
   {
     "Id": "aroboretum-walk",
     "LocationType": "Bench",
-    "img": "/SiteImages/Benches/ArboretumWalk.jpeg",
+    "img": "/SiteImages/ResizeBenches/ArboretumWalk.webp",
     "Url": null,
     "Title": "Arboretum Walk",
     "Description": "This small memorial bench provides a pleasant spot to sit along Azalea Way.",
@@ -52,7 +52,7 @@
   {
     "Id": "broadway-bench",
     "LocationType": "Bench",
-    "img": "/SiteImages/Benches/BroadwayBench.jpeg",
+    "img": "/SiteImages/ResizeBenches/BroadwayBench.webp",
     "Url": null,
     "Title": "Bench on Broadway",
     "Description": "A bench along north Broadway near the bus stop.",
@@ -180,7 +180,7 @@
   {
     "Id": "kubota-gardens-bench",
     "LocationType": "Bench",
-    "img": "/SiteImages/Benches/KubotaGardenBench.jpeg",
+    "img": "/SiteImages/ResizeBenches/KubotaGardenBench.webp",
     "Url": null,
     "Title": "Kobuta Gardens Bench",
     "Description": "A zen, overgrown bench located in one of Seattle\u0027s best public gardens.",
@@ -276,7 +276,7 @@
   {
     "Id": "louisa-boren-lookout",
     "LocationType": "Bench",
-    "img": "/SiteImages/Benches/StanleyPark.jpeg",
+    "img": "/SiteImages/ResizeBenches/StanleyPark.webp",
     "Url": null,
     "Title": "Louisa Boren Lookout",
     "Description": "This bench offers breathtaking northwest-facing views of Lake Washington.",
@@ -388,7 +388,7 @@
   {
     "Id": "seattle-u-bench",
     "LocationType": "Bench",
-    "img": "/SiteImages/Benches/SeattleU.jpeg",
+    "img": "/SiteImages/ResizeBenches/SeattleU.webp",
     "Url": null,
     "Title": "Seattle University Fountain",
     "Description": "Peaceful people watching underneath trees on the upper mall next to the quad.",
@@ -404,7 +404,7 @@
   {
     "Id": "seattle-university-rhododendron",
     "LocationType": "Bench",
-    "img": "/SiteImages/Benches/SeattleUniversityRhod.jpeg",
+    "img": "/SiteImages/ResizeBenches/SeattleUniversityRhod.webp",
     "Url": null,
     "Title": "Seattle University Rhorodendrons",
     "Description": "Located in front of the Administration building, this bench surrounds you with blooms of flowers every spring",
@@ -534,7 +534,7 @@
   {
     "Id": "uw-maple-hell",
     "LocationType": "Bench",
-    "img": "/SiteImages/Benches/UWMapleBench.jpeg",
+    "img": "/SiteImages/ResizeBenches/UWMapleBench.webp",
     "Url": null,
     "Title": "UW Maple Hall Promenade",
     "Description": "The curvy wood on University of Washington\u0027s Maple Hall Promenade makes for good sitting.\u0027",
@@ -566,7 +566,7 @@
   {
     "Id": "woordworth-bench",
     "LocationType": "Bench",
-    "img": "/SiteImages/Benches/woodworthbench.jpeg",
+    "img": "/SiteImages/ResizeBenches/woodworthbench.webp",
     "Url": null,
     "Title": "Woodworth Apartments",
     "Description": "Modern seating outside WoodWorth apartments across from Drip Tea Market.",
