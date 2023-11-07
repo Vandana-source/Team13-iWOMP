@@ -10,10 +10,11 @@
     <a class="font-weight-bold" asp-page="Create">+ Create </a>
     <table class="table table-bordered table-hover table">
         <thead>
-            <tr>
-                <th colspan="4">Benches</th>
-            </tr>
+        <tr>
+            <th colspan="4">Benches</th>
+        </tr>
         </thead>
+            
         @foreach (var product in Model.Products)
         {
             <tbody>
@@ -23,19 +24,19 @@
                         <td>@product.Title</td>
                         <td>
                             <a class="font-weight-bold" asp-page="Read" asp-route-id="@product.Id">
-                                <center><span class="read-icon">📖</span>Read</center>
+                                <center><span class="sm-icon fas fa-book"></span> Read</center>
 
                             </a>
                         </td>
                         <td>
                             <a class="font-weight-bold" asp-page="Update" asp-route-id="@product.Id">
-                                <center><span class="read-icon fas fa-pencil-alt"></span> Update</center>
+                                <center><span class="sm-icon fas fa-pencil-alt"></span> Update</center>
 
                             </a>
                         </td>
                         <td>
                             <a class="font-weight-bold" asp-page="Delete" asp-route-id="@product.Id">
-                                <center><span class="read-icon fas fa-trash-alt"></span> Delete</center>
+                                <center><span class="sm-icon fas fa-trash-alt"></span> Delete</center>
 
                             </a>
                         </td>
