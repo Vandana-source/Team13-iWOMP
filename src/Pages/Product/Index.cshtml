@@ -7,81 +7,82 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <div class="container" id="benches-section">
-    <a class="font-weight-bold" asp-page="Create">+ Create </a>
-    <table class="table table-bordered table-hover table">
+    <a class="font-weight-bold" asp-page="Create">+ Create</a>
+    <table class="table table-bordered table-hover">
         <thead>
-        <tr>
-            <th colspan="4">Benches</th>
-        </tr>
+            <tr>
+                <th>Benches</th>
+                <th class="skinny-col">Read</th>
+                <th class="skinny-col">Update</th>
+                <th class="skinny-col">Delete</th>
+            </tr>
         </thead>
-            
         @foreach (var product in Model.Products)
         {
-            <tbody>
-                @if (product.LocationType == "Bench")
-                {
+            @if (product.LocationType == "Bench")
+            {
+                <tbody>
                     <tr>
                         <td>@product.Title</td>
-                        <td>
+                        <td class="text-center skinny-col">
                             <a class="font-weight-bold" asp-page="Read" asp-route-id="@product.Id">
-                                <center><span class="sm-icon fas fa-book"></span> Read</center>
-
+                                <span class="sm-icon fas fa-book"></span> Read
                             </a>
                         </td>
-                        <td>
+                        <td class="text-center skinny-col">
                             <a class="font-weight-bold" asp-page="Update" asp-route-id="@product.Id">
-                                <center><span class="sm-icon fas fa-pencil-alt"></span> Update</center>
-
+                                <span class="sm-icon fas fa-pencil-alt"></span> Update
                             </a>
                         </td>
-                        <td>
+                        <td class="text-center skinny-col">
                             <a class="font-weight-bold" asp-page="Delete" asp-route-id="@product.Id">
-                                <center><span class="sm-icon fas fa-trash-alt"></span> Delete</center>
-
+                                <span class="sm-icon fas fa-trash-alt"></span> Delete
                             </a>
                         </td>
                     </tr>
-                }
-            </tbody>
+                </tbody>
+            }
         }
     </table>
 </div>
 
+<!-- Repeat for each section: restrooms, other-places, and tables, with the respective IDs and data -->
 <div class="container" id="restrooms-section">
     <a class="font-weight-bold" asp-page="Create">+ Create </a>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th colspan="4">Restrooms</th>
+                <th>Restrooms</th>
+                <th class="text-center skinny-col">Read</th>
+                <th class="text-center skinny-col">Update</th>
+                <th class="text-center skinny-col">Delete</th>
             </tr>
         </thead>
         @foreach (var product in Model.Products)
         {
-            <tbody>
-                @if (product.LocationType == "Restroom")
-                {
+            @if (product.LocationType == "Restroom")
+            {
+                    <tbody>
                     <tr>
                         <td>@product.Title</td>
-                        <td>
+                        <td class="text-center skinny-col">
                             <a class="font-weight-bold" asp-page="Read" asp-route-id="@product.Id">
-                                <center><span class="read-icon">📖</span>Read</center>
+                                <span class="sm-icon fas fa-book"></span> Read
                             </a>
                         </td>
-                        <td>
+                        <td class="text-center skinny-col">
                             <a class="font-weight-bold" asp-page="Update" asp-route-id="@product.Id">
-                                <center><span class="read-icon fas fa-pencil-alt"></span> Update</center>
-
+                                <span class="sm-icon fas fa-pencil-alt"></span> Update
                             </a>
                         </td>
-                        <td>
+                        <td class="text-center skinny-col">
                             <a class="font-weight-bold" asp-page="Delete" asp-route-id="@product.Id">
-                                <center><span class="read-icon fas fa-trash-alt"></span> Delete</center>
-
+                                <span class="sm-icon fas fa-trash-alt"></span> Delete
                             </a>
                         </td>
                     </tr>
+                    </tbody>
                 }
-            </tbody>
         }
     </table>
 </div>
@@ -95,35 +96,31 @@
             </tr>
         </thead>
         @foreach (var product in Model.Products)
-        {
-            <tbody>
-                @if (product.LocationType == "Other")
                 {
-                    <tr>
-                        <td>@product.Title</td>
-                        <td>
-                            <a class="font-weight-bold" asp-page="Read" asp-route-id="@product.Id">
-                                <center><span class="read-icon">📖</span>Read</center>
-                            </a>
-                        </td>
-                        <td>
-                            <a class="font-weight-bold" asp-page="Update" asp-route-id="@product.Id">
-                                <center><span class="read-icon fas fa-pencil-alt"></span> Update</center>
-
-                            </a>
-                        </td>
-                        <td>
-                            <a class="font-weight-bold" asp-page="Delete" asp-route-id="@product.Id">
-                                <center><span class="read-icon fas fa-trash-alt"></span> Delete</center>
-
-                            </a>
-                        </td>
-                    </tr>
+                    if (product.LocationType == "Other")
+                    {
+                        <tr>
+                            <td>@product.Title</td>
+                            <td class="text-center skinny-col">
+                                <a class="font-weight-bold" asp-page="/Product/Read" asp-route-id="@product.Id">
+                                    <span class="sm-icon fas fa-book"></span> Read
+                                </a>
+                            </td>
+                            <td class="text-center skinny-col">
+                                <a class="font-weight-bold" asp-page="/Product/Update" asp-route-id="@product.Id">
+                                    <span class="sm-icon fas fa-pencil-alt"></span> Update
+                                </a>
+                            </td>
+                            <td class="text-center skinny-col">
+                                <a class="font-weight-bold" asp-page="/Product/Delete" asp-route-id="@product.Id">
+                                    <span class="sm-icon fas fa-trash-alt"></span> Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
                 }
-            </tbody>
-        }
     </table>
-</div>
+        </div>
 
 <div class="container" id="tables-section">
     <a class="font-weight-bold" asp-page="Create">+ Create </a>
@@ -135,31 +132,27 @@
         </thead>
         @foreach (var product in Model.Products)
         {
-            <tbody>
-                @if (product.LocationType == "Table")
-                {
-                    <tr>
-                        <td>@product.Title</td>
-                        <td>
-                            <a class="font-weight-bold" asp-page="Read" asp-route-id="@product.Id">
-                                <center><span class="read-icon">📖</span>Read</center>
-                            </a>
-                        </td>
-                        <td>
-                            <a class="font-weight-bold" asp-page="Update" asp-route-id="@product.Id">
-                                <center><span class="read-icon fas fa-pencil-alt"></span> Update</center>
-
-                            </a>
-                        </td>
-                        <td>
-                            <a class="font-weight-bold" asp-page="Delete" asp-route-id="@product.Id">
-                                <center><span class="read-icon fas fa-trash-alt"></span> Delete</center>
-
-                            </a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
+            if (product.LocationType == "Table")
+            {
+                <tr>
+                    <td>@product.Title</td>
+                    <td class="text-center skinny-col">
+                        <a class="font-weight-bold" asp-page="/Product/Read" asp-route-id="@product.Id">
+                            <span class="sm-icon fas fa-book"></span> Read
+                        </a>
+                    </td>
+                    <td class="text-center skinny-col">
+                        <a class="font-weight-bold" asp-page="/Product/Update" asp-route-id="@product.Id">
+                            <span class="sm-icon fas fa-pencil-alt"></span> Update
+                        </a>
+                    </td>
+                    <td class="text-center skinny-col">
+                        <a class="font-weight-bold" asp-page="/Product/Delete" asp-route-id="@product.Id">
+                            <span class="sm-icon fas fa-trash-alt"></span> Delete
+                        </a>
+                    </td>
+                </tr>
+            }
         }
     </table>
 </div>
