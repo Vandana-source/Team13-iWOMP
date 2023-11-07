@@ -68,7 +68,7 @@
   {
     "Id": "cal-anderson-park",
     "LocationType": "Restroom",
-    "img": "/SiteImages/Restrooms/CalAnderson.jpg",
+    "img": "/SiteImages/ResizeRestrooms/CalAnderson.webp",
     "Url": null,
     "Title": "Cal Anderson Park",
     "Description": "A public restroom located in one of Seattle\u0027s busiest parks.",
@@ -84,7 +84,7 @@
   {
     "Id": "cloudburst-brewing-ballard",
     "LocationType": "Restroom",
-    "img": "/SiteImages/Restrooms/CloudburstBrewing.jpg",
+    "img": "/SiteImages/ResizeRestrooms/CloudburstBrewing.webp",
     "Url": null,
     "Title": "Cloudburst Brewing (Ballard)",
     "Description": "Another solid brewery bathroom. Here, the sinks are situated outside.",
@@ -100,7 +100,7 @@
   {
     "Id": "columbia-tower-club",
     "LocationType": "Restroom",
-    "img": "/SiteImages/Restrooms/ColumbiaTower.jpg",
+    "img": "/SiteImages/ResizeRestrooms/ColumbiaTower.webp",
     "Url": null,
     "Title": "Columbia Tower Club",
     "Description": "Frequently acclaimed as a hidden gem among Seattle\u0027s restrooms, this lavatory for women offers a stunning cityscape view from the 76th floor.",
