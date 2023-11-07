@@ -136,7 +136,7 @@ namespace UnitTests.Pages.Product.Create
                     // Mock the IFormFile
                     var mockFormFile = new Mock<IFormFile>();
                     var content = "Dummy file content";
-                    var fileName = "test.txt";
+                    var fileName = "test.jpg";
                     var byteArray = Encoding.UTF8.GetBytes(content);
                     var stream = new MemoryStream(byteArray);
                     
@@ -233,11 +233,67 @@ namespace UnitTests.Pages.Product.Create
             Assert.AreEqual(true, result is PageResult);
 
         }
-        
+
+        /// <summary>
+        /// Invalid file extension and valid location type should stay on same page
+        /// </summary>
+        [Test]
+        public void OnPost_InValid_File_Extension_And_Valid_LocationType_Should_Stay_On_Page()
+        {
+            // Data for testing
+            var testCases = new List<(string LocationType, string ExpectedSubDirectory)>
+                {
+                    ("Table", "Tables"),
+                    ("Bench", "Benches"),
+                    ("Restroom", "Restrooms"),
+                    ("UnknownType", "Others") // default case
+                };
+
+            // Loop through the test case scenarios and test them
+            foreach (var testCase in testCases)
+            {
+                // Arrange
+
+                // Mock the IFormFile
+                var mockFormFile = new Mock<IFormFile>();
+                var content = "Dummy file content";
+                var fileName = "test.pdf";
+                var byteArray = Encoding.UTF8.GetBytes(content);
+                var stream = new MemoryStream(byteArray);
+
+                // Set up the files
+                mockFormFile.Setup(f => f.FileName).Returns(fileName);
+                mockFormFile.Setup(f => f.Length).Returns(stream.Length);
+                mockFormFile.Setup(m => m.OpenReadStream()).Returns(stream);
+
+                pageModel.UploadedFile = mockFormFile.Object;
+
+                // Set up product for this iteration
+                pageModel.Product = new ProductModel
+                {
+                    Id = "testId",
+                    Title = "Title",
+                    LocationType = testCase.LocationType,
+                    Neighborhood = "Neighborhood",
+                    Description = "Description",
+                    MapURL = "Map",
+                };
+
+                // Act
+                var result = pageModel.OnPost() as PageResult;
+
+                // Assert
+                Assert.AreEqual(false, pageModel.ModelState.IsValid);
+
+                var isPageResultType = result is PageResult;
+                Assert.AreEqual(true, isPageResultType);
+            }
+        }
+
         #endregion OnPost
-        
-        # region UploadImage
-        
+
+        #region UploadImage
+
         /// <summary>
         /// Tests the property UploadImage set/get to make sure it works 
         /// </summary>
