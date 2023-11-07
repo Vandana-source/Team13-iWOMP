@@ -340,7 +340,7 @@
   {
     "Id": "SAMOlympicSculptureParkTable1",
     "LocationType": "Table",
-    "img": "/SiteImages/Tables/SAMOlympicSculpturePark.jpeg",
+    "img": "/SiteImages/ResizeTables/SAMOlympicSculpturePark.webp",
     "Url": null,
     "Title": "SAM Olympic Sculpture Park",
     "Description": "These tables overlook the sculpture park. They sit on the patio of the Paccar Pavillion and offer a nice place to eat, work, and watch immaculate sunset views.",
@@ -356,7 +356,7 @@
   {
     "Id": "SculptureParkLoveandLossTable1",
     "LocationType": "Table",
-    "img": "/SiteImages/Tables/SculptureParkLoveandLoss.jpeg",
+    "img": "/SiteImages/ResizeTables/SculptureParkLoveandLoss.webp",
     "Url": null,
     "Title": "Sculpture Park Love and Loss",
     "Description": "In 2005-2006, Roy McMakin created the punny art installation \u0022Love and Loss\u0022 for the Olympic Sculpture Park. The piece not only serves as a visual attraction but also provides a spot to sit. It\u0027s located near the bike trail along the park\u0027s edge.",
@@ -420,7 +420,7 @@
   {
     "Id": "SeattleUAdminBldTable1",
     "LocationType": "Table",
-    "img": "/SiteImages/Tables/SeattleUAdminBld.jpeg",
+    "img": "/SiteImages/ResizeTables/SeattleUAdminBld.webp",
     "Url": null,
     "Title": "Seattle University Admin Building",
     "Description": "This table sits in a secluded patch of greenery behind Seattle University\u0027s administration building. It feels like an oasis in the busy city.",
@@ -436,7 +436,7 @@
   {
     "Id": "SeattleUQuadTable1",
     "LocationType": "Table",
-    "img": "/SiteImages/Tables/SeattleUQuad.jpeg",
+    "img": "/SiteImages/ResizeTables/SeattleUQuad.webp",
     "Url": null,
     "Title": "Seattle University Green",
     "Description": "These tables look upon Seattle University\u0027s green, which is a large grassy field. They offer a good place to meet with friends on a nice day. Sit here to watch students picnic on the green, or engage in sports like volleyball.",
