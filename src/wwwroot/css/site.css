@@ -7,12 +7,8 @@
 }
 
 /* bar for the homepage */
-.homepage-container{
-    position: relative; /* This sets the reference point for absolute positioning of child elements */
-    width: 100%; /* or any desired width */
-    height: auto; /* or any desired height */
-}
 
+/* To center links on mobile view */
 @media (max-width: 768px) {
     .option-bar {
         display: flex;
@@ -157,7 +153,7 @@ a {
 }
 
 
-.btn-homecard {
+.btn-custom {
     cursor: pointer;
     margin-top: 5rem;
     padding: 0.75rem 1.5rem;
@@ -170,10 +166,10 @@ a {
     border: none;
 }
 
-.btn-homecard:hover {
+.btn-custom:hover {
     background-color: #ceb9c6;
 }
-.btn-homecard:focus {
+.btn-custom:focus {
     outline: 1px dashed #cecbb9;
     outline-offset: 3px;
 }
@@ -451,7 +447,7 @@ h1.h1-heading {
     pointer-events: auto;
 }
 
-.homecard .btn-homecard {
+.homecard .btn-custom {
     pointer-events: auto;
 }
 
