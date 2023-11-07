@@ -587,7 +587,7 @@ h1.h1-heading {
     position: relative;
 }
 
-.read-img {
+.wide-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -596,9 +596,9 @@ h1.h1-heading {
     object-fit: cover;
 }
 
-.read-icon {
-    font-size: 24px;
-    color: #0074d9; /* Blue color */
+.sm-icon {
+    font-size: 1.5vw;
+    color: rgba(0, 116, 217, 0.32); /* Blue color */
 }
 
 /*CSS for iframe component*/
