@@ -2,7 +2,7 @@
   {
     "Id": "Aquarium",
     "LocationType": "Other",
-    "img": "/SiteImages/Others/Aquarium.jpg",
+    "img": "/SiteImages/ResizeOthers/Aquarium.webp",
     "Url": null,
     "Title": "Seattle Aquarium",
     "Description": "Meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
@@ -116,7 +116,7 @@
   {
     "Id": "ESports",
     "LocationType": "Other",
-    "img": "/SiteImages/Others/Esports.jpg",
+    "img": "/SiteImages/ResizeOthers/Esports.webp",
     "Url": null,
     "Title": "ESPORTS Gaming Center",
     "Description": "A heaven for all the gamers. A new addition to Seattle University\u0027s recreation center is a great space to chill.\u0027",
@@ -132,7 +132,7 @@
   {
     "Id": "Ferry",
     "LocationType": "Other",
-    "img": "/SiteImages/Others/Ferry.jpg",
+    "img": "/SiteImages/ResizeOthers/Ferry.webp",
     "Url": null,
     "Title": "Ferry Rides",
     "Description": " Enjoy the breathtaking views from the bow of the boat as you cruise to the nearby communities of Bainbridge Island or Bremerton.",
@@ -164,7 +164,7 @@
   {
     "Id": "GreatWheel",
     "LocationType": "Other",
-    "img": "/SiteImages/Others/Great-Wheel.jpg",
+    "img": "/SiteImages/ResizeOthers/Great-Wheel.webp",
     "Url": null,
     "Title": "Great Wheel near Pier",
     "Description": "It adds an entirely new sightseeing perspective, thanks to its location perched on the end of Pier 57.",
@@ -196,7 +196,7 @@
   {
     "Id": "KubotaGardens",
     "LocationType": "Other",
-    "img": "/SiteImages/Others/KubotaGardens.jpg",
+    "img": "/SiteImages/ResizeOthers/KubotaGardens.webp",
     "Url": null,
     "Title": "Kubota Gardens",
     "Description": "Seattle University\u0027s campus has gardens designed by renowned Japanese American landscape architect Fujitar\u014D Kubota. Due to new construction, one of these gardens was recently relocated and renamed the Kubota Legacy Garden on the northwest side of the Sinegal Center. This move, and the garden itself, embodies both the deep artistic and spiritual significance of Kubota\u0027s designs and the university\u0027s commitment to inclusivity and anti-discrimination.",
