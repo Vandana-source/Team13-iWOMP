@@ -256,7 +256,7 @@ ul {
     background: linear-gradient(110deg, #bacec1 60%, #f3f3f3 60%);
 }
 
-.homeimage {
+.img-logo {
     float: right;
     max-width: 10vw;
     max-height: 10vw;
@@ -281,14 +281,14 @@ h1.h1-heading {
     text-align: center;
 }
 
-.homecard:hover,
-.homecard:focus-within {
+.card-custom:hover,
+.card-custom:focus-within {
     align-items: center;
 }
 
 
 
-.homecard-title {
+.card-custom-title {
     font-size: 2rem;
     line-height: 1.5;
     font-weight: bold; 
@@ -299,8 +299,8 @@ h1.h1-heading {
 }
 
 
-/* CSS for the homecard */
-.homecard {
+/* CSS for the card-custom */
+.card-custom {
     margin: 0.3rem;
     position: relative;
     display: flex;
@@ -324,7 +324,7 @@ h1.h1-heading {
 
 }
 
-.homecard:before {
+.card-custom:before {
     content: "";
     position: absolute;
     top: 0;
@@ -345,7 +345,7 @@ h1.h1-heading {
     rgba(16,23,18, 0.6) 90%,
     rgba(16,23,18, 1) 100%);
 }
-.homecard:after {
+.card-custom:after {
     content: "";
     display: block;
     position: absolute;
@@ -369,40 +369,40 @@ h1.h1-heading {
     transition: transform calc(var(--d) * 2) var(--e);
 }
 
-.homecard:hover:before,
-.homecard:focus-within:before {
+.card-custom:hover:before,
+.card-custom:focus-within:before {
     transform: translateY(-4%);
 }
-.homecard:hover:after,
-.homecard:focus-within:after {
+.card-custom:hover:after,
+.card-custom:focus-within:after {
     transform: translateY(-50%);
 }
-.homecard:hover .content,
-.homecard:focus-within .content {
+.card-custom:hover .content,
+.card-custom:focus-within .content {
     transform: translateY(0);
 }
-.homecard:hover .content > *:not(.title),
-.homecard:focus-within .content > *:not(.title) {
+.card-custom:hover .content > *:not(.title),
+.card-custom:focus-within .content > *:not(.title) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(var(--d) / 8);
 }
 
-.homecard:focus-within:before, .homecard:focus-within:after,
-.homecard:focus-within .content,
-.homecard:focus-within .content > *:not(.title) {
+.card-custom:focus-within:before, .card-custom:focus-within:after,
+.card-custom:focus-within .content,
+.card-custom:focus-within .content > *:not(.title) {
     transition-duration: 0s;
 }
 
 @media (max-width: 599px) {
-    .homecard {
+    .card-custom {
         width: 80vw;
         height: 80vw;  /* Match width for 1:1 aspect ratio */
     }
 }
 
 @media (min-width: 600px) and (max-width: 799px) {
-    .homecard {
+    .card-custom {
         width: 50vw;
         height: 50vw;  /* Match width for 1:1 aspect ratio */
     }
@@ -415,7 +415,7 @@ h1.h1-heading {
 }
 
 
-.homecard-content {
+.card-custom-content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -428,25 +428,25 @@ h1.h1-heading {
     z-index: 1;
 }
 
-.homecard-content > * + * {
+.card-custom-content > * + * {
     margin-top: 6rem;
 }
 
 /* On hover, slide the content up */
-.homecard:hover .homecard-content {
+.card-custom:hover .card-custom-content {
     bottom: 10px; /* Adjust according to how much you want to slide it up */
 }
 
 
 /* This ensures the hover effect is applied only to the card and not its children */
-.homecard * {
+.card-custom * {
     pointer-events: none;
 }
-.homecard {
+.card-custom {
     pointer-events: auto;
 }
 
-.homecard .btn-custom {
+.card-custom .btn-custom {
     pointer-events: auto;
 }
 
@@ -468,29 +468,29 @@ h1.h1-heading {
 }
 
 
-.homecard:hover .text-overlay {
+.card-custom:hover .text-overlay {
     transform: translateY(0); /* Slight zoom on hover */
 }
 
 
-.homecard .card-img-top {
+.card-custom .card-img-top {
     height: 40vw; /* This will set the height relative to the viewport width */
     object-fit: cover;  /* This will keep the image proportions while covering the space */
 }
 
-.homecard-body {
+.card-custom-body {
     opacity: 0;  /* Hide it initially */
     transition: opacity 0.3s ease; /* Smooth transition */
 }
 
-.homecard:hover .card-body {
+.card-custom:hover .card-body {
     opacity: 1;  /* Show it on hover */
 }
 
 
 
-/* Hover effect for the homecard */
-.homecard:hover {
+/* Hover effect for the card-custom */
+.card-custom:hover {
     background-color: rgba(37,33,82,.12); /* Change the background color on hover */
     transform: scale(1.05); /* Add a slight zoom effect */
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
