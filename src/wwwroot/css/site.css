@@ -1,4 +1,10 @@
-﻿.checked {
+﻿:root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --font-serif: "Cardo", serif;
+}
+
+.checked {
     color: orange;
 }
 
@@ -151,7 +157,6 @@ a {
     border-color: #bacec1;
 }
 
-
 .btn-custom {
     cursor: pointer;
     margin-top: 5rem;
@@ -287,7 +292,6 @@ h1.h1-heading {
 }
 
 
-
 .card-custom-title {
     font-size: 2rem;
     line-height: 1.5;
@@ -408,12 +412,6 @@ h1.h1-heading {
     }
 }
 
-:root {
-    --d: 700ms;
-    --e: cubic-bezier(0.19, 1, 0.22, 1);
-    --font-serif: "Cardo", serif;
-}
-
 
 .card-custom-content {
     position: relative;
@@ -502,8 +500,7 @@ h1.h1-heading {
     color: #888;
 }
 
-/* CSS for read page*/
-
+/* CSS for small nav bar */
 .option-bar {
     display: flex;
     flex-wrap: wrap;
@@ -699,13 +696,9 @@ h3.header-contactus {
 /* CSS for button pair on Read and Update Page */
 .button-row {
     display: flex;
-    margin: 20px 0;
+    margin: 3vw 0;
 }
 
-/* CSS for Update page */
-h1.update-page-title {
-    margin: 10px;
-}
 
 /* CSS for Read page */
 .larger-title {
