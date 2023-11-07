@@ -292,7 +292,7 @@
   {
     "Id": "PikePlaceMarket",
     "LocationType": "Other",
-    "img": "/SiteImages/Others/PikePlaceMarket.jpg",
+    "img": "/SiteImages/ResizeOthers/PikePlaceMarket.webp",
     "Url": null,
     "Title": "Pike Place Market",
     "Description": "The market added its historic MarketFront expansion in 2017, featuring an open-air plaza and fantastic views of Elliott Bay.",
@@ -308,7 +308,7 @@
   {
     "Id": "PublicLibrary",
     "LocationType": "Other",
-    "img": "/SiteImages/Others/PublicLibrary.jpg",
+    "img": "/SiteImages/ResizeOthers/PublicLibrary.webp",
     "Url": null,
     "Title": "Central Public Library",
     "Description": "You\u2019ve never seen a library quite like this\u2014Seattle Central Library\u2019s architecturally distinct structure boasts enough glass to cover more than five football stadiums.",
@@ -468,7 +468,7 @@
   {
     "Id": "Sinegal-Building",
     "LocationType": "Other",
-    "img": "/SiteImages/Others/SinegalBuilding.jpg",
+    "img": "/SiteImages/ResizeOthers/SinegalBuilding.webp",
     "Url": null,
     "Title": "Sinegal Building",
     "Description": "Cool place to sit in front of Sinegal building.",
