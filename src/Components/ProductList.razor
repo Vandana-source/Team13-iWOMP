@@ -5,8 +5,26 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+
+<select @onchange="OnNeighborhoodChanged">
+    <option value="">Location</option>
+    @foreach (var neighborhood in Neighborhoods)
+    {
+        <option value="@neighborhood">@neighborhood</option>
+    }
+</select>
+
+<!-- Location type filter -->
+<select @onchange="OnLocationTypeChanged">
+    <option value="">Location Type</option>
+    @foreach (var location in LocationTypes)
+    {
+        <option value="@location">@location</option>
+    }
+</select>
+
 <div class="card-columns">
-    @foreach (var product in Products)
+    @foreach (var product in FilteredProducts)
     {
         <div class="card">
             <div class="card-img" style="background-image: url('@product.Image');"></div>
@@ -172,9 +190,39 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @code {
-    [Parameter]
-    public IEnumerable<ProductModel> Products { get; set; }
+    private IEnumerable<ProductModel> Products => ProductService.GetProducts();
+    private string selectedNeighborhood;
+    private string selectedLocationType;
+    
+    private IEnumerable<string> LocationTypes => Products.Select(p => p.LocationType).Distinct();
 
+
+    // Computed property to get the distinct list of neighborhoods
+    private IEnumerable<string> Neighborhoods => Products.Select(p => p.Neighborhood).Distinct();
+
+    // Computed property to get the filtered list of products
+    private IEnumerable<ProductModel> FilteredProducts =>
+        Products
+            .Where(p =>
+                (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
+                (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase))
+            );
+
+    // Event callback for when the dropdown value changes
+    private void OnNeighborhoodChanged(ChangeEventArgs e)
+    {
+        selectedNeighborhood = e.Value?.ToString();
+        StateHasChanged(); // Trigger a re-render of the component
+    }
+    
+    // Event callback for when the location type dropdown value changes
+    private void OnLocationTypeChanged(ChangeEventArgs e)
+    {
+        selectedLocationType = e.Value?.ToString();
+        StateHasChanged(); // Trigger a re-render of the component
+    }
+
+    
     void SubmitRating(string productId, int rating)
     {
         System.Console.WriteLine($"Rating received for product {productId}: {rating}");
