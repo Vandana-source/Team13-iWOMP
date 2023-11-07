@@ -18,10 +18,11 @@
     <div>
         <select @onchange="OnLocationTypeChanged">
             <option value="">Location Type</option>
-            @foreach (var location in LocationTypes)
-            {
-                <option value="@location">@location</option>
-            }
+            
+            <option value="Bench">Bench</option>
+            <option value="Restroom">Restroom</option>
+            <option value="Table">Table</option>
+            <option value="Other">Other</option>
         </select>
     </div>
 </div>
