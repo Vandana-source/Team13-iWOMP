@@ -614,13 +614,13 @@ iframe {
 }
 
 
-.read-googlemap {
+.map-googlemap {
     position: relative;
     height: 0;
     overflow: hidden;
 }
 
-.read-googlemap iframe {
+.map-googlemap iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -708,7 +708,7 @@ h1.update-page-title {
 }
 
 /* CSS for Read page */
-.read-page-title {
+.larger-title {
     font-size: 2.5em;
     font-weight: bold;
 }
