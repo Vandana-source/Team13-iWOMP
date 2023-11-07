@@ -212,7 +212,7 @@
   {
     "Id": "la-dive-bar",
     "LocationType": "Restroom",
-    "img": "/SiteImages/Restrooms/LADiveBar.jpeg",
+    "img": "/SiteImages/ResizeRestrooms/LADiveBar.webp",
     "Url": null,
     "Title": "LA Dive Bar",
     "Description": "Another selfie favorite, this bathroom will have you seeing red.",
@@ -244,7 +244,7 @@
   {
     "Id": "life-on-mars",
     "LocationType": "Restroom",
-    "img": "/SiteImages/Restrooms/LifeOnMars.jpg",
+    "img": "/SiteImages/ResizeRestrooms/LifeOnMars.webp",
     "Url": null,
     "Title": "Life On Mars Disco",
     "Description": "This disco bathroom behind door No. 2 is a groovy spot for selfies and handwashing",
@@ -372,7 +372,7 @@
   {
     "Id": "seattle-central-college",
     "LocationType": "Restroom",
-    "img": "/SiteImages/Restrooms/SeattleCentralCollege.jpg",
+    "img": "/SiteImages/ResizeRestrooms/SeattleCentralCollege.webp",
     "Url": null,
     "Title": "Seattle Central College",
     "Description": "A gender-neutral, multi-stall layout located on the 4th floor",
