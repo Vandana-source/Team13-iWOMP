@@ -452,7 +452,7 @@
   {
     "Id": "SeattleURainGarden",
     "LocationType": "Table",
-    "img": "/SiteImages/Tables/SeattleURainGarden.jpeg",
+    "img": "/SiteImages/ResizeTables/SeattleURainGarden.webp",
     "Url": null,
     "Title": "Seattle U Rain Garden",
     "Description": "This cute little picnic table sits underneath the trees. It is a good spot for lunch, meeting friends, and people watching students on their way to and from class.",
@@ -550,7 +550,7 @@
   {
     "Id": "UWReadingRoom",
     "LocationType": "Table",
-    "img": "/SiteImages/Tables/UWReadingRoom.jpeg",
+    "img": "/SiteImages/ResizeTables/UWReadingRoom.webp",
     "Url": null,
     "Title": "UW Reading Room (Suzzallo)",
     "Description": "University of Washington\u0027s famous reading room gives off Harry Potter vibes. Located in the Suzzallo Library, it is the only silent study room in the library. Flanked by books on all sides, the vaulted ceilings contribute to the magical atmosphere. It is truly a \u0022cathedrals of learning.\u0022",
