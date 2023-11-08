@@ -161,5 +161,59 @@ namespace UnitTests.Pages.Product.AddRating
         }
 
         #endregion UpdateData
+
+        #region AddComment
+
+        /// <summary>
+        /// Testing valid usage of AddComment method
+        /// </summary>
+        [Test]
+        public void AddComment_Invalid_ProductID_Is_Null_Should_Return_false()
+        {
+            // Arrange
+            var comment = "Comment";
+
+            // Act
+            var result = TestHelper.ProductService.AddComment(null,comment);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        /// <summary>
+        /// Testing invalid usage of AddComment method
+        /// </summary>
+        [Test]
+        public void AddComment_Invalid_Data_Is_Null_For_ProductID_Should_Return_false()
+        {
+            // Arrange
+            var productID = "Test";
+            var comment = "Comment";
+
+            // Act
+            var result = TestHelper.ProductService.AddComment(productID, comment);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        /// <summary>
+        /// Testing valid usage of AddComment method
+        /// </summary>
+        [Test]
+        public void AddComment_Valid_Comment_Is_Added_For_Product_Should_Return_false()
+        {
+            // Arrange
+            var productID = "Aquarium";
+            var comment = "Comment";
+
+            // Act
+            var result = TestHelper.ProductService.AddComment(productID,comment);
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        #endregion Comments
     }
 }
