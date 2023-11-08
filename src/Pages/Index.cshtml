@@ -51,7 +51,7 @@
             <p class="homepageformat">
             </p>
             <div class="homepageformat py-3">
-                <a href="/Explore?LocationType=All" class="btn btn-primary">Ready to Explore?</a>
+                <a asp-page="/Explore" asp-route-filter="All" class="btn btn-primary">Ready to Explore?</a>
             </div>
         </main>
 
@@ -62,7 +62,7 @@
                 <div class="card card-custom card-img-bench">
                     <div class="card-custom-content">
                         <h2 class="card-custom-title">Benches</h2>
-                        <a href="/Explore?LocationType=Bench" class="btn btn-custom">Explore Benches</a>
+                        <a asp-page="/Explore" asp-route-filter="Bench" class="btn btn-custom">Explore Benches</a>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                 <div class="card card-custom card-img-restroom">
                     <div class="card-custom-content">
                         <h2 class="card-custom-title">Restrooms</h2>
-                        <a href="/Explore?LocationType=Restroom" class="btn btn-custom">Explore Restrooms</a>
+                        <a asp-page="/Explore" asp-route-filter="Restroom" class="btn btn-custom">Explore Restrooms</a>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                 <div class="card card-custom card-img-tables">
                     <div class="card-custom-content">
                         <h2 class="card-custom-title">Tables</h2>
-                        <a href="/Explore?LocationType=Table" class="btn btn-custom">Explore Tables</a>
+                        <a asp-page="/Explore" asp-route-filter="Table" class="btn btn-custom">Explore Tables</a>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                 <div class="card card-custom card-img-others">
                     <div class="card-custom-content">
                         <h2 class="card-custom-title">Other</h2>
-                        <a href="/Explore?LocationType=Other" class="btn btn-custom">Explore Other Places</a>
+                        <a asp-page="/Explore" asp-route-filter="Other" class="btn btn-custom">Explore Other Places</a>
                     </div>
                 </div>
             </div>
