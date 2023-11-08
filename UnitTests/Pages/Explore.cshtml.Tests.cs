@@ -91,7 +91,7 @@ namespace UnitTests.Pages.Explore
             // Arrange
 
             // Act
-            pageModel.OnGet("All");
+            pageModel.OnGet();
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
@@ -108,7 +108,7 @@ namespace UnitTests.Pages.Explore
             // Arrange
 
             // Act
-            pageModel.OnGet("Bench");
+            pageModel.OnGet();
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
