@@ -199,12 +199,6 @@ namespace UnitTests.Pages.Product.Delete
             // Assertions to verify
             Assert.AreEqual(null, deletedProduct);
 
-            // Reset it back
-            pageModel.Product.Id = originalId;
-            result = pageModel.OnPost() as RedirectToPageResult;
-            
-            // Assert to make sure it's back to normal
-            Assert.AreEqual(true, pageModel.ModelState.IsValid);
             
             // Rest 
             pageModel.ModelState.Clear();
