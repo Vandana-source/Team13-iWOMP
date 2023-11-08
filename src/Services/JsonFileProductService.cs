@@ -227,9 +227,5 @@ namespace ContosoCrafts.WebSite.Services
 
             return true;
         }
-
-
-
     }
-
 }
