@@ -998,6 +998,11 @@ h3.header-about {
 }
 
 /* Css for about page content*/
+
+.team-info h3 {
+    text-align: center;
+}
+
 /*** HEX CONTENT **********************************************************************/
 
 .hex img {
