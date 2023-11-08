@@ -15,7 +15,11 @@
     ],
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": [
+      "Its a nice place."
+    ]
   },
   {
     "Id": "arboretum-bench",
@@ -31,7 +35,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "aroboretum-walk",
@@ -42,12 +48,14 @@
     "Description": "This small memorial bench provides a pleasant spot to sit along Azalea Way.",
     "Neighborhood": "Madison Park",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.470858967956!2d-122.29838952360524!3d47.63641617119252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549014c6f6b93c81%3A0xa24e5c167a647e8a!2sWashington%20Park%20Arboretum!5e0!3m2!1sen!2sus!4v1697556826709!5m2!1sen!2sus",
-    "FunFacts": "The Washington Park Arboretum: 1,475 Reviews, Try this 3.8-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 1 hour 18 min to complete. This is a very popular area for birding, running, and walking, so you'll likely encounter other people while exploring.",
+    "FunFacts": "The Washington Park Arboretum: 1,475 Reviews, Try this 3.8-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 1 hour 18 min to complete. This is a very popular area for birding, running, and walking, so you\u0027ll likely encounter other people while exploring.",
     "Address": null,
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "broadway-bench",
@@ -63,7 +71,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "cal-anderson-park",
@@ -79,7 +89,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "cloudburst-brewing-ballard",
@@ -95,7 +107,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "columbia-tower-club",
@@ -111,7 +125,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "ESports",
@@ -127,7 +143,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "Ferry",
@@ -138,12 +156,14 @@
     "Description": " Enjoy the breathtaking views from the bow of the boat as you cruise to the nearby communities of Bainbridge Island or Bremerton.",
     "Neighborhood": "Downtown",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10761.125043255322!2d-122.34944284793558!3d47.601220434371356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aaff3190823%3A0xab1484dea3fd0b99!2sSeattle%20Ferry%20Toll%20Booth!5e0!3m2!1sen!2sus!4v1697478213442!5m2!1sen!2sus",
-    "FunFacts": "Ferry rides in Seattle offer a unique way to experience the city's stunning waterfront and surrounding natural beauty. The Washington State Ferries system is one of the largest and most extensive in the world, with routes connecting Seattle to various islands and peninsulas. It's not just a mode of transportation; it's a scenic journey with opportunities to spot marine wildlife like whales and enjoy breathtaking views of the Puget Sound. ",
+    "FunFacts": "Ferry rides in Seattle offer a unique way to experience the city\u0027s stunning waterfront and surrounding natural beauty. The Washington State Ferries system is one of the largest and most extensive in the world, with routes connecting Seattle to various islands and peninsulas. It\u0027s not just a mode of transportation; it\u0027s a scenic journey with opportunities to spot marine wildlife like whales and enjoy breathtaking views of the Puget Sound. ",
     "Address": null,
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "GoldenGardens",
@@ -154,12 +174,14 @@
     "Description": "These tables sit along the waterfront in Ballard\u0027s public Golden Gardens Park. The park includes wetlands, beaches, and hiking trails. It is a popular place in the summer for picnics and other gatherings. Facing west, sunsets here can feel magical.",
     "Neighborhood": "Ballard",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2685.6332143949876!2d-122.40896388888355!3d47.69154273990544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549017c7ae2d9273%3A0x5e08236d4601c27d!2sGolden%20Gardens%20Beach!5e0!3m2!1sen!2sus!4v1698082784105!5m2!1sen!2sus",
-    "FunFacts": "Golden Gardens Park in Seattle is known for its beautiful sandy beach on Puget Sound, making it a popular spot for sunsets and bonfires. It also offers fantastic views of the Olympic Mountains and opportunities for activities like kayaking, fishing, and hiking along nearby trails. It's a favorite destination for locals and visitors alike to enjoy the natural beauty of the Pacific Northwest. ",
+    "FunFacts": "Golden Gardens Park in Seattle is known for its beautiful sandy beach on Puget Sound, making it a popular spot for sunsets and bonfires. It also offers fantastic views of the Olympic Mountains and opportunities for activities like kayaking, fishing, and hiking along nearby trails. It\u0027s a favorite destination for locals and visitors alike to enjoy the natural beauty of the Pacific Northwest. ",
     "Address": null,
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "GreatWheel",
@@ -170,12 +192,14 @@
     "Description": "It adds an entirely new sightseeing perspective, thanks to its location perched on the end of Pier 57.",
     "Neighborhood": "Waterfront",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2690.028382475856!2d-122.34509952345697!3d47.606137788009114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aadf98c7f51%3A0xa5209073def1dac6!2sThe%20Seattle%20Great%20Wheel!5e0!3m2!1sen!2sus!4v1697478022176!5m2!1sen!2sus",
-    "FunFacts": "The Seattle Great Wheel is one of the largest Ferris wheels on the West Coast, standing at 175 feet tall and offering stunning views of the city, Elliott Bay, and the surrounding mountains. It's beautifully illuminated at night, creating a captivating visual display on the waterfront. Each gondola is climate-controlled, making it a great attraction to enjoy year-round. ",
+    "FunFacts": "The Seattle Great Wheel is one of the largest Ferris wheels on the West Coast, standing at 175 feet tall and offering stunning views of the city, Elliott Bay, and the surrounding mountains. It\u0027s beautifully illuminated at night, creating a captivating visual display on the waterfront. Each gondola is climate-controlled, making it a great attraction to enjoy year-round. ",
     "Address": null,
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "kubota-gardens-bench",
@@ -191,7 +215,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "KubotaGardens",
@@ -207,7 +233,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "la-dive-bar",
@@ -223,7 +251,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "LemieuxLibrary",
@@ -239,7 +269,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "life-on-mars",
@@ -255,7 +287,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "LincolnParkShelter5Table1",
@@ -271,7 +305,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "louisa-boren-lookout",
@@ -287,7 +323,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "PikePlaceMarket",
@@ -298,12 +336,14 @@
     "Description": "The market added its historic MarketFront expansion in 2017, featuring an open-air plaza and fantastic views of Elliott Bay.",
     "Neighborhood": "Downtown",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5379.687572397515!2d-122.34735353141961!3d47.609727117429976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ab2c151d6cb%3A0x60441d5f633e9f1c!2sPike%20Place%20Market%2C%20Seattle%2C%20WA!5e0!3m2!1sen!2sus!4v1697527428381!5m2!1sen!2sus",
-    "FunFacts": "Pike Place Market in Seattle is one of the oldest continuously operated public farmers' markets in the United States. It's famous for its 'flying fish' tradition, where fishmongers toss fish to one another. The market is also home to the original Starbucks store and a wide range of local artisan stalls, making it a vibrant and iconic destination for visitors",
+    "FunFacts": "Pike Place Market in Seattle is one of the oldest continuously operated public farmers\u0027 markets in the United States. It\u0027s famous for its \u0027flying fish\u0027 tradition, where fishmongers toss fish to one another. The market is also home to the original Starbucks store and a wide range of local artisan stalls, making it a vibrant and iconic destination for visitors",
     "Address": null,
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "PublicLibrary",
@@ -314,12 +354,14 @@
     "Description": "You\u2019ve never seen a library quite like this\u2014Seattle Central Library\u2019s architecturally distinct structure boasts enough glass to cover more than five football stadiums.",
     "Neighborhood": "Downtown",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86077.65735675086!2d-122.35808647301589!3d47.60811315256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490415b59cb97e7%3A0xb3a044a779f5fdd2!2sSeattle%20Public%20Library%20-%20Central%20Library!5e0!3m2!1sen!2sus!4v1697527070419!5m2!1sen!2sus",
-    "FunFacts": "The Seattle Central Library was voted as one of America's Favorite Structures by the American Institute of Architects. It cost over $169 million to build and Bill Gates, being his usual generous self, donated a humble $20 million to the project. ",
+    "FunFacts": "The Seattle Central Library was voted as one of America\u0027s Favorite Structures by the American Institute of Architects. It cost over $169 million to build and Bill Gates, being his usual generous self, donated a humble $20 million to the project. ",
     "Address": null,
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "RanchoBravoTable1",
@@ -335,7 +377,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "SAMOlympicSculptureParkTable1",
@@ -351,7 +395,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "SculptureParkLoveandLossTable1",
@@ -367,7 +413,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "seattle-central-college",
@@ -383,7 +431,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "seattle-u-bench",
@@ -399,7 +449,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "seattle-university-rhododendron",
@@ -415,7 +467,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "SeattleUAdminBldTable1",
@@ -431,7 +485,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "SeattleUQuadTable1",
@@ -447,7 +503,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "SeattleURainGarden",
@@ -463,7 +521,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "Sinegal-Building",
@@ -474,12 +534,14 @@
     "Description": "Cool place to sit in front of Sinegal building.",
     "Neighborhood": "First Hill",
     "MapURL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.8072871926897!2d-122.32050413789176!3d47.61043678759224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906bc0121b1b49%3A0x4285d7477777511a!2sCenter%20for%20Science%20and%20Innovation%2C%20Seattle%20University!5e0!3m2!1sen!2sus!4v1697557096244!5m2!1sen!2sus",
-    "FunFacts": "The Sinegal Building at Seattle University's Albers School of Business and Economics is a LEED Platinum-certified facility, showcasing a strong commitment to sustainability and environmental responsibility. It is named after Jim Sinegal, the co-founder and former CEO of Costco Wholesale, highlighting the university's connection to influential business leaders. The building offers cutting-edge technology, modern design, and collaborative spaces for students and faculty. ",
+    "FunFacts": "The Sinegal Building at Seattle University\u0027s Albers School of Business and Economics is a LEED Platinum-certified facility, showcasing a strong commitment to sustainability and environmental responsibility. It is named after Jim Sinegal, the co-founder and former CEO of Costco Wholesale, highlighting the university\u0027s connection to influential business leaders. The building offers cutting-edge technology, modern design, and collaborative spaces for students and faculty. ",
     "Address": null,
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "starbucks-reserve",
@@ -495,7 +557,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "stoop-brewing-cap-hill",
@@ -511,7 +575,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "u-village",
@@ -529,7 +595,9 @@
     ],
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "uw-maple-hell",
@@ -545,7 +613,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "UWReadingRoom",
@@ -561,7 +631,9 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   },
   {
     "Id": "woordworth-bench",
@@ -577,6 +649,8 @@
     "Ratings": null,
     "Accessibility": null,
     "OpeningHours": null,
-    "LastUpdated": "0001-01-01T00:00:00"
+    "LastUpdated": "0001-01-01T00:00:00",
+    "NoiseLevel": 0,
+    "CommentList": []
   }
 ]
