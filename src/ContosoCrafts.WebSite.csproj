@@ -36,13 +36,24 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\SiteImages\" />
-    <Folder Include="wwwroot\SiteImages\Benches\" />
-    <Folder Include="wwwroot\SiteImages\Restrooms\" />
-    <Folder Include="wwwroot\SiteImages\Others\" />
     <Folder Include="wwwroot\SiteImages\ResizeBenches\" />
     <Folder Include="wwwroot\SiteImages\ResizeOthers\" />
     <Folder Include="wwwroot\SiteImages\ResizeRestrooms\" />
     <Folder Include="wwwroot\SiteImages\ResizeTables\" />
     <Folder Include="wwwroot\SiteImages\AboutImages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\.DS_Store" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\ArboretumMarshIslandBench.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\ArboretumWalk.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\BroadwayBench.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\KubotaGardenBench.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\SeattleU.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\SeattleUniversityFern.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\SeattleUniversityRhod.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\StanleyPark.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\UWMapleBench.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\WoodworthBench.jpeg" />
   </ItemGroup>
 </Project>
