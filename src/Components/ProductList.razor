@@ -73,6 +73,8 @@
                             <div class="card-img" style="background-image: url('@product.Image');"></div>
                             <div class="card-body">
                                 <p class="card-text">@product.Description</p>
+                                <br />
+                                <p class="card-text">Fun Facts : <mark>@product.FunFacts</mark></p>
                                 <!-- Button to toggle the map -->
                                 <div class="d-flex align-items-center justify-content-between map-toggler"
                                      data-toggle="collapse"
@@ -83,16 +85,16 @@
                                     <i class="fas fa-chevron-down"></i>
                                     <i class="fas fa-chevron-up d-none"></i>
                                 </div>
+                                <br />
                                 <!-- The Map wrapped inside a collapsible div -->
                                 <div class="collapse" id="mapCollapse-@product.Id">
                                     <iframe src="@product.MapURL" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
+                        <button type="button" class="btn btn-info share-button-margin" data-toggle="collapse" data-target="#share">Share : </button>
                         <br />
-                        <br />
-                        <div class="container image-row">
-                            <span>     Share : </span>
+                        <div class="container image-row collapse" id="share">
                             <!-- Sharingbutton Facebook -->
                             @{
                                 string fblink = "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
