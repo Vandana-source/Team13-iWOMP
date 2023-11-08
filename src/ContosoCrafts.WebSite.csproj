@@ -18,6 +18,7 @@
     <Content Remove="wwwroot\SiteImages\ResizeOthers\" />
     <Content Remove="wwwroot\SiteImages\ResizeRestrooms\" />
     <Content Remove="wwwroot\SiteImages\ResizeTables\" />
+    <Content Remove="wwwroot\SiteImages\AboutImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="wwwroot\data\products.json">
@@ -42,5 +43,6 @@
     <Folder Include="wwwroot\SiteImages\ResizeOthers\" />
     <Folder Include="wwwroot\SiteImages\ResizeRestrooms\" />
     <Folder Include="wwwroot\SiteImages\ResizeTables\" />
+    <Folder Include="wwwroot\SiteImages\AboutImages\" />
   </ItemGroup>
 </Project>
