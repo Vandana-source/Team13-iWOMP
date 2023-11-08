@@ -950,3 +950,7 @@ h3.header-about {
     display: flex;
     justify-content: space-between; /* this will add equal space between each image */
 }
+
+.share-button-margin {
+    margin-left: 20px;
+}
