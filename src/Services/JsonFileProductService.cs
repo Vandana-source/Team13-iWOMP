@@ -129,6 +129,7 @@ namespace ContosoCrafts.WebSite.Services
             productData.MapURL = data.MapURL;
             productData.Image = data.Image;
             productData.NoiseLevel = data.NoiseLevel;
+            productData.CommentList = data.CommentList;
 
             SaveData(products);
 
@@ -195,6 +196,38 @@ namespace ContosoCrafts.WebSite.Services
             return productData; 
             
         }
+
+        /// <summary>
+        /// Add a Comment to the product
+        /// </summary>
+        public bool AddComment(string productId, string comment)
+        {
+            // If the ProductID is invalid, return
+            if (string.IsNullOrEmpty(productId))
+            {
+                return false;
+            }
+
+            var products = GetProducts();
+
+            // Look up the product, if it does not exist, return
+            var data = products.FirstOrDefault(x => x.Id.Equals(productId));
+            if (data == null)
+            {
+                return false;
+            }
+
+            // Add the Comment
+            var comments = data.CommentList.ToList();
+            comments.Add(comment);
+            data.CommentList = comments.ToArray();
+
+            // Save the data back to the data store
+            SaveData(products);
+
+            return true;
+        }
+
 
 
     }
