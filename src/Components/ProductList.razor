@@ -195,6 +195,50 @@
                         }
                     </div>
 
+                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Comments</button>
+
+                    <div class="modal-footer">
+                        @*First show all the existing comments*@
+                        <div class="container collapse" id="demo">
+                            @{
+                                foreach (var comment in product.CommentList)
+                                {
+                                    <div class="row">
+                                        @comment
+                                    </div>
+                                }
+
+                                // If this is a new comment, then add the Input boxes for it, else show the Add Comment Button
+                                if (NewComment)
+                                {
+                                    <div class="row text-center">
+                                        <div class="col">
+                                            <input class="shadow-7 border" type="text" @onchange="(e) => UpdateCommentText(e.Value.ToString())" value="@NewCommentText" id="CommentInput" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row text-center">
+                                        <div class="col">
+                                            <button @onclick="(e => AddComment(product,NewCommentText))" class="btn btn-outline-success" data-mdb-ripple-color="dark" data-toggle="modal">Save Comment</button>
+                                            <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                }
+
+                                // If this is not a new comment, then show the buttons for Adding comment and Close
+                                if (NewComment == false)
+                                {
+                                    <div class="row text-center">
+                                        <div class="col-sm">
+                                            <button @onclick="(e => ShowNewCommentInput())" id="AddComment" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Add Comment</button>
+                                            <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -204,21 +248,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @code {
-    
+
     // Variable to get all the products, Neighborhoods (for drop down) 
     private IEnumerable<ProductModel> Products => ProductService.GetProducts();
     private IEnumerable<string> Neighborhoods => Products
-        .Select(p => p.Neighborhood) 
-        .Distinct()                  
-        .OrderBy(n => n);         
-    
+        .Select(p => p.Neighborhood)
+        .Distinct()
+        .OrderBy(n => n);
+
     // The neighborhood selected from drop down
     private string selectedNeighborhood;
-    
+
     // The location type selected from drop down
     [Parameter]
     public string selectedLocationType { get; set; }
-    
+
     // The noise level type selected from drop down 
     private int? selectedNoiseLevel;
 
@@ -246,20 +290,20 @@
     private void OnNeighborhoodChanged(ChangeEventArgs e)
     {
         selectedNeighborhood = e.Value?.ToString();
-        
+
         // Trigger a re-render of the component
-        StateHasChanged(); 
+        StateHasChanged();
     }
-    
+
     /// <summary>
     /// Event callback for when drop down LocationType changes
     ///</summary>
     private void OnLocationTypeChanged(ChangeEventArgs e)
     {
         selectedLocationType = e.Value?.ToString();
-        
+
         // Trigger a re-render of the component
-        StateHasChanged(); 
+        StateHasChanged();
     }
 
     /// <summary>
@@ -267,7 +311,7 @@
     /// </summary>
     private void OnNoiseLevelTypeChanged(ChangeEventArgs e)
     {
-        
+
         // Try to get the noise level 
         if (int.TryParse(e.Value?.ToString(), out int result))
         {
@@ -276,9 +320,9 @@
         else
         {
             // Reset or handle the invalid input appropriately
-            selectedNoiseLevel = null; 
+            selectedNoiseLevel = null;
         }
-        
+
         // Trigger a re-render of the component
         StateHasChanged();
     }
@@ -290,5 +334,44 @@
     {
         System.Console.WriteLine($"Rating received for product {productId}: {rating}");
         ProductService.AddRating(productId, rating);
+    }
+
+    // New Comment Flag to show the input box or not
+    bool NewComment = false;
+
+    // Next Comment Text is what the comment text is
+    string NewCommentText = "";
+
+    /// <summary>
+    /// Enable the New Comment Entry by setting the NewComment flag
+    /// </summary>
+    /// <param name="comment"></param>
+    void ShowNewCommentInput()
+    {
+        // Setting the new Comment flag to true will show the input box
+        NewComment = true;
+    }
+
+    /// <summary>
+    /// Set the New Comment Text variable to the data just entered in the input box
+    /// </summary>
+    /// <param name="newCommentText"></param>
+    void UpdateCommentText(string newCommentText)
+    {
+        NewCommentText = newCommentText;
+    }
+
+    /// <summary>
+    /// Add the comment to the product
+    /// Best to refactor this to be a method to call in the Middle Tier Data service, rathern than putting the logic here...
+    /// </summary>
+    /// <param name="comment"></param>
+    void AddComment(ProductModel selectedProduct, string NewCommentText)
+    {
+        // Add it to the Comment List
+        bool result = ProductService.AddComment(selectedProduct.Id, NewCommentText);
+
+        // Set the NewComment flag to false to hide the input box
+        NewComment = false;
     }
 }
