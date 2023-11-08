@@ -40,6 +40,10 @@ namespace ContosoCrafts.WebSite.Pages.Product
         {
             Product = ProductService.GetProducts()
                 .FirstOrDefault(m => m.Id.Equals(id));
+            if (Product == null)
+            {
+                this.ModelState.AddModelError("OnGet", "Update Onget Error");
+            }
         }
 
         /// <summary>
