@@ -17,6 +17,7 @@ using Moq;
 using NUnit.Framework;
 
 using ContosoCrafts.WebSite.Models;
+using System.Linq;
 
 
 namespace UnitTests.Pages.Product.Create
@@ -105,6 +106,9 @@ namespace UnitTests.Pages.Product.Create
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
+
+            // Reset
+            pageModel.ModelState.Clear();
         }
 
         #endregion OnGet
@@ -117,60 +121,65 @@ namespace UnitTests.Pages.Product.Create
         /// Tests switch statement path with Benches, Table, Restrooms, Other
         /// </summary>
         [Test]
-            public void OnPost_Valid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Redirect_To_Index()
-            {
-                // Data for testing
-                var testCases = new List<(string LocationType, string ExpectedSubDirectory)>
+        public void OnPost_Valid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Redirect_To_Index()
+        {
+            // Data for testing
+            var testCases = new List<(string LocationType, string ExpectedSubDirectory)>
                 {
                     ("Table", "Tables"),
                     ("Bench", "Benches"),
                     ("Restroom", "Restrooms"),
                     ("UnknownType", "Others") // default case
                 };
-                
-                // Loop through the test case scenarios and test them
-                foreach (var testCase in testCases)
+
+            // Loop through the test case scenarios and test them
+            foreach (var testCase in testCases)
+            {
+                // Arrange
+
+                // Mock the IFormFile
+                var mockFormFile = new Mock<IFormFile>();
+                var content = "Dummy file content";
+                var fileName = "test.jpg";
+                var byteArray = Encoding.UTF8.GetBytes(content);
+                var stream = new MemoryStream(byteArray);
+
+                // Set up the files
+                mockFormFile.Setup(f => f.FileName).Returns(fileName);
+                mockFormFile.Setup(f => f.Length).Returns(stream.Length);
+                mockFormFile.Setup(m => m.OpenReadStream()).Returns(stream);
+
+                pageModel.UploadedFile = mockFormFile.Object;
+
+                // Set up product for this iteration
+                pageModel.Product = new ProductModel
                 {
-                    // Arrange
+                    Title = "Title",
+                    LocationType = testCase.LocationType,
+                    Neighborhood = "Neighborhood",
+                    Description = "Description",
+                    MapURL = "Map",
+                };
 
-                    // Mock the IFormFile
-                    var mockFormFile = new Mock<IFormFile>();
-                    var content = "Dummy file content";
-                    var fileName = "test.jpg";
-                    var byteArray = Encoding.UTF8.GetBytes(content);
-                    var stream = new MemoryStream(byteArray);
-                    
-                    // Set up the files
-                    mockFormFile.Setup(f => f.FileName).Returns(fileName);
-                    mockFormFile.Setup(f => f.Length).Returns(stream.Length);
-                    mockFormFile.Setup(m => m.OpenReadStream()).Returns(stream);
-        
-                    pageModel.UploadedFile = mockFormFile.Object;
+                // Act
+                var result = pageModel.OnPost() as RedirectToPageResult;
 
-                    // Set up product for this iteration
-                    pageModel.Product = new ProductModel
-                    {
-                        Id = "testId",
-                        Title = "Title",
-                        LocationType = testCase.LocationType,
-                        Neighborhood = "Neighborhood",
-                        Description = "Description",
-                        MapURL = "Map",
-                    };
+                // Assert on correct sub-directory
+                string expectedPath = Path.Combine("/SiteImages", testCase.ExpectedSubDirectory);
+                bool isExpectedSubDirectory = pageModel.Product.Image.Contains(expectedPath);
 
-                    // Act
-                    var result = pageModel.OnPost() as RedirectToPageResult;
+                // Assert on correct title after creation
+                Assert.AreEqual("Title", pageModel.Product.Title);
+                Assert.AreEqual(true, isExpectedSubDirectory, $"Failed for LocationType: {testCase.LocationType}");
 
-                    // Assert on correct sub-directory
-                    string expectedPath = Path.Combine("/SiteImages", testCase.ExpectedSubDirectory);
-                    bool isExpectedSubDirectory = pageModel.Product.Image.Contains(expectedPath);
-                    Assert.AreEqual(true, isExpectedSubDirectory, $"Failed for LocationType: {testCase.LocationType}");
+                // Assert on correct redirection
+                Assert.AreEqual("Index", result.PageName);
 
-                    // Assert on correct redirection
-                    Assert.AreEqual("Index", result.PageName);
-                }
+                // Reset
+                pageModel.ModelState.Clear();
             }
-        
+        }
+
         /// <summary>
         /// Tests invalid Model state stays on page
         /// </summary>
@@ -201,6 +210,9 @@ namespace UnitTests.Pages.Product.Create
 
             var isPageResultType = result is PageResult;
             Assert.AreEqual(true, isPageResultType);
+
+            // Reset
+            pageModel.ModelState.Clear();
         }
         /// <summary>
         /// No upload file stays on page 
@@ -231,6 +243,9 @@ namespace UnitTests.Pages.Product.Create
 
             // Confirming that the result type is a PageResult.
             Assert.AreEqual(true, result is PageResult);
+
+            // Reset
+            pageModel.ModelState.Clear();
 
         }
 
@@ -287,6 +302,9 @@ namespace UnitTests.Pages.Product.Create
 
                 var isPageResultType = result is PageResult;
                 Assert.AreEqual(true, isPageResultType);
+
+                // Reset
+                pageModel.ModelState.Clear();
             }
         }
 
