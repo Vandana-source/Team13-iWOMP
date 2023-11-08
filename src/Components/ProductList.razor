@@ -38,7 +38,7 @@
 
 
 <div class="card-columns">
-    @foreach (var product in FilteredProducts)
+    @foreach (var product in FilterProducts())
     {
         <div class="card">
             <div class="card-img" style="background-image: url('@product.Image');"></div>
@@ -216,19 +216,29 @@
     private string selectedNeighborhood;
     
     // The location type selected from drop down
-    private string selectedLocationType;
+    [Parameter]
+    public string selectedLocationType { get; set; }
     
     // The noise level type selected from drop down 
     private int? selectedNoiseLevel;
 
-    // Computed property to get the filtered list of products
-    private IEnumerable<ProductModel> FilteredProducts =>
-        Products
+    // Computed method to get the filtered list of products
+    private List<ProductModel> FilterProducts()
+    {
+        // Implement logic to filter products based on the Filter parameter
+        // For example:
+        System.Console.WriteLine($"Rating received for product {selectedLocationType}");
+        if (selectedLocationType == "All")
+        {
+            return Products.ToList();
+        }
+        var filteredProducts = Products
             .Where(p =>
                 (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
-                (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase)) &&
-                (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value) 
-            );
+                (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase))
+            ).ToList();
+        return filteredProducts;
+    }
 
     /// <summary>
     /// Event callback for when drop down neighborhood changes 
