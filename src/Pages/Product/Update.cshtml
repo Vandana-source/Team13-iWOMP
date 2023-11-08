@@ -86,6 +86,9 @@
 
         <div class="form-group">
             <label class="control-label" asp-for="Product.MapURL"></label>
+            <button class="btn btn-primary map-button" onclick=" window.open('http://google.com/maps','_blank','noopener noreferrer')">
+                Open Google Maps
+            </button>
             <input class="form-control" asp-for="Product.MapURL">
             <span class="text-danger" asp-validation-for="Product.MapURL"></span>
         </div>
