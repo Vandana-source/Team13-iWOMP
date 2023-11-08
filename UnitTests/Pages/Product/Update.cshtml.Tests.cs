@@ -96,21 +96,27 @@ namespace UnitTests.Pages.Product.Update
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual("Seattle University Green", pageModel.Product.Title);
+
+            // Reset
+            pageModel.ModelState.Clear();
         }
 
         /// <summary>
         /// Tests OnGet with a Invalid product, should return null
         /// </summary>
         [Test]
-        public void OnGet_InValid_Should_Not_Return_Products()
+        public void OnGet_Valid_Should_Return_InvalidState()
         {
             // Arrange
 
             // Act
-            pageModel.OnGet("Test");
+            pageModel.OnGet("bogus");
 
             // Assert
-            Assert.IsNull(pageModel.Product);
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+
+            // Reset
+            pageModel.ModelState.Clear();
         }
 
         #endregion OnGet
@@ -124,14 +130,35 @@ namespace UnitTests.Pages.Product.Update
         public void OnPost_Valid_Should_Return_Products()
         {
             // Arrange
-            pageModel.OnGet("Aquarium");
 
             // Act
+            pageModel.OnGet("Aquarium");
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            var originalTitle = pageModel.Product.Title;
+
+            // change Value to Microsoft  and update
+            pageModel.Product.Title = "Aquarium Title test";
             var result = pageModel.OnPost() as RedirectToPageResult;
 
-            // Assert
+            // Assert to see that post succeeeded
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(true, result.PageName.Contains("Index"));
+
+            // Read it to see if it changed
+            pageModel.OnGet("Aquarium");
+
+            // Assertions to verify
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual("Aquarium Title test", pageModel.Product.Title);
+
+            // Reset it back
+            pageModel.Product.Title = originalTitle;
+            result = pageModel.OnPost() as RedirectToPageResult;
+
+            // Assert to see that post succeeded
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            
+            // Reset
+            pageModel.ModelState.Clear();
         }
 
         /// <summary>
@@ -141,26 +168,22 @@ namespace UnitTests.Pages.Product.Update
         public void OnPost_InValid_Model_Not_Valid_Return_Page()
         {
             // Arrange
-            pageModel.Product = new ProductModel
-            {
-                Id = "testId",
-                Title = "Title",
-                LocationType = "Location",
-                Neighborhood = "Neighborhood",
-                Description = "Description",
-                MapURL = "Map",
-                Image = "Image",
-                NoiseLevel = 2
-            };
 
             // Force an invalid error state
-            pageModel.ModelState.AddModelError("Test", "Test error");
+            pageModel.ModelState.AddModelError("bogus", "bogus error");
 
             // Act
+            // Store the ActionResult of the post? TODO: better understand this line of code or ask professor
             var result = pageModel.OnPost() as ActionResult;
+            // Store whether the ModelState is valid for later assert
+            var stateIsValid = pageModel.ModelState.IsValid;
 
             // Assert
-            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+            Assert.AreEqual(false, stateIsValid);
+
+            // Reset
+            // This should remove the error we added
+            pageModel.ModelState.Clear();
         }
 
         /// <summary>
@@ -215,6 +238,9 @@ namespace UnitTests.Pages.Product.Update
 
                 // Assert on correct redirection
                 Assert.AreEqual("./Index", result.PageName);
+
+                // Reset
+                pageModel.ModelState.Clear();
             }
         }
 
@@ -259,6 +285,9 @@ namespace UnitTests.Pages.Product.Update
             // Assert on correct redirection
             Assert.AreEqual("./Index", result.PageName);
 
+            // Reset
+            pageModel.ModelState.Clear();
+
         }
 
         /// <summary>
@@ -301,8 +330,14 @@ namespace UnitTests.Pages.Product.Update
 
             // Assert on correct redirection
             Assert.AreEqual("./Index", result.PageName);
+
+            // Reset
+            pageModel.ModelState.Clear();
         }
 
+        /// <summary>
+        /// Testing Invalid file extension should stay on the same page
+        /// </summary>
         [Test]
         public void OnPost_Invalid_File_Should_Stay_On_Page()
         {
@@ -338,11 +373,14 @@ namespace UnitTests.Pages.Product.Update
             bool isExpectedSubDirectory = pageModel.Product.Image.Contains(expectedPath);
             Assert.AreEqual(true, isExpectedSubDirectory, $"Failed for LocationType: Restroom");
 
-            // Assert on correct redirection
+            // Assert
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
 
             var isPageResultType = result is PageResult;
             Assert.AreEqual(true, isPageResultType);
+
+            // Reset
+            pageModel.ModelState.Clear();
         }
 
         #endregion OnPost
