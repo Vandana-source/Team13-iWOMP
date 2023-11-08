@@ -255,7 +255,8 @@
         var filteredProducts = Products
             .Where(p =>
                 (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
-                (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase))
+                (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase)) &&
+                (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value) 
             ).ToList();
         return filteredProducts;
     }
