@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using ContosoCrafts.WebSite.Pages.Product;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Hosting;
@@ -74,7 +75,7 @@ namespace UnitTests.Pages.Product.Delete
 
             productService = new JsonFileProductService(mockWebHostEnvironment.Object);
 
-            pageModel = new DeleteModel(productService)
+            pageModel = new DeleteModel(TestHelper.ProductService)
             {
             };
         }
@@ -173,6 +174,43 @@ namespace UnitTests.Pages.Product.Delete
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Index"));
         }
+        
+        /// <summary>
+        /// Tests to see if a product was actually deleted from the database 
+        /// </summary>
+        [Test]
+        public void OnPost_ValidProductId_Should_DeleteProduct()
+        {
+            // Arrange
+            
+            // Act 
+            pageModel.OnGet("Aquarium");
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            var originalId = pageModel.Product.Id;
+            
+            // Delete it 
+            var result = pageModel.OnPost() as RedirectToPageResult;
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            
+            // Look for it and assert it 's not there 
+            var deletedProduct = pageModel.ProductService.GetProducts()
+                .FirstOrDefault(product => product.Id == "Aquarium");            
+            
+            // Assertions to verify
+            Assert.AreEqual(null, deletedProduct);
+
+            // Reset it back
+            pageModel.Product.Id = originalId;
+            result = pageModel.OnPost() as RedirectToPageResult;
+            
+            // Assert to make sure it's back to normal
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            
+            // Rest 
+            pageModel.ModelState.Clear();
+        }
+            
+            
 
         #endregion OnPost
 
