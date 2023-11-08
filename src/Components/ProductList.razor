@@ -16,14 +16,22 @@
             }
         </select>
     </div>
-    <div>
+    <div style="margin-right: 1vw;">
         <select @onchange="OnLocationTypeChanged">
             <option value="">Location Type</option>
-            
             <option value="Bench">Bench</option>
             <option value="Restroom">Restroom</option>
             <option value="Table">Table</option>
             <option value="Other">Other</option>
+        </select>
+    </div>
+    <div>
+        <select @onchange="OnNoiseLevelTypeChanged">
+            <option value="">Noise Level</option>
+            @for (int i = 1; i <= 10; i++)
+            {
+                <option value="@i">@i</option>
+            }
         </select>
     </div>
 </div>
@@ -196,45 +204,81 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @code {
+    
+    // Variable to get all the products, Neighborhoods (for drop down) 
     private IEnumerable<ProductModel> Products => ProductService.GetProducts();
+    private IEnumerable<string> Neighborhoods => Products
+        .Select(p => p.Neighborhood) 
+        .Distinct()                  
+        .OrderBy(n => n);         
+    
+    // The neighborhood selected from drop down
     private string selectedNeighborhood;
+    
+    // The location type selected from drop down
     private string selectedLocationType;
     
-    private IEnumerable<string> LocationTypes => Products.Select(p => p.LocationType).Distinct();
-
-
-    // Computed property to get the distinct list of neighborhoods
-    private IEnumerable<string> Neighborhoods => Products.Select(p => p.Neighborhood).Distinct();
+    // The noise level type selected from drop down 
+    private int? selectedNoiseLevel;
 
     // Computed property to get the filtered list of products
     private IEnumerable<ProductModel> FilteredProducts =>
         Products
             .Where(p =>
                 (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
-                (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase))
+                (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase)) &&
+                (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value) 
             );
 
-    // Event callback for when the dropdown value changes
+    /// <summary>
+    /// Event callback for when drop down neighborhood changes 
+    ///</summary>
     private void OnNeighborhoodChanged(ChangeEventArgs e)
     {
         selectedNeighborhood = e.Value?.ToString();
-        StateHasChanged(); // Trigger a re-render of the component
+        
+        // Trigger a re-render of the component
+        StateHasChanged(); 
     }
     
-    // Event callback for when the location type dropdown value changes
+    /// <summary>
+    /// Event callback for when drop down LocationType changes
+    ///</summary>
     private void OnLocationTypeChanged(ChangeEventArgs e)
     {
         selectedLocationType = e.Value?.ToString();
-        StateHasChanged(); // Trigger a re-render of the component
+        
+        // Trigger a re-render of the component
+        StateHasChanged(); 
     }
 
-    
+    /// <summary>
+    /// Event callabck for when drop down NoiseLevel changes
+    /// </summary>
+    private void OnNoiseLevelTypeChanged(ChangeEventArgs e)
+    {
+        
+        // Try to get the noise level 
+        if (int.TryParse(e.Value?.ToString(), out int result))
+        {
+            selectedNoiseLevel = result;
+        }
+        else
+        {
+            // Reset or handle the invalid input appropriately
+            selectedNoiseLevel = null; 
+        }
+        
+        // Trigger a re-render of the component
+        StateHasChanged();
+    }
+
+    /// <summary>
+    /// Event callabck for when ratings change 
+    /// </summary>
     void SubmitRating(string productId, int rating)
     {
         System.Console.WriteLine($"Rating received for product {productId}: {rating}");
         ProductService.AddRating(productId, rating);
-
-        // After adding rating, you might want to refresh the product's details
-        // You would need to implement logic to refresh product details if necessary
     }
 }
