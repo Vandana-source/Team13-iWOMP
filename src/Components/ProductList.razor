@@ -317,7 +317,7 @@
     bool NewComment = false;
 
     // Next Comment Text is what the comment text is
-    string NewCommentText = "";
+    string NewCommentText = string.Empty;
 
     //Date time for the comment
     string timestamp = DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + " - ";
@@ -338,7 +338,7 @@
     /// <param name="newCommentText"></param>
     void UpdateCommentText(string newCommentText)
     {
-        NewCommentText = timestamp + newCommentText;
+        NewCommentText = newCommentText;
     }
 
     /// <summary>
@@ -348,10 +348,19 @@
     /// <param name="comment"></param>
     void AddComment(ProductModel selectedProduct, string NewCommentText)
     {
-        // Add it to the Comment List
-        bool result = ProductService.AddComment(selectedProduct.Id, NewCommentText);
+        // Comment should not be empty 
+        if(string.IsNullOrWhiteSpace(NewCommentText))
+        {
+            NewComment = false;
+        }
+        else
+        {
+            NewCommentText = timestamp + NewCommentText;
+            // Add it to the Comment List
+            bool result = ProductService.AddComment(selectedProduct.Id, NewCommentText);
 
-        // Set the NewComment flag to false to hide the input box
-        NewComment = false;
+            // Set the NewComment flag to false to hide the input box
+            NewComment = false;
+        }
     }
 }
