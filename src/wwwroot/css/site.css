@@ -1153,6 +1153,11 @@ h3.header-about {
     }
 }
 
+/* Css for filter */
+.filter-option {
+    margin-right: 1vw;
+}
+
 select.filter-button {
     background-color: #bacec1;
     border-radius: 5px;
