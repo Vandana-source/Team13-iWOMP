@@ -118,7 +118,6 @@ for details on configuring this project to bundle and minify static web assets. 
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    opacity: .8;
 }
 
 .modal .card-img {
