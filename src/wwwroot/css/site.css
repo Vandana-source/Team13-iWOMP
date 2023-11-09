@@ -1159,3 +1159,12 @@ select.filter-button {
     padding: 5px;
     font-family: 'Nunito', sans-serif;
 }
+
+#neighborhoodDropdown {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    padding-bottom: 2vw;
+}
