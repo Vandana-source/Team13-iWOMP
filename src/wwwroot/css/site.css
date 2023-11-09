@@ -1166,5 +1166,5 @@ select.filter-button {
     background-color: white;
     z-index: 1;
     display: flex;
-    padding-bottom: 2vw;
+    padding: 1vw 0;
 }
