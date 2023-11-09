@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="~/css/site.css" />
 
 <div id="neighborhoodDropdown">
-    <div class="filter-option" style="margin-right: 1vw;">
+    <div class="filter-option">
         <select class="filter-button" @onchange="OnNeighborhoodChanged">
             <option value="">Neighborhood</option>
             @foreach (var neighborhood in Neighborhoods)
@@ -16,7 +16,7 @@
             }
         </select>
     </div>
-    <div class="filter-option" style="margin-right: 1vw;">
+    <div class="filter-option">
         <select class="filter-button" @onchange="OnLocationTypeChanged">
             <option value="">Location Type</option>
             <option value="Bench">Bench</option>
