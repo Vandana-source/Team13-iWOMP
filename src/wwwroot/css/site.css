@@ -4,6 +4,24 @@
     --font-serif: "Cardo", serif;
 }
 
+.skinny-container {
+    height: 5.5vw;
+}
+
+
+@media (max-width: 759px) {
+    .skinny-container {
+        height: auto; /* Adjust the height for mobile */
+        padding: 10px; /* Add some padding if needed */
+        padding-left: 10vw; 
+    }
+
+    .img-logo {
+        max-width: 25vw; 
+        max-height: 25vw; 
+    }
+}
+
 .skinny-col {
     width: 4%;    
 }
@@ -30,6 +48,12 @@
     height: 18vw;
     margin-left: -100%;
     margin-top: -2.6rem;
+    background-color: #29392e;
+    position: relative;
+}
+
+.small-color-rectangle {
+    height: 4.5vw;
     background-color: #29392e;
     position: relative;
 }
@@ -61,7 +85,7 @@
     font-family: 'Lato', sans-serif;
     font-size: 1.3vw;
     color: #cec1ba;
-    margin-top: 2.6vw;
+    margin-top: 2.3vw;
     top: 0;
     left: 60%; /* Moving the text box to the right side, starting from the center. Adjust as needed. */
     position: absolute;
@@ -114,13 +138,14 @@ for details on configuring this project to bundle and minify static web assets. 
     background: #fbfafd;
 }
 
-
 a.navbar-brand {
     white-space: normal;
     font-family: 'Pacifico', cursive;
     text-align: center;
     word-break: break-all;
-    font-size: 2vw;
+    font-size: 3.5vw;
+    padding-top: 3.2vw;
+
 }
 
 /* Provide sufficient contrast against white background */
@@ -264,14 +289,15 @@ ul {
 
 .img-logo {
     float: right;
-    max-width: 7.5vw;
-    max-height: 7.5vw;
+    max-width: 8vw;
+    max-height: 8vw;
 }
 
 .nav-item {
-    padding-top: 1vw; 
+    padding-top: 4.8vw; 
     font-size: 1.5vw;
 }
+
 
 
 
