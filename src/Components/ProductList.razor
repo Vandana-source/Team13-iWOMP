@@ -256,7 +256,7 @@
             .Where(p =>
                 (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
                 (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase)) &&
-                (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value) 
+                (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value)
             ).ToList();
         return filteredProducts;
     }
@@ -319,6 +319,9 @@
     // Next Comment Text is what the comment text is
     string NewCommentText = "";
 
+    //Date time for the comment
+    string timestamp = DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + " - ";
+
     /// <summary>
     /// Enable the New Comment Entry by setting the NewComment flag
     /// </summary>
@@ -335,7 +338,7 @@
     /// <param name="newCommentText"></param>
     void UpdateCommentText(string newCommentText)
     {
-        NewCommentText = newCommentText;
+        NewCommentText = timestamp + newCommentText;
     }
 
     /// <summary>
