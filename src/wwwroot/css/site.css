@@ -1152,3 +1152,10 @@ h3.header-about {
         font-size: 13px;
     }
 }
+
+select.filter-button {
+    background-color: #bacec1;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: 'Nunito', sans-serif;
+}
