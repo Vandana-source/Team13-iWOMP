@@ -30,7 +30,7 @@ namespace ContosoCrafts.WebSite.Models
         public int NominatedNoiseLevel { get; set;}
         
         // Nominated neighborhood
-        public string NominatedNeighborhoodP { get; set; }
+        public string NominatedNeighborhood { get; set; }
         
         // Nominated map details 
         public string NominatedMapDetails { get; set;}
