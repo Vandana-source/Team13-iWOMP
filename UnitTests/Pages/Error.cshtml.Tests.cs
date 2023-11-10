@@ -14,8 +14,8 @@ using NUnit.Framework;
 
 using Moq;
 
-using ContosoCrafts.WebSite.Pages;
-using ContosoCrafts.WebSite.Services;
+using TakeABreak.WebSite.Pages;
+using TakeABreak.WebSite.Services;
 
 namespace UnitTests.Pages.Error
 {
