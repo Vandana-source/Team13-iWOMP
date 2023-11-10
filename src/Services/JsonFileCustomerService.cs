@@ -3,11 +3,11 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-using ContosoCrafts.WebSite.Models;
+using TakeABreak.WebSite.Models;
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-namespace ContosoCrafts.WebSite.Services
+namespace TakeABreak.WebSite.Services
 {
     public class JsonFileCustomerService
     {
