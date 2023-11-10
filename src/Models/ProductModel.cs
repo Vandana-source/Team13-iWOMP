@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace ContosoCrafts.WebSite.Models
+namespace TakeABreak.WebSite.Models
 {
     /// <summary>
     /// In project a 'product model' is a physical location and this describes its attributes

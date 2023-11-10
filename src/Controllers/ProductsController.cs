@@ -2,10 +2,10 @@ using System.Collections.Generic;
 
 using Microsoft.AspNetCore.Mvc;
 
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
+using TakeABreak.WebSite.Models;
+using TakeABreak.WebSite.Services;
 
-namespace ContosoCrafts.WebSite.Controllers
+namespace TakeABreak.WebSite.Controllers
 {
     
     /// <summary>
