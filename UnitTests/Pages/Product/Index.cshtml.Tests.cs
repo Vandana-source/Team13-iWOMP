@@ -14,8 +14,8 @@ using Moq;
 
 using NUnit.Framework;
 
-using ContosoCrafts.WebSite.Pages.Product;
-using ContosoCrafts.WebSite.Services;
+using TakeABreak.WebSite.Pages.Product;
+using TakeABreak.WebSite.Services;
 
 namespace UnitTests.Pages.Product.Index
 {

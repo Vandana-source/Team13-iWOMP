@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
-using ContosoCrafts.WebSite.Pages.Product;
-using ContosoCrafts.WebSite.Models;
+using TakeABreak.WebSite.Pages.Product;
+using TakeABreak.WebSite.Models;
 using System.Linq;
 
 namespace UnitTests.Pages.Product.AddRating

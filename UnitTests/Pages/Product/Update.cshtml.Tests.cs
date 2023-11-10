@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using ContosoCrafts.WebSite.Pages.Product;
+using TakeABreak.WebSite.Pages.Product;
 using System.Text;
-using ContosoCrafts.WebSite.Services;
+using TakeABreak.WebSite.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +16,7 @@ using Moq;
 
 using NUnit.Framework;
 
-using ContosoCrafts.WebSite.Models;
+using TakeABreak.WebSite.Models;
 
 
 namespace UnitTests.Pages.Product.Update
