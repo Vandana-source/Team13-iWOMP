@@ -2,10 +2,10 @@ using System.Collections.Generic;
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
+using TakeABreak.WebSite.Models;
+using TakeABreak.WebSite.Services;
 
-namespace ContosoCrafts.WebSite.Pages.Product
+namespace TakeABreak.WebSite.Pages.Product
 {
     /// <summary>
     /// Index Page will return all the data to show
