@@ -35,6 +35,9 @@ namespace ContosoCrafts.WebSite.Models
         // Nominated map details 
         public string NominatedMapDetails { get; set;}
         
+        // Nominated description 
+        public string NominatedDescription { get; set;}
+        
         // Overrides the ToString method to serialize the object to JSON.
         public override string ToString() => JsonSerializer.Serialize<CustomerModel>(this);
     }
