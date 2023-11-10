@@ -18,11 +18,20 @@
     </div>
     <div class="filter-option">
         <select class="filter-button" @onchange="OnLocationTypeChanged">
-            <option value="">Location Type</option>
-            <option value="Bench">Bench🪑</option>
-            <option value="Restroom">Restroom🚻</option>
-            <option value="Table">Table</option>
-            <option value="Other">Other🏞️</option>
+            @{
+                <option value="">Location Type</option>
+                foreach (var locationtype in LocationTypes)
+                {
+                    if (locationtype.Equals(selectedLocationType))
+                    {
+                        <option value="@locationtype" selected>@locationtype</option>
+                    }
+                    else
+                    {
+                        <option value="@locationtype">@locationtype</option>
+                    }
+                }
+            }
         </select>
     </div>
     <div class="filter-option">
@@ -225,10 +234,14 @@
 
 @code {
 
-    // Variable to get all the products, Neighborhoods (for drop down)
+    // Variable to get all the products, Neighborhoods and LocationType (for drop down)
     private IEnumerable<ProductModel> Products => ProductService.GetProducts();
     private IEnumerable<string> Neighborhoods => Products
         .Select(p => p.Neighborhood)
+        .Distinct()
+        .OrderBy(n => n);
+    private IEnumerable<string> LocationTypes => Products
+        .Select(p => p.LocationType)
         .Distinct()
         .OrderBy(n => n);
 
@@ -348,8 +361,8 @@
     /// <param name="comment"></param>
     void AddComment(ProductModel selectedProduct, string NewCommentText)
     {
-        // Comment should not be empty 
-        if(string.IsNullOrWhiteSpace(NewCommentText))
+        // Comment should not be empty
+        if (string.IsNullOrWhiteSpace(NewCommentText))
         {
             NewComment = false;
         }
