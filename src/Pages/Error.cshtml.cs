@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace ContosoCrafts.WebSite.Pages
+namespace TakeABreak.WebSite.Pages
 {
     /// <summary>
-    ///  Represents the error page model for the ContosoCrafts website.
+    ///  Represents the error page model for the TakeABreak website.
     /// </summary>
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : PageModel
