@@ -3,10 +3,10 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
+using TakeABreak.WebSite.Models;
+using TakeABreak.WebSite.Services;
 
-namespace ContosoCrafts.WebSite.Pages
+namespace TakeABreak.WebSite.Pages
 {
     /// <summary>
     /// Represents the code-behind for the Index Razor Page.

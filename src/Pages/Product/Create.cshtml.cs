@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ContosoCrafts.WebSite.Services;
-using ContosoCrafts.WebSite.Models;
+using TakeABreak.WebSite.Services;
+using TakeABreak.WebSite.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System;
 using System.Linq;
 
-namespace ContosoCrafts.WebSite.Pages.Product
+namespace TakeABreak.WebSite.Pages.Product
 {
     /// <summary>
     /// Page for creating new product entries.

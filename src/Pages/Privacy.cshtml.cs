@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace ContosoCrafts.WebSite.Pages
+namespace TakeABreak.WebSite.Pages
 {
     /// <summary>
     /// Represents the code-behind for the Privacy Razor Page.
