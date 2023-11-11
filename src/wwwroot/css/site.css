@@ -530,6 +530,11 @@ h1.h1-heading {
     display: flex;
     flex-wrap: wrap;
     margin: auto 15px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    padding: 1vw 0;
 }
 
 .location-content {
