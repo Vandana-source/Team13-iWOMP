@@ -1169,7 +1169,7 @@ select.filter-button {
     font-family: 'Nunito', sans-serif;
 }
 
-#neighborhoodDropdown {
+#filter-bar {
     position: sticky;
     top: 0;
     background-color: white;
