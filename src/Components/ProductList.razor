@@ -37,6 +37,17 @@
             }
         </select>
     </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" placeholder="Search by Title...">
+                    <div class="input-group-append">
+                        <button @onclick="(e => EnableFilterData())" class="btn btn-primary">Filter</button>
+                        <button @onclick="(e => ClearFilterData())" class="btn btn-secondary">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 
 
@@ -234,7 +245,7 @@
         .Select(p => p.Neighborhood)
         .Distinct()
         .OrderBy(n => n);
-   
+
 
     // The neighborhood selected from drop down
     private string selectedNeighborhood;
@@ -245,6 +256,9 @@
 
     // The noise level type selected from drop down
     private int? selectedNoiseLevel;
+
+    string FilterDataString = "";
+    bool FilterData = false;
 
     // Computed method to get the filtered list of products
     private List<ProductModel> FilterProducts()
@@ -260,7 +274,8 @@
             .Where(p =>
                 (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
                 (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase)) &&
-                (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value)
+                (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value) &&
+                (string.IsNullOrWhiteSpace(FilterDataString) || FilterData == false || p.Title.Contains(FilterDataString))
             ).ToList();
         return filteredProducts;
     }
@@ -366,5 +381,23 @@
             // Set the NewComment flag to false to hide the input box
             NewComment = false;
         }
+    }
+
+    void UpdateFilterText(string text)
+    {
+        FilterDataString = text;
+    }
+
+    void EnableFilterData()
+    {
+        // If the Filter is enabled, set the filter flag
+        FilterData = true;
+    }
+
+    void ClearFilterData()
+    {
+        // If the Filter is enabled, set the filter flag
+        FilterData = false;
+        FilterDataString = "";
     }
 }
