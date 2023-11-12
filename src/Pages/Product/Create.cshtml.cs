@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace TakeABreak.WebSite.Pages.Product
 {
@@ -48,6 +49,14 @@ namespace TakeABreak.WebSite.Pages.Product
         /// <returns>An IActionResult representing the response to the POST request.</returns>
         public IActionResult OnPost()
         {
+            // Validate the MapURL provided
+            if (!IsAllowedMapURL(Product.MapURL))
+            {
+                // Display an error message and redirect back to the page.
+                ModelState.AddModelError("MapURL", "Please provide a valid Google Maps URL");
+                return Page();
+            }
+
             if (UploadedFile != null && UploadedFile.Length > 0)
             {
                 string fileExtension = Path.GetExtension(UploadedFile.FileName).ToLower();
@@ -100,10 +109,35 @@ namespace TakeABreak.WebSite.Pages.Product
             return Page();
         }
 
+        /// <summary>
+        /// Method to validate the type of image provided
+        /// </summary>
+        /// <param name="extension"></param>
+        /// <returns></returns>
         private bool IsAllowedImageExtension(string extension)
         {
+            // List of valid extensions
             string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".bmp" };
+
+            // If the extension is valid returns true, if not returns false
             return allowedExtensions.Contains(extension);
+        }
+
+        /// <summary>
+        /// Method to validate the pattern provided for the MapURL
+        /// </summary>
+        /// <param name="MapURL"></param>
+        /// <returns></returns>
+        private bool IsAllowedMapURL(string MapURL)
+        {
+            // Valid pattern for the Maps URL
+            string googleMapsPattern = @"^https://www\.google\.com/maps/embed\?pb=!.+$"; // Adjust the pattern as needed
+
+            // Regular expression of the pattern
+            Regex regex = new Regex(googleMapsPattern);
+
+            // Return true if the pattern matches, if not returns false
+            return regex.IsMatch(MapURL);
         }
     }
 }
