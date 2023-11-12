@@ -8,7 +8,7 @@
 
 <div id="filter-bar">
     <div class="filter-option">
-        <select class="filter-button" @onchange="OnNeighborhoodChanged">
+        <select class="filter-dropdown" @onchange="OnNeighborhoodChanged">
             <option value="">Neighborhood</option>
             @foreach (var neighborhood in Neighborhoods)
             {
@@ -17,7 +17,7 @@
         </select>
     </div>
     <div class="filter-option">
-        <select class="filter-button" @onchange="OnLocationTypeChanged">
+        <select class="filter-dropdown" @onchange="OnLocationTypeChanged">
             @{
                 <option value="">Location Type</option>
                 <option value="Bench">Bench🪑</option>
@@ -29,7 +29,7 @@
         </select>
     </div>
     <div class="filter-option">
-        <select class="filter-button" @onchange="OnNoiseLevelTypeChanged">
+        <select class="filter-dropdown" @onchange="OnNoiseLevelTypeChanged">
             <option value="">Noise Level</option>
             @for (int i = 1; i <= 10; i++)
             {
