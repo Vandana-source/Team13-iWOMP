@@ -1177,3 +1177,15 @@ select.filter-button {
     display: flex;
     padding: 1vw 0;
 }
+
+.input-group {
+    width: 46vw;
+    border-radius: 5px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.input-group-append {
+    border-radius: 5px;
+    font-family: 'Nunito', sans-serif;
+    height: 2.7vw;
+}
