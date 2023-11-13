@@ -233,7 +233,7 @@
                     @for (int i = 1; i <= 5; i++)
                     {
                         var currentStar = i;
-                        <span class="fa fa-star @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
+                        <span class="fa fa-thumbs-up @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
                     }
                 </div>
 
