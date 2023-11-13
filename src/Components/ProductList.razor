@@ -40,10 +40,10 @@
     <div class="row">
         <div class="col-md-8">
             <div class="input-group">
-                <input type="text" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" placeholder="Search by Title...">
+                <input type="text" id="filter-input" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" placeholder="Search by Title...">
                 <div class="input-group-append">
-                    <button @onclick="(e => EnableFilterData())" class="btn btn-primary">Filter</button>
-                    <button @onclick="(e => ClearFilterData())" class="btn btn-secondary">Clear</button>
+                    <button @onclick="(e => EnableFilterData())" class="btn btn-primary" id="filter-button">Filter</button>
+                    <button @onclick="(e => ClearFilterData())" class="btn btn-secondary" id="clear-button">Clear</button>
                 </div>
             </div>
         </div>
@@ -119,37 +119,40 @@
                         <div class="tab-pane fade" id="funfact-@product.Id" role="tabpanel" aria-labelledby="funfact-tab">@product.FunFacts</div>
                         <div class="tab-pane fade" id="comments-@product.Id" role="tabpanel" aria-labelledby="comments-tab">
                             @{
-                                foreach (var comment in product.CommentList)
+                                if (product.CommentList != null)
                                 {
-                                    <div class="row">@comment</div>
-                                }
+                                    foreach (var comment in product.CommentList)
+                                    {
+                                        <div class="row">@comment</div>
+                                    }
 
-                                // If this is a new comment, then add the Input boxes for it, else show the Add Comment Button
-                                if (NewComment)
-                                {
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <input class="shadow-7 border" type="text" @onchange="(e) => UpdateCommentText(e.Value.ToString())" value="@NewCommentText" id="CommentInput" />
+                                    // If this is a new comment, then add the Input boxes for it, else show the Add Comment Button
+                                    if (NewComment)
+                                    {
+                                        <div class="row text-center">
+                                            <div class="col">
+                                                <input class="shadow-7 border" type="text" @onchange="(e) => UpdateCommentText(e.Value.ToString())" value="@NewCommentText" id="CommentInput" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br />
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <button @onclick="(e => AddComment(product,NewCommentText))" class="btn btn-outline-success" data-mdb-ripple-color="dark" data-toggle="modal">Save Comment</button>
-                                            <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Cancel</button>
+                                        <br />
+                                        <div class="row text-center">
+                                            <div class="col">
+                                                <button @onclick="(e => AddComment(product,NewCommentText))" class="btn btn-outline-success" data-mdb-ripple-color="dark" data-toggle="modal">Save Comment</button>
+                                                <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Cancel</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                }
+                                    }
 
-                                // If this is not a new comment, then show the buttons for Adding comment and Close
-                                if (NewComment == false)
-                                {
-                                    <div class="row text-center">
-                                        <div class="col-sm">
-                                            <button @onclick="(e => ShowNewCommentInput())" id="AddComment" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Add Comment</button>
-                                            <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Close</button>
+                                    // If this is not a new comment, then show the buttons for Adding comment and Close
+                                    if (NewComment == false)
+                                    {
+                                        <div class="row text-center">
+                                            <div class="col-sm">
+                                                <button @onclick="(e => ShowNewCommentInput())" id="AddComment" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Add Comment</button>
+                                                <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Close</button>
+                                            </div>
                                         </div>
-                                    </div>
+                                    }
                                 }
                             }
                         </div>
@@ -270,10 +273,7 @@
         // Implement logic to filter products based on the Filter parameter
         // For example:
         System.Console.WriteLine($"Rating received for product {selectedLocationType}");
-        if (selectedLocationType == "All")
-        {
-            return Products.ToList();
-        }
+        
         var filteredProducts = Products
             .Where(p =>
                 (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
