@@ -158,7 +158,7 @@ namespace UnitTests.Pages.Product.Create
                     LocationType = testCase.LocationType,
                     Neighborhood = "Neighborhood",
                     Description = "Description",
-                    MapURL = "Map",
+                    MapURL = "https://www.google.com/maps/embed?pb=!12345",
                 };
 
                 // Act
@@ -231,7 +231,7 @@ namespace UnitTests.Pages.Product.Create
                 LocationType = "Bench",
                 Neighborhood = "Neighborhood",
                 Description = "Description",
-                MapURL = "Map",
+                MapURL = "https://www.google.com/maps/embed?pb=!12345",
             };
 
             // Act
@@ -291,7 +291,7 @@ namespace UnitTests.Pages.Product.Create
                     LocationType = testCase.LocationType,
                     Neighborhood = "Neighborhood",
                     Description = "Description",
-                    MapURL = "Map",
+                    MapURL = "https://www.google.com/maps/embed?pb=!12345",
                 };
 
                 // Act
