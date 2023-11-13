@@ -16,6 +16,10 @@ namespace TakeABreak.WebSite
 
         public IConfiguration Configuration { get; }
 
+
+        
+
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -24,6 +28,7 @@ namespace TakeABreak.WebSite
             services.AddHttpClient();
             services.AddControllers();
             services.AddTransient<JsonFileProductService>();
+            services.AddTransient<JsonFileCustomerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
