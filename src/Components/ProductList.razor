@@ -21,10 +21,10 @@
         <select class="filter-dropdown" @onchange="OnLocationTypeChanged">
             @{
                 <option value="">Location Type</option>
-                <option value="Bench">Bench🪑</option>
-                <option value="Restroom">Restroom🚻</option>
-                <option value="Table">Table🔳</option>
-                <option value="Other">Other🏞️</option>
+                <option value="Bench" selected="@IsLocationTypeSelected("Bench")">Bench🪑</option>
+                <option value="Restroom" selected="@IsLocationTypeSelected("Restroom")">Restroom🚻</option>
+                <option value="Table" selected="@IsLocationTypeSelected("Table")">Table🔳</option>
+                <option value="Other" selected="@IsLocationTypeSelected("Other")">Other🏞️</option>
             }
         </select>
     </div>
