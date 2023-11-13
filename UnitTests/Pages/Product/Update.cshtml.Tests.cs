@@ -383,6 +383,35 @@ namespace UnitTests.Pages.Product.Update
             pageModel.ModelState.Clear();
         }
 
+        /// <summary>
+        /// Testing Invalid Map URL should stay on the same page
+        /// </summary>
+        [Test]
+        public void OnPost_Invalid_MapURL_Should_Stay_On_Page()
+        {
+            // Arrange            
+
+            // Set up product
+            pageModel.Product = new ProductModel
+            {
+                Id = "cal-anderson-park",
+                LocationType = "Restroom",
+                MapURL = "dummy"
+            };
+
+            // Act
+            var result = pageModel.OnPost() as PageResult;
+
+            // Assert
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+
+            var isPageResultType = result is PageResult;
+            Assert.AreEqual(true, isPageResultType);
+
+            // Reset
+            pageModel.ModelState.Clear();
+        }
+
         #endregion OnPost
 
     }
