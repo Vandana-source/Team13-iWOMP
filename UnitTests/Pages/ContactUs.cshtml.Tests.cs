@@ -70,11 +70,11 @@ namespace UnitTests.Pages.ContactUs
             mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
 
             var MockLoggerDirect = Mock.Of<ILogger<ContactUsModel>>();
-            JsonFileProductService productService;
+            JsonFileCustomerService customerService;
 
-            productService = new JsonFileProductService(mockWebHostEnvironment.Object);
+            customerService = new JsonFileCustomerService(mockWebHostEnvironment.Object);
 
-            pageModel = new ContactUsModel(MockLoggerDirect)
+            pageModel = new ContactUsModel(customerService, mockWebHostEnvironment.Object, MockLoggerDirect)
             {
                 PageContext = pageContext,
                 TempData = tempData,
