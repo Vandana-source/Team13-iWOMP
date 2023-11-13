@@ -62,14 +62,17 @@ namespace TakeABreak.WebSite.Pages.Product
             var existingProduct = ProductService.GetProducts()
                 .FirstOrDefault(m => m.Id.Equals(Product.Id));
 
-            // Validate the MapURL provided
-            if (!IsAllowedMapURL(Product.MapURL))
+            if (Product.MapURL != null)
             {
-                // Display an error message and redirect back to the page.
-                ModelState.AddModelError("MapURL", "Please provide a valid Google Maps URL");
-                return Page();
+                // Validate the MapURL provided
+                if (!IsAllowedMapURL(Product.MapURL))
+                {
+                    // Display an error message and redirect back to the page.
+                    ModelState.AddModelError("MapURL", "Please provide a valid Google Maps URL");
+                    return Page();
+                }
             }
-
+            
             if (Product.Image == null)
             {
                 // Capture the old image path right after fetching the product
