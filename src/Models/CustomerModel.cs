@@ -11,6 +11,10 @@ namespace TakeABreak.WebSite.Models
     /// </summary>
     public class CustomerModel
     {
+
+        // Customer ID
+        public int CustId { get; set; }
+
         // Customer first name
         public string CusFirstName { get; set; }
 
@@ -41,8 +45,5 @@ namespace TakeABreak.WebSite.Models
         // Overrides the ToString method to serialize the object to JSON.
         public override string ToString() => JsonSerializer.Serialize<CustomerModel>(this);
     }
-    
-    
-    
-    
+        
 }
