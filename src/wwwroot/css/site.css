@@ -1189,3 +1189,11 @@ select.filter-dropdown {
     font-family: 'Nunito', sans-serif;
     height: 2.7vw;
 }
+
+p.header-about {
+    font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: 1.5vw;
+    margin-top: 1.1vw;
+    top: 1vw;
+}
