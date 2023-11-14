@@ -1197,3 +1197,10 @@ p.header-about {
     margin-top: 1.1vw;
     top: 1vw;
 }
+
+/* Css for tabs in image card */
+a.card-tab {
+    border: 0.1px solid #000000e5 !important;
+    background-color: #bacec1;
+    color: #000000e5;
+}
