@@ -1,30 +1,55 @@
 ﻿@page
-@model ContactUsModel
+@model TakeABreak.WebSite.Pages.ContactUsModel
+@using TakeABreak.WebSite.Services
+@inject JsonFileCustomerService CustomerService
 @{
     ViewData["Title"] = "Contact Us";
 }
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+<body>
 
-<h1>@ViewData["Title"]</h1>
+    <div class="container text-center mt-5">
+        <h3 class="display-4">Helping your 🍑 find a seat since 2023</h3>
+    </div>
 
-<br />
-<br />
+    <div class="container my-4">
+        <div class="row d-flex align-items-center justify-content-between">
+            <div class="col-lg-6">
+                <h1 class="my-4">@ViewData["Title"]</h1>
+                <h3>Take a Break!</h3>
+                <address>
+                    901 12th Avenue, P.O. Box 222000<br>
+                    Seattle, WA 98122-1090<br>
+                    <strong>Phone:</strong> +1.206.296.6000<br>
+                    <strong>Toll-free:</strong> 1.800.426.7123<br>
+                    For general inquiries: <a href="mailto:13.take.a.break@gmail.com">13.take.a.break@gmail.com</a>
+                </address>
+            </div>
+            <div class="col-lg-6">
+                <img src="/ContactUs.png" alt="Contact Image" class="img-fluid img-reg">
+            </div>
+        </div>
+    </div>
 
-<div class="contact-section">
-    <h3 class="header-contactus">
-        Take a Break!<br />
-        Helping your 🍑 find a seat since 2023
-    </h3>
+    <div class="container mt-5">
+       <form> 
 
-    <address>
-        901 12th Avenue, P.O. Box 222000<br />
-        Seattle, WA 98122-1090<br />
-        <strong>Phone:</strong> +1.206.296.6000<br />
-        <strong>Toll-free:</strong> 1.800.426.7123<br />
-    </address>
+            <div class="form-group">
+                <label for="nominatedDescription">Description</label>
+                <textarea class="form-control" asp-for="CustomerNomination.NominatedDescription" placeholder="Enter Description"></textarea>
+            </div>
 
-    <h6>For general inquiries, contact us via email at <a href="mailto:13.take.a.break@gmail.com">13.take.a.break@gmail.com</a>.</h6>
-</div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
