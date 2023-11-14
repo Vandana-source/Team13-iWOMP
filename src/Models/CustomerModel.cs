@@ -24,6 +24,9 @@ namespace TakeABreak.WebSite.Models
         // Customer contact email
         public string CusEmail { get; set;}
         
+        // Nominated Location Type 
+        public string NominatedLocationType { get; set;}
+        
         // Nominated title of the new place 
         public string NominatedTitle { get; set; }
         
