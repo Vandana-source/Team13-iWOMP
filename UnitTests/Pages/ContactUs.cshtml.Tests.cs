@@ -110,8 +110,7 @@ namespace UnitTests.Pages.ContactUs
         #region OnPost
         
         [Test]
-        public void
-            OnPost_Valid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Stay_On_Page()
+        public void OnPost_Valid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Stay_On_Page()
         {
             // Data for testing
             var testCases =
@@ -143,7 +142,7 @@ namespace UnitTests.Pages.ContactUs
                 Assert.AreEqual("Title", pageModel.CustomerNomination.NominatedTitle);
 
                 // Assert on correct redirection
-                Assert.AreEqual("ContactUs", result.PageName);
+                Assert.AreEqual("/ContactUs", result.PageName);
 
                 // Delete the created data
                 
