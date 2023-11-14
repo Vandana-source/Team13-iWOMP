@@ -217,6 +217,10 @@ namespace UnitTests.Pages.Product.Create
 
             var isPageResultType = result is PageResult;
             Assert.AreEqual(true, isPageResultType);
+            
+            
+            // Delete
+            pageModel.ProductService.DeleteData(pageModel.Product);
 
             // Reset
             pageModel.ModelState.Clear();
