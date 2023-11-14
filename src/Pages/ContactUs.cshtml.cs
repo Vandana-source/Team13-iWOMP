@@ -24,8 +24,7 @@ namespace TakeABreak.WebSite.Pages
         private readonly ILogger<ContactUsModel> _logger;
 
         // Model for customer nomination data binding
-        [BindProperty]
-        public CustomerModel CustomerNomination { get; set; }
+        [BindProperty] public CustomerModel CustomerNomination { get; set; }
 
         /// <summary>
         /// Constructor for ContactUsModel
@@ -56,42 +55,22 @@ namespace TakeABreak.WebSite.Pages
         /// <returns>ActionResult</returns>
         public IActionResult OnPost()
         {
-            // Validate the NominatedMapDetails URL
-            if (!IsAllowedMapURL(CustomerNomination.NominatedMapDetails))
-            {
-                ModelState.AddModelError("NominatedMapDetails", "Please provide a valid Google Maps URL");
-                return Page();
-            }
 
-            // Assuming the nominated image URL is provided directly in the CustomerNomination object
-            if (!string.IsNullOrEmpty(CustomerNomination.NominatedImage))
-            {
-                // Here you can add any logic needed for the nominated image URL,
-                // like validation or formatting.
+            // Add to the database 
+            // Note: User data minimally vetted because it is not appearing on
+            //       the website immediately and goes to the database.  
+            CustomerService.AddCustomer(CustomerNomination);
 
-                // Save the customer data
+            // Thank the user for their submission 
+            if (ModelState.IsValid)
+            {
                 CustomerService.AddCustomer(CustomerNomination);
-
-                // Redirect to a success or listing page after saving
-                return RedirectToPage("Index");
-            }
-            else
-            {
-                ModelState.AddModelError("NominatedImage", "Please provide a URL for the nominated image.");
-                return Page();
-            }
-        }
-
-        /// <summary>
-        /// Validates a Google Maps URL
-        /// </summary>
-        /// <param name="mapURL">The URL to validate</param>
-        /// <returns>True if the URL is valid, otherwise False</returns>
-        private bool IsAllowedMapURL(string mapURL)
-        {
-            string googleMapsPattern = @"^https://www\.google\.com/maps/embed\?pb=!.+$";
-            Regex regex = new Regex(googleMapsPattern);
-            return regex.IsMatch(mapURL);
+                TempData["SubmissionMessage"] = "Thank you for your submission";
+                return RedirectToPage("/ContactUs");
+            } 
+            
+            // Stay on the page 
+            return Page();
         }
     }
 }
