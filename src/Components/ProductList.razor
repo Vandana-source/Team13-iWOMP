@@ -9,7 +9,7 @@
 
 <div id="filter-bar">
     <div class="filter-option">
-        <select class="filter-dropdown dropdown1" @onchange="OnNeighborhoodChanged">
+        <select class="filter-dropdown" test-id="dropdown1" @onchange="OnNeighborhoodChanged">
             <option value="">Neighborhood</option>
             @foreach (var neighborhood in Neighborhoods)
             {
@@ -239,7 +239,7 @@
                     @for (int i = 1; i <= 5; i++)
                     {
                         var currentStar = i;
-                        <span class="fas fa-chair @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
+                        <span test-id="vote_button" class="fas fa-chair @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
                     }
                 </div>
 
@@ -285,7 +285,7 @@
     {
         // Implement logic to filter products based on the Filter parameter
         // For example:
-        System.Console.WriteLine($"Rating received for product {selectedLocationType}");
+        System.Console.WriteLine($"Rating received for product {selectedNeighborhood}");
 
         var filteredProducts = Products
             .Where(p =>
