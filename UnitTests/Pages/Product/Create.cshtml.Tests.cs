@@ -202,7 +202,6 @@ namespace UnitTests.Pages.Product.Create
             pageModel.Product = new ProductModel
             {
                 Id = "testId",
-                // Don't provide a Title, which might be a required field.
                 LocationType = "Bench",
                 Neighborhood = "Neighborhood",
                 Description = "Description",
