@@ -28,6 +28,9 @@
     <Content Update="wwwroot\data\products.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+	<Content Update="wwwroot\data\customerDetails.json">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
     <Content Update="Properties\launchSettings.json">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
