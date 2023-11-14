@@ -21,10 +21,10 @@
         <select class="filter-dropdown" @onchange="OnLocationTypeChanged">
             @{
                 <option value="">Location Type</option>
-                <option value="Bench" selected="@IsLocationTypeSelected("Bench")">Bench🪑</option>
-                <option value="Restroom" selected="@IsLocationTypeSelected("Restroom")">Restroom🚻</option>
-                <option value="Table" selected="@IsLocationTypeSelected("Table")">Table🔳</option>
-                <option value="Other" selected="@IsLocationTypeSelected("Other")">Other🏞️</option>
+                <option value="Bench">Bench🪑</option>
+                <option value="Restroom">Restroom🚻</option>
+                <option value="Table">Table🔳</option>
+                <option value="Other">Other🏞️</option>
             }
         </select>
     </div>
@@ -40,10 +40,10 @@
     <div class="row">
         <div class="col-md-8">
             <div class="input-group">
-                <input type="text" id="filter-input" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" placeholder="Search by Title...">
+                <input type="text" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" placeholder="Search by Title...">
                 <div class="input-group-append">
-                    <button @onclick="(e => EnableFilterData())" class="btn btn-primary" id="filter-button">Filter</button>
-                    <button @onclick="(e => ClearFilterData())" class="btn btn-secondary" id="clear-button">Clear</button>
+                    <button @onclick="(e => EnableFilterData())" class="btn btn-primary">Filter</button>
+                    <button @onclick="(e => ClearFilterData())" class="btn btn-secondary">Clear</button>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
             <div class="card-img" style="background-image: url('@product.Image');"></div>
             <div class="card-body">
                 <h5 class="card-title">@product.Title</h5>
-                <h7>Neighborhood: </h7>
+
                 <h7 class="card-title">@product.Neighborhood</h7>
                 <p class="card-text">@product.LocationType</p>
             </div>
@@ -119,40 +119,37 @@
                         <div class="tab-pane fade" id="funfact-@product.Id" role="tabpanel" aria-labelledby="funfact-tab">@product.FunFacts</div>
                         <div class="tab-pane fade" id="comments-@product.Id" role="tabpanel" aria-labelledby="comments-tab">
                             @{
-                                if (product.CommentList != null)
+                                foreach (var comment in product.CommentList)
                                 {
-                                    foreach (var comment in product.CommentList)
-                                    {
-                                        <div class="row">@comment</div>
-                                    }
+                                    <div class="row">@comment</div>
+                                }
 
-                                    // If this is a new comment, then add the Input boxes for it, else show the Add Comment Button
-                                    if (NewComment)
-                                    {
-                                        <div class="row text-center">
-                                            <div class="col">
-                                                <input class="shadow-7 border" type="text" @onchange="(e) => UpdateCommentText(e.Value.ToString())" value="@NewCommentText" id="CommentInput" />
-                                            </div>
+                                // If this is a new comment, then add the Input boxes for it, else show the Add Comment Button
+                                if (NewComment)
+                                {
+                                    <div class="row text-center">
+                                        <div class="col">
+                                            <input class="shadow-7 border" type="text" @onchange="(e) => UpdateCommentText(e.Value.ToString())" value="@NewCommentText" id="CommentInput" />
                                         </div>
-                                        <br />
-                                        <div class="row text-center">
-                                            <div class="col">
-                                                <button @onclick="(e => AddComment(product,NewCommentText))" class="btn btn-outline-success" data-mdb-ripple-color="dark" data-toggle="modal">Save Comment</button>
-                                                <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Cancel</button>
-                                            </div>
+                                    </div>
+                                    <br />
+                                    <div class="row text-center">
+                                        <div class="col">
+                                            <button @onclick="(e => AddComment(product,NewCommentText))" class="btn btn-outline-success" data-mdb-ripple-color="dark" data-toggle="modal">Save Comment</button>
+                                            <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Cancel</button>
                                         </div>
-                                    }
+                                    </div>
+                                }
 
-                                    // If this is not a new comment, then show the buttons for Adding comment and Close
-                                    if (NewComment == false)
-                                    {
-                                        <div class="row text-center">
-                                            <div class="col-sm">
-                                                <button @onclick="(e => ShowNewCommentInput())" id="AddComment" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Add Comment</button>
-                                                <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Close</button>
-                                            </div>
+                                // If this is not a new comment, then show the buttons for Adding comment and Close
+                                if (NewComment == false)
+                                {
+                                    <div class="row text-center">
+                                        <div class="col-sm">
+                                            <button @onclick="(e => ShowNewCommentInput())" id="AddComment" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Add Comment</button>
+                                            <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Close</button>
                                         </div>
-                                    }
+                                    </div>
                                 }
                             }
                         </div>
@@ -242,177 +239,170 @@
 
             </div>
         </div>
-    </div>
-}
+       </div>
 
-@code {
-
-    // Variable to get all the products, Neighborhoods and LocationType (for drop down)
-    private IEnumerable<ProductModel> Products => ProductService.GetProducts();
-    private IEnumerable<string> Neighborhoods => Products
-        .Select(p => p.Neighborhood)
-        .Distinct()
-        .OrderBy(n => n);
-
-    // The neighborhood selected from drop down
-    private string selectedNeighborhood;
-
-    // The location type selected from drop down
-    [Parameter]
-    public string selectedLocationType { get; set; }
-
-    // The noise level type selected from drop down
-    private int? selectedNoiseLevel;
-
-    string FilterDataString = "";
-    bool FilterData = false;
-
-    // Computed method to get the filtered list of products
-    private List<ProductModel> FilterProducts()
-    {
-        // Implement logic to filter products based on the Filter parameter
-        // For example:
-        System.Console.WriteLine($"Rating received for product {selectedLocationType}");
-        
-        var filteredProducts = Products
-            .Where(p =>
-                (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
-                (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase)) &&
-                (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value) &&
-                (string.IsNullOrWhiteSpace(FilterDataString) || FilterData == false || p.Title.Contains(FilterDataString))
-            ).ToList();
-        return filteredProducts;
-    }
-
-    /// <summary>
-    /// Checks if the provided location type matches the currently selected location type.
-    /// Used to dynamically set the 'selected' attribute in the dropdown options.
-    /// </summary>
-    /// <param name="locationType">The location type to check for selection.</param>
-    /// <returns>True if the location type is selected, false otherwise.</returns>
-    private bool IsLocationTypeSelected(string locationType)
-    {
-        return selectedLocationType == locationType;
-    }
-
-    /// <summary>
-    /// Event callback for when drop down neighborhood changes
-    ///</summary>
-    private void OnNeighborhoodChanged(ChangeEventArgs e)
-    {
-        selectedNeighborhood = e.Value?.ToString();
-
-        // Trigger a re-render of the component
-        StateHasChanged();
-    }
-
-    /// <summary>
-    /// Event callback for when drop down LocationType changes
-    ///</summary>
-    private void OnLocationTypeChanged(ChangeEventArgs e)
-    {
-        selectedLocationType = e.Value?.ToString();
-
-        // Trigger a re-render of the component
-        StateHasChanged();
-    }
-
-    /// <summary>
-    /// Event callback for when drop down NoiseLevel changes
-    /// </summary>
-    private void OnNoiseLevelTypeChanged(ChangeEventArgs e)
-    {
-
-        // Try to get the noise level
-        if (int.TryParse(e.Value?.ToString(), out int result))
-        {
-            selectedNoiseLevel = result;
-        }
-        else
-        {
-            // Reset or handle the invalid input appropriately
-            selectedNoiseLevel = null;
         }
 
-        // Trigger a re-render of the component
-        StateHasChanged();
-    }
+        @code {
 
-    /// <summary>
-    /// Event callback for when ratings change
-    /// </summary>
-    void SubmitRating(string productId, int rating)
-    {
-        System.Console.WriteLine($"Rating received for product {productId}: {rating}");
-        ProductService.AddRating(productId, rating);
-    }
+            // Variable to get all the products, Neighborhoods and LocationType (for drop down)
+private IEnumerable<ProductModel> Products => ProductService.GetProducts();
+        private IEnumerable<string> Neighborhoods => Products
+            .Select(p => p.Neighborhood)
+            .Distinct()
+            .OrderBy(n => n);
 
-    // New Comment Flag to show the input box or not
-    bool NewComment = false;
+        // The neighborhood selected from drop down
+        private string selectedNeighborhood;
 
-    // Next Comment Text is what the comment text is
-    string NewCommentText = string.Empty;
+        // The location type selected from drop down
+        [Parameter]
+        public string selectedLocationType { get; set; }
 
-    //Date time for the comment
-    string timestamp = DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + " - ";
+        // The noise level type selected from drop down
+        private int? selectedNoiseLevel;
 
-    /// <summary>
-    /// Enable the New Comment Entry by setting the NewComment flag
-    /// </summary>
-    /// <param name="comment"></param>
-    void ShowNewCommentInput()
-    {
-        // Setting the new Comment flag to true will show the input box
-        NewComment = true;
-    }
+        string FilterDataString = "";
+        bool FilterData = false;
 
-    /// <summary>
-    /// Set the New Comment Text variable to the data just entered in the input box
-    /// </summary>
-    /// <param name="newCommentText"></param>
-    void UpdateCommentText(string newCommentText)
-    {
-        NewCommentText = newCommentText;
-    }
-
-    /// <summary>
-    /// Add the comment to the product
-    /// Best to refactor this to be a method to call in the Middle Tier Data service, rather than putting the logic here...
-    /// </summary>
-    /// <param name="comment"></param>
-    void AddComment(ProductModel selectedProduct, string NewCommentText)
-    {
-        // Comment should not be empty
-        if (string.IsNullOrWhiteSpace(NewCommentText))
+        // Computed method to get the filtered list of products
+        private List<ProductModel> FilterProducts()
         {
-            NewComment = false;
+            // Implement logic to filter products based on the Filter parameter
+            // For example:
+            System.Console.WriteLine($"Rating received for product {selectedLocationType}");
+            if (selectedLocationType == "All")
+            {
+                return Products.ToList();
+            }
+            var filteredProducts = Products
+                .Where(p =>
+                    (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase)) &&
+                    (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value) &&
+                    (string.IsNullOrWhiteSpace(FilterDataString) || FilterData == false || p.Title.Contains(FilterDataString))
+                ).ToList();
+            return filteredProducts;
         }
-        else
+
+        /// <summary>
+        /// Event callback for when drop down neighborhood changes
+        ///</summary>
+        private void OnNeighborhoodChanged(ChangeEventArgs e)
         {
-            NewCommentText = timestamp + NewCommentText;
-            // Add it to the Comment List
-            bool result = ProductService.AddComment(selectedProduct.Id, NewCommentText);
+            selectedNeighborhood = e.Value?.ToString();
 
-            // Set the NewComment flag to false to hide the input box
-            NewComment = false;
+            // Trigger a re-render of the component
+            StateHasChanged();
         }
-    }
 
-    void UpdateFilterText(string text)
-    {
-        FilterDataString = text;
-    }
+        /// <summary>
+        /// Event callback for when drop down LocationType changes
+        ///</summary>
+        private void OnLocationTypeChanged(ChangeEventArgs e)
+        {
+            selectedLocationType = e.Value?.ToString();
 
-    void EnableFilterData()
-    {
-        // If the Filter is enabled, set the filter flag
-        FilterData = true;
-    }
+            // Trigger a re-render of the component
+            StateHasChanged();
+        }
 
-    void ClearFilterData()
-    {
-        // If the Filter is enabled, set the filter flag
-        FilterData = false;
-        FilterDataString = "";
-    }
-}
+        /// <summary>
+        /// Event callback for when drop down NoiseLevel changes
+        /// </summary>
+        private void OnNoiseLevelTypeChanged(ChangeEventArgs e)
+        {
+
+            // Try to get the noise level
+            if (int.TryParse(e.Value?.ToString(), out int result))
+            {
+                selectedNoiseLevel = result;
+            }
+            else
+            {
+                // Reset or handle the invalid input appropriately
+                selectedNoiseLevel = null;
+            }
+
+            // Trigger a re-render of the component
+            StateHasChanged();
+        }
+
+        /// <summary>
+        /// Event callback for when ratings change
+        /// </summary>
+        void SubmitRating(string productId, int rating)
+        {
+            System.Console.WriteLine($"Rating received for product {productId}: {rating}");
+            ProductService.AddRating(productId, rating);
+        }
+
+        // New Comment Flag to show the input box or not
+        bool NewComment = false;
+
+        // Next Comment Text is what the comment text is
+        string NewCommentText = string.Empty;
+
+        //Date time for the comment
+        string timestamp = DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + " - ";
+
+        /// <summary>
+        /// Enable the New Comment Entry by setting the NewComment flag
+        /// </summary>
+        /// <param name="comment"></param>
+        void ShowNewCommentInput()
+        {
+            // Setting the new Comment flag to true will show the input box
+            NewComment = true;
+        }
+
+        /// <summary>
+        /// Set the New Comment Text variable to the data just entered in the input box
+        /// </summary>
+        /// <param name="newCommentText"></param>
+        void UpdateCommentText(string newCommentText)
+        {
+            NewCommentText = newCommentText;
+        }
+
+        /// <summary>
+        /// Add the comment to the product
+        /// Best to refactor this to be a method to call in the Middle Tier Data service, rather than putting the logic here...
+        /// </summary>
+        /// <param name="comment"></param>
+        void AddComment(ProductModel selectedProduct, string NewCommentText)
+        {
+            // Comment should not be empty
+            if (string.IsNullOrWhiteSpace(NewCommentText))
+            {
+                NewComment = false;
+            }
+            else
+            {
+                NewCommentText = timestamp + NewCommentText;
+                // Add it to the Comment List
+                bool result = ProductService.AddComment(selectedProduct.Id, NewCommentText);
+
+                // Set the NewComment flag to false to hide the input box
+                NewComment = false;
+            }
+        }
+
+        void UpdateFilterText(string text)
+        {
+            FilterDataString = text;
+        }
+
+        void EnableFilterData()
+        {
+            // If the Filter is enabled, set the filter flag
+            FilterData = true;
+        }
+
+        void ClearFilterData()
+        {
+            // If the Filter is enabled, set the filter flag
+            FilterData = false;
+            FilterDataString = "";
+        }
+        }
