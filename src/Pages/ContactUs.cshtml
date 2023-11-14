@@ -17,82 +17,91 @@
 </head>
 <body>
 
-    <div class="container text-center mt-5">
-        <h3 class="display-4">Helping your 🍑 find a seat since 2023</h3>
-    </div>
+<div class="container text-center mt-5">
+    <h3 class="display-4">Helping your 🍑 find a seat since 2023</h3>
+</div>
 
-    <div class="container my-4">
-        <div class="row d-flex align-items-center justify-content-between">
-            <div class="col-lg-6">
-                <h1 class="my-4">@ViewData["Title"]</h1>
-                <h3>Take a Break!</h3>
-                <address>
-                    901 12th Avenue, P.O. Box 222000<br>
-                    Seattle, WA 98122-1090<br>
-                    <strong>Phone:</strong> +1.206.296.6000<br>
-                    <strong>Toll-free:</strong> 1.800.426.7123<br>
-                    For general inquiries: <a href="mailto:13.take.a.break@gmail.com">13.take.a.break@gmail.com</a>
-                </address>
-            </div>
-            <div class="col-lg-6">
-                <img src="/ContactUs.png" alt="Contact Image" class="img-fluid img-reg">
-            </div>
+<div class="container my-4">
+    <div class="row d-flex align-items-center justify-content-between">
+        <div class="col-lg-6">
+            <h1 class="my-4">@ViewData["Title"]</h1>
+            <h3>Take a Break!</h3>
+            <address>
+                901 12th Avenue, P.O. Box 222000<br>
+                Seattle, WA 98122-1090<br>
+                <strong>Phone:</strong> +1.206.296.6000<br>
+                <strong>Toll-free:</strong> 1.800.426.7123<br>
+                For general inquiries: <a href="mailto:13.take.a.break@gmail.com">13.take.a.break@gmail.com</a>
+            </address>
+        </div>
+        <div class="col-lg-6">
+            <img src="/ContactUs.png" alt="Contact Image" class="img-fluid img-reg">
         </div>
     </div>
+</div>
 
-    <div class="container mt-5">
-        <h2>Customer Information Form</h2>
-            <form method="post">
-                <div class="form-group">
-                    <label for="cusFirstName">First Name</label>
-                    <input type="text" class="form-control" asp-for="CustomerNomination.CusFirstName" placeholder="Enter First Name">
-                </div>
+<div class="container mt-5">
+    <h2>Customer Information Form</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="cusFirstName">First Name (Optional)</label>
+            <input type="text" class="form-control" asp-for="CustomerNomination.CusFirstName" placeholder="Enter First Name">
+        </div>
 
-                <div class="form-group">
-                    <label for="cusLastName">Last Name</label>
-                    <input type="text" class="form-control" asp-for="CustomerNomination.CusLastName" placeholder="Enter Last Name">
-                </div>
+        <div class="form-group">
+            <label for="cusLastName">Last Name (Optional)</label>
+            <input type="text" class="form-control" asp-for="CustomerNomination.CusLastName" placeholder="Enter Last Name">
+        </div>
 
-                <div class="form-group">
-                    <label for="cusEmail">Email</label>
-                    <input type="email" class="form-control" asp-for="CustomerNomination.CusEmail" placeholder="Enter Email">
-                </div>
+        <div class="form-group">
+            <label for="cusEmail">Email</label>
+            <input type="email" class="form-control" asp-for="CustomerNomination.CusEmail" placeholder="Enter Email">
+        </div>
 
-                <div class="form-group">
-                    <label for="nominatedTitle">Name of Location</label>
-                    <input type="text" class="form-control" asp-for="CustomerNomination.NominatedTitle" placeholder="Enter Nominated Title">
-                </div>
+        <div class="form-group">
+            <label for="nominatedTitle">Name of Location</label>
+            <input type="text" class="form-control" asp-for="CustomerNomination.NominatedTitle" placeholder="Enter Nominated Title">
+        </div>
 
-                <div class="form-group">
-                    <label for="nominatedImage">Image URL</label>
-                    <input type="url" class="form-control" asp-for="CustomerNomination.NominatedImage" placeholder="Enter Image URL">
-                </div>
+        <div class="form-group">
+            <label for="nominatedImage">Image URL</label>
+            <input type="url" class="form-control" asp-for="CustomerNomination.NominatedImage" placeholder="Enter Image URL">
+        </div>
 
-                <div class="form-group">
-                    <label>Noise Level Rating: (1 is Good, 10 is Bad)</label>
-                    <div class="d-flex flex-row align-items-center">
-                        @for (int i = 1; i <= 10; i++)
-                        {
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="CustomerNomination.NominatedNoiseLevel" id="@("rating" + i)" value="@i" asp-for="CustomerNomination.NominatedNoiseLevel">
-                                <label class="form-check-label" for="@("rating" + i)">@i</label>
-                            </div>
-                        }
+        <div class="form-group">
+            <label>Noise Level Rating: (1 is Good, 10 is Bad)</label>
+            <div class="d-flex flex-row align-items-center">
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="CustomerNomination.NominatedNoiseLevel" id="@("rating" + i)" value="@i" asp-for="CustomerNomination.NominatedNoiseLevel">
+                        <label class="form-check-label" for="@("rating" + i)">@i</label>
                     </div>
-                </div>
+                }
+            </div>
+        </div>
 
-                <div class="form-group">
-                    <label for="nominatedNeighborhood">Neighborhood</label>
-                    <input type="text" class="form-control" asp-for="CustomerNomination.NominatedNeighborhood" placeholder="Enter Neighborhood">
-                </div>
+        <div class="form-group">
+            <label for="nominatedNeighborhood">Neighborhood</label>
+            <input type="text" class="form-control" asp-for="CustomerNomination.NominatedNeighborhood" placeholder="Enter Neighborhood">
+        </div>
 
-                <div class="form-group">
-                    <label for="nominatedMapDetails">Map Details</label>
-                    <textarea class="form-control" asp-for="CustomerNomination.NominatedMapDetails" placeholder="Enter Google Map Embed Link"></textarea>
-                </div>
+        <div class="form-group">
+            <label for="nominatedMapDetails">Map Details</label>
+            <input type="url" class="form-control" asp-for="CustomerNomination.NominatedMapDetails" placeholder="Enter Google Map Location">
+        </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-    </div>
-    </body>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+@if (TempData["ShowThankYouMessage"] as bool? == true)
+{
+    <script type="text/javascript">
+        alert('Thank you for your submission');
+    </script>
+}
+</body>
 </html>
+
+
