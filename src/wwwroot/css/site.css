@@ -9,6 +9,13 @@
 }
 
 
+.custom-img-size {
+    width: auto;
+    max-width: 70%; 
+    height: auto; 
+}
+
+
 @media (max-width: 759px) {
     .skinny-container {
         height: auto; /* Adjust the height for mobile */
@@ -30,6 +37,17 @@
     color: orange;
 }
 
+.gray-rectangle {
+    background-color: #f3f7f5;
+    padding-top: 1rem;
+    padding-right: 15rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    display: inline-block; 
+    color: black; 
+    text-align: left;
+}
+
 .fa-star {
     cursor: pointer;
 }
@@ -43,6 +61,7 @@
     }
 }
 
+
 .color-rectangle {
     width: 220%;
     height: 18vw;
@@ -52,16 +71,35 @@
     position: relative;
 }
 
-.small-color-rectangle {
-    height: 4.5vw;
+.thinner-rectangle {
+    height: 7vw;
+
+}
+
+.slim-rectangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 6vw; 
+    margin-top: -2.6rem;
     background-color: #29392e;
     position: relative;
+    overflow: hidden; 
+}
+
+.rectangle-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 4vw;
+    color: #cebac7;
+    white-space: nowrap; 
+    padding: 0 1vw; 
 }
 
 .index-textcontainer {
     display: flex;
-    justify-content: space-between; /* This will space out the two divs to the far ends of the container */
-    align-items: center; /* This will vertically center the texts if they are of different sizes */
+    justify-content: space-between; 
+    align-items: center; 
     margin-bottom: 2vw; 
 }
 
