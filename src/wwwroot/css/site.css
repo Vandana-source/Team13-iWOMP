@@ -76,6 +76,18 @@
 
 }
 
+.fatter-rectangle {
+    
+    height: 30vw; 
+}
+@media (max-width: 768px) {
+    .fatter-rectangle {
+        height: 40vw;
+    }
+}
+
+ 
+
 .slim-rectangle {
     display: flex;
     justify-content: center;
@@ -119,6 +131,13 @@
     line-height: 1.2;
 }
 
+.left-index-small {
+    font-size: 1.5vw; 
+    line-height: 1.9vw;
+    text-align: justify;
+    width: 50%;
+}
+
 .right-indextext {
     font-family: 'Lato', sans-serif;
     font-size: 1.3vw;
@@ -128,14 +147,25 @@
     left: 60%; /* Moving the text box to the right side, starting from the center. Adjust as needed. */
     position: absolute;
     z-index: 2;
-    text-align: justify-all; /* Making the text justified */
+    text-align: justify;
     width: 50%; /* Setting a width for the text box so the text can be justified within. Adjust as needed. */
     transform: none;
+}
+
+.right-index-large {
+    margin-top: 2.5vw;
+    font-size: 12vw;
+    line-height: 11vw;
+    text-align: center;
+    width: 40%;
+    font-weight: 700;
 }
 
 .left-text, .right-indextext {
     flex: 1; 
 }
+
+
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
@@ -1245,4 +1275,11 @@ a.card-tab {
 
 .tab-content {
     margin: 1vw 0;
+}
+
+.team-info {
+    padding-top: 10vw; 
+    width: 70vw; 
+    margin-left: 20vw; 
+    box-sizing: border-box; 
 }
