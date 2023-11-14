@@ -111,6 +111,27 @@ namespace TakeABreak.WebSite.Services
             return maxId + 1;
         }
 
+        /// <summary>
+        /// Delete a customer
+        /// </summary>
+        public CustomerModel DeleteCustomer(CustomerModel customerModel)
+        {
+            // Get the current set, and append the new record to it
+            var customers = GetCustomers();
+            var customerData =
+                customers.FirstOrDefault(x => x.CustId.Equals(customerModel.CustId));
+
+            // Exclude chosen ID from new list 
+            var newDataSet =
+                GetCustomers().Where(x => x.CustId.Equals(customerModel.CustId) == false);
+
+            // Save list without the product 
+            SaveCustomers(newDataSet);
+
+            return customerData;
+
+        }
+
 
 
     }
