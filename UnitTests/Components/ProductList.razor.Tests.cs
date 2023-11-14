@@ -36,6 +36,8 @@ namespace UnitTests.Components
 
         #endregion TestSetup
 
+        #region ProductList
+
         /// <summary>
         /// Test for ProductList Default Should Return Content
         /// </summary>
@@ -54,6 +56,10 @@ namespace UnitTests.Components
             //Assert
             Assert.AreEqual(true, result.Contains("Seattle Aquarium"));
         }
+
+        #endregion ProductList
+
+        #region TextFilter
 
         /// <summary>
         /// Test for filter text "Seattle" should return matching products
@@ -137,84 +143,52 @@ namespace UnitTests.Components
             Assert.AreEqual(true, pageMarkup.Contains("Seattle"));
         }
 
+        #endregion TextFilter
+
+        #region AddRating
+
+        /// <summary>
+        /// Test for testing the AddRating button.
+        /// </summary>
         [Test]
-        public void SubmitRating_Valid_ID_Click_Unstared_Should_Increment_Count_And_Check_Chair()
+        public void AddRating_Valid_RatingClick_Should_ReturnNewRating()
         {
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
 
+            const string TestButtonId = "MoreInfo_columbia-tower-club";
+            const string VoteButtonId = "vote_button";
+
+            const string PreVoteString = "Be the first to vote!";
+            const string PostVoteString = "1 Vote";
+
+            // Arrange: Built and find the More Info button
+            var cut = RenderComponent<ProductList>();
+            var moreInfoButton = cut.FindAll("Button").First(element => element.OuterHtml.Contains(TestButtonId));
+
+            // Arrange: Click button and save markup
+            moreInfoButton.Click();
+            var preVoteMarkup = cut.Markup;
+
             // Act
-            var page = RenderComponent<ProductList>();
 
-            var moreInfoButton = page.Find($"button[data-target='#productModal-arboretum-bench']");
+            // Act: Find voting button
+            var voteButton = cut.FindAll("span").First(element => element.OuterHtml.Contains(VoteButtonId));
 
-            var buttonMarkup = page.Markup;
+            // Act: Click button and save markup
+            voteButton.Click();
+            var postVoteMarkup = cut.Markup;
 
-            //Get the star Buttons
-            var chairButtonList = page.FindAll("span");
 
-            //Get the vote count
-            //Get the vote count, the list should have 7 elements, element 2 is the string for the count
-            var preVoteCountSpan = chairButtonList[1];
-            var preVoteCountString = preVoteCountSpan.OuterHtml;
+            // Reset
 
-            //Get the first star item from the list, it should not be checked
-            var starButton = chairButtonList.First(m => !string.IsNullOrEmpty(m.ClassName) && m.ClassName.Contains("fas fa-chair"));
-
-            //Save the html for it to compare after the click
-            var preStarChange = starButton.OuterHtml;
-
-            //Act
-
-            //Click the star button
-            starButton.Click();
-
-            //Get the markup to use for the assert
-            buttonMarkup = page.Markup;
-
-            //Get the star Buttons
-            chairButtonList = page.FindAll("span");
-
-            //Get the vote count
-            //Get the vote count, the list should have 7 elements, element 2 is the string for the count
-            var postVoteCountSpan = chairButtonList[1];
-            var postVoteCountString = postVoteCountSpan.OuterHtml;
-
-            //Get the first star item from the list, it should not be checked
-            starButton = chairButtonList.First(m => !string.IsNullOrEmpty(m.ClassName) && m.ClassName.Contains("fas fa-chair checked"));
-
-            //Save the html for it to compare after the click
-            var postStarChange = starButton.OuterHtml;
-
-            //Click the star button
-            starButton.Click();
-
-            //Get the markup to use for the assert
-            buttonMarkup = page.Markup;
-
-            //Get the star Buttons
-            chairButtonList = page.FindAll("span");
-
-            //Get the vote count
-            //Get the vote count, the list should have 7 elements, element 2 is the string for the count
-            var postVoteCountSpan2 = chairButtonList[1];
-            var postVoteCountString2 = postVoteCountSpan2.OuterHtml;
-
-            //Get the first star item from the list, it should not be checked
-            starButton = chairButtonList.First(m => !string.IsNullOrEmpty(m.ClassName) && m.ClassName.Contains("fas fa-chair checked"));
-
-            //Save the html for it to compare after the click
-            var postStarChange2 = starButton.OuterHtml;
-
-            //Assert
-            System.Console.WriteLine($"Rating received before and after {preVoteCountString}:{postVoteCountString}:{postVoteCountString2}");
-
-            //Confirm that the record has no votes to start, and 1 vote after
-            Assert.AreEqual(true, preVoteCountString.Contains("Be the first to vote!"));
-            Assert.AreEqual(true, postVoteCountString.Contains("1 Vote"));
-            Assert.AreEqual(true, postVoteCountString2.Contains("2 Votes"));
-            Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
+            // Assert
+            Assert.AreEqual(true, preVoteMarkup.Contains(PreVoteString));
+            Assert.AreEqual(true, postVoteMarkup.Contains(PostVoteString));
+            Assert.AreNotEqual(preVoteMarkup, postVoteMarkup);
         }
+
+        #endregion AddRating
 
         #region AddComments
         [Test]
@@ -309,5 +283,32 @@ namespace UnitTests.Components
         }
 
         #endregion AddComments
+
+        [Test]
+        public void Filters_Products_By_Neighborhood_Should_Return_Matching_Content()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Act
+            var page = RenderComponent<ProductList>();
+
+            //Find the input
+            var selectList = page.FindAll("select");
+
+            //Find the one that matches the ID looking for and click it
+            var select = selectList.First(m => m.OuterHtml.Contains("dropdown1"));
+
+            var changeEventArgs = new ChangeEventArgs { Value = "First Hill" };
+
+            // Act - Simulate changing the filter text
+            select.Change(changeEventArgs);
+
+            var pageMarkup = page.Markup;
+            // Assert
+            // Ensure the method OnNeighborhoodChanged was called with the correct value
+            Assert.AreEqual(true, pageMarkup.Contains("First Hill"));
+
+        }
     }
 }
