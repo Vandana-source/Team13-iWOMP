@@ -7,7 +7,8 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,32 +17,37 @@
     <title>@ViewData["Title"]</title>
 </head>
 <body>
-
+<br/>
 <div class="container text-center mt-5">
-    <h3 class="display-4">Helping your 🍑 find a seat since 2023</h3>
-</div>
-
-<div class="container my-4">
+    <h3 class="display-5" style="font-family: 'Lato', sans-serif; text-align: left;">
+        Helping your 🍑 find a seat since 2023
+    </h3>    
     <div class="row d-flex align-items-center justify-content-between">
-        <div class="col-lg-6">
-            <h1 class="my-4">@ViewData["Title"]</h1>
-            <h3>Take a Break!</h3>
-            <address>
-                901 12th Avenue, P.O. Box 222000<br>
-                Seattle, WA 98122-1090<br>
-                <strong>Phone:</strong> +1.206.296.6000<br>
-                <strong>Toll-free:</strong> 1.800.426.7123<br>
-                For general inquiries: <a href="mailto:13.take.a.break@gmail.com">13.take.a.break@gmail.com</a>
-            </address>
+        <div class="col-lg-4" style="font-family: 'Lato', sans-serif;">
+            <div class="gray-rectangle">
+                <h3>Contact Us At<br/>Take a Break!</h3>
+                <br/>
+                <address>
+                    901 12th Avenue, <br/>P.O. Box 222000<br>
+                    Seattle, WA 98122-1090<br>
+                    <strong>Phone:</strong> +1.206.296.6000<br>
+                    <strong>Toll-free:</strong> 1.800.426.7123<br>
+                    <br/>
+                    For general inquiries: <a href="mailto:13.take.a.break@gmail.com">13.take.a.break@gmail.com</a>
+                </address>
+            </div>
         </div>
-        <div class="col-lg-6">
-            <img src="/ContactUs.png" alt="Contact Image" class="img-fluid img-reg">
+        <div class="col-lg-7">
+            <img src="/ContactUs.png" alt="Contact Image" class="img-fluid custom-img-size">
         </div>
     </div>
 </div>
 
 <div class="container mt-5">
-    <h2>Customer Information Form</h2>
+    <div class="slim-rectangle">
+        <span class="rectangle-text">Nominate A Place</span>
+    </div>
+    <br/>
     <form method="post">
         <div class="form-group">
             <label for="cusFirstName">First Name (Optional)</label>
@@ -62,7 +68,7 @@
             <label for="nominatedTitle">Name of Location</label>
             <input type="text" class="form-control" asp-for="CustomerNomination.NominatedTitle" placeholder="Enter Nominated Title">
         </div>
-        
+
         <div class="form-group">
             <label class="control-label" for="CustomerNomination_NominatedLocationType">Location Type</label>
             <select class="form-control" id="CustomerNomination_NominatedLocationType" name="CustomerNomination.NominatedLocationType">
