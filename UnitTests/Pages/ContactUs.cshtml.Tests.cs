@@ -17,6 +17,7 @@ using Moq;
 using NUnit.Framework;
 using TakeABreak.WebSite.Models;
 using TakeABreak.WebSite.Pages;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
 namespace UnitTests.Pages.ContactUs
 {
@@ -122,6 +123,8 @@ namespace UnitTests.Pages.ContactUs
                     ("UnknownType", "Others") 
                 };
 
+            List<CustomerModel> customerModelList = new List<CustomerModel>();
+
             // Loop through the test case scenarios and test them
             foreach (var testCase in testCases)
             {
@@ -141,17 +144,57 @@ namespace UnitTests.Pages.ContactUs
                 // Assert on correct title after creation
                 Assert.AreEqual("Title", pageModel.CustomerNomination.NominatedTitle);
 
+                System.Console.WriteLine($"Rating received before and after {pageModel.CustomerNomination.CustId}");
+
                 // Assert on correct redirection
                 Assert.AreEqual("/ContactUs", result.PageName);
 
-                // Delete the created data
                 
+                customerModelList.Add(pageModel.CustomerNomination);
+
                 // Reset
                 pageModel.ModelState.Clear();
             }
+            foreach (var customerModel in customerModelList)
+            {
+                pageModel.CustomerService.DeleteCustomer(customerModel);
+            }
         }
-        
+
+        /// <summary>
+        /// Tests invalid Model state stays on page
+        /// </summary>
+        [Test]
+        public void OnPost_Invalid_ModelState_Should_Stay_On_Page()
+        {
+            // Arrange: Set an error in the ModelState to simulate a model validation failure.
+            pageModel.ModelState.AddModelError("Customer.NominatedTitle",
+                "Title is required");
+
+            // Set up customer
+            pageModel.CustomerNomination = new CustomerModel
+            {
+                NominatedLocationType = "Bench",
+                NominatedNeighborhood = "Neighborhood",
+                NominatedDescription = "Description",
+                NominatedMapDetails = "https://www.google.com/maps/embed?pb=!12345",
+            };
+
+            // Act
+            var result = pageModel.OnPost() as PageResult;
+
+            // Assert
+            // Confirming that ModelState is invalid.
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+
+            var isPageResultType = result is PageResult;
+            Assert.AreEqual(true, isPageResultType);
+
+            // Reset
+            pageModel.ModelState.Clear();
+        }
+
         #endregion OnPost
-      
+
     }
 }
