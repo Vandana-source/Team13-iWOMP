@@ -102,5 +102,19 @@ namespace UnitTests.Pages.ContactUs
         }
 
         #endregion OnGet
+        
+        /// <summary>
+        /// Tests OnPost with valid customer input should return new customer
+        /// </summary>
+        #region OnPost
+        
+        [Test]
+        public void OnPost_Valid_Customer_Input_Should_Create_Customer()
+        {
+            
+        }
+        
+        #endregion OnPost
+      
     }
 }
