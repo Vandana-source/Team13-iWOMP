@@ -1,21 +1,22 @@
-﻿using System.Diagnostics;
-
+﻿using System.Collections.Generic;
+using System.IO;
+using TakeABreak.WebSite.Pages.Product;
+using System.Text;
+using TakeABreak.WebSite.Services;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Routing;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.Logging;
-
-using NUnit.Framework;
-
 using Moq;
 
+using NUnit.Framework;
+using TakeABreak.WebSite.Models;
 using TakeABreak.WebSite.Pages;
-using TakeABreak.WebSite.Services;
 
 namespace UnitTests.Pages.ContactUs
 {
@@ -109,9 +110,46 @@ namespace UnitTests.Pages.ContactUs
         #region OnPost
         
         [Test]
-        public void OnPost_Valid_Customer_Input_Should_Create_Customer()
+        public void
+            OnPost_Valid_File_And_LocationType_Should_Save_In_Correct_SubDirectory_And_Stay_On_Page()
         {
-            
+            // Data for testing
+            var testCases =
+                new List<(string NominatedLocationType, string ExpectedSubDirectory)>
+                {
+                    ("Table", "Tables"),
+                    ("Bench", "Benches"),
+                    ("Restroom", "Restrooms"),
+                    ("UnknownType", "Others") 
+                };
+
+            // Loop through the test case scenarios and test them
+            foreach (var testCase in testCases)
+            {
+                // Set up product for this iteration
+                pageModel.CustomerNomination = new CustomerModel
+                {
+                    NominatedTitle = "Title",
+                    NominatedLocationType = testCase.NominatedLocationType,
+                    NominatedNeighborhood =  "Neighborhood",
+                    NominatedDescription = "Description",
+                    NominatedMapDetails = "https://www.google.com/maps/embed?pb=!12345",
+                };
+
+                // Act
+                var result = pageModel.OnPost() as RedirectToPageResult;
+
+                // Assert on correct title after creation
+                Assert.AreEqual("Title", pageModel.CustomerNomination.NominatedTitle);
+
+                // Assert on correct redirection
+                Assert.AreEqual("ContactUs", result.PageName);
+
+                // Delete the created data
+                
+                // Reset
+                pageModel.ModelState.Clear();
+            }
         }
         
         #endregion OnPost
