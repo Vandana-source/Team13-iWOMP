@@ -135,5 +135,85 @@ namespace UnitTests.Components
             Assert.AreEqual(true, pageMarkup.Contains("Seattle"));
         }
 
+        [Test]
+        public void SubmitRating_Valid_ID_Click_Unstared_Should_Increment_Count_And_Check_Chair()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Act
+            var page = RenderComponent<ProductList>();
+
+            var moreInfoButton = page.Find($"button[data-target='#productModal-arboretum-bench']");
+
+            var buttonMarkup = page.Markup;
+
+            //Get the star Buttons
+            var chairButtonList = page.FindAll("span");
+
+            //Get the vote count
+            //Get the vote count, the list should have 7 elements, element 2 is the string for the count
+            var preVoteCountSpan = chairButtonList[1];
+            var preVoteCountString = preVoteCountSpan.OuterHtml;
+
+            //Get the first star item from the list, it should not be checked
+            var starButton = chairButtonList.First(m => !string.IsNullOrEmpty(m.ClassName) && m.ClassName.Contains("fas fa-chair"));
+
+            //Save the html for it to compare after the click
+            var preStarChange = starButton.OuterHtml;
+
+            //Act
+
+            //Click the star button
+            starButton.Click();
+
+            //Get the markup to use for the assert
+            buttonMarkup = page.Markup;
+
+            //Get the star Buttons
+            chairButtonList = page.FindAll("span");
+
+            //Get the vote count
+            //Get the vote count, the list should have 7 elements, element 2 is the string for the count
+            var postVoteCountSpan = chairButtonList[1];
+            var postVoteCountString = postVoteCountSpan.OuterHtml;
+
+            //Get the first star item from the list, it should not be checked
+            starButton = chairButtonList.First(m => !string.IsNullOrEmpty(m.ClassName) && m.ClassName.Contains("fas fa-chair checked"));
+
+            //Save the html for it to compare after the click
+            var postStarChange = starButton.OuterHtml;
+
+            //Click the star button
+            starButton.Click();
+
+            //Get the markup to use for the assert
+            buttonMarkup = page.Markup;
+
+            //Get the star Buttons
+            chairButtonList = page.FindAll("span");
+
+            //Get the vote count
+            //Get the vote count, the list should have 7 elements, element 2 is the string for the count
+            var postVoteCountSpan2 = chairButtonList[1];
+            var postVoteCountString2 = postVoteCountSpan2.OuterHtml;
+
+            //Get the first star item from the list, it should not be checked
+            starButton = chairButtonList.First(m => !string.IsNullOrEmpty(m.ClassName) && m.ClassName.Contains("fas fa-chair checked"));
+
+            //Save the html for it to compare after the click
+            var postStarChange2 = starButton.OuterHtml;
+
+            //Assert
+            System.Console.WriteLine($"Rating received before and after {preVoteCountString}:{postVoteCountString}:{postVoteCountString2}");
+
+            //Confirm that the record has no votes to start, and 1 vote after
+            Assert.AreEqual(true, preVoteCountString.Contains("Be the first to vote!"));
+            Assert.AreEqual(true, postVoteCountString.Contains("1 Vote"));
+            Assert.AreEqual(true, postVoteCountString2.Contains("2 Votes"));
+            Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
+        }
+
+        
     }
 }
