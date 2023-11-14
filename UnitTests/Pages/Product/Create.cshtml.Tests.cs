@@ -174,6 +174,9 @@ namespace UnitTests.Pages.Product.Create
 
                 // Assert on correct redirection
                 Assert.AreEqual("Index", result.PageName);
+                
+                // Delete the created data
+                pageModel.ProductService.DeleteData(pageModel.Product);
 
                 // Reset
                 pageModel.ModelState.Clear();
@@ -243,6 +246,9 @@ namespace UnitTests.Pages.Product.Create
 
             // Confirming that the result type is a PageResult.
             Assert.AreEqual(true, result is PageResult);
+            
+            // Delete the created data
+            pageModel.ProductService.DeleteData(pageModel.Product);
 
             // Reset
             pageModel.ModelState.Clear();
@@ -303,6 +309,10 @@ namespace UnitTests.Pages.Product.Create
                 var isPageResultType = result is PageResult;
                 Assert.AreEqual(true, isPageResultType);
 
+                
+                // Delete the created data
+                pageModel.ProductService.DeleteData(pageModel.Product);
+                
                 // Reset
                 pageModel.ModelState.Clear();
             }
@@ -326,7 +336,7 @@ namespace UnitTests.Pages.Product.Create
             var retrievedFile = pageModel.UploadedFile;
 
             // Assert
-            // Assert.AreEqual(mockFormFile.Object, retrievedFile);
+            Assert.AreEqual(mockFormFile.Object, retrievedFile);
         }
 
         #endregion UploadImage
