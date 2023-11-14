@@ -365,6 +365,13 @@ ul {
     font-size: 1.5vw;
 }
 
+@media (max-width: 768px) {
+    .nav-item {
+        font-size: larger; /* Increase text size */
+        padding: 10px; /* Increase padding */
+    }
+}
+
 
 
 
