@@ -1204,3 +1204,7 @@ a.card-tab {
     background-color: #bacec1;
     color: #000000e5;
 }
+
+.tab-content {
+    margin: 1vw 0;
+}
