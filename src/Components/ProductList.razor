@@ -9,7 +9,7 @@
 
 <div id="filter-bar">
     <div class="filter-option">
-        <select class="filter-dropdown" test-id="dropdown1" @onchange="OnNeighborhoodChanged">
+        <select class="filter-dropdown" test-id="dropdown1" @bind="selectedNeighborhood">
             <option value="">Neighborhood</option>
             @foreach (var neighborhood in Neighborhoods)
             {
@@ -18,7 +18,7 @@
         </select>
     </div>
     <div class="filter-option">
-        <select class="filter-dropdown dropdown2" @onchange="OnLocationTypeChanged">
+        <select class="filter-dropdown dropdown2" @bind="selectedLocationType">
             @{
                 <option value="">Location Type</option>
                 <option value="Bench">Bench🪑</option>
@@ -29,7 +29,7 @@
         </select>
     </div>
     <div class="filter-option">
-        <select class="filter-dropdown dropdown3" @onchange="OnNoiseLevelTypeChanged">
+        <select class="filter-dropdown dropdown3" @bind="selectedNoiseLevel">
             <option value="">Noise Level</option>
             @for (int i = 1; i <= 10; i++)
             {
@@ -297,48 +297,7 @@
         return filteredProducts;
     }
 
-    /// <summary>
-    /// Event callback for when drop down neighborhood changes
-    ///</summary>
-    private void OnNeighborhoodChanged(ChangeEventArgs e)
-    {
-        selectedNeighborhood = e.Value?.ToString();
-
-        // Trigger a re-render of the component
-        StateHasChanged();
-    }
-
-    /// <summary>
-    /// Event callback for when drop down LocationType changes
-    ///</summary>
-    private void OnLocationTypeChanged(ChangeEventArgs e)
-    {
-        selectedLocationType = e.Value?.ToString();
-
-        // Trigger a re-render of the component
-        StateHasChanged();
-    }
-
-    /// <summary>
-    /// Event callback for when drop down NoiseLevel changes
-    /// </summary>
-    private void OnNoiseLevelTypeChanged(ChangeEventArgs e)
-    {
-
-        // Try to get the noise level
-        if (int.TryParse(e.Value?.ToString(), out int result))
-        {
-            selectedNoiseLevel = result;
-        }
-        else
-        {
-            // Reset or handle the invalid input appropriately
-            selectedNoiseLevel = null;
-        }
-
-        // Trigger a re-render of the component
-        StateHasChanged();
-    }
+    
 
     /// <summary>
     /// Event callback for when ratings change
