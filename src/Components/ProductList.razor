@@ -18,7 +18,7 @@
         </select>
     </div>
     <div class="filter-option">
-        <select class="filter-dropdown dropdown2" @bind="selectedLocationType">
+        <select class="filter-dropdown" test-id="dropdown2" @bind="selectedLocationType">
             @{
                 <option value="">Location Type</option>
                 <option value="Bench">Bench🪑</option>
@@ -29,7 +29,7 @@
         </select>
     </div>
     <div class="filter-option">
-        <select class="filter-dropdown dropdown3" @bind="selectedNoiseLevel">
+        <select class="filter-dropdown" test-id="dropdown3" @bind="selectedNoiseLevel">
             <option value="">Noise Level</option>
             @for (int i = 1; i <= 10; i++)
             {
