@@ -285,7 +285,7 @@ namespace UnitTests.Components
         #endregion AddComments
 
         [Test]
-        public void Filters_Products_By_Neighborhood_Should_Return_Matching_Content()
+        public void Filters_Products_By_LocationType_Should_Return_Matching_Content()
         {
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
@@ -296,18 +296,45 @@ namespace UnitTests.Components
             //Find the input
             var selectList = page.FindAll("select");
 
-            //Find the one that matches the ID looking for and click it
-            var select = selectList.First(m => m.OuterHtml.Contains("dropdown1"));
+            const string locationType = "Bench";
 
-            var changeEventArgs = new ChangeEventArgs { Value = "First Hill" };
+            //Find the one that matches the ID looking for and click it
+            var select = selectList.First(m => m.OuterHtml.Contains("dropdown2"));
 
             // Act - Simulate changing the filter text
-            select.Change(changeEventArgs);
+            select.Change(locationType);
 
             var pageMarkup = page.Markup;
             // Assert
             // Ensure the method OnNeighborhoodChanged was called with the correct value
-            Assert.AreEqual(true, pageMarkup.Contains("First Hill"));
+            Assert.AreEqual(true, pageMarkup.Contains("Arboretum Marsh Walk"));
+
+        }
+
+        [Test]
+        public void Filters_Products_By_NoiseLevel_Should_Return_Matching_Content()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Act
+            var page = RenderComponent<ProductList>();
+
+            //Find the input
+            var selectList = page.FindAll("select");
+
+            const int noiseLevel = 5;
+
+            //Find the one that matches the ID looking for and click it
+            var select = selectList.First(m => m.OuterHtml.Contains("dropdown3"));
+
+            // Act - Simulate changing the filter text
+            select.Change(noiseLevel);
+
+            var pageMarkup = page.Markup;
+            // Assert
+            // Ensure the method OnNeighborhoodChanged was called with the correct value
+            Assert.AreEqual(true, pageMarkup.Contains("Seattle Aquarium"));
 
         }
     }
