@@ -4,6 +4,12 @@
     --font-serif: "Cardo", serif;
 }
 
+@media (max-width: 768px) {
+    .static-img {
+        height: 100px;
+    }
+}
+
 .skinny-container {
     height: 5.5vw;
 }
@@ -188,6 +194,7 @@ for details on configuring this project to bundle and minify static web assets. 
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
+
 .modal .card-img {
     height: 500px;
     vertical-align: bottom;
@@ -195,6 +202,7 @@ for details on configuring this project to bundle and minify static web assets. 
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
 }
+
 
 .card-columns .card:hover {
     transform: scale(1.00);
@@ -593,6 +601,16 @@ h1.h1-heading {
     transform: scale(1.05); /* Add a slight zoom effect */
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
 }
+
+@media (max-width: 576px) {
+    .navbar-toggler {
+        position: absolute;
+        right: 0;
+        margin-right: 50px; 
+    }
+}
+
+
 
 /* CSS for the small text */
 .text-muted {
