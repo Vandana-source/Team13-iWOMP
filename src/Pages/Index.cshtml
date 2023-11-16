@@ -25,83 +25,67 @@
 </head>
 
 <body>
-
-    <<div class="container-fluid position-relative">
-
-        <div class="color-rectangle"></div> <!-- This is the background rectangle -->
-        <!-- These texts will overlay the rectangle -->
-        <div class="left-indextext">
+<div class="color-rectangle">
+    <div class="container pb-3">
+        <!-- Background rectangle and overlay texts -->
+        <div class="left-text text-start pt-4">
             Tired of
-            <br />                   the daily grind?
-        </div>
-        <div class="right-indextext">
-            <strong>Let's Take A Break</strong> from your worries and mellow out!!
-            <br />
-            Get ready to explore the nearest <em>benches</em>, <em>restrooms</em>, <em>tables</em>,
-            <br />       and other nice spots present in and around Seattle.
-            <br />
-            <br />       We've covered the most serene and creative <em>places</em> along with
-            <br />       their fun facts, so come branch
-            out and find your new favorite
-            <br />       spot to unwind.
-        </div>
-</div>    
-    <main role="main" class="pb-3">
-        <!-- For horizontal centering -->
+            <p>the daily grind?</p>
+            </div>
+    </div>
+</div> 
+<div class="container pb-3">
+<main role="main" class="pb-3">
+        <!-- Main content -->
         <p class="homepageformat text-center">
-            <!-- Your content here -->
         </p>
         <div class="homepageformat py-3 d-flex justify-content-center">
-            <!-- For horizontal centering inside a flex container -->
             <a asp-page="/Explore" class="btn btn-primary">Ready to Explore?</a>
         </div>
     </main>
-<!-- Cards Section -->
-        <div class="row">
-            <!-- Each Card -->
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card card-custom card-img-bench">
-                    <div class="card-custom-content">
-                        <h2 class="card-custom-title">Benches</h2>
-                        <a asp-page="/Explore" asp-route-filter="Bench" class="btn btn-custom">Explore Benches</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card card-custom card-img-restroom">
-                    <div class="card-custom-content">
-                        <h2 class="card-custom-title">Restrooms</h2>
-                        <a asp-page="/Explore" asp-route-filter="Restroom" class="btn btn-custom">Explore Restrooms</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card card-custom card-img-tables">
-                    <div class="card-custom-content">
-                        <h2 class="card-custom-title">Tables</h2>
-                        <a asp-page="/Explore" asp-route-filter="Table" class="btn btn-custom">Explore Tables</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card card-custom card-img-others">
-                    <div class="card-custom-content">
-                        <h2 class="card-custom-title">Other</h2>
-                        <a asp-page="/Explore" asp-route-filter="Other" class="btn btn-custom">Explore Other Places</a>
-                    </div>
-                </div>
+    
+        <!-- Cards Section -->
+<div class="row">
+    <!-- Each Card -->
+    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div class="card card-custom card-img-bench">
+            <div class="card-custom-content">
+                <h2 class="card-custom-title">Benches</h2>
+                <a asp-page="/Explore" asp-route-filter="Bench" class="btn btn-custom">Explore Benches</a>
             </div>
         </div>
     </div>
-
-    <!-- Scripts -->
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="_framework/blazor.server.js"></script>
+    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div class="card card-custom card-img-restroom">
+            <div class="card-custom-content">
+                <h2 class="card-custom-title">Restrooms</h2>
+                <a asp-page="/Explore" asp-route-filter="Restroom" class="btn btn-custom">Explore Restrooms</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div class="card card-custom card-img-tables">
+            <div class="card-custom-content">
+                <h2 class="card-custom-title">Tables</h2>
+                <a asp-page="/Explore" asp-route-filter="Table" class="btn btn-custom">Explore Tables</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div class="card card-custom card-img-others">
+            <div class="card-custom-content">
+                <h2 class="card-custom-title">Other</h2>
+                <a asp-page="/Explore" asp-route-filter="Other" class="btn btn-custom">Explore Other Places</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="_framework/blazor.server.js"></script>
 </body>
 
 </html>
