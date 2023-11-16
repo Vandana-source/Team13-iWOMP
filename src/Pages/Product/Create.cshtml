@@ -7,16 +7,21 @@
     ViewData["Title"] = "Create page";
 }
 
-<body class="crud">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
 
-    <h1 class="font-weight-bold">Create</h1>
+<div class="container pb-3 pt-3">
+    <h1>Create Place</h1>
 
-    <div class="container">
+    <div class="container pt">
         <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger"></div>
             @Html.HiddenFor(x => x.Product.Id)
 
-            <div class="form-group">
+            <div class="form-group pt-2">
                 <label class="control-label" asp-for="Product.Title"></label>
                 <input class="form-control" asp-for="Product.Title" required placeholder="Enter Title">
                 <span class="text-danger" asp-validation-for="Product.Title"></span>
@@ -52,7 +57,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label" asp-for="Product.Image"></label><br />
+                <label class="control-label" asp-for="Product.Image"></label><br/>
                 <input type="file" name="UploadedFile" asp-for="Product.Image" accept=".jpg, .jpeg, .png, .gif, .bmp" required>
                 <span class="text-danger" asp-validation-for="UploadedFile"></span>
             </div>
@@ -65,7 +70,7 @@
 
             <div class="form-group">
                 <label class="control-label" asp-for="Product.MapURL"></label>
-                <button class="btn btn-primary map-button" onclick=" window.open('http://google.com/maps','_blank','noopener noreferrer')">
+                <button class="btn btn-primary map-button" onclick="window.open('http://google.com/maps','_blank','noopener noreferrer')">
                     Open Google Maps
                 </button>
                 <input class="form-control" asp-for="Product.MapURL" required placeholder="Enter google map URL">
@@ -81,11 +86,9 @@
                     <a class="btn btn-danger" asp-page="Index">Cancel</a>
                 </div>
             </div>
-
-
         </form>
     </div>
-</body>
+</div>
 
 @section Scripts {
     @{
