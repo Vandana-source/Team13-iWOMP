@@ -2,11 +2,16 @@
     --d: 700ms;
     --e: cubic-bezier(0.19, 1, 0.22, 1);
     --font-serif: "Cardo", serif;
-    --main-font-size: 16px;
+    --font-size: clamp(1rem, 4.8vw, 1.3rem);
+}
+
+@media (min-width: 900px) {
+    :root {
+        --font-size: clamp(1.1rem, 1.125rem + 1vw, 1.12em);
+    }
 }
 
 body {
-    font-size: var(--main-font-size);
     margin-bottom: 60px;
 }
 
@@ -78,10 +83,21 @@ body {
 }
 
 .color-rectangle {
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 20vw;
+    height: 18vw;
     background-color: #29392e;
+    display: flex;
 }
+
+.left-text {
+    font-family: 'Lato', sans-serif;
+    font-size: clamp(2rem, 5vw, 5em);
+    color: #cebac7;
+    line-height: 1;
+}
+
 
 .thinner-rectangle {
     height: 7vw;
@@ -117,28 +133,7 @@ body {
     padding: 1vw; 
 }
 
-.index-textcontainer {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 2vw; 
-}
 
-
-.left-indextext {
-    font-family: 'Lato', sans-serif;
-    font-size: 6rem;
-    color: #cebac7;
-    margin-top: 1.1vw;
-    top: 1vw;
-    left: 0;
-    text-align: left;
-    transform: none;
-    position: absolute;
-    z-index: 2;
-    right: auto;
-    line-height: 1.2;
-}
 
 .left-index-small {
     font-size: 1.5vw; 
@@ -149,16 +144,14 @@ body {
 
 .right-indextext {
     font-family: 'Lato', sans-serif;
-    font-size: 1rem;
+    font-size: 1.3em;
     color: #cec1ba;
-    margin-top: 2.3vw;
+    margin-top: 2.5vw;
     top: 0;
-    left: 60%; /* Moving the text box to the right side, starting from the center. Adjust as needed. */
-    position: absolute;
+    left: 55%;
     z-index: 2;
-    text-align: justify;
-    width: 50%; /* Setting a width for the text box so the text can be justified within. Adjust as needed. */
-    transform: none;
+    text-align: justify-all;
+    width: 50%;
 }
 
 .right-index-large {
@@ -170,9 +163,6 @@ body {
     font-weight: 700;
 }
 
-.left-text, .right-indextext {
-    flex: 1; 
-}
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
@@ -219,7 +209,7 @@ a.navbar-brand {
     font-family: 'Pacifico', cursive;
     text-align: center;
     word-break: break-all;
-    font-size: 3em;
+    font-size: clamp(2rem, 3vw, 3em);
     padding-top: 3.2vw;
 }
 
@@ -375,16 +365,12 @@ ul {
     }
 }
 
-
-
-
 /*CSS form body h1*/
 h1.h1-heading {
     text-align: center;
     color: firebrick;
     font-weight: 700;
 }
-
 
 .card-custom:hover,
 .card-custom:focus-within {
