@@ -5,7 +5,7 @@
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+<div class="container pb-3 pt-3">
 <div class="option-bar">
     <a class="font-weight-bold acolor" href="/Product#restrooms-section">Restrooms</a>
     <span class="vertical-bars"></span>
@@ -15,8 +15,7 @@
     <span class="vertical-bars"></span>
     <a class="font-weight-bold acolor" href="/Product#other-places-section">Other Places</a>
 </div>
-
-<div class="container" id="benches-section">
+    <div class="container" id="benches-section">
     <a class="font-weight-bold" asp-page="Create">+ Create</a>
     <table class="table table-bordered table-hover">
         <thead>
@@ -136,9 +135,9 @@
     <a class="font-weight-bold" asp-page="Create">+ Create </a>
     <table class="table table-bordered table-hover">
         <thead>
-            <tr>
-                <th colspan="4">Tables</th>
-            </tr>
+        <tr>
+            <th colspan="4">Tables</th>
+        </tr>
         </thead>
         @foreach (var product in Model.Products)
         {
@@ -165,4 +164,6 @@
             }
         }
     </table>
+</div>
+
 </div>
