@@ -15,89 +15,91 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 
 <body>
-    <div class="option-bar">
-        <a class="font-weight-bold acolor" href="/Product#restrooms-section">Restrooms</a>
-        <span class="vertical-bars"></span>
-        <a class="font-weight-bold acolor" href="/Product#benches-section">Benches</a>
-        <span class="vertical-bars"></span>
-        <a class="font-weight-bold acolor" href="/Product#tables-section">Tables</a>
-        <span class="vertical-bars"></span>
-        <a class="font-weight-bold acolor" href="/Product#other-places-section">Other Places</a>
-    </div>
-    <br />
+<div class="container pb-3 pt-3">
+<div class="option-bar">
+    <a class="font-weight-bold acolor" href="/Product#restrooms-section">Restrooms</a>
+    <span class="vertical-bars"></span>
+    <a class="font-weight-bold acolor" href="/Product#benches-section">Benches</a>
+    <span class="vertical-bars"></span>
+    <a class="font-weight-bold acolor" href="/Product#tables-section">Tables</a>
+    <span class="vertical-bars"></span>
+    <a class="font-weight-bold acolor" href="/Product#other-places-section">Other Places</a>
+</div>
+<br/>
 
-    <div class="container">
-        <div class="text-center">
-            <!-- Image Wrapper -->
-            <div class="image-wrapper">
-                <img class="align-content-center wide-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
-            </div>
+<div class="container">
+    <div class="text-center">
+        <!-- Image Wrapper -->
+        <div class="image-wrapper">
+            <img class="align-content-center wide-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
         </div>
+    </div>
 
-        <div class="container2">
-            <h5 class="larger-title" id="productTitle">@Model.Product.Title</h5>
-            <hr class="horizontal-line">
-            <br />
-            <h5 class="font-weight-bold" id="placeNeighborhood">@Model.Product.Neighborhood</h5>
-            @{
-                int currentRating = 0;
-                int voteCount = 0;
-                string voteLabel = "";
-                if (Model.Product.Ratings == null)
+    <div class="container2">
+        <h5 class="larger-title" id="productTitle">@Model.Product.Title</h5>
+        <hr class="horizontal-line">
+        <br/>
+        <h5 class="font-weight-bold" id="placeNeighborhood">@Model.Product.Neighborhood</h5>
+        @{
+            int currentRating = 0;
+            int voteCount = 0;
+            string voteLabel = "";
+            if (Model.Product.Ratings == null)
+            {
+                currentRating = 0;
+                voteCount = 0;
+            }
+            else
+            {
+                voteCount = Model.Product.Ratings.Count();
+                voteLabel = voteCount > 1 ? "Reviews" : "Review";
+                currentRating = Model.Product.Ratings.Sum() / voteCount;
+            }
+            System.Console.WriteLine($"Current rating for {Model.Product.Id}: {currentRating}");
+            @for (int i = 1; i < 6; i++)
+            {
+                var currentStar = i;
+                if (i <= currentRating)
                 {
-                    currentRating = 0;
-                    voteCount = 0;
+                    <span class="fas fa-chair checked space"></span>
                 }
                 else
                 {
-                    voteCount = Model.Product.Ratings.Count();
-                    voteLabel = voteCount > 1 ? "Reviews" : "Review";
-                    currentRating = Model.Product.Ratings.Sum() / voteCount;
-                }
-                System.Console.WriteLine($"Current rating for {Model.Product.Id}: {currentRating}");
-                @for (int i = 1; i < 6; i++)
-                {
-                    var currentStar = i;
-                    if (i <= currentRating)
-                    {
-                        <span class="fas fa-chair checked space"></span>
-                    }
-                    else
-                    {
-                        <span class="fas fa-chair space"></span>
-                    }
-                }
-                @if (voteCount == 0)
-                {
-                    <span>No Reviews yet!</span>
-                }
-                else
-                {
-                    <span>@voteCount @voteLabel</span>
+                    <span class="fas fa-chair space"></span>
                 }
             }
-            <br />
-            <span class="text-wrapper">D</span>
-            <span class="description">
-                escription
-                <br />@Model.Product.Description
-            </span>
+            @if (voteCount == 0)
+            {
+                <span>No Reviews yet!</span>
+            }
+            else
+            {
+                <span>@voteCount @voteLabel</span>
+            }
+        }
+        <br/>
+        <span class="text-wrapper">D</span>
+        <span class="description">
+            escription
+            <br/>@Model.Product.Description
+        </span>
 
-            <span class="noiselevel">
-                <br />Noise Level (1 is Good, 10 is Bad) : @Model.Product.NoiseLevel
-            </span>
+        <span class="noiselevel">
+            <br/>Noise Level (1 is Good, 10 is Bad) : @Model.Product.NoiseLevel
+        </span>
 
-            <br /><br />
-            <div class="map-container">
-                <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
-            </div>
-            <br />
-
-            <div class="button-row">
-                <a asp-page="Update" asp-route-id="@Model.Product.Id" class="btn btn-primary">Update</a>&nbsp; &nbsp
-                <a asp-page="Delete" asp-route-id="@Model.Product.Id" class="btn btn-danger">Delete</a>
-            </div>
+        <br/><br/>
+        <div class="map-container">
+            <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
         </div>
-        <br />
+        <br/>
+
+        <div class="button-row">
+            <a asp-page="Update" asp-route-id="@Model.Product.Id" class="btn btn-primary">Update</a>&nbsp; &nbsp
+            <a asp-page="Delete" asp-route-id="@Model.Product.Id" class="btn btn-danger">Delete</a>
+        </div>
     </div>
+    <br/>
+</div>
+</div>
 </body>
