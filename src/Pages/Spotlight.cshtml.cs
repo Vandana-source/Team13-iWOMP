@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace TakeABreak.WebSite.Pages;
 
-public class Spotlight : PageModel
+public class SpotlightModel : PageModel
 {
     public void OnGet()
     {
