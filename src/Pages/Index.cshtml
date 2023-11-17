@@ -7,22 +7,21 @@
 }
 
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Take A Break</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>@ViewData["Title"] - Take A Break</title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Oi:400,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Grand+Hotel&family=Oi&family=Pacifico&family=Syncopate:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@300&display=swap" rel="stylesheet">
-</head>
+<!-- Stylesheets -->
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cardo:400i|Oi:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Capriola&family=Grand+Hotel&family=Oi&family=Pacifico&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Lato&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
 
 <body>
 <div class="color-rectangle d-flex justify-content-center align-items-center">
@@ -42,57 +41,79 @@
 </div>
 
 <div class="container pb-3">
-<main role="main" class="pb-3">
-        <!-- Main content -->
-        <p class="homepageformat text-center">
-        </p>
-        <div class="homepageformat py-3 d-flex justify-content-center">
-            <a asp-page="/Explore" class="btn btn-primary">Ready to Explore?</a>
+    <main role="main" class="pb-3">
+        <div class="homepageformat py-3 d-flex flex-wrap justify-content-center">
+            <div class="d-flex flex-column flex-md-row justify-content-center button-container">
+                <a asp-page="/Explore" class="btn btn-third m-1">
+                    <span class="button-line">Ready to Explore?</span>
+                    <span class="button-line">Discover Places</span>
+                </a>
+                <span class="divider"></span>
+                <a asp-page="/Spotlight" class="btn btn-third m-1">
+                    <span class="button-line">Spotlight of the Month</span>
+                    <span class="button-line">See Highlights</span>
+                </a>
+                <span class="divider"></span>
+                <a asp-page="/Explore" class="btn btn-third m-1">
+                    <span class="button-line">Surprise Me</span>
+                    <span class="button-line">Find the Unexpected</span>
+                </a>
+                <span class="divider"></span>
+                                <a asp-page="/Explore" class="btn btn-third m-1">
+                                    <span class="button-line">Walk This Way</span>
+                                    <span class="button-line">Find a Route</span>
+                                </a>
+            </div>
         </div>
     </main>
+
+
     
-        <!-- Cards Section -->
-<div class="row">
-    <!-- Each Card -->
-    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-        <div class="card card-custom card-img-bench">
-            <div class="card-custom-content">
-                <h2 class="card-custom-title">Benches</h2>
-                <a asp-page="/Explore" asp-route-filter="Bench" class="btn btn-custom">Explore Benches</a>
+    <!-- Cards Section -->
+    <div class="row">
+        <!-- Each Card -->
+        <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div class="card card-custom card-img-bench">
+                <div class="card-custom-content">
+                    <h2 class="card-custom-title">Benches</h2>
+                    <a asp-page="/Explore" asp-route-filter="Bench" class="btn btn-custom">Explore Benches</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div class="card card-custom card-img-restroom">
+                <div class="card-custom-content">
+                    <h2 class="card-custom-title">Restrooms</h2>
+                    <a asp-page="/Explore" asp-route-filter="Restroom" class="btn btn-custom">Explore Restrooms</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div class="card card-custom card-img-tables">
+                <div class="card-custom-content">
+                    <h2 class="card-custom-title">Tables</h2>
+                    <a asp-page="/Explore" asp-route-filter="Table" class="btn btn-custom">Explore Tables</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div class="card card-custom card-img-others">
+                <div class="card-custom-content">
+                    <h2 class="card-custom-title">Other</h2>
+                    <a asp-page="/Explore" asp-route-filter="Other" class="btn btn-custom">Explore Other Places</a>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-        <div class="card card-custom card-img-restroom">
-            <div class="card-custom-content">
-                <h2 class="card-custom-title">Restrooms</h2>
-                <a asp-page="/Explore" asp-route-filter="Restroom" class="btn btn-custom">Explore Restrooms</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-        <div class="card card-custom card-img-tables">
-            <div class="card-custom-content">
-                <h2 class="card-custom-title">Tables</h2>
-                <a asp-page="/Explore" asp-route-filter="Table" class="btn btn-custom">Explore Tables</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-        <div class="card card-custom card-img-others">
-            <div class="card-custom-content">
-                <h2 class="card-custom-title">Other</h2>
-                <a asp-page="/Explore" asp-route-filter="Other" class="btn btn-custom">Explore Other Places</a>
-            </div>
-        </div>
-    </div>
+
 </div>
-</div>
+
+
 <!-- Scripts -->
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 <script src="_framework/blazor.server.js"></script>
 </body>
-
+</head>
 </html>
