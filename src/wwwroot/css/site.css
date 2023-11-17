@@ -5,11 +5,7 @@
     --font-size: clamp(1rem, 4.8vw, 1.3rem);
 }
 
-@media (min-width: 900px) {
-    :root {
-        --font-size: clamp(1.1rem, 1.125rem + 1vw, 1.12em);
-    }
-}
+
 
 body {
     margin-bottom: 60px;
@@ -83,12 +79,9 @@ body {
 }
 
 .color-rectangle {
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 18vw;
     background-color: #29392e;
-    display: flex;
 }
 
 .left-text {
@@ -96,6 +89,20 @@ body {
     font-size: clamp(2rem, 5vw, 5em);
     color: #cebac7;
     line-height: 1;
+}
+
+.right-text {
+    font-family: 'Lato', sans-serif;
+    font-size: clamp(0.8rem, 1.3vw, 1.1rem);
+    color: #cec1ba;
+    padding-left: 7vw; 
+    padding-top: 1vw;
+    line-height: 1.6;
+
+}
+
+.right-text p {
+    margin-bottom: 0.5rem; 
 }
 
 
@@ -142,17 +149,7 @@ body {
     width: 50%;
 }
 
-.right-indextext {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.3em;
-    color: #cec1ba;
-    margin-top: 2.5vw;
-    top: 0;
-    left: 55%;
-    z-index: 2;
-    text-align: justify-all;
-    width: 50%;
-}
+
 
 .right-index-large {
     margin-top: 2.5vw;
