@@ -17,7 +17,7 @@
     <title>@ViewData["Title"]</title>
 </head>
 <body>
-<div class="container mt-5 pb-3 pt-3 text-center">
+<div class="container mt-5 pt-3 text-center">
     <h3 class="display-5 text-lg-left">
         Helping your 🍑 find a seat since 2023
     </h3>
@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-5 pb-3">
     <div class="slim-rectangle">
         <span class="rectangle-text">Nominate A Place</span>
     </div>
@@ -102,7 +102,7 @@
             <input type="text" class="form-control" asp-for="CustomerNomination.NominatedNeighborhood" placeholder="Enter Neighborhood">
         </div>
 
-        <div class="form-group">
+        <div class="form-group pb-3">
             <label for="nominatedMapDetails">Map Details</label>
             <input type="url" class="form-control" asp-for="CustomerNomination.NominatedMapDetails" placeholder="Enter Google Map Location">
         </div>
