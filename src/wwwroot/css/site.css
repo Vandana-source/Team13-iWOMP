@@ -97,12 +97,15 @@ body {
 }
 
 .left-text {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Cardo', serif;
     font-size: clamp(2rem, 5vw, 5em);
     color: #cebac7;
     line-height: 1;
 }
 
+.color-rectangle .left-text p {
+    font-family: 'Cardo', serif;
+}
 
 .right-text {
     font-family: 'Lato', sans-serif;
@@ -183,13 +186,20 @@ body {
 
 
 .right-text-large {
+    font-family: "Cardo", serif;
     color: #cebac7;
     font-size: clamp(4rem, 12vw, 10rem);
     line-height: 11vw;
     text-align: center;
     width: 40%;
     font-weight: 700;
+    
 }
+
+.color-rectangle .right-text-large p {
+    font-family: 'Cardo', serif;
+}
+
 
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
@@ -255,6 +265,22 @@ a {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.btn-third {
+    background-color: rgba(206, 186, 199, 0);
+    color: #000000e6;
+    border-color: rgba(186, 206, 193, 0);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-third:hover {
+    color: #fff;
+    background-color: rgba(186, 206, 193, 0.65);
+    background-color: rgba(186, 206, 193, 0.52);
 }
 
 .btn-danger {
@@ -1308,9 +1334,37 @@ a.card-tab {
     margin: 1vw 0;
 }
 
-.team-info {
-    padding-top: 10vw; 
-    width: 70vw; 
-    margin-left: 20vw; 
-    box-sizing: border-box; 
+/* Style for the dividers */
+.divider {
+    height: 40px;
+    width: 1px;
+    background-color: #29392e; 
+    align-self: center; 
+    margin: 0 12px; 
 }
+
+.button-line {
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.btn .button-line:nth-of-type(2) {
+    font-family: 'Cardo', serif; 
+    font-size: 1.3rem;
+}
+
+/* Hide dividers on small screens */
+@media (max-width: 768px) {
+    .divider {
+        display: none;
+    }
+}
+
+
+.button-container {
+    padding-top: 2vw; 
+}
+
+
+
