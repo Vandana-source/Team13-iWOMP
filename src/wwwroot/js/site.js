@@ -8,3 +8,6 @@ const map = new maplibregl.Map({
     center: [0, 0], // [longitude, latitude]
     zoom: 1 // starting zoom level
 });
+
+
+map.addControl(new maplibregl.NavigationControl());
