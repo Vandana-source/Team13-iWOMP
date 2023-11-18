@@ -9,9 +9,9 @@
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
 
 <div id="filter-bar" class="sticky-top">
-<div class="container pb-3">
-    <div class="d-flex flex-wrap align-items-center">
-             
+    <div class="container pb-3">
+        <div class="d-flex flex-wrap align-items-center">
+
             <!-- Neighborhood Dropdown -->
             <div class="filter-option mr-2">
                 <div class="dropdown">
@@ -39,262 +39,258 @@
                 </div>
             </div>
             <!-- Location Type Dropdown -->
-             <div class="filter-option">
-                 <div class="dropdown">
-                     <button class="btn btn-third dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Location Type
-                     </button>
-                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Bench")'>
-                             <i class="fas fa-chair mr-2"></i> Bench
-                         </a>
-                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Restroom")'>
-                             <i class="fas fa-restroom mr-2"></i> Restroom
-                         </a>
-                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Table")'>
-                             <i class="fi fi-bs-table-picnic mr-2"></i> Table
-                         </a>
-                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Other")'>
-                             <i class="fas fa-ellipsis-h mr-2"></i> Other
-                         </a>
-                     </div>
-                 </div>
-             </div>
+            <div class="filter-option">
+                <div class="dropdown">
+                    <button class="btn btn-third dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Location Type
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Bench")'>
+                            <i class="fas fa-chair mr-2"></i> Bench
+                        </a>
+                        <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Restroom")'>
+                            <i class="fas fa-restroom mr-2"></i> Restroom
+                        </a>
+                        <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Table")'>
+                            <i class="fi fi-bs-table-picnic mr-2"></i> Table
+                        </a>
+                        <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Other")'>
+                            <i class="fas fa-ellipsis-h mr-2"></i> Other
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-             <!-- Noise Level Dropdown -->
-             <div class="filter-option mr-2">
-                 <div class="dropdown">
-                     <button class="btn btn-third dropdown-toggle" type="button" id="noiseLevelDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onclick="() => UpdatedNoiseLevel(0)">
-                         Noise Level
-                     </button>
-                     <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
-                         @for (int i = 1; i <= 10; i++)
-                         {
-                             int noiseLevel = i;
-                             <a class="dropdown-item" href="#" @onclick="() => UpdatedNoiseLevel(noiseLevel)">
-                                 @i
-                             </a>
-                         }
-                     </div>
-                 </div>
-             </div>
- 
-             <!-- Search and Filter Options -->
-             <div class="filter-option flex-grow-1">
-                 <div class="input-group">
-                     <input type="text" id="filter-input" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" placeholder="Search by Title...">
-                     <div class="input-group-append">
-                         <button @onclick="(e => EnableFilterData())" class="btn btn-primary" id="filter-button">Filter</button>
-                         <button @onclick="(e => ClearFilterData())" class="btn btn-secondary" id="clear-button">Clear</button>
-                     </div>
-                 </div>
-             </div>
- 
-         </div>
-     </div>
+            <!-- Noise Level Dropdown -->
+            <div class="filter-option mr-2">
+                <div class="dropdown">
+                    <button class="btn btn-third dropdown-toggle" type="button" id="noiseLevelDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onclick="() => UpdatedNoiseLevel(0)">
+                        Noise Level
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
+                        @for (int i = 1; i <= 10; i++)
+                        {
+                            int noiseLevel = i;
+                            <a class="dropdown-item" href="#" @onclick="() => UpdatedNoiseLevel(noiseLevel)">
+                                @i
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search and Filter Options -->
+            <div class="filter-option flex-grow-1">
+                <div class="input-group">
+                    <input type="text" id="filter-input" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" placeholder="Search by Title...">
+                    <div class="input-group-append">
+                        <button @onclick="(e => EnableFilterData())" class="btn btn-primary" id="filter-button">Filter</button>
+                        <button @onclick="(e => ClearFilterData())" class="btn btn-secondary" id="clear-button">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 <div class="container pb-3">
-<!-- Start of card layout -->
-<div class="card-columns">
-    @foreach (var product in FilterProducts())
-    {
-        <div class="card">
-            <div class="card-img" style="background-image: url('@product.Image');"></div>
-            <div class="card-body">
-                <h5 class="card-title">@product.Title</h5>
-                <h7 class="card-title">@product.Neighborhood</h7>
-                <p class="card-text">@product.LocationType</p>
+    <!-- Start of card layout -->
+    <div class="card-columns">
+        @foreach (var product in FilterProducts())
+        {
+            <div class="card">
+                <div class="card-img" style="background-image: url('@product.Image');"></div>
+                <div class="card-body">
+                    <h5 class="card-title">@product.Title</h5>
+                    <h7 class="card-title">@product.Neighborhood</h7>
+                    <p class="card-text">@product.LocationType</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <!-- Updated data - target to point to a unique modal ID based on the product ID -->
+                        <button @onclick="(e => SelectProduct(product.Id))" test-id="MoreInfo_@product.Id" data-toggle="modal" data-target="#productModal-@product.Id" class="btn btn-primary">
+                            More Info
+                        </button>
+                    </small>
+                </div>
             </div>
-            <div class="card-footer">
-                <small class="text-muted">
-                    <!-- Updated data - target to point to a unique modal ID based on the product ID -->
-                    <button @onclick="(e => SelectProduct(product.Id))" test-id="MoreInfo_@product.Id" data-toggle="modal" data-target="#productModal-@product.Id" class="btn btn-primary">
-                        More Info
-                    </button>
-                </small>
-            </div>
-        </div>
-    }
+        }
     </div>
 
-<!-- End of card layout -->
-@if (selectedProduct == null)
-{
-    selectedProduct = ProductService.GetProducts().First();
-}
+    <!-- End of card layout -->
+    @if (selectedProduct == null)
+    {
+        selectedProduct = ProductService.GetProducts().First();
+    }
 
-@foreach (var product in FilterProducts())
-{
-    <div class="modal fade" id="productModal-@product.Id" tabindex="-1" role="dialog" aria-labelledby="productModalLabel-@product.Id">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="productModalLabel-@product.Id">@product.Title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Keep this image static at the top of the modal -->
-                    <div class="static-img" style="background-image: url('@product.Image'); height: 30vw; background-size: cover;"></div>
+    @foreach (var product in FilterProducts())
+    {
+        <div class="modal fade" id="productModal-@product.Id" tabindex="-1" role="dialog" aria-labelledby="productModalLabel-@product.Id">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalLabel-@product.Id">@product.Title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Keep this image static at the top of the modal -->
+                        <div class="static-img" style="background-image: url('@product.Image'); height: 30vw; background-size: cover;"></div>
 
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" id="productTab-@product.Id" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link card-tab active" id="description-tab-@product.Id" data-toggle="tab" href="#description-@product.Id" role="tab" aria-controls="description" aria-selected="true">Description</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link card-tab" id="map-tab-@product.Id" data-toggle="tab" href="#map-@product.Id" role="tab" aria-controls="map" aria-selected="false">Map</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link card-tab" id="funfact-tab-@product.Id" data-toggle="tab" href="#funfact-@product.Id" role="tab" aria-controls="funfact" aria-selected="false">Fun Facts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link card-tab" id="comments-tab-@product.Id" data-toggle="tab" href="#comments-@product.Id" role="tab" aria-controls="comments" aria-selected="false">Comments</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link card-tab" id="share-tab-@product.Id" data-toggle="tab" href="#share-@product.Id" role="tab" aria-controls="share" aria-selected="false">Share</a>
-                        </li>
-                        <!-- More tabs as needed -->
-                    </ul>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" id="productTab-@product.Id" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link card-tab active" id="description-tab-@product.Id" data-toggle="tab" href="#description-@product.Id" role="tab" aria-controls="description" aria-selected="true">Description</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link card-tab" id="map-tab-@product.Id" data-toggle="tab" href="#map-@product.Id" role="tab" aria-controls="map" aria-selected="false">Map</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link card-tab" id="funfact-tab-@product.Id" data-toggle="tab" href="#funfact-@product.Id" role="tab" aria-controls="funfact" aria-selected="false">Fun Facts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link card-tab" id="comments-tab-@product.Id" data-toggle="tab" href="#comments-@product.Id" role="tab" aria-controls="comments" aria-selected="false">Comments</a>
+                            </li>
+                            @*  <li class="nav-item">
+                        <a class="nav-link card-tab" id="share-tab-@product.Id" data-toggle="tab" href="#share-@product.Id" role="tab" aria-controls="share" aria-selected="false">Share</a>
+                        </li> *@
+                            <!-- More tabs as needed -->
+                        </ul>
 
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="description-@product.Id" role="tabpanel" aria-labelledby="description-tab">@product.Description</div>
-                        <div class="tab-pane fade" id="map-@product.Id" role="tabpanel" aria-labelledby="map-tab">
-                            <iframe src="@product.MapURL" width="100%" height="450" allowfullscreen></iframe>
-                        </div>
-                        <div class="tab-pane fade" id="funfact-@product.Id" role="tabpanel" aria-labelledby="funfact-tab">@product.FunFacts</div>
-                        <div class="tab-pane fade" id="comments-@product.Id" role="tabpanel" aria-labelledby="comments-tab">
-                            @{
-                                if (product.CommentList != null)
-                                {
-                                    foreach (var comment in product.CommentList)
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="description-@product.Id" role="tabpanel" aria-labelledby="description-tab">@product.Description</div>
+                            <div class="tab-pane fade" id="map-@product.Id" role="tabpanel" aria-labelledby="map-tab">
+                                <iframe src="@product.MapURL" width="100%" height="450" allowfullscreen></iframe>
+                            </div>
+                            <div class="tab-pane fade" id="funfact-@product.Id" role="tabpanel" aria-labelledby="funfact-tab">@product.FunFacts</div>
+                            <div class="tab-pane fade" id="comments-@product.Id" role="tabpanel" aria-labelledby="comments-tab">
+                                @{
+                                    if (product.CommentList != null)
                                     {
-                                        <div>@comment</div>
-                                    }
+                                        foreach (var comment in product.CommentList)
+                                        {
+                                            <div>@comment</div>
+                                        }
 
-                                    // If this is a new comment, then add the Input boxes for it, else show the Add Comment Button
-                                    if (NewComment)
-                                    {
-                                        <div class="row text-center">
-                                            <div class="col">
-                                                <input class="shadow-7 border" type="text" @bind="NewCommentText" id="CommentInput" test-id="new_comment_input" />
+                                        // If this is a new comment, then add the Input boxes for it, else show the Add Comment Button
+                                        if (NewComment)
+                                        {
+                                            <div class="row text-center">
+                                                <div class="col">
+                                                    <input class="shadow-7 border" type="text" @bind="NewCommentText" id="CommentInput" test-id="new_comment_input" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <br />
-                                        <div class="row text-center">
-                                            <div class="col">
-                                                <button @onclick="(e => AddComment(product,NewCommentText))" test-id="add_comment_button" class="btn btn-outline-success" data-mdb-ripple-color="dark" data-toggle="modal">Save Comment</button>
-                                                <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Cancel</button>
+                                            <br />
+                                            <div class="row text-center">
+                                                <div class="col">
+                                                    <button @onclick="(e => AddComment(product,NewCommentText))" test-id="add_comment_button" class="btn btn-outline-success" data-mdb-ripple-color="dark" data-toggle="modal">Save Comment</button>
+                                                    <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Cancel</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    }
+                                        }
 
-                                    // If this is not a new comment, then show the buttons for Adding comment and Close
-                                    if (NewComment == false)
-                                    {
-                                        <div class="row text-center">
-                                            <div class="col-sm">
-                                                <button @onclick="(e => ShowNewCommentInput())" test-id="new_comment_button" id="AddComment" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Add Comment</button>
-                                                <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Close</button>
+                                        // If this is not a new comment, then show the buttons for Adding comment and Close
+                                        if (NewComment == false)
+                                        {
+                                            <div class="row text-center">
+                                                <div class="col-sm">
+                                                    <button @onclick="(e => ShowNewCommentInput())" test-id="new_comment_button" id="AddComment" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Add Comment</button>
+                                                    <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Close</button>
+                                                </div>
                                             </div>
-                                        </div>
+                                        }
                                     }
                                 }
-                            }
+                            </div>
+                            <!--More tab content as needed-->
                         </div>
-                        <div class="tab-pane fade" id="share-@product.Id" role="tabpanel" aria-labelledby="share-tab">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="index-textcontainer">
-                                        <!-- Sharingbutton Facebook -->
-                                        @{
-                                            string fblink = "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                        }
-                                        <a class="btn text-white" style="background-color: #3b5998;" href="@fblink" role="button">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
+                    </div>
 
-                                        <!-- Sharingbutton Twitter -->
-                                        @{
-                                            string tlink = "https://twitter.com/share?text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.&amp&url=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                        }
-                                        <a class="btn text-white" style="background-color: #55acee;" href="@tlink" role="button">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
+                    <div class="modal-footer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="index-textcontainer">
+                                    <!-- Sharingbutton Facebook -->
+                                    @{
+                                        string fblink = "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
+                                    }
+                                    <a class="btn text-white" style="background-color: #3b5998;" href="@fblink" role="button">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
 
-                                        <!-- Sharingbutton E-Mail -->
-                                        @{
-                                            string elink = "mailto:?subject=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.&amp&body=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                        }
-                                        <a class="btn text-white" style="background-color: #332D2D;" href="@elink" role="button">
-                                            <i class="far fa-envelope"></i>
-                                        </a>
+                                    <!-- Sharingbutton Twitter -->
+                                    @{
+                                        string tlink = "https://twitter.com/share?text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.&amp&url=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
+                                    }
+                                    <a class="btn text-white" style="background-color: #55acee;" href="@tlink" role="button">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
 
-                                        <!-- Sharingbutton Pinterest -->
-                                        @{
-                                            string plink = "https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id + "&amp";
-                                        }
-                                        <a class="btn text-white" style="background-color: #c61118;" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2Fabc&amp;media=@plink;description=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out." role="button">
-                                            <i class="fab fa-pinterest"></i>
-                                        </a>
+                                    <!-- Sharingbutton E-Mail -->
+                                    @{
+                                        string elink = "mailto:?subject=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.&amp&body=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
+                                    }
+                                    <a class="btn text-white" style="background-color: #332D2D;" href="@elink" role="button">
+                                        <i class="far fa-envelope"></i>
+                                    </a>
 
-                                        <!-- Sharingbutton LinkedIn -->
-                                        @{
-                                            string llink = "https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                        }
-                                        <a class="btn text-white" style="background-color: #0082ca;" href="https://www.linkedin.com/sharing/share-offsite/?url=@llink&title=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out." role="button">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </a>
+                                    <!-- Sharingbutton Pinterest -->
+                                    @{
+                                        string plink = "https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id + "&amp";
+                                    }
+                                    <a class="btn text-white" style="background-color: #c61118;" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2Fabc&amp;media=@plink;description=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out." role="button">
+                                        <i class="fab fa-pinterest"></i>
+                                    </a>
 
-                                        <!-- Sharingbutton WhatsApp -->
-                                        @{
-                                            string wlink = "https://api.whatsapp.com/send?text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.%20https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                        }
-                                        <a class="btn text-white" style="background-color: #25d366;" href="@wlink" role="button">
-                                            <i class="fab fa-whatsapp"></i>
-                                        </a>
+                                    <!-- Sharingbutton LinkedIn -->
+                                    @{
+                                        string llink = "https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
+                                    }
+                                    <a class="btn text-white" style="background-color: #0082ca;" href="https://www.linkedin.com/sharing/share-offsite/?url=@llink&title=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out." role="button">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
 
-                                        <!-- Sharingbutton Telegram -->
-                                        @{
-                                            string telegramLink = "https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                        }
-                                        <a class="btn text-white" style="background-color: #229ED9;" href="https://t.me/share/url?url=@telegramLink&text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out." role="button">
-                                            <i class="fab fa-telegram"></i>
-                                        </a>
-                                    </div>
+                                    <!-- Sharingbutton WhatsApp -->
+                                    @{
+                                        string wlink = "https://api.whatsapp.com/send?text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.%20https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
+                                    }
+                                    <a class="btn text-white" style="background-color: #25d366;" href="@wlink" role="button">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+
+                                    <!-- Sharingbutton Telegram -->
+                                    @{
+                                        string telegramLink = "https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
+                                    }
+                                    <a class="btn text-white" style="background-color: #229ED9;" href="https://t.me/share/url?url=@telegramLink&text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out." role="button">
+                                        <i class="fab fa-telegram"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <!--More tab content as needed-->
+
+                        @if (product.Ratings == null || !product.Ratings.Any())
+                        {
+                            <span>Be the first to vote!</span>
+                        }
+                        else
+                        {
+                            <span>@product.Ratings.Count() @(product.Ratings.Count() == 1 ? "Vote" : "Votes")</span>
+                        }
+                        <!--Updated the for loop to use product ID-->
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            var currentStar = i;
+                            <span test-id="vote_button" class="fas fa-chair @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
+                        }
                     </div>
                 </div>
-
-                <div class="modal-footer">
-                    @if (product.Ratings == null || !product.Ratings.Any())
-                    {
-                        <span>Be the first to vote!</span>
-                    }
-                    else
-                    {
-                        <span>@product.Ratings.Count() @(product.Ratings.Count() == 1 ? "Vote" : "Votes")</span>
-                    }
-                    <!--Updated the for loop to use product ID-->
-                    @for (int i = 1; i <= 5; i++)
-                    {
-                        var currentStar = i;
-                        <span test-id="vote_button" class="fas fa-chair @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
-                    }
-                </div>
-
             </div>
         </div>
-    </div>
-    
-}
-
+    }
 </div>
 
 @code {
@@ -332,8 +328,8 @@
     // Computed method to get the filtered list of products
     private List<ProductModel> FilterProducts()
     {
-    // Implement logic to filter products based on the Filter parameter
-    // For example:
+        // Implement logic to filter products based on the Filter parameter
+        // For example:
         System.Console.WriteLine($"Rating received for product {selectedNeighborhood}");
 
         var filteredProducts = Products
@@ -371,7 +367,7 @@
     /// <param name="comment"></param>
     void ShowNewCommentInput()
     {
-    // Setting the new Comment flag to true will show the input box
+        // Setting the new Comment flag to true will show the input box
         NewComment = true;
     }
 
@@ -382,7 +378,7 @@
     /// <param name="comment"></param>
     void AddComment(ProductModel selectedProduct, string NewCommentText)
     {
-    // Comment should not be empty
+        // Comment should not be empty
         if (string.IsNullOrWhiteSpace(NewCommentText))
         {
             NewComment = false;
@@ -390,10 +386,10 @@
         else
         {
             NewCommentText = timestamp + NewCommentText;
-    // Add it to the Comment List
+            // Add it to the Comment List
             bool result = ProductService.AddComment(selectedProduct.Id, NewCommentText);
 
-    // Set the NewComment flag to false to hide the input box
+            // Set the NewComment flag to false to hide the input box
             NewComment = false;
         }
     }
@@ -405,20 +401,20 @@
 
     void EnableFilterData()
     {
-    // If the Filter is enabled, set the filter flag
+        // If the Filter is enabled, set the filter flag
         FilterData = true;
     }
 
     void ClearFilterData()
     {
-    // If the Filter is enabled, set the filter flag
+        // If the Filter is enabled, set the filter flag
         FilterData = false;
         FilterDataString = "";
     }
 
     /// <summary>
-    /// To update the location type 
-    /// </summary> 
+    /// To update the location type
+    /// </summary>
     void UpdateLocationType(string locationType)
     {
         selectedLocationType = locationType;
@@ -433,6 +429,4 @@
     {
         selectedNoiseLevel = noiseLevel;
     }
-    
-
 }
