@@ -437,7 +437,6 @@ h1.h1-heading {
     text-shadow: 2px 2px 2px #395041;
 }
 
-
 /* CSS for the card-custom */
 .card-custom {
     margin: 0.3rem;
@@ -1374,6 +1373,15 @@ a.card-tab {
 .btn:hover .gg-arrow-right-o {
     transform: translateX(10px);
     box-shadow: 0 0 8px 2px #468a5e;
+}
+
+.filter-option .dropdown-toggle {
+    height: calc(1.5em + .75rem + 2px); /* Match height of form-control */
+    margin-bottom: 0; /* Remove margin-bottom if present */
+}
+
+.filter-option .dropdown-menu {
+    width: 100%; /* Make dropdown menu width same as button */
 }
 
 
