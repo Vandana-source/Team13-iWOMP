@@ -38,14 +38,17 @@ namespace TakeABreak.WebSite.Pages.Product
         /// Retrieves the product data based on the provided id.
         /// <param name="id">the string identifier of product to fetch</param>
         /// </summary>
-        public void OnGet(string id)
+        public IActionResult OnGet(string id)
         {
             Product = ProductService.GetProducts()
                 .FirstOrDefault(m => m.Id.Equals(id));
             if (Product == null)
             {
                 this.ModelState.AddModelError("OnGet", "Update Onget Error");
+                return RedirectToPage("./Index");
             }
+
+            return Page();
         }
 
         /// <summary>
