@@ -1384,6 +1384,11 @@ a.card-tab {
     width: 100%; /* Make dropdown menu width same as button */
 }
 
-
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
 
 
