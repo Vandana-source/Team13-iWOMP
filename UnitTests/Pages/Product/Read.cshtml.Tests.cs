@@ -92,6 +92,22 @@ namespace UnitTests.Pages.Product.Read
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual("Great Wheel near Pier", pageModel.Product.Title);
         }
+
+        /// <summary>
+        /// Tests OnGet with a Invalid product, should return null
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_Should_Return_InvalidState()
+        {
+            // Arrange
+
+            // Act  
+            pageModel.OnGet("bogus");
+
+            // Assert
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+        }
+
         #endregion OnGet
     }
 }
