@@ -341,7 +341,7 @@
                 (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
                 (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase)) &&
                 (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value) &&
-                (string.IsNullOrWhiteSpace(FilterDataString) || FilterData == false || p.Title.Contains(FilterDataString))
+                (string.IsNullOrWhiteSpace(FilterDataString) || FilterData == false || p.Title.Contains(FilterDataString, StringComparison.OrdinalIgnoreCase))
             ).ToList();
         return filteredProducts;
     }
