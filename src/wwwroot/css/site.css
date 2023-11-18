@@ -1344,9 +1344,14 @@ a.card-tab {
 }
 
 .button-line {
-    display: block;
-    text-align: left;
-    font-size: 1rem;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+}
+
+.button-line .gg-arrow-right-o {
+    margin-left: 0.5em; /* This will add space between the text and the icon */
 }
 
 .btn .button-line:nth-of-type(2) {
@@ -1365,6 +1370,11 @@ a.card-tab {
 .button-container {
     padding-top: 2vw; 
 }
+
+.button-line .gg-arrow-right-o {
+    margin-left: 0.5em;
+}
+
 
 
 
