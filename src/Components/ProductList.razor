@@ -6,51 +6,95 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="~/css/site.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
 
+<div id="filter-bar" class="sticky-top">
 <div class="container pb-3">
-<div id="filter-bar">
-    <div class="filter-option">
-        <select class="filter-dropdown" test-id="dropdown1" @bind="selectedNeighborhood">
-            <option value="">Neighborhood</option>
-            @foreach (var neighborhood in Neighborhoods)
-            {
-                <option value="@neighborhood">@neighborhood</option>
-            }
-        </select>
-    </div>
-    <div class="filter-option">
-        <select class="filter-dropdown" test-id="dropdown2" @bind="selectedLocationType">
-            @{
-                <option value="">Location Type</option>
-                <option value="Bench">Bench🪑</option>
-                <option value="Restroom">Restroom🚻</option>
-                <option value="Table">Table🔳</option>
-                <option value="Other">Other🏞️</option>
-            }
-        </select>
-    </div>
-    <div class="filter-option">
-        <select class="filter-dropdown" test-id="dropdown3" @bind="selectedNoiseLevel">
-            <option value="">Noise Level</option>
-            @for (int i = 1; i <= 10; i++)
-            {
-                <option value="@i">@i</option>
-            }
-        </select>
-    </div>
-    <div class="row">
-        <div class="col-md-8">
-            <div class="input-group">
-                <input type="text" id="filter-input" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" placeholder="Search by Title...">
-                <div class="input-group-append">
-                    <button @onclick="(e => EnableFilterData())" class="btn btn-primary" id="filter-button">Filter</button>
-                    <button @onclick="(e => ClearFilterData())" class="btn btn-secondary" id="clear-button">Clear</button>
+    <div class="d-flex flex-wrap align-items-center">
+             
+            <!-- Neighborhood Dropdown -->
+            <div class="filter-option mr-2">
+                <div class="dropdown">
+                    <button class="btn btn-third dropdown-toggle" type="button" id="neighborhoodDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @if (string.IsNullOrEmpty(selectedNeighborhood))
+                        {
+                            <text>Neighborhoods</text>
+                        }
+                        else
+                        {
+                            @selectedNeighborhood
+                        }
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="neighborhoodDropdownButton">
+                        <a class="dropdown-item" href='#' @onclick='() => UpdateNeighborhood(null)'>
+                            All
+                        </a>
+                        @foreach (var neighborhood in Neighborhoods)
+                        {
+                            <a class="dropdown-item" href="#" @onclick="() => UpdateNeighborhood(neighborhood)">
+                                @neighborhood
+                            </a>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <!-- Location Type Dropdown -->
+             <div class="filter-option">
+                 <div class="dropdown">
+                     <button class="btn btn-third dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Location Type
+                     </button>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Bench")'>
+                             <i class="fas fa-chair mr-2"></i> Bench
+                         </a>
+                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Restroom")'>
+                             <i class="fas fa-restroom mr-2"></i> Restroom
+                         </a>
+                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Table")'>
+                             <i class="fi fi-bs-table-picnic mr-2"></i> Table
+                         </a>
+                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Other")'>
+                             <i class="fas fa-ellipsis-h mr-2"></i> Other
+                         </a>
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Noise Level Dropdown -->
+             <div class="filter-option mr-2">
+                 <div class="dropdown">
+                     <button class="btn btn-third dropdown-toggle" type="button" id="noiseLevelDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onclick="() => UpdatedNoiseLevel(0)">
+                         Noise Level
+                     </button>
+                     <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
+                         @for (int i = 1; i <= 10; i++)
+                         {
+                             int noiseLevel = i;
+                             <a class="dropdown-item" href="#" @onclick="() => UpdatedNoiseLevel(noiseLevel)">
+                                 @i
+                             </a>
+                         }
+                     </div>
+                 </div>
+             </div>
+ 
+             <!-- Search and Filter Options -->
+             <div class="filter-option flex-grow-1">
+                 <div class="input-group">
+                     <input type="text" id="filter-input" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" placeholder="Search by Title...">
+                     <div class="input-group-append">
+                         <button @onclick="(e => EnableFilterData())" class="btn btn-primary" id="filter-button">Filter</button>
+                         <button @onclick="(e => ClearFilterData())" class="btn btn-secondary" id="clear-button">Clear</button>
+                     </div>
+                 </div>
+             </div>
+ 
+         </div>
+     </div>
 </div>
 
+<div class="container pb-3">
 <!-- Start of card layout -->
 <div class="card-columns">
     @foreach (var product in FilterProducts())
@@ -73,7 +117,7 @@
         </div>
     }
     </div>
-</div>
+
 <!-- End of card layout -->
 @if (selectedProduct == null)
 {
@@ -248,8 +292,10 @@
             </div>
         </div>
     </div>
-
+    
 }
+
+</div>
 
 @code {
 
@@ -264,6 +310,7 @@
 
     // Variable to get all the products, Neighborhoods and LocationType (for drop down)
     private IEnumerable<ProductModel> Products => ProductService.GetProducts();
+
     private IEnumerable<string> Neighborhoods => Products
         .Select(p => p.Neighborhood)
         .Distinct()
@@ -285,8 +332,8 @@
     // Computed method to get the filtered list of products
     private List<ProductModel> FilterProducts()
     {
-        // Implement logic to filter products based on the Filter parameter
-        // For example:
+    // Implement logic to filter products based on the Filter parameter
+    // For example:
         System.Console.WriteLine($"Rating received for product {selectedNeighborhood}");
 
         var filteredProducts = Products
@@ -299,7 +346,6 @@
         return filteredProducts;
     }
 
-    
 
     /// <summary>
     /// Event callback for when ratings change
@@ -325,7 +371,7 @@
     /// <param name="comment"></param>
     void ShowNewCommentInput()
     {
-        // Setting the new Comment flag to true will show the input box
+    // Setting the new Comment flag to true will show the input box
         NewComment = true;
     }
 
@@ -336,7 +382,7 @@
     /// <param name="comment"></param>
     void AddComment(ProductModel selectedProduct, string NewCommentText)
     {
-        // Comment should not be empty
+    // Comment should not be empty
         if (string.IsNullOrWhiteSpace(NewCommentText))
         {
             NewComment = false;
@@ -344,10 +390,10 @@
         else
         {
             NewCommentText = timestamp + NewCommentText;
-            // Add it to the Comment List
+    // Add it to the Comment List
             bool result = ProductService.AddComment(selectedProduct.Id, NewCommentText);
 
-            // Set the NewComment flag to false to hide the input box
+    // Set the NewComment flag to false to hide the input box
             NewComment = false;
         }
     }
@@ -359,14 +405,34 @@
 
     void EnableFilterData()
     {
-        // If the Filter is enabled, set the filter flag
+    // If the Filter is enabled, set the filter flag
         FilterData = true;
     }
 
     void ClearFilterData()
     {
-        // If the Filter is enabled, set the filter flag
+    // If the Filter is enabled, set the filter flag
         FilterData = false;
         FilterDataString = "";
     }
+
+    /// <summary>
+    /// To update the location type 
+    /// </summary> 
+    void UpdateLocationType(string locationType)
+    {
+        selectedLocationType = locationType;
+    }
+
+    void UpdateNeighborhood(string neighborhood)
+    {
+        selectedNeighborhood = neighborhood;
+    }
+
+    void UpdatedNoiseLevel(int noiseLevel)
+    {
+        selectedNoiseLevel = noiseLevel;
+    }
+    
+
 }
