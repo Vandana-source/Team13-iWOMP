@@ -12,7 +12,7 @@ const map = new maplibregl.Map({
     container: 'map', 
 
     // MapTiler style URL with key
-    style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=K4IpGwkgz6Fw1K2vSoDR', 
+    style: 'https://api.maptiler.com/maps/30dd37d7-d50c-4872-9800-73b00ff17c52/style.json?key=K4IpGwkgz6Fw1K2vSoDR',
 
     // [longitude, latitude]
     center: [-122.31790014721174, 47.60930666870316], 
