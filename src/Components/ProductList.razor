@@ -16,13 +16,13 @@
             <div class="filter-option mr-2">
                 <div class="dropdown">
                     <button class="btn btn-third dropdown-toggle" type="button" id="neighborhoodDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @if (string.IsNullOrEmpty(selectedNeighborhood))
+                        @if (string.IsNullOrEmpty(_selectedNeighborhood))
                         {
                             <text>Neighborhoods</text>
                         }
                         else
                         {
-                            @selectedNeighborhood
+                            @_selectedNeighborhood
                         }
                     </button>
                     <div class="dropdown-menu" aria-labelledby="neighborhoodDropdownButton">
@@ -82,7 +82,7 @@
             <!-- Search and Filter Options -->
             <div class="filter-option flex-grow-1">
                 <div class="input-group">
-                    <input type="text" id="filter-input" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" placeholder="Search by Title...">
+                    <input type="text" id="filter-input" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@_filterDataString" placeholder="Search by Title...">
                     <div class="input-group-append">
                         <button @onclick="(e => EnableFilterData())" class="btn btn-primary" id="filter-button">Filter</button>
                         <button @onclick="(e => ClearFilterData())" class="btn btn-secondary" id="clear-button">Clear</button>
@@ -119,9 +119,9 @@
     </div>
 
     <!-- End of card layout -->
-    @if (selectedProduct == null)
+    @if (_selectedProduct == null)
     {
-        selectedProduct = ProductService.GetProducts().First();
+        _selectedProduct = ProductService.GetProducts().First();
     }
 
     @foreach (var product in FilterProducts())
@@ -173,24 +173,24 @@
                                         }
 
                                         // If this is a new comment, then add the Input boxes for it, else show the Add Comment Button
-                                        if (NewComment)
+                                        if (_newComment)
                                         {
                                             <div class="row text-center">
                                                 <div class="col">
-                                                    <input class="shadow-7 border" type="text" @bind="NewCommentText" id="CommentInput" test-id="new_comment_input" />
+                                                    <input class="shadow-7 border" type="text" @bind="_newCommentText" id="CommentInput" test-id="new_comment_input" />
                                                 </div>
                                             </div>
                                             <br />
                                             <div class="row text-center">
                                                 <div class="col">
-                                                    <button @onclick="(e => AddComment(product,NewCommentText))" test-id="add_comment_button" class="btn btn-outline-success" data-mdb-ripple-color="dark" data-toggle="modal">Save Comment</button>
+                                                    <button @onclick="(e => AddComment(product,_newCommentText))" test-id="add_comment_button" class="btn btn-outline-success" data-mdb-ripple-color="dark" data-toggle="modal">Save Comment</button>
                                                     <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" data-dismiss="modal">Cancel</button>
                                                 </div>
                                             </div>
                                         }
 
                                         // If this is not a new comment, then show the buttons for Adding comment and Close
-                                        if (NewComment == false)
+                                        if (_newComment == false)
                                         {
                                             <div class="row text-center">
                                                 <div class="col-sm">
@@ -292,17 +292,47 @@
 
 @code {
 
-    ProductModel selectedProduct;
-    string selectedProductId;
+    ProductModel _selectedProduct;
+    string _selectedProductId;
 
     void SelectProduct(string productId)
     {
-        selectedProductId = productId;
-        selectedProduct = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(selectedProductId));
+        _selectedProductId = productId;
+        _selectedProduct = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(_selectedProductId));
     }
 
     // Variable to get all the products, Neighborhoods and LocationType (for drop down)
     private IEnumerable<ProductModel> Products => ProductService.GetProducts();
+    
+    private List<ProductModel> FilterProducts()
+    {
+        return Products.Where(IsProductMatch).ToList();
+    }
+
+    private bool IsProductMatch(ProductModel product)
+    {
+        if (IsNeighborhoodMatch(product) == false)
+        {
+            return false;
+        }
+
+        if (IsLocationTypeMatch(product) == false)
+        {
+            return false; 
+        }
+
+        if (IsNoiseLevelMatch(product) == false)
+        {
+            return false;
+        }
+
+        if (IsTitleMatch(product) == false)
+        {
+            return false; 
+        }
+
+        return true;
+    }
 
     private IEnumerable<string> Neighborhoods => Products
         .Select(p => p.Neighborhood)
@@ -310,34 +340,54 @@
         .OrderBy(n => n);
 
     // The neighborhood selected from drop down
-    public string selectedNeighborhood;
+    private string _selectedNeighborhood;
 
     // The location type selected from drop down
     [Parameter]
-    public string selectedLocationType { get; set; }
+    public string SelectedLocationType { get; set; }
 
     // The noise level type selected from drop down
-    private int? selectedNoiseLevel;
+    private int? _selectedNoiseLevel;
 
-    string FilterDataString = "";
-    bool FilterData = false;
+    string _filterDataString = "";
+    bool _filterData = false;
 
     // Computed method to get the filtered list of products
-    private List<ProductModel> FilterProducts()
+    private bool IsNeighborhoodMatch(ProductModel product)
     {
-        // Implement logic to filter products based on the Filter parameter
-        // For example:
-        System.Console.WriteLine($"Rating received for product {selectedNeighborhood}");
+        if (string.IsNullOrWhiteSpace(_selectedNeighborhood))
+            return true;
 
-        var filteredProducts = Products
-            .Where(p =>
-                (string.IsNullOrWhiteSpace(selectedNeighborhood) || p.Neighborhood.Equals(selectedNeighborhood, StringComparison.OrdinalIgnoreCase)) &&
-                (string.IsNullOrWhiteSpace(selectedLocationType) || p.LocationType.Equals(selectedLocationType, StringComparison.OrdinalIgnoreCase)) &&
-                (!selectedNoiseLevel.HasValue || p.NoiseLevel == selectedNoiseLevel.Value) &&
-                (string.IsNullOrWhiteSpace(FilterDataString) || FilterData == false || p.Title.Contains(FilterDataString, StringComparison.OrdinalIgnoreCase))
-            ).ToList();
-        return filteredProducts;
+        return product.Neighborhood.Equals(_selectedNeighborhood, StringComparison.OrdinalIgnoreCase);
     }
+
+    private bool IsLocationTypeMatch(ProductModel product)
+    {
+        if (string.IsNullOrWhiteSpace(SelectedLocationType))
+            return true;
+
+        return product.LocationType.Equals(SelectedLocationType, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private bool IsNoiseLevelMatch(ProductModel product)
+    {
+        if (_selectedNoiseLevel.HasValue == false)
+            return true;
+
+        return product.NoiseLevel == _selectedNoiseLevel.Value;
+    }
+
+    private bool IsTitleMatch(ProductModel product)
+    {
+        if (string.IsNullOrWhiteSpace(_filterDataString))
+            return true;
+
+        if (_filterData)
+            return product.Title.Contains(_filterDataString, StringComparison.OrdinalIgnoreCase);
+
+        return false;
+    }
+
 
 
     /// <summary>
@@ -350,63 +400,63 @@
     }
 
     // New Comment Flag to show the input box or not
-    bool NewComment = false;
+    bool _newComment = false;
 
     // Next Comment Text is what the comment text is
-    string NewCommentText = string.Empty;
+    string _newCommentText = string.Empty;
 
     //Date time for the comment
-    string timestamp = DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + " - ";
+    readonly string _timestamp = DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + " - ";
 
     /// <summary>
     /// Enable the New Comment Entry by setting the NewComment flag
     /// </summary>
-    /// <param name="comment"></param>
     void ShowNewCommentInput()
     {
         // Setting the new Comment flag to true will show the input box
-        NewComment = true;
+        _newComment = true;
     }
 
     /// <summary>
     /// Add the comment to the product
     /// Best to refactor this to be a method to call in the Middle Tier Data service, rather than putting the logic here...
     /// </summary>
-    /// <param name="comment"></param>
-    void AddComment(ProductModel selectedProduct, string NewCommentText)
+    /// <param name="selectedProduct"></param>
+    /// <param name="newCommentText"></param>
+    void AddComment(ProductModel selectedProduct, string newCommentText)
     {
         // Comment should not be empty
-        if (string.IsNullOrWhiteSpace(NewCommentText))
+        if (string.IsNullOrWhiteSpace(newCommentText))
         {
-            NewComment = false;
+            _newComment = false;
         }
         else
         {
-            NewCommentText = timestamp + NewCommentText;
+            newCommentText = _timestamp + newCommentText;
             // Add it to the Comment List
-            bool result = ProductService.AddComment(selectedProduct.Id, NewCommentText);
+            bool result = ProductService.AddComment(selectedProduct.Id, newCommentText);
 
             // Set the NewComment flag to false to hide the input box
-            NewComment = false;
+            _newComment = false;
         }
     }
 
     void UpdateFilterText(string text)
     {
-        FilterDataString = text;
+        _filterDataString = text;
     }
 
     void EnableFilterData()
     {
         // If the Filter is enabled, set the filter flag
-        FilterData = true;
+        _filterData = true;
     }
 
     void ClearFilterData()
     {
         // If the Filter is enabled, set the filter flag
-        FilterData = false;
-        FilterDataString = "";
+        _filterData = false;
+        _filterDataString = "";
     }
 
     /// <summary>
@@ -414,16 +464,16 @@
     /// </summary>
     void UpdateLocationType(string locationType)
     {
-        selectedLocationType = locationType;
+        SelectedLocationType = locationType;
     }
 
     void UpdateNeighborhood(string neighborhood)
     {
-        selectedNeighborhood = neighborhood;
+        _selectedNeighborhood = neighborhood;
     }
 
     void UpdatedNoiseLevel(int noiseLevel)
     {
-        selectedNoiseLevel = noiseLevel;
+        _selectedNoiseLevel = noiseLevel;
     }
 }
