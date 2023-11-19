@@ -2,7 +2,6 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
-import 'maplibre-gl/dist/maplibre-gl.css';
 
 ///<summary>
 /// map libre
@@ -26,4 +25,3 @@ const map = new maplibregl.Map({
 
 // Adds the nav controls for the map 
 map.addControl(new maplibregl.NavigationControl());
-map.addControl(control, "top-left")
