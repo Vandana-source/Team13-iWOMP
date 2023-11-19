@@ -46,7 +46,8 @@
                         {
                             <text>Location Type</text>
                         }
-                            else
+                        
+                        else
                         {
                             @SelectedLocationType
                         }
@@ -76,17 +77,25 @@
             <div class="filter-option mr-2">
                 <div class="dropdown">
                     <button class="btn btn-third dropdown-toggle" type="button" id="noiseLevelDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onclick="() => UpdatedNoiseLevel(0)">
-                        @if (string.IsNullOrEmpty(SelectedNeighborhood))
+                        @if (SelectedNoiseLevel == null)
                         {
                             <text>Noise Level</text>
                         }
-                            else
+                        
+                        @if (SelectedNoiseLevel == 0)
+                        {
+                            <text>Noise Level</text>
+                        }
+                        
+                        else
                         {
                             @SelectedNoiseLevel
                         }
-                        
                     </button>
                     <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
+                        <a class="dropdown-item" href="#" @onclick="() => UpdatedNoiseLevel(0)">
+                            All
+                        </a>
                         @for (int i = 1; i <= 10; i++)
                         {
                             int noiseLevel = i;
@@ -97,6 +106,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!-- Search and Filter Options -->
             <div class="filter-option flex-grow-1">
