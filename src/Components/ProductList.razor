@@ -16,13 +16,13 @@
             <div class="filter-option mr-2">
                 <div class="dropdown">
                     <button class="btn btn-third dropdown-toggle" type="button" id="neighborhoodDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @if (string.IsNullOrEmpty(_selectedNeighborhood))
+                        @if (string.IsNullOrEmpty(SelectedNeighborhood))
                         {
                             <text>Neighborhoods</text>
                         }
                         else
                         {
-                            @_selectedNeighborhood
+                            @SelectedNeighborhood
                         }
                     </button>
                     <div class="dropdown-menu" aria-labelledby="neighborhoodDropdownButton">
@@ -42,9 +42,20 @@
             <div class="filter-option">
                 <div class="dropdown">
                     <button class="btn btn-third dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Location Type
+                        @if (string.IsNullOrEmpty(SelectedLocationType))
+                        {
+                            <text>Location Type</text>
+                        }
+                            else
+                        {
+                            @SelectedLocationType
+                        }
+                        
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType(null)'>
+                            All
+                            </a>
                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Bench")'>
                             <i class="fas fa-chair mr-2"></i> Bench
                         </a>
@@ -65,7 +76,15 @@
             <div class="filter-option mr-2">
                 <div class="dropdown">
                     <button class="btn btn-third dropdown-toggle" type="button" id="noiseLevelDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onclick="() => UpdatedNoiseLevel(0)">
-                        Noise Level
+                        @if (string.IsNullOrEmpty(SelectedNeighborhood))
+                        {
+                            <text>Noise Level</text>
+                        }
+                            else
+                        {
+                            @SelectedNoiseLevel
+                        }
+                        
                     </button>
                     <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
                         @for (int i = 1; i <= 10; i++)
@@ -340,14 +359,14 @@
         .OrderBy(n => n);
 
     // The neighborhood selected from drop down
-    private string _selectedNeighborhood;
+    public string SelectedNeighborhood;
 
     // The location type selected from drop down
     [Parameter]
     public string SelectedLocationType { get; set; }
 
     // The noise level type selected from drop down
-    private int? _selectedNoiseLevel;
+    private int? SelectedNoiseLevel;
 
     string _filterDataString = "";
     bool _filterData = false;
@@ -355,10 +374,10 @@
     // Computed method to get the filtered list of products
     private bool IsNeighborhoodMatch(ProductModel product)
     {
-        if (string.IsNullOrWhiteSpace(_selectedNeighborhood))
+        if (string.IsNullOrWhiteSpace(SelectedNeighborhood))
             return true;
 
-        return product.Neighborhood.Equals(_selectedNeighborhood, StringComparison.OrdinalIgnoreCase);
+        return product.Neighborhood.Equals(SelectedNeighborhood, StringComparison.OrdinalIgnoreCase);
     }
 
     private bool IsLocationTypeMatch(ProductModel product)
@@ -371,10 +390,10 @@
 
     private bool IsNoiseLevelMatch(ProductModel product)
     {
-        if (_selectedNoiseLevel.HasValue == false)
+        if (SelectedNoiseLevel.HasValue == false)
             return true;
 
-        return product.NoiseLevel == _selectedNoiseLevel.Value;
+        return product.NoiseLevel == SelectedNoiseLevel.Value;
     }
 
     private bool IsTitleMatch(ProductModel product)
@@ -469,11 +488,11 @@
 
     void UpdateNeighborhood(string neighborhood)
     {
-        _selectedNeighborhood = neighborhood;
+        SelectedNeighborhood = neighborhood;
     }
 
     void UpdatedNoiseLevel(int noiseLevel)
     {
-        _selectedNoiseLevel = noiseLevel;
+        SelectedNoiseLevel = noiseLevel;
     }
 }
