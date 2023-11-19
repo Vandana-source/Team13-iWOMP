@@ -178,7 +178,7 @@ body {
 
 
 .left-text-small {
-    font-size: clamp(1rem, 1.5vw, 2rem);
+    font-size: clamp(1rem, 1.4vw, 2rem);
     color: #cec1ba;
     text-align: left;
     width: 60%;
@@ -1390,5 +1390,7 @@ a.card-tab {
     height: calc(100vh - 10vh);
     z-index: -1;
 }
+
+
 
 
