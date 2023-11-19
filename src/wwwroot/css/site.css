@@ -135,7 +135,7 @@ body {
 
 .fatter-rectangle {
     
-    height: 40vw; 
+    height: 35vw; 
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
