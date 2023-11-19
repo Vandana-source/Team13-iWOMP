@@ -15,10 +15,10 @@ const map = new maplibregl.Map({
     style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=K4IpGwkgz6Fw1K2vSoDR', 
 
     // [longitude, latitude]
-    center: [-122.3212675,47.6033376], 
+    center: [-122.31790014721174, 47.60930666870316], 
     
     // starting zoom level
-    zoom: 10 
+    zoom: 11 
 });
 
 
