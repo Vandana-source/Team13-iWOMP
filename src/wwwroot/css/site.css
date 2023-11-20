@@ -1229,7 +1229,6 @@ a.card-tab {
 }
 
 .filter-option .dropdown-toggle {
-    height: calc(1.5em + .75rem + 2px); /* Match height of form-control */
     margin-bottom: 0; /* Remove margin-bottom if present */
 }
 
