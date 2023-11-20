@@ -323,7 +323,7 @@
 
     // Variable to get all the products, Neighborhoods and LocationType (for drop down)
     private IEnumerable<ProductModel> Products => ProductService.GetProducts();
-    
+
     private List<ProductModel> FilterProducts()
     {
         return Products.Where(IsProductMatch).ToList();
@@ -338,7 +338,7 @@
 
         if (IsLocationTypeMatch(product) == false)
         {
-            return false; 
+            return false;
         }
 
         if (IsNoiseLevelMatch(product) == false)
@@ -349,7 +349,7 @@
 
         if (IsTitleMatch(product) == false)
         {
-            return false; 
+            return false;
         }
 
         return true;
@@ -369,7 +369,7 @@
 
     // The max noise level
     private int? SelectedNoiseLevelMax;
-    
+
     // The min noise level 
     private int? SelectedNoiseLevelMin;
 
@@ -392,23 +392,23 @@
 
         return product.LocationType.Equals(SelectedLocationType, StringComparison.OrdinalIgnoreCase);
     }
-    
+
     /// <summary>
     /// Checks to see if the noise level is a match (min or max)
     /// <param name="product"></param>
     /// </summary>
     private bool IsNoiseLevelMatch(ProductModel product)
     {
-        // Check if both min and max values are not set
+    // Check if both min and max values are not set
         if (!SelectedNoiseLevelMin.HasValue && !SelectedNoiseLevelMax.HasValue)
         {
             return true;
         }
-    
-        // Check if min value is set and the product's noise level is greater than or equal to it
+
+    // Check if min value is set and the product's noise level is greater than or equal to it
         bool minMatch = !SelectedNoiseLevelMin.HasValue || product.NoiseLevel >= SelectedNoiseLevelMin.Value;
-    
-        // Check if max value is set and the product's noise level is less than or equal to it
+
+    // Check if max value is set and the product's noise level is less than or equal to it
         bool maxMatch = !SelectedNoiseLevelMax.HasValue || product.NoiseLevel <= SelectedNoiseLevelMax.Value;
 
         return minMatch && maxMatch;
@@ -428,7 +428,7 @@
 
         return false;
     }
-    
+
     /// <summary>
     /// Event callback for when ratings change
     /// <param name="productId"></param>
@@ -454,7 +454,7 @@
     /// </summary>
     void ShowNewCommentInput()
     {
-        // Setting the new Comment flag to true will show the input box
+    // Setting the new Comment flag to true will show the input box
         _newComment = true;
     }
 
@@ -466,7 +466,7 @@
     /// <param name="newCommentText"></param>
     void AddComment(ProductModel selectedProduct, string newCommentText)
     {
-        // Comment should not be empty
+    // Comment should not be empty
         if (string.IsNullOrWhiteSpace(newCommentText))
         {
             _newComment = false;
@@ -474,10 +474,10 @@
         else
         {
             newCommentText = _timestamp + newCommentText;
-            // Add it to the Comment List
+    // Add it to the Comment List
             bool result = ProductService.AddComment(selectedProduct.Id, newCommentText);
 
-            // Set the NewComment flag to false to hide the input box
+    // Set the NewComment flag to false to hide the input box
             _newComment = false;
         }
     }
@@ -489,13 +489,13 @@
 
     void EnableFilterData()
     {
-        // If the Filter is enabled, set the filter flag
+    // If the Filter is enabled, set the filter flag
         _filterData = true;
     }
 
     void ClearFilterData()
     {
-        // If the Filter is enabled, set the filter flag
+    // If the Filter is enabled, set the filter flag
         _filterData = false;
         _filterDataString = "";
     }
@@ -507,7 +507,7 @@
     {
         SelectedLocationType = locationType;
     }
-    
+
     /// <summary>
     /// Updates neighborhood
     /// </summary>
@@ -515,7 +515,7 @@
     {
         SelectedNeighborhood = neighborhood;
     }
-    
+
     /// <summary>
     /// Updates noise level
     /// <param name="NoiseLevel"></param>
@@ -523,13 +523,13 @@
     void UpdateNoiseLevel(NoiseLevel? noiseLevel)
     {
         SelectedNoiseFilter = noiseLevel;
-        
+
         if (noiseLevel == null)
         {
             SelectedNoiseLevelMin = null;
             SelectedNoiseLevelMax = null;
         }
-        
+
         else
         {
             int enumValue = (int)noiseLevel;
@@ -538,7 +538,7 @@
         }
 
     }
-    
+
     /// <summary>
     /// Gets the display name from the enum for the drop down
     /// /// <param name="selectedLevel"></param>
@@ -549,11 +549,16 @@
         {
             return "Noise Level";
         }
-     
-        // Access the display name of the selected filter based on its value
-        var displayName = Enum.GetName(typeof(NoiseLevel), selectedLevel);
-        return displayName;
+
+        var enumType = typeof(NoiseLevel);
+        var enumValue = Enum.GetName(enumType, selectedLevel);
+        var memberInfos = enumType.GetMember(enumValue);
+        var enumValueMemberInfo = memberInfos.FirstOrDefault(m => m.DeclaringType == enumType);
+
+        var displayAttribute = enumValueMemberInfo?.GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault() as DisplayAttribute;
+
+        return displayAttribute?.Name ?? enumValue;
+
     }
-    
 
 }
