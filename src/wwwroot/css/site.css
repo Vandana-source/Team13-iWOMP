@@ -1134,16 +1134,32 @@ select.filter-dropdown {
     padding: 1vw 0;
 }
 
-.input-group {
-    width: 46vw;
-    border-radius: 5px;
-    font-family: 'Lato', sans-serif;
+#filter-input {
+    width: auto; 
 }
 
-.input-group-append {
+.search-bar {
+    width: auto;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.search-bar-buttons {
     border-radius: 5px;
     font-family: 'Lato', sans-serif;
     height: 2.7vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#filter-button {
+    display: flex;
+    margin: 0 0.3vw;
 }
 
 p.header-about {

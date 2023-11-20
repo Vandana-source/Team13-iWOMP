@@ -49,12 +49,12 @@
                         {
                             <text>Location Type</text>
                         }
-                        
+
                         else
                         {
                             @SelectedLocationType
                         }
-                        
+
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType(null)'>
@@ -75,7 +75,6 @@
                     </div>
                 </div>
             </div>
-            
 
             <!-- Noise Level Dropdown -->
             <div class="filter-option mr-2">
@@ -84,7 +83,7 @@
                         @GetDropdownDisplayText(SelectedNoiseFilter)
                     </button>
                     <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
-                        <a class="dropdown-item" href="#" @onclick="() => UpdateNoiseLevel(null)">All</a> 
+                        <a class="dropdown-item" href="#" @onclick="() => UpdateNoiseLevel(null)">All</a>
                         @foreach (var name in Enum.GetNames(typeof(NoiseLevel)))
                         {
                             var displayName = GetDropdownDisplayText(Enum.Parse<NoiseLevel>(name));
@@ -96,11 +95,9 @@
                 </div>
             </div>
 
-
-
             <!-- Search and Filter Options -->
             <div class="filter-option flex-grow-1">
-                <div class="input-group">
+                <div class="search-bar">
                     <input type="text" id="filter-input" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@_filterDataString" placeholder="Search by Title...">
                     <div class="input-group-append">
                         <button @onclick="(e => EnableFilterData())" class="btn btn-primary" id="filter-button">Filter</button>
