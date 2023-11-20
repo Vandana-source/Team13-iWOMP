@@ -1,6 +1,9 @@
+@using System.ComponentModel.DataAnnotations
+@using System.Reflection
 @using TakeABreak.WebSite.Models
 @using TakeABreak.WebSite.Services
 @using Microsoft.AspNetCore.Components.Web
+@using TakeABreak.WebSite.Enums
 @inject JsonFileProductService ProductService
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -56,7 +59,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType(null)'>
                             All
-                            </a>
+                        </a>
                         <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Bench")'>
                             <i class="fas fa-chair mr-2"></i> Bench
                         </a>
@@ -72,40 +75,35 @@
                     </div>
                 </div>
             </div>
+            
 
             <!-- Noise Level Dropdown -->
             <div class="filter-option mr-2">
                 <div class="dropdown">
-                    <button class="btn btn-third dropdown-toggle" type="button" id="noiseLevelDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onclick="() => UpdatedNoiseLevel(0)">
-                        @if (SelectedNoiseLevel == null)
+                    <button class="btn btn-third dropdown-toggle" type="button" id="noiseLevelDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @if (SelectedNoiseLevelMin == null || SelectedNoiseLevelMax == null)
                         {
-                            <text>Noise Level</text>
+                            @GetDropdownDisplayText(null);
                         }
-                        
-                        @if (SelectedNoiseLevel == 0)
-                        {
-                            <text>Noise Level</text>
-                        }
-                        
+
                         else
                         {
-                            @SelectedNoiseLevel
+                            @GetDropdownDisplayText(null)
                         }
                     </button>
                     <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
-                        <a class="dropdown-item" href="#" @onclick="() => UpdatedNoiseLevel(0)">
-                            All
-                        </a>
-                        @for (int i = 1; i <= 10; i++)
+                        <a class="dropdown-item" href="#" @onclick="() => UpdateNoiseLevel(null)">All</a> 
+                        @foreach (var name in Enum.GetNames(typeof(NoiseLevel)))
                         {
-                            int noiseLevel = i;
-                            <a class="dropdown-item" href="#" @onclick="() => UpdatedNoiseLevel(noiseLevel)">
-                                @i
+                            var displayName = GetDropdownDisplayText(Enum.Parse<NoiseLevel>(name));
+                            <a class="dropdown-item" href="#" @onclick="() => UpdateNoiseLevel(Enum.Parse<NoiseLevel>(name))">
+                                @displayName
                             </a>
                         }
                     </div>
                 </div>
             </div>
+
 
 
             <!-- Search and Filter Options -->
@@ -352,6 +350,7 @@
 
         if (IsNoiseLevelMatch(product) == false)
         {
+
             return false;
         }
 
@@ -375,8 +374,11 @@
     [Parameter]
     public string SelectedLocationType { get; set; }
 
-    // The noise level type selected from drop down
-    private int? SelectedNoiseLevel;
+    // The max noise level
+    private int? SelectedNoiseLevelMax;
+    
+    // The min noise level 
+    private int? SelectedNoiseLevelMin;
 
     string _filterDataString = "";
     bool _filterData = false;
@@ -397,15 +399,33 @@
 
         return product.LocationType.Equals(SelectedLocationType, StringComparison.OrdinalIgnoreCase);
     }
-
+    
+    /// <summary>
+    /// Checks to see if the noise level is a match (min or max)
+    /// <param name="product"></param>
+    /// </summary>
     private bool IsNoiseLevelMatch(ProductModel product)
     {
-        if (SelectedNoiseLevel.HasValue == false)
+        // Check if both min and max values are not set
+        if (!SelectedNoiseLevelMin.HasValue && !SelectedNoiseLevelMax.HasValue)
+        {
             return true;
+        }
+    
+        // Check if min value is set and the product's noise level is greater than or equal to it
+        bool minMatch = !SelectedNoiseLevelMin.HasValue || product.NoiseLevel >= SelectedNoiseLevelMin.Value;
+    
+        // Check if max value is set and the product's noise level is less than or equal to it
+        bool maxMatch = !SelectedNoiseLevelMax.HasValue || product.NoiseLevel <= SelectedNoiseLevelMax.Value;
 
-        return product.NoiseLevel == SelectedNoiseLevel.Value;
+        return minMatch && maxMatch;
     }
-
+   
+    
+    /// <summary>
+    /// Checks to see if the title is a match
+    /// <param name="product"></param>
+    /// </summary>
     private bool IsTitleMatch(ProductModel product)
     {
         if (string.IsNullOrWhiteSpace(_filterDataString))
@@ -421,6 +441,8 @@
 
     /// <summary>
     /// Event callback for when ratings change
+    /// <param name="productId"></param>
+    /// <param name="rating"></param>
     /// </summary>
     void SubmitRating(string productId, int rating)
     {
@@ -495,14 +517,51 @@
     {
         SelectedLocationType = locationType;
     }
-
+    
+    /// <summary>
+    /// Updates neighborhood
+    /// </summary>
     void UpdateNeighborhood(string neighborhood)
     {
         SelectedNeighborhood = neighborhood;
     }
-
-    void UpdatedNoiseLevel(int noiseLevel)
+    
+    /// <summary>
+    /// Updates noise level
+    /// <param name="NoiseLevel"></param>
+    /// </summary>
+    void UpdateNoiseLevel(NoiseLevel? noiseLevel)
     {
-        SelectedNoiseLevel = noiseLevel;
+        if (noiseLevel == null)
+        {
+            SelectedNoiseLevelMin = null;
+            SelectedNoiseLevelMax = null;
+        }
+        
+        else
+        {
+            int enumValue = (int)noiseLevel;
+            SelectedNoiseLevelMin = enumValue;
+            SelectedNoiseLevelMax = enumValue + 1;
+        }
+
     }
+    
+    
+    /// <summary>
+    /// Gets the display name from the enum for the drop down
+    /// /// <param name="selectedLevel"></param>
+    /// </summary>
+    private string GetDropdownDisplayText(NoiseLevel? selectedLevel)
+    {
+        if (selectedLevel == null)
+        {
+            return "Noise Level";
+        }
+     
+        // Access the display name of the selected filter based on its value
+        var displayName = Enum.GetName(typeof(NoiseLevel), selectedLevel);
+        return displayName;
+    }
+
 }
