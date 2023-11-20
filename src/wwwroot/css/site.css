@@ -1145,7 +1145,6 @@ select.filter-dropdown {
     display: flex;
     align-items: stretch;
     flex-wrap: wrap;
-    padding-top: 10px;
     padding-left: 20px;
 }
 
