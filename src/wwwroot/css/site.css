@@ -542,8 +542,16 @@ h1.h1-heading {
 @media (min-width: 600px) and (max-width: 799px) {
     .card-custom {
         width: 50vw;
-        height: 50vw;  /* Match width for 1:1 aspect ratio */
+        height: 50vw;  
     }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+    .card-custom {
+        width: 30vw;
+        height: 35vw;
+    }
+    
 }
 
 
