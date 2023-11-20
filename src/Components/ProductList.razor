@@ -99,7 +99,7 @@
             <div class="filter-option flex-grow-1">
                 <div class="search-bar">
                     <input type="text" id="filter-input" class="form-control" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@_filterDataString" placeholder="Search by Title...">
-                    <div class="input-group-append">
+                    <div class="search-bar-buttons">
                         <button @onclick="(e => EnableFilterData())" class="btn btn-primary" id="filter-button">Filter</button>
                         <button @onclick="(e => ClearFilterData())" class="btn btn-secondary" id="clear-button">Clear</button>
                     </div>
