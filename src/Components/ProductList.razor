@@ -81,15 +81,7 @@
             <div class="filter-option mr-2">
                 <div class="dropdown">
                     <button class="btn btn-third dropdown-toggle" type="button" id="noiseLevelDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @if (SelectedNoiseLevelMin == null || SelectedNoiseLevelMax == null)
-                        {
-                            @GetDropdownDisplayText(null);
-                        }
-
-                        else
-                        {
-                            @GetDropdownDisplayText(null)
-                        }
+                        @GetDropdownDisplayText(SelectedNoiseFilter)
                     </button>
                     <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
                         <a class="dropdown-item" href="#" @onclick="() => UpdateNoiseLevel(null)">All</a> 
@@ -321,6 +313,7 @@
 
     ProductModel _selectedProduct;
     string _selectedProductId;
+    private NoiseLevel? SelectedNoiseFilter = null;
 
     void SelectProduct(string productId)
     {
@@ -420,8 +413,7 @@
 
         return minMatch && maxMatch;
     }
-   
-    
+
     /// <summary>
     /// Checks to see if the title is a match
     /// <param name="product"></param>
@@ -436,9 +428,7 @@
 
         return false;
     }
-
-
-
+    
     /// <summary>
     /// Event callback for when ratings change
     /// <param name="productId"></param>
@@ -532,6 +522,8 @@
     /// </summary>
     void UpdateNoiseLevel(NoiseLevel? noiseLevel)
     {
+        SelectedNoiseFilter = noiseLevel;
+        
         if (noiseLevel == null)
         {
             SelectedNoiseLevelMin = null;
@@ -546,7 +538,6 @@
         }
 
     }
-    
     
     /// <summary>
     /// Gets the display name from the enum for the drop down
@@ -563,5 +554,6 @@
         var displayName = Enum.GetName(typeof(NoiseLevel), selectedLevel);
         return displayName;
     }
+    
 
 }
