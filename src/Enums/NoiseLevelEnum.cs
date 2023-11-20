@@ -1,5 +1,5 @@
-using System.ComponentModel.DataAnnotations;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TakeABreak.WebSite.Enums
 {
@@ -8,19 +8,19 @@ namespace TakeABreak.WebSite.Enums
     /// </summary>
     public enum NoiseLevel
     {
-        [Display(Name = "Quiet (1-2)")]
+        [Display(Name = "Quiet")]
         Quiet = 1,
 
-        [Display(Name = "Moderate (3-4)")]
+        [Display(Name = "Moderate")]
         Moderate = 3,
 
-        [Display(Name = "Loud (5-6)")]
+        [Display(Name = "Loud")]
         Loud = 5,
 
-        [Display(Name = "Very Loud (7-8)")]
+        [Display(Name = "Very Loud")]
         VeryLoud = 7,
 
-        [Display(Name = "Extremely Loud (9-10)")]
+        [Display(Name = "Extremely Loud")]
         ExtremelyLoud = 9,
     }
 }
