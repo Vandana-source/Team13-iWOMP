@@ -78,7 +78,7 @@
   {
     "Id": "cal-anderson-park",
     "LocationType": "Restroom",
-    "img": "/SiteImages/ResizeRestrooms/CalAnderson.webp",
+    "img": "/SiteImages/Restrooms/CalAnderson.webp",
     "Url": null,
     "Title": "Cal Anderson Park",
     "Description": "A public restroom located in one of Seattle\u0027s busiest parks.",
@@ -96,7 +96,7 @@
   {
     "Id": "cloudburst-brewing-ballard",
     "LocationType": "Restroom",
-    "img": "/SiteImages/ResizeRestrooms/CloudburstBrewing.webp",
+    "img": "/SiteImages/Restrooms/CloudburstBrewing.webp",
     "Url": null,
     "Title": "Cloudburst Brewing (Ballard)",
     "Description": "Another solid brewery bathroom. Here, the sinks are situated outside.",
@@ -114,7 +114,7 @@
   {
     "Id": "columbia-tower-club",
     "LocationType": "Restroom",
-    "img": "/SiteImages/ResizeRestrooms/ColumbiaTower.webp",
+    "img": "/SiteImages/Restrooms/ColumbiaTower.webp",
     "Url": null,
     "Title": "Columbia Tower Club",
     "Description": "Frequently acclaimed as a hidden gem among Seattle\u0027s restrooms, this lavatory for women offers a stunning cityscape view from the 76th floor.",
@@ -240,7 +240,7 @@
   {
     "Id": "la-dive-bar",
     "LocationType": "Restroom",
-    "img": "/SiteImages/ResizeRestrooms/LADiveBar.webp",
+    "img": "/SiteImages/Restrooms/LADiveBar.webp",
     "Url": null,
     "Title": "LA Dive Bar",
     "Description": "Another selfie favorite, this bathroom will have you seeing red.",
@@ -276,7 +276,7 @@
   {
     "Id": "life-on-mars",
     "LocationType": "Restroom",
-    "img": "/SiteImages/ResizeRestrooms/LifeOnMars.webp",
+    "img": "/SiteImages/Restrooms/LifeOnMars.webp",
     "Url": null,
     "Title": "Life On Mars Disco",
     "Description": "This disco bathroom behind door No. 2 is a groovy spot for selfies and handwashing",
@@ -420,7 +420,7 @@
   {
     "Id": "seattle-central-college",
     "LocationType": "Restroom",
-    "img": "/SiteImages/ResizeRestrooms/SeattleCentralCollege.webp",
+    "img": "/SiteImages/Restrooms/SeattleCentralCollege.webp",
     "Url": null,
     "Title": "Seattle Central College",
     "Description": "A gender-neutral, multi-stall layout located on the 4th floor",
@@ -546,7 +546,7 @@
   {
     "Id": "starbucks-reserve",
     "LocationType": "Restroom",
-    "img": "/SiteImages/ResizeRestrooms/StarbucksRoastery.webp",
+    "img": "/SiteImages/Restrooms/StarbucksRoastery.webp",
     "Url": null,
     "Title": "Starbucks Reserve",
     "Description": "A softly lit, gender-neutral space with a panoramic view overlooking the roastery below.",
@@ -564,7 +564,7 @@
   {
     "Id": "stoop-brewing-cap-hill",
     "LocationType": "Restroom",
-    "img": "/SiteImages/ResizeRestrooms/StoopBrewingCapHill.webp",
+    "img": "/SiteImages/Restrooms/StoopBrewingCapHill.webp",
     "Url": null,
     "Title": "Stoop Brewing (Capitol Hill)",
     "Description": "A classic gender neutral bathroom with plenty of stalls for everyone to go",
@@ -582,7 +582,7 @@
   {
     "Id": "u-village",
     "LocationType": "Restroom",
-    "img": "/SiteImages/ResizeRestrooms/UniversityVillage.webp",
+    "img": "/SiteImages/Restrooms/UniversityVillage.webp",
     "Url": null,
     "Title": "U Village",
     "Description": "Private stalls with floor to ceiling doors and individual sinks make this spot a favorite rest stop among local shoppers.",
