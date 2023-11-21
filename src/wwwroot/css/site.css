@@ -5,15 +5,14 @@
     --font-size: clamp(1rem, 4.8vw, 1.3rem);
 }
 
-
-
 body {
     margin-bottom: 60px;
 }
 
 @media (max-width: 768px) {
     .static-img {
-        height: 100px;
+        height: 70px;
+        width: 70px;
     }
 }
 
@@ -27,7 +26,6 @@ body {
     max-width: 70%; 
     height: auto; 
 }
-
 
 @media (max-width: 759px) {
     .skinny-container {
@@ -51,12 +49,14 @@ body {
 }
 
 .gray-rectangle {
-    background-color: #f3f7f5;
+    background-color: rgba(243, 247, 245, 0.7);
     padding: 1rem;
     padding-right: 15rem;
     display: inline-block; 
     color: black; 
     text-align: left;
+    border: 1px solid #D7B1BE ;
+    box-shadow: 4px 8px 15px rgba(112, 71, 86, 0.25);
 }
 
 @media (max-width: 768px) {
@@ -229,6 +229,12 @@ for details on configuring this project to bundle and minify static web assets. 
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
+.card {
+
+    border: 1px solid #cec1ba ;
+    box-shadow: 4px 8px 15px #d2cdcb;
+}
+
 
 .modal .card-img {
     height: 500px;
@@ -278,9 +284,13 @@ a {
     color: #000000e6;
     border-color: rgba(186, 206, 193, 0);
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+.btn-third:hover {
+    box-shadow: 0 5px 15px rgba(186, 189, 206, 0.55); 
+    background-color: rgba(231, 238, 233, 0.42);
 }
 
 
