@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using TakeABreak.WebSite.Models;
 using TakeABreak.WebSite.Services;
+using System.Threading;
 
 namespace TakeABreak.WebSite.Pages
 {
@@ -67,10 +68,8 @@ namespace TakeABreak.WebSite.Pages
             // Thank the user for their submission 
 
             TempData["SubmissionMessage"] = "Thank you for your submission";
-            return RedirectToPage("/ContactUs");
 
-
-
+            return RedirectToPage("/ContactUs");   
             // Stay on the page 
         }
     }
