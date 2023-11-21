@@ -1,5 +1,6 @@
 ﻿@page
 @model TakeABreak.WebSite.Pages.ContactUsModel
+@using TakeABreak.WebSite.Models
 @using TakeABreak.WebSite.Services
 @inject JsonFileCustomerService CustomerService
 @{
@@ -17,107 +18,111 @@
     <title>@ViewData["Title"]</title>
 </head>
 <body>
-<div class="container mt-5 pt-3 text-center">
-    <h3 class="display-5 text-lg-left mb-1"> 
-        Helping your 🍑 find a seat since 2023
-    </h3>
-    <div class="row d-flex align-items-center justify-content-between">
-        <div class="col-lg-4" style="font-family: 'Lato', sans-serif;">
-            <div class="gray-rectangle pt-2"> <!-- Added top padding -->
-                <div class="container">
-                    <h3 class="mb-2">Contact Us At<p>Take a Break!</p></h3>
-                    <address class="mb-0">
-                        <p class="mb-0">901 12th Avenue,</p>
-                        <p class="mb-0">P.O. Box 222000</p>
-                        <p class="mb-0">Seattle, WA 98122-1090</p>
-                        <p class="mb-0"><strong>Phone:</strong> +1.206.296.6000</p>
-                        <p class="mb-2"><strong>Toll-free:</strong> 1.800.426.7123</p>
-                        <p class="mb-0">For general inquiries: <a href="mailto:13.take.a.break@gmail.com">13.take.a.break@gmail.com</a></p>
-                    </address>
+    @*@{
+            string NewTitle = "Sample";
+        }*@
+    <div class="container mt-5 pt-3 text-center">
+        <h3 class="display-5 text-lg-left mb-1">
+            Helping your 🍑 find a seat since 2023
+        </h3>
+        <div class="row d-flex align-items-center justify-content-between">
+            <div class="col-lg-4" style="font-family: 'Lato', sans-serif;">
+                <div class="gray-rectangle pt-2">
+                    <!-- Added top padding -->
+                    <div class="container">
+                        <h3 class="mb-2">Contact Us At<p>Take a Break!</p></h3>
+                        <address class="mb-0">
+                            <p class="mb-0">901 12th Avenue,</p>
+                            <p class="mb-0">P.O. Box 222000</p>
+                            <p class="mb-0">Seattle, WA 98122-1090</p>
+                            <p class="mb-0"><strong>Phone:</strong> +1.206.296.6000</p>
+                            <p class="mb-2"><strong>Toll-free:</strong> 1.800.426.7123</p>
+                            <p class="mb-0">For general inquiries: <a href="mailto:13.take.a.break@gmail.com">13.take.a.break@gmail.com</a></p>
+                        </address>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-7">
-            <img src="/ContactUs.png" alt="Contact Image" class="img-fluid custom-img-size">
-        </div>
-    </div>
-</div>
-
-<div class="container mt-5 pb-3">
-    <div class="slim-rectangle">
-        <span class="rectangle-text">Nominate A Place</span>
-    </div>
-    <br/>
-    <form method="post">
-        <div class="form-group">
-            <label for="cusFirstName">First Name (Optional)</label>
-            <input type="text" class="form-control" asp-for="CustomerNomination.CusFirstName" placeholder="Enter First Name">
-        </div>
-
-        <div class="form-group">
-            <label for="cusLastName">Last Name (Optional)</label>
-            <input type="text" class="form-control" asp-for="CustomerNomination.CusLastName" placeholder="Enter Last Name">
-        </div>
-
-        <div class="form-group">
-            <label for="cusEmail">Email</label>
-            <input type="email" class="form-control" asp-for="CustomerNomination.CusEmail" placeholder="Enter Email">
-        </div>
-
-        <div class="form-group">
-            <label for="nominatedTitle">Name of Location</label>
-            <input type="text" class="form-control" asp-for="CustomerNomination.NominatedTitle" placeholder="Enter Nominated Title">
-        </div>
-
-        <div class="form-group">
-            <label class="control-label" for="CustomerNomination_NominatedLocationType">Location Type</label>
-            <select class="form-control" id="CustomerNomination_NominatedLocationType" name="CustomerNomination.NominatedLocationType">
-                <option selected>Table</option>
-                <option>Bench</option>
-                <option>Restroom</option>
-                <option>Other</option>
-            </select>
-            <span class="text-danger" asp-validation-for="CustomerNomination.NominatedLocationType"></span>
-        </div>
-
-        <div class="form-group">
-            <label for="nominatedImage">Image URL</label>
-            <input type="url" class="form-control" asp-for="CustomerNomination.NominatedImage" placeholder="Enter Image URL">
-        </div>
-
-        <div class="form-group">
-            <label>Noise Level Rating: (1 is Good, 10 is Bad)</label>
-            <div class="d-flex flex-row align-items-center">
-                @for (int i = 1; i <= 10; i++)
-                {
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="CustomerNomination.NominatedNoiseLevel" id="@("rating" + i)" value="@i" asp-for="CustomerNomination.NominatedNoiseLevel">
-                        <label class="form-check-label" for="@("rating" + i)">@i</label>
-                    </div>
-                }
+            <div class="col-lg-7">
+                <img src="/ContactUs.png" alt="Contact Image" class="img-fluid custom-img-size">
             </div>
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="nominatedNeighborhood">Neighborhood</label>
-            <input type="text" class="form-control" asp-for="CustomerNomination.NominatedNeighborhood" placeholder="Enter Neighborhood">
+    <div class="container mt-5 pb-3">
+        <div class="slim-rectangle">
+            <span class="rectangle-text">Nominate A Place</span>
         </div>
+        <br />
+        <form method="post">
+            <div class="form-group">
+                <label for="cusFirstName">First Name (Optional)</label>
+                <input type="text" class="form-control" asp-for="CustomerNomination.CusFirstName" placeholder="Enter First Name">
+            </div>
 
-        <div class="form-group pb-3">
-            <label for="nominatedMapDetails">Map Details</label>
-            <input type="url" class="form-control" asp-for="CustomerNomination.NominatedMapDetails" placeholder="Enter Google Map Location">
-        </div>
+            <div class="form-group">
+                <label for="cusLastName">Last Name (Optional)</label>
+                <input type="text" class="form-control" asp-for="CustomerNomination.CusLastName" placeholder="Enter Last Name">
+            </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+            <div class="form-group">
+                <label for="cusEmail">Email</label>
+                <input type="email" class="form-control" asp-for="CustomerNomination.CusEmail" placeholder="Enter Email">
+            </div>
 
-@if (TempData["ShowThankYouMessage"] as bool? == true)
-{
-    <script type="text/javascript">
-        alert('Thank you for your submission');
-    </script>
-}
+            <div class="form-group">
+                <label for="nominatedTitle">Name of Location</label>
+                <input type="text" class="form-control" asp-for="CustomerNomination.NominatedTitle" placeholder="Enter Nominated Title">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="CustomerNomination_NominatedLocationType">Location Type</label>
+                <select class="form-control" id="CustomerNomination_NominatedLocationType" name="CustomerNomination.NominatedLocationType">
+                    <option selected>Table</option>
+                    <option>Bench</option>
+                    <option>Restroom</option>
+                    <option>Other</option>
+                </select>
+                <span class="text-danger" asp-validation-for="CustomerNomination.NominatedLocationType"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="nominatedImage">Image URL</label>
+                <input type="url" class="form-control" asp-for="CustomerNomination.NominatedImage" placeholder="Enter Image URL">
+            </div>
+
+            <div class="form-group">
+                <label>Noise Level Rating: (1 is Good, 10 is Bad)</label>
+                <div class="d-flex flex-row align-items-center">
+                    @for (int i = 1; i <= 10; i++)
+                    {
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="CustomerNomination.NominatedNoiseLevel" id="@("rating" + i)" value="@i" asp-for="CustomerNomination.NominatedNoiseLevel">
+                            <label class="form-check-label" for="@("rating" + i)">@i</label>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="nominatedNeighborhood">Neighborhood</label>
+                <input type="text" class="form-control" asp-for="CustomerNomination.NominatedNeighborhood" placeholder="Enter Neighborhood">
+            </div>
+
+            <div class="form-group pb-3">
+                <label for="nominatedMapDetails">Map Details</label>
+                <input type="url" class="form-control" asp-for="CustomerNomination.NominatedMapDetails" placeholder="Enter Google Map Location">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        @if (TempData["SubmissionMessage"] != null)
+        {
+            <script type="text/javascript">alert('Thank you for your submission');</script>
+        }
+    </div>
+    
 
 </body>
 </html>
+
