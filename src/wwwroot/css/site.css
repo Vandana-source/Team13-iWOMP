@@ -1151,7 +1151,6 @@ select.filter-dropdown {
 .search-bar-buttons {
     border-radius: 5px;
     font-family: 'Lato', sans-serif;
-    height: 2.7vw;
     display: flex;
     flex-wrap: wrap;
 }
