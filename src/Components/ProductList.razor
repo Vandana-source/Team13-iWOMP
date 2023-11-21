@@ -29,12 +29,12 @@
                         }
                     </button>
                     <div class="dropdown-menu" aria-labelledby="neighborhoodDropdownButton">
-                        <a class="dropdown-item" href='#' @onclick='() => UpdateNeighborhood(null)'>
+                        <a class="dropdown-item" href='#' test-id="dropdown1" @onclick='() => UpdateNeighborhood(null)'>
                             All
                         </a>
                         @foreach (var neighborhood in Neighborhoods)
                         {
-                            <a class="dropdown-item" href="#" @onclick="() => UpdateNeighborhood(neighborhood)">
+                            <a class="dropdown-item" href="#" test-id="dropdown2" @onclick="() => UpdateNeighborhood(neighborhood)">
                                 @neighborhood
                             </a>
                         }
@@ -57,19 +57,19 @@
 
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType(null)'>
+                        <a class="dropdown-item" href='#' test-id="dropdown3" @onclick='() => UpdateLocationType(null)'>
                             All
                         </a>
-                        <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Bench")'>
+                        <a class="dropdown-item" href='#' test-id="dropdown4" @onclick='() => UpdateLocationType("Bench")'>
                             <i class="fas fa-chair mr-2"></i> Bench
                         </a>
-                        <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Restroom")'>
+                        <a class="dropdown-item" href='#' test-id="dropdown5" @onclick='() => UpdateLocationType("Restroom")'>
                             <i class="fas fa-restroom mr-2"></i> Restroom
                         </a>
-                        <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Table")'>
+                        <a class="dropdown-item" href='#' test-id="dropdown6" @onclick='() => UpdateLocationType("Table")'>
                             <i class="fi fi-bs-table-picnic mr-2"></i> Table
                         </a>
-                        <a class="dropdown-item" href='#' @onclick='() => UpdateLocationType("Other")'>
+                        <a class="dropdown-item" href='#' test-id="dropdown7" @onclick='() => UpdateLocationType("Other")'>
                             <i class="fas fa-ellipsis-h mr-2"></i> Other
                         </a>
                     </div>
@@ -83,11 +83,11 @@
                         @GetDropdownDisplayText(SelectedNoiseFilter)
                     </button>
                     <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
-                        <a class="dropdown-item" href="#" @onclick="() => UpdateNoiseLevel(null)">All</a>
+                        <a class="dropdown-item" href="#" test-id="dropdown8" @onclick="() => UpdateNoiseLevel(null)">All</a>
                         @foreach (var name in Enum.GetNames(typeof(NoiseLevel)))
                         {
                             var displayName = GetDropdownDisplayText(Enum.Parse<NoiseLevel>(name));
-                            <a class="dropdown-item" href="#" @onclick="() => UpdateNoiseLevel(Enum.Parse<NoiseLevel>(name))">
+                            <a class="dropdown-item" href="#" test-id="dropdown9" @onclick="() => UpdateNoiseLevel(Enum.Parse<NoiseLevel>(name))">
                                 @displayName
                             </a>
                         }
