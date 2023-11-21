@@ -448,9 +448,6 @@
     // Next Comment Text is what the comment text is
     string _newCommentText = string.Empty;
 
-    //Date time for the comment
-    readonly string _timestamp = DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + " - ";
-
     /// <summary>
     /// Enable the New Comment Entry by setting the NewComment flag
     /// </summary>
@@ -468,6 +465,9 @@
     /// <param name="newCommentText"></param>
     void AddComment(ProductModel selectedProduct, string newCommentText)
     {
+        //Date time for the comment
+        string _timestamp = DateTime.Now.ToString("MM/dd/yyyy h:mm tt") + " - ";
+
         // Comment should not be empty
         if (string.IsNullOrWhiteSpace(newCommentText))
         {
