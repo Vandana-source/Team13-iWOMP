@@ -336,5 +336,133 @@ namespace UnitTests.Components
 
         }
 
+        [Test]
+        public void Filters_Products_By_LocationType_Should_Return_Matching_Content()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Act
+            var page = RenderComponent<ProductList>();
+
+            //Find the input
+            var selectList = page.FindAll("a");
+
+
+            //Find the one that matches the ID looking for and click it
+            var select = selectList.First(m => m.OuterHtml.Contains("dropdown3"));
+
+            // Act - Simulate changing the filter text
+            select.Click();
+
+            var pageMarkup = page.Markup;
+            // Assert
+            // Ensure the method OnNeighborhoodChanged was called with the correct value
+            Assert.AreEqual(true, pageMarkup.Contains("Arboretum Marsh Walk"));
+
+        }
+
+        [Test]
+        public void Filters_Products_By_LocationType_Bench_Should_Return_Matching_Content()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Act
+            var page = RenderComponent<ProductList>();
+
+            //Find the input
+            var selectList = page.FindAll("a");
+
+            //Find the one that matches the ID looking for and click it
+            var select = selectList.First(m => m.OuterHtml.Contains("dropdown4"));
+
+            // Act - Simulate changing the filter text
+            select.Click();
+
+            var pageMarkup = page.Markup;
+            // Assert
+            // Ensure the method OnNeighborhoodChanged was called with the correct value
+            Assert.AreEqual(true, pageMarkup.Contains("Arboretum Marsh Walk"));
+
+        }
+
+        [Test]
+        public void Filters_Products_By_LocationType_Restroom_Should_Return_Matching_Content()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Act
+            var page = RenderComponent<ProductList>();
+
+            //Find the input
+            var selectList = page.FindAll("a");
+
+            //Find the one that matches the ID looking for and click it
+            var select = selectList.First(m => m.OuterHtml.Contains("dropdown5"));
+
+            // Act - Simulate changing the filter text
+            select.Click();
+
+            var pageMarkup = page.Markup;
+            // Assert
+            // Ensure the method OnNeighborhoodChanged was called with the correct value
+            Assert.AreEqual(true, pageMarkup.Contains("LA Dive Bar"));
+
+        }
+
+        [Test]
+        public void Filters_Products_By_LocationType_Table_Should_Return_Matching_Content()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Act
+            var page = RenderComponent<ProductList>();
+
+            //Find the input
+            var selectList = page.FindAll("a");
+
+
+            //Find the one that matches the ID looking for and click it
+            var select = selectList.First(m => m.OuterHtml.Contains("dropdown6"));
+
+            // Act - Simulate changing the filter text
+            select.Click();
+
+            var pageMarkup = page.Markup;
+            // Assert
+            // Ensure the method OnNeighborhoodChanged was called with the correct value
+            Assert.AreEqual(true, pageMarkup.Contains("Golden Gardens"));
+
+        }
+
+        [Test]
+        public void Filters_Products_By_LocationType_Other_Should_Return_Matching_Content()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Act
+            var page = RenderComponent<ProductList>();
+
+            //Find the input
+            var selectList = page.FindAll("a");
+
+
+            //Find the one that matches the ID looking for and click it
+            var select = selectList.First(m => m.OuterHtml.Contains("dropdown7"));
+
+            // Act - Simulate changing the filter text
+            select.Click();
+
+            var pageMarkup = page.Markup;
+            // Assert
+            // Ensure the method OnNeighborhoodChanged was called with the correct value
+            Assert.AreEqual(true, pageMarkup.Contains("Lemieux Library"));
+
+        }
+
     }
 }
