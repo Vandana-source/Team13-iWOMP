@@ -1,14 +1,76 @@
 @page
+@using TakeABreak.WebSite.Services
+@using TakeABreak.WebSite.Models
+@inject JsonFileProductService ProductService
 @model SpotlightModel
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-
-
-<div class="container pb-3 pt-3">
+<div class="container pb-3 pt-5">
     <h1>@ViewData["Title"]</h1>
     
-    
-    <img src="/SpotlightImage.webp"></img>
-</div>
+    <div class="image-wrapper d-flex justify-content-center align-items-center position-center">
+        <!-- Container for the second image -->
+        <div class="wide-img-container">
 
+            <img class="wide-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
+        </div>
+    </div>
+
+    <!-- Container for text and other content below the wide image -->
+    <div class="container2">
+                <h5 class="larger-title pt-4" id="productTitle">@Model.Product.Title</h5> <!-- Reduced padding-top -->
+                <h5 class="font-weight-bold" id="placeNeighborhood">@Model.Product.Neighborhood</h5>
+        @{
+            int currentRating = 0;
+            int voteCount = 0;
+            string voteLabel = "";
+            if (Model.Product.Ratings == null)
+            {
+                currentRating = 0;
+                voteCount = 0;
+            }
+            else
+            {
+                voteCount = Model.Product.Ratings.Count();
+                voteLabel = voteCount > 1 ? "Reviews" : "Review";
+                currentRating = Model.Product.Ratings.Sum() / voteCount;
+            }
+            System.Console.WriteLine($"Current rating for {Model.Product.Id}: {currentRating}");
+            @for (int i = 1; i < 6; i++)
+            {
+                var currentStar = i;
+                if (i <= currentRating)
+                {
+                    <span class="fas fa-chair checked space"></span>
+                }
+                else
+                {
+                    <span class="fas fa-chair space"></span>
+                }
+            }
+            @if (voteCount == 0)
+            {
+                <span>No Reviews yet!</span>
+            }
+            else
+            {
+                <span>@voteCount @voteLabel</span>
+            }
+        }
+                <p class="mt-2">
+                    <br/>@Model.Product.Description
+                </p>
+                <span class="noiselevel mt-2"> <!-- Reduced margin-top -->
+                    Noise Level (1 is Good, 10 is Bad) : @Model.Product.NoiseLevel
+                </span>
+                
+                <h5 class="font-weight-bold mt-5">Where to find it: </h5>
+                <div class="map-container"> <!-- Reduced margin-top -->
+                    <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
+                </div>
+                
+            </div>
+        </div>
 
