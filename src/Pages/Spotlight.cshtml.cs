@@ -1,27 +1,55 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
+using System.Linq;
+
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc;
+
+using TakeABreak.WebSite.Models;
+using TakeABreak.WebSite.Services;
+
 namespace TakeABreak.WebSite.Pages
 {
     /// <summary>
-    /// Represents the code-behind for the Privacy Razor Page.
+    /// Razor page model for reading product details
     /// </summary>
     public class SpotlightModel : PageModel
     {
-        // Declare a private field to hold a logger instance
-        private readonly ILogger<SpotlightModel> _logger;
+        // Data middletier
+        public JsonFileProductService ProductService { get; }
 
-        // Constructor for PrivacyModel, takes a logger as a dependency
-        public SpotlightModel(ILogger<SpotlightModel> logger)
+        /// <summary>
+        /// Default Construtor
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="productService"></param>
+        public SpotlightModel(JsonFileProductService productService)
         {
-            // Initialize the logger field with the injected logger
-            _logger = logger;
+            ProductService = productService;
         }
 
-        public void OnGet()
+        // The data to show
+        public ProductModel Product;
+
+        /// <summary>
+        /// REST Get request
+        /// </summary>
+        /// <param name="id"></param>
+        public IActionResult OnGet()
         {
-            // This is the PageModel's method called when an HTTP GET request is made to this page.
-            // It is typically used to prepare data for display, but in this case, it's empty, so no specific action is taken.
+            string id = "seattle-university-rhododendron";
+            
+            // Fetches the product with the specified ID from the service.
+            Product  = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+
+            if (Product == null)
+            {
+                this.ModelState.AddModelError("OnGet", "Read Onget Error");
+                return RedirectToPage("./Index"); 
+            }
+
+            return Page();
         }
     }
 }
