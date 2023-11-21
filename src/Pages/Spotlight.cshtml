@@ -8,9 +8,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <div class="container pb-3 pt-5">
-    <h1>@ViewData["Title"]</h1>
-    
-    <div class="image-wrapper d-flex justify-content-center align-items-center position-center">
+    <div class="slim-rectangle">
+        <span class="rectangle-text">Spotlight of the Month</span>
+    </div>
+    <div class="image-wrapper d-flex justify-content-center align-items-center position-center mt-0">
         <!-- Container for the second image -->
         <div class="wide-img-container">
 
@@ -20,8 +21,8 @@
 
     <!-- Container for text and other content below the wide image -->
     <div class="container2">
-                <h5 class="larger-title pt-4" id="productTitle">@Model.Product.Title</h5> <!-- Reduced padding-top -->
-                <h5 class="font-weight-bold" id="placeNeighborhood">@Model.Product.Neighborhood</h5>
+        <h5 class="larger-title pt-4" id="productTitle">@Model.Product.Title</h5> <!-- Reduced padding-top -->
+        <h5 class="font-weight-bold" id="placeNeighborhood">@Model.Product.Neighborhood</h5>
         @{
             int currentRating = 0;
             int voteCount = 0;
@@ -59,18 +60,18 @@
                 <span>@voteCount @voteLabel</span>
             }
         }
-                <p class="mt-2">
-                    <br/>@Model.Product.Description
-                </p>
-                <span class="noiselevel mt-2"> <!-- Reduced margin-top -->
-                    Noise Level (1 is Good, 10 is Bad) : @Model.Product.NoiseLevel
-                </span>
-                
-                <h5 class="font-weight-bold mt-5">Where to find it: </h5>
-                <div class="map-container"> <!-- Reduced margin-top -->
-                    <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
-                </div>
-                
-            </div>
+        <p class="mt-2">
+            <br/>@Model.Product.Description
+        </p>
+        <span class="noiselevel mt-2"> <!-- Reduced margin-top -->
+            Noise Level (1 is Good, 10 is Bad) : @Model.Product.NoiseLevel
+        </span>
+
+        <h5 class="font-weight-bold mt-5">Where to find it: </h5>
+        <div class="map-container"> <!-- Reduced margin-top -->
+            <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
         </div>
+
+    </div>
+</div>
 
