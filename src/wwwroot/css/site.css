@@ -290,8 +290,9 @@ a {
 }
 .btn-third:hover {
     box-shadow: 0 5px 15px rgba(186, 189, 206, 0.55); 
-    background-color: rgba(231, 238, 233, 0.42);
+
 }
+
 
 
 .btn-danger {
