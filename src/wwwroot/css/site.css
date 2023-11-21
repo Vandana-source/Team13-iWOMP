@@ -20,6 +20,13 @@ body {
     height: 5.5vw;
 }
 
+.custom-image {
+    max-width: 50%;
+    height: auto;
+    border-color: #D7B1BE;
+    box-shadow: 4px 8px 15px rgba(112, 71, 86, 0.25);
+    
+}
 
 .custom-img-size {
     width: auto;
@@ -55,7 +62,7 @@ body {
     display: inline-block; 
     color: black; 
     text-align: left;
-    border: 1px solid #D7B1BE ;
+    border: 1px solid #D7B1BE;
     box-shadow: 4px 8px 15px rgba(112, 71, 86, 0.25);
 }
 
@@ -67,6 +74,13 @@ body {
 
 .fa-star {
     cursor: pointer;
+}
+
+.custom-iframe-container {
+
+    height: 70vh;
+    width: 100%
+
 }
 
 /* To center links on mobile view */
@@ -645,7 +659,6 @@ h1.h1-heading {
 }
 
 
-
 /* Hover effect for the card-custom */
 .card-custom:hover {
     background-color: rgba(37,33,82,.12); /* Change the background color on hover */
@@ -659,6 +672,13 @@ h1.h1-heading {
         right: 0;
         margin-right: 50px; 
     }
+}
+
+.small-image {
+    width: 90%;
+    height: auto;
+    border: 2px solid #cec1ba;
+    box-shadow: 4px 8px 15px #d2cdcb;
 }
 
 
@@ -758,6 +778,18 @@ h1.h1-heading {
     position: relative;
 }
 
+
+.overlay-spotlight-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 15rem;
+    max-height: 15rem;
+    border-bottom-left-radius: 20px;
+    opacity: .9;
+}
+
+
 .wide-img {
     position: absolute;
     top: 0;
@@ -779,6 +811,10 @@ iframe {
     border: 0;
     width: 100%;
     height: 300px;
+}
+
+.custom-iframe {
+    height: 70vh !important;
 }
 
 .map-container {
@@ -877,6 +913,7 @@ h3.header-contactus {
 .larger-title {
     font-size: 2.5em;
     font-weight: bold;
+    font-family: "Cardo", serif;
 }
 
 
