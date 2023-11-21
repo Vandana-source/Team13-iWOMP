@@ -183,10 +183,15 @@
                                 @{
                                     if (product.CommentList != null)
                                     {
-                                        foreach (var comment in product.CommentList)
-                                        {
-                                            <div>@comment</div>
-                                        }
+                                        <div class="card" style="width: auto;">
+                                            <ul class="list-group list-group-flush">
+                                                @foreach (var comment in product.CommentList)
+                                                {
+                                                    <li class="list-group-item">@comment</li>
+                                                }
+                                            </ul>
+                                        </div>
+                                        <br/>
 
                                         // If this is a new comment, then add the Input boxes for it, else show the Add Comment Button
                                         if (_newComment)
@@ -367,7 +372,7 @@
     // The max noise level
     private int? SelectedNoiseLevelMax;
 
-    // The min noise level 
+    // The min noise level
     private int? SelectedNoiseLevelMin;
 
     string _filterDataString = "";
@@ -396,16 +401,16 @@
     /// </summary>
     private bool IsNoiseLevelMatch(ProductModel product)
     {
-    // Check if both min and max values are not set
+        // Check if both min and max values are not set
         if (!SelectedNoiseLevelMin.HasValue && !SelectedNoiseLevelMax.HasValue)
         {
             return true;
         }
 
-    // Check if min value is set and the product's noise level is greater than or equal to it
+        // Check if min value is set and the product's noise level is greater than or equal to it
         bool minMatch = !SelectedNoiseLevelMin.HasValue || product.NoiseLevel >= SelectedNoiseLevelMin.Value;
 
-    // Check if max value is set and the product's noise level is less than or equal to it
+        // Check if max value is set and the product's noise level is less than or equal to it
         bool maxMatch = !SelectedNoiseLevelMax.HasValue || product.NoiseLevel <= SelectedNoiseLevelMax.Value;
 
         return minMatch && maxMatch;
@@ -451,7 +456,7 @@
     /// </summary>
     void ShowNewCommentInput()
     {
-    // Setting the new Comment flag to true will show the input box
+        // Setting the new Comment flag to true will show the input box
         _newComment = true;
     }
 
@@ -463,7 +468,7 @@
     /// <param name="newCommentText"></param>
     void AddComment(ProductModel selectedProduct, string newCommentText)
     {
-    // Comment should not be empty
+        // Comment should not be empty
         if (string.IsNullOrWhiteSpace(newCommentText))
         {
             _newComment = false;
@@ -471,10 +476,10 @@
         else
         {
             newCommentText = _timestamp + newCommentText;
-    // Add it to the Comment List
+            // Add it to the Comment List
             bool result = ProductService.AddComment(selectedProduct.Id, newCommentText);
 
-    // Set the NewComment flag to false to hide the input box
+            // Set the NewComment flag to false to hide the input box
             _newComment = false;
         }
     }
@@ -486,13 +491,13 @@
 
     void EnableFilterData()
     {
-    // If the Filter is enabled, set the filter flag
+        // If the Filter is enabled, set the filter flag
         _filterData = true;
     }
 
     void ClearFilterData()
     {
-    // If the Filter is enabled, set the filter flag
+        // If the Filter is enabled, set the filter flag
         _filterData = false;
         _filterDataString = "";
     }
