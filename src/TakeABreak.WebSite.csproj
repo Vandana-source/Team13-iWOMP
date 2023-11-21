@@ -55,6 +55,7 @@
     <Folder Include="wwwroot\SiteImages\CompressResizeOthers\" />
     <Folder Include="wwwroot\SiteImages\Restrooms\" />
     <Folder Include="wwwroot\SiteImages\Tables\" />
+    <Folder Include="wwwroot\SiteImages\Others\" />
   </ItemGroup>
 
   <ItemGroup>
