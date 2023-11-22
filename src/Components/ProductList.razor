@@ -453,11 +453,11 @@
             return true;
         }
 
-        // Check if min value is set and the product's noise level is greater than or equal to it
-        bool minMatch = !SelectedNoiseLevelMin.HasValue || product.NoiseLevel >= SelectedNoiseLevelMin.Value;
+        // Check if product's noise level is greater than or equal to it
+        bool minMatch = product.NoiseLevel >= SelectedNoiseLevelMin.Value;
 
-        // Check if max value is set and the product's noise level is less than or equal to it
-        bool maxMatch = !SelectedNoiseLevelMax.HasValue || product.NoiseLevel <= SelectedNoiseLevelMax.Value;
+        // Check if product's noise level is less than or equal to it
+        bool maxMatch = product.NoiseLevel <= SelectedNoiseLevelMax.Value;
 
         return minMatch && maxMatch;
     }
