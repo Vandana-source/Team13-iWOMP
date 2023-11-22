@@ -228,13 +228,13 @@ namespace TakeABreak.WebSite.Services
             return true;
         }
 
-
+        /// <summary>
+        /// Getting all the titles from json file and returning a list
+        /// </summary>
         public List<string> GetTitles()
         {
             var products = GetProducts();
             List<string> titleList = new List<string>();
-
-            //var a = products.ElementAt(2);
             foreach (var item in products)
             {
                 titleList.Add(item.Id.ToString());
