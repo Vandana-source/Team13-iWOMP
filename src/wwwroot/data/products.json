@@ -2,7 +2,7 @@
   {
     "Id": "Aquarium",
     "LocationType": "Other",
-    "img": "/SiteImages/CompressResizeOthers/Aquarium.webp",
+    "img": "/SiteImages/Others/Aquarium.webp",
     "Url": null,
     "Title": "Seattle Aquarium",
     "Description": "Meet a few adorable sea otters, and greet the various sea creatures of the Pacific Ocean, from puffers to giant clams.",
@@ -132,7 +132,7 @@
   {
     "Id": "ESports",
     "LocationType": "Other",
-    "img": "/SiteImages/CompressResizeOthers/Esports.webp",
+    "img": "/SiteImages/Others/Esports.webp",
     "Url": null,
     "Title": "ESPORTS Gaming Center",
     "Description": "A heaven for all the gamers. A new addition to Seattle University\u0027s recreation center is a great space to chill.\u0027",
