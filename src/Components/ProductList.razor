@@ -4,6 +4,7 @@
 @using TakeABreak.WebSite.Services
 @using Microsoft.AspNetCore.Components.Web
 @using TakeABreak.WebSite.Enums
+@using YourNamespace
 @inject JsonFileProductService ProductService
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -21,7 +22,7 @@
                     <button class="btn btn-third dropdown-toggle" type="button" id="neighborhoodDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         @if (string.IsNullOrEmpty(SelectedNeighborhood))
                         {
-                            <text>Neighborhoods</text>
+                            <text>Neighborhood</text>
                         }
                         else
                         {
@@ -29,13 +30,13 @@
                         }
                     </button>
                     <div class="dropdown-menu" aria-labelledby="neighborhoodDropdownButton">
-                        <a class="dropdown-item" href='#' test-id="dropdown1" @onclick='() => UpdateNeighborhood(null)'>
+                        <a class="dropdown-item" href='#' @onclick='() => UpdateNeighborhood(null)'>
                             All
                         </a>
-                        @foreach (var neighborhood in Neighborhoods)
+                        @foreach (SeattleNeighborhoods neighborhood in Enum.GetValues(typeof(SeattleNeighborhoods)))
                         {
-                            <a class="dropdown-item" href="#" test-id="dropdown2" @onclick="() => UpdateNeighborhood(neighborhood)">
-                                @neighborhood
+                            <a class="dropdown-item" href="#" @onclick="() => UpdateNeighborhood(GetDisplayName(neighborhood))">
+                                @GetDisplayName(neighborhood)
                             </a>
                         }
                     </div>
@@ -609,5 +610,15 @@
         return displayAttribute.Name;
 
     }
+    
+    string GetDisplayName(SeattleNeighborhoods neighborhood)
+    {
+        return neighborhood.GetType()
+            .GetMember(neighborhood.ToString())
+            .First()
+            .GetCustomAttribute<DisplayAttribute>()?
+            .Name ?? neighborhood.ToString();
+    }
+    
 
 }
