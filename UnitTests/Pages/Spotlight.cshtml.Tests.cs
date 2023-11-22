@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
+using TakeABreak.WebSite.Models;
+
 
 using NUnit.Framework;
 
@@ -16,6 +18,9 @@ using Moq;
 
 using TakeABreak.WebSite.Pages;
 using TakeABreak.WebSite.Services;
+using System.Collections.Generic;
+using TakeABreak.WebSite.Controllers;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace UnitTests.Pages.Spotlight
 {
@@ -36,6 +41,8 @@ namespace UnitTests.Pages.Spotlight
         public static PageContext pageContext;
 
         public static SpotlightModel pageModel;
+
+        public static Mock<JsonFileProductService> mockProductService;
 
         /// <summary>
         /// Set up test intialize
@@ -73,8 +80,9 @@ namespace UnitTests.Pages.Spotlight
             JsonFileProductService productService;
 
             productService = new JsonFileProductService(mockWebHostEnvironment.Object);
+            mockProductService = new Mock<JsonFileProductService>(mockWebHostEnvironment.Object);
 
-            pageModel = new SpotlightModel(MockLoggerDirect)
+            pageModel = new SpotlightModel(productService)
             {
                 PageContext = pageContext,
                 TempData = tempData,
@@ -99,6 +107,25 @@ namespace UnitTests.Pages.Spotlight
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
+        }
+
+        /// <summary>
+        /// Tests OnGet with a null product, should redirect to index page
+        /// </summary>
+        [Test]
+        public void OnGet_InValid_ProductId_Should_Redirect_To_Index()
+        {
+            // Arrange
+            mockProductService.Setup(p => p.GetProducts()).Returns(new List<ProductModel>());
+
+            var pageModel = new SpotlightModel(mockProductService.Object);
+
+            // Act
+            var result = pageModel.OnGet() as RedirectToPageResult;
+
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+            Assert.AreEqual("./Index", result.PageName);
+
         }
 
         #endregion OnGet
