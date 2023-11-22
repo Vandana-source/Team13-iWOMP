@@ -49,13 +49,12 @@
                         {
                             <text>Location Type</text>
                         }
-                        @if (SelectedLocationType.Equals(surpriseString))
-                        {
-                            isSurprise();
-                            <text>Location Type</text>
-                        }
                         else
                         {
+                            if (SelectedLocationType.Equals(surpriseString))
+                            {
+                                isSurprise();
+                            }
                             @SelectedLocationType
                         }
 
