@@ -44,7 +44,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\SiteImages\" />
-    <Folder Include="wwwroot\SiteImages\ResizeBenches\" />
     <Folder Include="wwwroot\SiteImages\ResizeRestrooms\" />
     <Folder Include="wwwroot\SiteImages\AboutImages\" />
     <Folder Include="wwwroot\SiteImages\Restrooms\" />
@@ -65,5 +64,6 @@
     <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\StanleyPark.jpeg" />
     <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\UWMapleBench.jpeg" />
     <_ContentIncludedByDefault Remove="wwwroot\SiteImages\Benches\WoodworthBench.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\SiteImages\ResizeBenches\.DS_Store" />
   </ItemGroup>
 </Project>
