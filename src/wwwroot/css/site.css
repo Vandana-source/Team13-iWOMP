@@ -810,6 +810,11 @@ h1.h1-heading {
     margin: 0.5vw;
 }
 
+.copy-img {
+    border: 2px solid #D7B1BE; /* Sets the border style and width */
+    box-shadow: 4px 8px 15px rgba(112, 71, 86, 0.25);
+}
+
 /*CSS for iframe component*/
 
 iframe {
