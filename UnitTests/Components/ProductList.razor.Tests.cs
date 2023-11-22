@@ -105,6 +105,10 @@ namespace UnitTests.Components
         #endregion AddRating
 
         #region AddComments
+
+        /// <summary>
+        /// Test a valid new comment should add it as a new comment
+        /// </summary>
         [Test]
         public void AddComment_Valid_NewComment_Should_AddComment()
         {
@@ -151,6 +155,9 @@ namespace UnitTests.Components
 
         }
 
+        /// <summary>
+        /// Test adding a null comment should not add the comment
+        /// </summary>
         [Test]
         public void AddComment_Invalid_Null_NewComment_Should_Not_AddComment()
         {
@@ -295,6 +302,9 @@ namespace UnitTests.Components
 
         #region Dropdown filters
 
+        /// <summary>
+        /// Test for Neighborhood filter "All" should return all products content
+        /// </summary>
         [Test]
         public void Filters_Products_By_Null_Neighborhood_Should_Return_Matching_Content()
         {
@@ -321,6 +331,9 @@ namespace UnitTests.Components
 
         }
 
+        /// <summary>
+        /// Test for Neighborhood filter "Ballard" should return matching products
+        /// </summary>
         [Test]
         public void Filters_Products_By_Neighborhood_Should_Return_Matching_Content()
         {
@@ -346,6 +359,9 @@ namespace UnitTests.Components
 
         }
 
+        /// <summary>
+        /// Test for LocationType filter "All" should return all products content
+        /// </summary>
         [Test]
         public void Filters_Products_By_LocationType_Should_Return_Matching_Content()
         {
@@ -372,6 +388,9 @@ namespace UnitTests.Components
 
         }
 
+        /// <summary>
+        /// Test for LocationType filter "Bench" should return matching content
+        /// </summary>
         [Test]
         public void Filters_Products_By_LocationType_Bench_Should_Return_Matching_Content()
         {
@@ -397,6 +416,9 @@ namespace UnitTests.Components
 
         }
 
+        /// <summary>
+        /// Test for LocationType filter "Restroom" should return matching content
+        /// </summary
         [Test]
         public void Filters_Products_By_LocationType_Restroom_Should_Return_Matching_Content()
         {
@@ -422,6 +444,9 @@ namespace UnitTests.Components
 
         }
 
+        /// <summary>
+        /// Test for LocationType filter "Table" should return matching content
+        /// </summary
         [Test]
         public void Filters_Products_By_LocationType_Table_Should_Return_Matching_Content()
         {
@@ -448,6 +473,9 @@ namespace UnitTests.Components
 
         }
 
+        /// <summary>
+        /// Test for LocationType filter "Other" should return matching content
+        /// </summary
         [Test]
         public void Filters_Products_By_LocationType_Other_Should_Return_Matching_Content()
         {
@@ -474,6 +502,9 @@ namespace UnitTests.Components
 
         }
 
+        /// <summary>
+        /// Test for Noise Level filter "All" should return all products content
+        /// </summary
         [Test]
         public void Filters_Products_By_Null_NoiseLevel_Should_Return_Matching_Content()
         {
@@ -499,6 +530,9 @@ namespace UnitTests.Components
 
         }
 
+        /// <summary>
+        /// Test for Noise Level filter should return matching content
+        /// </summary
         [Test]
         public void Filters_Products_By_NoiseLevel_Should_Return_Matching_Content()
         {
@@ -526,6 +560,7 @@ namespace UnitTests.Components
 
         #endregion Dropdown filters
 
+        #region SurpriseMe
 
         ///<summary>
         /// Test surprise me code should return a random place from the products
@@ -542,7 +577,8 @@ namespace UnitTests.Components
 
             // Assert
             Assert.AreEqual("Surprise", page.Instance.SelectedLocationType);
-
         }
+
+        #endregion SurpriseMe
     }
 }
