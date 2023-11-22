@@ -5,22 +5,19 @@
 @model SpotlightModel
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
 
 <div class="container pb-3 pt-5">
-    <div class="container pt-5">
-    <div class="slim-rectangle">
-        <span class="rectangle-text"><h1 class="larger-title">Spotlight of the Month</h1></span>
-    </div>
-    <div class="image-wrapper d-flex justify-content-center align-items-center position-center mt-0">
-        <!-- Container for the second image -->
+    <div class="image-wrapper mt-5">
         <div class="wide-img-container">
-
             <img class="wide-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
         </div>
-    </div>
+        <!-- Rectangle with title overlaying the image -->
+        <div class="slim-rectangle slim-rectangle2">
+            <span class="rectangle-text"><h1 class="larger-title">Spotlight of the Month</h1></span>
+        </div>
+</div>
      
     <!-- Container for text and other content below the wide image -->
     <div class="container2">
@@ -113,10 +110,10 @@
         <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
     </div>
     
-    </div> 
-    
-    </div> 
 
+
+
+    </div>
 
         
     
