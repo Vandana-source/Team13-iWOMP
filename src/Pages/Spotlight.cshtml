@@ -24,9 +24,9 @@
      
     <!-- Container for text and other content below the wide image -->
     <div class="container2">
-        <h5 class="larger-title pt-4" id="productTitle">@Model.Product.Title</h5> <!-- Reduced padding-top -->
-        <hr class="short-hr">
+        <h5 class="larger-title pt-4" id="productTitle">@Model.Product.Title</h5> 
         <h5 class="font-weight-bold" id="placeNeighborhood">@Model.Product.Neighborhood</h5>
+         <hr class="short-hr">
 
         <div class="volume-level pt-3 pb-2">
             <i class="fa-solid fa-volume-low mr-1 ml-1"></i>Noise Level: @Model.Product.NoiseLevel
@@ -74,21 +74,21 @@
         }
 </div> 
     <div class="container">
-            <div class="row align-items-center">
-                <!-- Image Column -->
-                <div class="col-lg-6">
-                    <img src="SpotlightImage.webp" alt="illustration of space needle and bench" class="img-fluid">
-                </div>
-         
-                <!-- Text Column -->
-                <div class="col-lg-6 text-column">
-                    <h3 class="recopy-header">The Campus Corner Bench: A Window to Campus Life</h3>
-                    <div class="recopy-text">
-                        <p>Tucked away in the heart of the campus across from the Administration Building, the Campus Corner Bench is a prime spot for people watching. Overlooking the main walkway, yet shaded by mature trees, it's a favorite for students and faculty alike. It's not just a bench; it's a snapshot of campus life, a place where stories unfold, friendships form, and moments of solitude are cherished. From hurried students to leisurely chats, this bench sees it all, making it a special part of our campus community. As a bonus, this bench surrounds you with blooms of rhododendron flowers every spring.</p>
-                    </div>
+        <div class="row align-items-end">
+            <!-- Image Column -->
+            <div class="col-lg-6">
+                <img src="SpotlightImage.webp" alt="illustration of space needle and bench" class="img-fluid">
+            </div>
+        
+            <!-- Text Column -->
+            <div class="col-lg-6 text-column">
+                <h3 class="copy-header">The Campus Corner Bench: A Window to Campus Life</h3> 
+                <div class="recopy-text">
+                    <p>Tucked away in the heart of the campus, the Campus Corner Bench is a prime spot for people watching. Overlooking the main walkway, yet shaded by mature trees, it's a favorite for students and faculty alike. It's not just a bench; it's a snapshot of campus life, a place where stories unfold, friendships form, and moments of solitude are cherished. From hurried students to leisurely chats, this bench sees it all, making it a special part of our campus community. As a bonus, the bench is surrounded by beautiful rhododendron blooms during the spring.</p>
                 </div>
             </div>
         </div>
+    </div>
         <div class="custom-image-container">
             <div class="custom-image-wrapper">
                 <img class="custom-cropped-img" src="/SiteImages/Benches/SUAutBench.jpeg" alt='Image for @Model.Product.Title'>
@@ -97,7 +97,7 @@
                 <p>The bench in all its glory on an autumn day</p>
             </div>
         </div>
-    
+
     <h1 class="font-weight-bold mt-5"><strong>Where to find it:</strong> </h1>
         
         <div class="container">
