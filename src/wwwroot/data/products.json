@@ -258,7 +258,7 @@
   {
     "Id": "LemieuxLibrary",
     "LocationType": "Other",
-    "img": "/SiteImages/CompressResizeOthers/LemieuxLibrary.webp",
+    "img": "/SiteImages/Others/LemieuxLibrary.webp",
     "Url": null,
     "Title": "Lemieux Library",
     "Description": "Surrounded by books and art, Seattle University\u0027s library has study rooms and cozy places to sit.",
@@ -330,7 +330,7 @@
   {
     "Id": "PikePlaceMarket",
     "LocationType": "Other",
-    "img": "/SiteImages/CompressResizeOthers/PikePlaceMarket.webp",
+    "img": "/SiteImages/Others/PikePlaceMarket.webp",
     "Url": null,
     "Title": "Pike Place Market",
     "Description": "The market added its historic MarketFront expansion in 2017, featuring an open-air plaza and fantastic views of Elliott Bay.",
