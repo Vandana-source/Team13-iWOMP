@@ -330,14 +330,13 @@
     {
         _selectedProductId = productId;
         _selectedProduct = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(_selectedProductId));
-
     }
 
+    // bool check if the Surprise link has been clicked
     bool isSurprise()
     {
         surpriseCheck = true;
         return surpriseCheck;
-
     }
 
     public void storePrevious(ProductModel selectedProduct)
@@ -347,8 +346,10 @@
     // Variable to get all the products, Neighborhoods and LocationType (for drop down)
     private IEnumerable<ProductModel> Products => ProductService.GetProducts();
 
+    //List of Products which should be displayed on the explore page
     private List<ProductModel> FilterProducts()
     {
+        //If the surprise link has been click, this should find and store a random location
         if (surpriseCheck)
         {
             ProductModel selectedProduct;
@@ -357,7 +358,7 @@
                 Random rand = new Random();
                 var items = ProductService.GetProducts();
                 var numberOfItemsinJson = items.Count(); // Number of random items you want to select
-                //Generating random values
+                                                         //Generating random values
                 int randomIndex = rand.Next(numberOfItemsinJson);
                 //Getting all the titles and checking for the random number index
                 List<string> titleList = ProductService.GetTitles();
