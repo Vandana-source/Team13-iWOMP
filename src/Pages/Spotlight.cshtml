@@ -69,16 +69,34 @@
         </span>
         
         <div class="image-wrapper bottom-image d-flex justify-content-center align-items-center position-center mb-5">
-                <!-- Container for the second image -->
-                <div class="wide-img-container">
-                    <img class="wide-img" src='/SiteImages/ResizeBenches/SUAutBench.jpeg' alt='Image for @Model.Product.Title'>
-                </div>
+            <!-- Container for the second image -->
+            <div class="wide-img-container copy-img">
+                <img class="wide-img" src='/SiteImages/ResizeBenches/SUAutBench.jpeg' alt='Image for @Model.Product.Title'>
             </div>
+        </div>
+        
+        <div class="copy-text">
+            <h2>The Campus Corner Bench: A Window to Campus Life</h2>
+            <p>
+                Tucked away in the heart of the campus, the Campus Corner Bench 
+                is a prime spot for people watching. Overlooking the main walkway,
+                yet shaded by mature trees, it's a favorite for students and 
+                faculty alike. It's not just a bench; it's a snapshot of campus 
+                life, a place where stories unfold, friendships form, and 
+                moments of solitude are cherished. From hurried students to 
+                leisurely chats, this bench sees it all, making it a special 
+                part of our campus community.
+            </p>        
+        </div>
+        
 
         <h5 class="font-weight-bold mt-5">Where to find it: </h5>
-        <div class="map-container"> <!-- Reduced margin-top -->
+        <div class="map-container copy-img"> <!-- Reduced margin-top -->
             <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
         </div>
+        
+        <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+<img src="SpotlightImage.webp" alt="Spotlight Image" class="img-fluid copy-img " style="width: 60%;">                    </div>
 
     </div>
 </div>
