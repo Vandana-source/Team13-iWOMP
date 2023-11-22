@@ -1,12 +1,13 @@
 using NUnit.Framework;
 using TakeABreak.WebSite.Enums;
+using YourNamespace;
 
 namespace UnitTests.Enums
 {
     /// <summary>
-    /// Class to provide unit testing of NoiseLevelEnum.cs
+    /// Class to provide unit testing of NeighborhoodEnums.cs
     /// </summary>
-    public class NeighborhoodEnums
+    public class NeighborhoodEnumsTests
     {
         #region TestSetup
         /// <summary>
@@ -27,12 +28,13 @@ namespace UnitTests.Enums
         public void Valid_Enum_Should_Return_Correct_Name()
         {
             // Arrange
-          
+            SeattleNeighborhoods testEnum = SeattleNeighborhoods.Ballard;
 
             // Act
 
             // Assert
-     
+            Assert.AreEqual("Ballard", testEnum.ToString());
+
         }
         #endregion StaticMethodTests
     }
