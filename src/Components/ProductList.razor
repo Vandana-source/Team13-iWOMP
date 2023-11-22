@@ -49,7 +49,11 @@
                         {
                             <text>Location Type</text>
                         }
-
+                        @if (SelectedLocationType.Equals(surpriseString))
+                        {
+                            isSurprise();
+                            <text>Location Type</text>
+                        }
                         else
                         {
                             @SelectedLocationType
@@ -135,10 +139,11 @@
     </div>
 
     <!-- End of card layout -->
-    @if (_selectedProduct == null)
+    @if (_selectedProduct == null && surpriseCheck == false)
     {
         _selectedProduct = ProductService.GetProducts().First();
     }
+
 
     @foreach (var product in FilterProducts())
     {
@@ -191,7 +196,7 @@
                                                 }
                                             </ul>
                                         </div>
-                                        <br/>
+                                        <br />
 
                                         // If this is a new comment, then add the Input boxes for it, else show the Add Comment Button
                                         if (_newComment)
@@ -316,19 +321,61 @@
     ProductModel _selectedProduct;
     string _selectedProductId;
     private NoiseLevel? SelectedNoiseFilter = null;
+    string surpriseString = "Surprise";
+    bool surpriseCheck = false;
+    bool onceExecutedList = false;
+    ProductModel randomProduct;
 
     void SelectProduct(string productId)
     {
         _selectedProductId = productId;
         _selectedProduct = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(_selectedProductId));
+
     }
 
+    bool isSurprise()
+    {
+        surpriseCheck = true;
+        return surpriseCheck;
+
+    }
+
+    public void storePrevious(ProductModel selectedProduct)
+    {
+        randomProduct = selectedProduct;
+    }
     // Variable to get all the products, Neighborhoods and LocationType (for drop down)
     private IEnumerable<ProductModel> Products => ProductService.GetProducts();
 
     private List<ProductModel> FilterProducts()
     {
-        return Products.Where(IsProductMatch).ToList();
+        if (surpriseCheck)
+        {
+            ProductModel selectedProduct;
+            if (randomProduct == null)
+            {
+                Random rand = new Random();
+                var items = ProductService.GetProducts();
+                var numberOfItemsinJson = items.Count(); // Number of random items you want to select
+                //Generating random values
+                int randomIndex = rand.Next(numberOfItemsinJson);
+                //Getting all the titles and checking for the random number index
+                List<string> titleList = ProductService.GetTitles();
+                var randomItemTitle = titleList[randomIndex];
+                selectedProduct = Products.FirstOrDefault(m => m.Id.Equals(randomItemTitle));
+                //Storing the value for once generated location
+                storePrevious(selectedProduct);
+                return selectedProduct != null ? new List<ProductModel> { selectedProduct } : new List<ProductModel>();
+            }
+            else
+            {
+                return randomProduct != null ? new List<ProductModel> { randomProduct } : new List<ProductModel>();
+            }
+        }
+        else
+        {
+            return Products.Where(IsProductMatch).ToList();
+        }
     }
 
     private bool IsProductMatch(ProductModel product)
