@@ -364,11 +364,11 @@
                 selectedProduct = Products.FirstOrDefault(m => m.Id.Equals(randomItemTitle));
                 //Storing the value for once generated location
                 storePrevious(selectedProduct);
-                return selectedProduct != null ? new List<ProductModel> { selectedProduct } : new List<ProductModel>();
+                return new List<ProductModel> { selectedProduct };
             }
             else
             {
-                return randomProduct != null ? new List<ProductModel> { randomProduct } : new List<ProductModel>();
+                return new List<ProductModel> { randomProduct };
             }
         }
         else
@@ -604,9 +604,9 @@
         var memberInfos = enumType.GetMember(enumValue);
         var enumValueMemberInfo = memberInfos.FirstOrDefault(m => m.DeclaringType == enumType);
 
-        var displayAttribute = enumValueMemberInfo?.GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault() as DisplayAttribute;
+        var displayAttribute = enumValueMemberInfo.GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault() as DisplayAttribute;
 
-        return displayAttribute?.Name ?? enumValue;
+        return displayAttribute.Name;
 
     }
 
