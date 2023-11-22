@@ -22,7 +22,7 @@
                     <button class="btn btn-third dropdown-toggle" type="button" id="neighborhoodDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         @if (string.IsNullOrEmpty(SelectedNeighborhood))
                         {
-                            <text>Neighborhood</text>
+                            <i class="fi fi-bs-house-building" style="font-size: 15px; margin-right: 6px;"></i><text>Neighborhoods</text>
                         }
                         else
                         {
@@ -48,7 +48,7 @@
                     <button class="btn btn-third dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         @if (string.IsNullOrEmpty(SelectedLocationType))
                         {
-                            <text>Location Type</text>
+                            <i class="fi fi-bs-map-marker-home" style="font-size: 15px; margin-right:6px;"></i><text>Location Type</text>
                         }
                         else
                         {
@@ -79,12 +79,19 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Noise Level Dropdown -->
             <div class="filter-option mr-2">
                 <div class="dropdown">
                     <button class="btn btn-third dropdown-toggle" type="button" id="noiseLevelDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @GetDropdownDisplayText(SelectedNoiseFilter)
+                        @if (SelectedNoiseFilter == null)
+                        {
+                            <i class="fi fi-bs-volume" style="font-size: 15px; margin-right: 6px;"></i><text>Noise Level</text>
+                        }
+                        else
+                        {
+                            @GetDropdownDisplayText(SelectedNoiseFilter) 
+                        }
                     </button>
                     <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
                         <a class="dropdown-item" href="#" test-id="dropdown8" @onclick="() => UpdateNoiseLevel(null)">All</a>
@@ -590,11 +597,7 @@
     /// </summary>
     private string GetDropdownDisplayText(NoiseLevel? selectedLevel)
     {
-        if (selectedLevel == null)
-        {
-            return "Noise Level";
-        }
-
+        
         var enumType = typeof(NoiseLevel);
         var enumValue = Enum.GetName(enumType, selectedLevel);
         var memberInfos = enumType.GetMember(enumValue);
