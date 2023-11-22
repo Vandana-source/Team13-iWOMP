@@ -938,7 +938,7 @@ h3.header-contactus {
 }
 
 .larger-title {
-    font-size: 2.5em;
+    font-size: 2.75em;
     font-weight: bold;
     font-family: "Cardo", serif;
 }
@@ -1371,7 +1371,7 @@ a.card-tab {
 }
 
 .short-hr {
-    width: 8vw; /* Set the desired width for the shorter line */
+    width: 5vw; /* Set the desired width for the shorter line */
     height: 2px; /* Set the height (thickness) of the line */
     background-color: #333; /* Change the color to a darker shade if needed */
     border: none; /* Remove any border */
