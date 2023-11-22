@@ -799,6 +799,11 @@ h1.h1-heading {
     object-fit: cover;
 }
 
+.bottom-image {
+    
+    margin-top: 10vw;
+}
+
 .sm-icon {
     font-size: 1.3vw;
     color: rgba(0, 116, 217, 0.27); /* Blue color */
