@@ -21,7 +21,6 @@
     <Content Remove="wwwroot\SiteImages\Restrooms\" />
     <Content Remove="wwwroot\SiteImages\Others\" />
     <Content Remove="wwwroot\SiteImages\ResizeBenches\" />
-    <Content Remove="wwwroot\SiteImages\ResizeOthers\" />
     <Content Remove="wwwroot\SiteImages\ResizeRestrooms\" />
     <Content Remove="wwwroot\SiteImages\AboutImages\" />
     <Content Remove="wwwroot\SiteImages\Tables\" />
@@ -46,7 +45,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\SiteImages\" />
     <Folder Include="wwwroot\SiteImages\ResizeBenches\" />
-    <Folder Include="wwwroot\SiteImages\ResizeOthers\" />
     <Folder Include="wwwroot\SiteImages\ResizeRestrooms\" />
     <Folder Include="wwwroot\SiteImages\AboutImages\" />
     <Folder Include="wwwroot\SiteImages\Restrooms\" />
