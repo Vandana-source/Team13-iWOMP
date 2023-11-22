@@ -63,7 +63,7 @@
                 <input class="form-control" asp-for="Product.MapURL" readonly>
                 <span class="text-danger" asp-validation-for="Product.MapURL"></span>
             </div>
-            
+
             <h1>Are you sure?</h1>
             <div class="button-row">
                 <div class="form-group">
@@ -79,5 +79,7 @@
 </div>
 
 @section Scripts {
-    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
