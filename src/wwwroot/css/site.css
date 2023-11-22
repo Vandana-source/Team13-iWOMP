@@ -779,6 +779,8 @@ h1.h1-heading {
 }
 
 
+
+
 .overlay-spotlight-image {
     position: absolute;
     top: 0;
@@ -797,6 +799,21 @@ h1.h1-heading {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.custom-font {
+    font-family: "Cardo", serif;
+}
+
+.smaller-image {
+    max-width: 100%; 
+    margin: 0 auto; 
+}
+
+@media (min-width: 992px) {
+    .mt-lg-2 {
+        margin-top: 1rem; 
+    }
 }
 
 .bottom-image {
@@ -1297,5 +1314,31 @@ a.card-tab {
     top: 10vh; 
     width: 100%;
     height: calc(100vh - 10vh);
-    z-index: -1;
+}
+
+.copy-header {
+    font-size: 2em; /* Increase size as needed */
+    color: #000; /* Change color as needed */
+    font-weight: bold; /* Adjust weight as needed */
+}
+
+.recopy-text {
+    padding-top: 1.5em; /* Align text vertically */
+    padding-bottom: 1em; /* Align text vertically */
+    line-height: 1.8; /* Increase line spacing */
+}
+
+.recopy-text p {
+    text-shadow: .25px .25px .25px #000; 
+}
+
+/* Ensuring consistent padding inside the text column */
+.text-column {
+    padding: 2em; /* Adjust padding as needed */
+}
+
+@media (min-width: 992px) { /* This applies the styles for large devices only, matching col-lg- */
+    .row.align-items-center {
+        align-items: center; /* This will vertically center the items */
+    }
 }
