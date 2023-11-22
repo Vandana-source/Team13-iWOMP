@@ -6,6 +6,8 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
 
 <div class="container pb-3 pt-5">
     <div class="container pt-5">
@@ -19,12 +21,21 @@
             <img class="wide-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
         </div>
     </div>
-
+     
     <!-- Container for text and other content below the wide image -->
     <div class="container2">
         <h5 class="larger-title pt-4" id="productTitle">@Model.Product.Title</h5> <!-- Reduced padding-top -->
+        <hr class="short-hr">
         <h5 class="font-weight-bold" id="placeNeighborhood">@Model.Product.Neighborhood</h5>
-        @{
+
+        <div class="volume-level pt-3 pb-2">
+            <i class="fa-solid fa-volume-low mr-1 ml-1"></i>Noise Level: @Model.Product.NoiseLevel
+        </div>
+    </div> 
+    
+    <div class="vote-conteinr mb-5 mt-2">
+        
+    @{
             int currentRating = 0;
             int voteCount = 0;
             string voteLabel = "";
@@ -61,41 +72,44 @@
                 <span>@voteCount @voteLabel</span>
             }
         }
-        <p class="mt-2">
-            <br/>@Model.Product.Description
-        </p>
-        <span class="noiselevel mt-2"> <!-- Reduced margin-top -->
-            Noise Level (1 is Good, 10 is Bad) : @Model.Product.NoiseLevel
-        </span>
-        
-        <div class="image-wrapper bottom-image d-flex justify-content-center align-items-center position-center mb-5">
-            <!-- Container for the second image -->
-            <div class="wide-img-container copy-img">
-                <img class="wide-img" src="/SiteImages/Benches/SUAutBench.jpeg" alt='Image for @Model.Product.Title'>
+</div> 
+    <div class="container">
+            <div class="row align-items-center">
+                <!-- Image Column -->
+                <div class="col-lg-6">
+                    <img src="SpotlightImage.webp" alt="illustration of space needle and bench" class="img-fluid">
+                </div>
+         
+                <!-- Text Column -->
+                <div class="col-lg-6 text-column">
+                    <h3 class="recopy-header">The Campus Corner Bench: A Window to Campus Life</h3>
+                    <div class="recopy-text">
+                        <p>Tucked away in the heart of the campus across from the Administration Building, the Campus Corner Bench is a prime spot for people watching. Overlooking the main walkway, yet shaded by mature trees, it's a favorite for students and faculty alike. It's not just a bench; it's a snapshot of campus life, a place where stories unfold, friendships form, and moments of solitude are cherished. From hurried students to leisurely chats, this bench sees it all, making it a special part of our campus community. As a bonus, this bench surrounds you with blooms of rhododendron flowers every spring.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        
-         
-         <div class="container">
-           <div class="row align-items-center">
-             <!-- Image Column -->
-             <div class="col-lg-6">
-               <img src="SpotlightImage.webp" alt="illustration of space needle and bench" class="img-fluid">
-             </div>
-         
-             <!-- Text Column -->
-             <div class="col-lg-6 text-column">
-               <h3 class="recopy-header">The Campus Corner Bench: A Window to Campus Life</h3>
-               <div class="recopy-text">
-                 <p>Tucked away in the heart of the campus, the Campus Corner Bench is a prime spot for people watching. Overlooking the main walkway, yet shaded by mature trees, it's a favorite for students and faculty alike. It's not just a bench; it's a snapshot of campus life, a place where stories unfold, friendships form, and moments of solitude are cherished. From hurried students to leisurely chats, this bench sees it all, making it a special part of our campus community.</p>
-               </div>
-             </div>
-           </div>
-         </div>
-
+        <div class="custom-image-container">
+            <div class="custom-image-wrapper">
+                <img class="custom-cropped-img" src="/SiteImages/Benches/SUAutBench.jpeg" alt='Image for @Model.Product.Title'>
+            </div>
+            <div class="recopy-text caption">
+                <p>The bench in all its glory on an autumn day</p>
+            </div>
+        </div>
     
-        <h1 class="font-weight-bold mt-5">Where to find it: </h1>
-    <div class="map-container copy-img"> <!-- Reduced margin-top -->
+    <h1 class="font-weight-bold mt-5"><strong>Where to find it:</strong> </h1>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="textbox pt-5 pb-5">
+                        Located along the walking path, this bench is on on the Upper Mall across from the entrance of the Administration Building
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-container copy-img"> <!-- Reduced margin-top -->
         <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
     </div>
     
@@ -103,6 +117,6 @@
     
     </div> 
 
-</div> 
+
         
     
