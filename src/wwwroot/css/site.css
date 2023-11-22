@@ -1337,8 +1337,43 @@ a.card-tab {
     padding: 2em; /* Adjust padding as needed */
 }
 
-@media (min-width: 992px) { /* This applies the styles for large devices only, matching col-lg- */
+@media (min-width: 992px) { 
     .row.align-items-center {
-        align-items: center; /* This will vertically center the items */
+        align-items: center; 
     }
+}
+
+.custom-image-container {
+    max-width: 50%; /* Set the maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally on the page */
+    overflow: hidden; /* Hide the cropped portions of the image */
+}
+
+.custom-image-wrapper {
+    text-align: center; /* Center the image horizontally within the container */
+}
+
+.custom-cropped-img {
+    width: 160%; /* Adjust the width to crop by 30% on each side */
+    max-width: none;
+    height: auto;
+    max-height: none;
+    position: relative; /* Enable positioning */
+    left: -20%; /* Move the image 20% to the left */
+    top: -10%; /* Move the image 15% up */
+    bottom: -25%;
+    padding-bottom: .25rem; /* Add some padding to the bottom if needed */
+    padding-top: 3vw;
+}
+
+.caption {
+    padding-top: 0
+}
+
+.short-hr {
+    width: 8vw; /* Set the desired width for the shorter line */
+    height: 2px; /* Set the height (thickness) of the line */
+    background-color: #333; /* Change the color to a darker shade if needed */
+    border: none; /* Remove any border */
+    margin: 10px 0; /* Adjust margin as needed */
 }
