@@ -30,12 +30,12 @@
                         }
                     </button>
                     <div class="dropdown-menu" aria-labelledby="neighborhoodDropdownButton">
-                        <a class="dropdown-item" href='#' @onclick='() => UpdateNeighborhood(null)'>
+                        <a class="dropdown-item" href='#' test-id="dropdown1" @onclick='() => UpdateNeighborhood(null)'>
                             All
                         </a>
                         @foreach (SeattleNeighborhoods neighborhood in Enum.GetValues(typeof(SeattleNeighborhoods)))
                         {
-                            <a class="dropdown-item" href="#" @onclick="() => UpdateNeighborhood(GetDisplayName(neighborhood))">
+                            <a class="dropdown-item" href="#" test-id="dropdown2" @onclick="() => UpdateNeighborhood(GetDisplayName(neighborhood))">
                                 @GetDisplayName(neighborhood)
                             </a>
                         }
@@ -404,11 +404,6 @@
         return true;
     }
 
-    private IEnumerable<string> Neighborhoods => Products
-        .Select(p => p.Neighborhood)
-        .Distinct()
-        .OrderBy(n => n);
-
     // The neighborhood selected from drop down
     public string SelectedNeighborhood;
 
@@ -616,8 +611,8 @@
         return neighborhood.GetType()
             .GetMember(neighborhood.ToString())
             .First()
-            .GetCustomAttribute<DisplayAttribute>()?
-            .Name ?? neighborhood.ToString();
+            .GetCustomAttribute<DisplayAttribute>()
+            .Name.ToString();
     }
     
 
