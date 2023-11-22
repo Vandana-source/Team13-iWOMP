@@ -41,7 +41,7 @@ namespace TakeABreak.WebSite.Services
         /// REST call to read all data from the JSON files
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<ProductModel> GetProducts()
+        public virtual IEnumerable<ProductModel> GetProducts()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
             {
