@@ -185,16 +185,16 @@ namespace TakeABreak.WebSite.Services
             var products = GetProducts();
             var productData =
                 products.FirstOrDefault(x => x.Id.Equals(productModel.Id));
-            
+
             // Exclude chosen ID from new list 
-            var newDataSet = 
+            var newDataSet =
                 GetProducts().Where(x => x.Id.Equals(productModel.Id) == false);
-            
+
             // Save list without the product 
             SaveData(newDataSet);
-           
-            return productData; 
-            
+
+            return productData;
+
         }
 
         /// <summary>
@@ -226,6 +226,20 @@ namespace TakeABreak.WebSite.Services
             SaveData(products);
 
             return true;
+        }
+
+
+        public List<string> GetTitles()
+        {
+            var products = GetProducts();
+            List<string> titleList = new List<string>();
+
+            //var a = products.ElementAt(2);
+            foreach (var item in products)
+            {
+                titleList.Add(item.Id.ToString());
+            }
+            return titleList;
         }
     }
 }
