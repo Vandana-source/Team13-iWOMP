@@ -193,7 +193,9 @@ body {
     font-size: 2rem;
     color: #cebac7;
     white-space: nowrap; 
-    padding: 1vw; 
+    padding: 1vw;
+    display: block; 
+    text-align: center; 
 }
 
 
@@ -1376,4 +1378,13 @@ a.card-tab {
     background-color: #333; /* Change the color to a darker shade if needed */
     border: none; /* Remove any border */
     margin: 10px 0; /* Adjust margin as needed */
+}
+
+.slim-rectangle2 {
+    position: absolute; /* Position the rectangle absolutely within the image wrapper */
+    top: 0; /* Align it to the top of the image wrapper */
+    left: 0; /* Align it to the left of the image wrapper */
+    width: 100%; /* Let it take the full width of the image wrapper */
+    z-index: 10; /* Ensure it sits above the image */
+    height: 10vw;
 }
