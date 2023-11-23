@@ -1381,10 +1381,10 @@ a.card-tab {
 }
 
 .slim-rectangle2 {
-    position: absolute; /* Position the rectangle absolutely within the image wrapper */
-    top: 0; /* Align it to the top of the image wrapper */
-    left: 0; /* Align it to the left of the image wrapper */
-    width: 100%; /* Let it take the full width of the image wrapper */
-    z-index: 10; /* Ensure it sits above the image */
-    height: 10vw;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 10; 
+    height: 8vw;
 }
