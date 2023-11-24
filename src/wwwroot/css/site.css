@@ -1448,8 +1448,8 @@ a.card-tab {
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
-    width: 20vw; 
-    height: 20vw; 
+    width: 25vw; 
+    height: 25vw; 
     border-radius: 50%; 
     overflow: hidden; 
     z-index: 2;
@@ -1459,7 +1459,7 @@ a.card-tab {
 .circle-wrapper img.img-fluid {
     width: 100%; 
     height: auto; 
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 
 /* Styles for the color band (rectangle) */
@@ -1467,7 +1467,7 @@ a.card-tab {
     position: relative; 
     background-color: #29392e; 
     width: 100%;
-    height: 16vw; 
+    height: 18vw; 
     display: flex; /* Use flexbox to center content vertically */
     align-items: center; /* Center the content vertically */
     justify-content: center; /* Center the content horizontally */
@@ -1482,14 +1482,18 @@ a.card-tab {
     }
     
     .color-band {
-        height: 50vw; 
+        height: 60vw; 
+    }
+    
+    .sub-title {
+        padding-top: 5rem;
     }
 }
 
 @media (max-width: 992px) {
     .circle-wrapper {
-        width: 40vw;
-        height: 40vw;
+        width: 45vw;
+        height: 45vw;
         top: 50%;
     }
 
@@ -1497,15 +1501,29 @@ a.card-tab {
         height: 50vw;
     }
     
+    .sub-title {
+        padding-top: 8rem;
+    }
+
+   
 }
 
 @media (max-width: 480px) {
     .circle-wrapper {
-        width: 40vw; 
-        height: 40vw; 
+        width: 45vw; 
+        height: 45vw; 
         top: 60%;
     }
     .color-band {
-        height: 60vw;
+        height: 80vw;
+    }
+
+    .sub-title {
+        padding-top: 3rem;
+    }
+
+    .color-band {
+        
+        padding-top: 2rem; 
     }
 }
