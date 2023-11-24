@@ -986,7 +986,7 @@ h3.header-contactus {
 
 
 .larger-title {
-    font-size: clamp(.5em, 7vw, 10vw);
+    font-size: clamp(.25em, 3em, 10em);
     font-weight: bold;
     font-family: "Cardo", serif;
 }
@@ -1435,7 +1435,7 @@ a.card-tab {
     left: 0; 
     width: 100%; 
     z-index: 10; 
-    height: 8vw;
+    height: 10vw;
 }
 
 /* Base styles for the circle */
