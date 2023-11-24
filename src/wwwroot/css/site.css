@@ -190,7 +190,7 @@ body {
 
 .rectangle-text {
     font-family: 'Lato', sans-serif;
-    font-size: 2rem;
+    font-size: clamp(1rem, 2rem, 3rem);
     color: #cebac7;
     white-space: nowrap; 
     padding: 1vw;
@@ -198,6 +198,15 @@ body {
     text-align: center; 
 }
 
+.rectangle-text {
+    font-family: 'Lato', sans-serif;
+    font-size: clamp(1em, 2em, 3em);
+    color: #cebac7;
+    white-space: nowrap;
+    padding: 1vw;
+    display: block;
+    text-align: center;
+}
 
 .left-text-small {
     font-size: clamp(1rem, 1.4vw, 2rem);
@@ -401,6 +410,7 @@ p {
 h1 {
     font-family: 'Lato', sans-serif;
 }
+
 
 ul {
     font-family: 'Lato', sans-serif;
@@ -830,8 +840,8 @@ h1.h1-heading {
 }
 
 .copy-img {
-    border: 2px solid #D7B1BE; /* Sets the border style and width */
-    box-shadow: 4px 8px 15px rgba(112, 71, 86, 0.25);
+    border: 2px solid #004C99; 
+    box-shadow: 4px 8px 15px rgba(112, 112, 112, 0.73);
 }
 
 /*CSS for iframe component*/
@@ -846,9 +856,6 @@ iframe {
     height: 70vh !important;
 }
 
-.map-container {
-    padding-top: 20px;
-}
 
 
 .map-googlemap {
@@ -939,10 +946,56 @@ h3.header-contactus {
     margin: 3vw 0;
 }
 
+.bottom-container {
+    padding-top: 2rem; /* Add top padding to create space between color band and content above */
+    padding-bottom: 2rem; /* Add bottom padding to create space between color band and content below */
+}
+
+/* General Styles */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Image Styles */
+.img-fluid {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .circle-wrapper {
+        width: 20vw;
+        height: 20vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .circle-wrapper {
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+
+
+
 .larger-title {
-    font-size: 2.75em;
+    font-size: clamp(.5em, 7vw, 10vw);
     font-weight: bold;
     font-family: "Cardo", serif;
+}
+
+.sub-title {
+    font-size: clamp(1.5rem, 4.5vw, 4.5rem); 
+    font-weight: bold;
+    white-space: nowrap;
+    max-width: 100%; 
 }
 
 
@@ -1328,6 +1381,7 @@ a.card-tab {
     padding-top: 1.5em; /* Align text vertically */
     padding-bottom: 1em; /* Align text vertically */
     line-height: 1.8; /* Increase line spacing */
+    font-size: 1.3rem;
 }
 
 .recopy-text p {
@@ -1339,11 +1393,6 @@ a.card-tab {
     padding: 2em; /* Adjust padding as needed */
 }
 
-@media (min-width: 992px) { 
-    .row.align-items-center {
-        align-items: center; 
-    }
-}
 
 .custom-image-container {
     max-width: 50%; /* Set the maximum width for the container */
@@ -1364,7 +1413,7 @@ a.card-tab {
     left: -20%; /* Move the image 20% to the left */
     top: -10%; /* Move the image 15% up */
     bottom: -25%;
-    padding-bottom: .25rem; /* Add some padding to the bottom if needed */
+    padding-bottom: .25rem;
     padding-top: 3vw;
 }
 
@@ -1373,11 +1422,11 @@ a.card-tab {
 }
 
 .short-hr {
-    width: 5vw; /* Set the desired width for the shorter line */
-    height: 2px; /* Set the height (thickness) of the line */
-    background-color: #333; /* Change the color to a darker shade if needed */
-    border: none; /* Remove any border */
-    margin: 10px 0; /* Adjust margin as needed */
+    width: 5vw; 
+    height: 2px; 
+    background-color: #333; 
+    border: none; 
+    margin: 10px 0;
 }
 
 .slim-rectangle2 {
@@ -1387,4 +1436,72 @@ a.card-tab {
     width: 100%; 
     z-index: 10; 
     height: 8vw;
+}
+
+/* Base styles for the circle */
+.circle-wrapper {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 20vw; 
+    height: 20vw; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    z-index: 2;
+}
+
+/* Styles for the image inside the circle wrapper to be responsive */
+.circle-wrapper img.img-fluid {
+    width: 100%; 
+    height: auto; 
+    border-radius: 50%; 
+}
+
+/* Styles for the color band (rectangle) */
+.color-band {
+    position: relative; 
+    background-color: #00457C; 
+    width: 100%;
+    height: 16vw; 
+    display: flex; /* Use flexbox to center content vertically */
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+}
+
+/* Media query adjustments for different viewport sizes */
+@media (max-width: 768px) {
+    .circle-wrapper {
+        width: 40vw; 
+        height: 40vw;
+        top: 60%;
+    }
+    
+    .color-band {
+        height: 50vw; 
+    }
+}
+
+@media (max-width: 992px) {
+    .circle-wrapper {
+        width: 40vw;
+        height: 40vw;
+        top: 50%;
+    }
+
+    .color-band {
+        height: 50vw;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .circle-wrapper {
+        width: 40vw; 
+        height: 40vw; 
+        top: 60%;
+    }
+    .color-band {
+        height: 60vw;
+    }
 }
