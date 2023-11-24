@@ -840,8 +840,8 @@ h1.h1-heading {
 }
 
 .copy-img {
-    border: 2px solid #004C99; 
-    box-shadow: 4px 8px 15px rgba(112, 112, 112, 0.73);
+    border: 2px solid rgba(41, 57, 46, 0.78); 
+    box-shadow: 4px 8px 15px rgba(31, 29, 29, 0.21);
 }
 
 /*CSS for iframe component*/
@@ -989,6 +989,7 @@ h3.header-contactus {
     font-size: clamp(.25em, 3em, 10em);
     font-weight: bold;
     font-family: "Cardo", serif;
+    color: #cebac7;
 }
 
 .sub-title {
@@ -996,6 +997,7 @@ h3.header-contactus {
     font-weight: bold;
     white-space: nowrap;
     max-width: 100%; 
+    color: #cebac7; 
 }
 
 
@@ -1373,8 +1375,8 @@ a.card-tab {
 
 .copy-header {
     font-size: 2em; /* Increase size as needed */
-    color: #000; /* Change color as needed */
     font-weight: bold; /* Adjust weight as needed */
+    color: #cebac7;
 }
 
 .recopy-text {
@@ -1382,10 +1384,12 @@ a.card-tab {
     padding-bottom: 1em; /* Align text vertically */
     line-height: 1.8; /* Increase line spacing */
     font-size: 1.3rem;
+    color: #cebac7;
 }
 
 .recopy-text p {
-    text-shadow: .25px .25px .25px #000; 
+    text-shadow: .25px .25px .25px #000;
+    color: #cebac7;
 }
 
 /* Ensuring consistent padding inside the text column */
@@ -1461,7 +1465,7 @@ a.card-tab {
 /* Styles for the color band (rectangle) */
 .color-band {
     position: relative; 
-    background-color: #00457C; 
+    background-color: #29392e; 
     width: 100%;
     height: 16vw; 
     display: flex; /* Use flexbox to center content vertically */
