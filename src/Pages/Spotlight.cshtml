@@ -21,7 +21,7 @@
      
     <!-- Container for text and other content below the wide image -->
     <div class="container2">
-        <h1 class="larger-title pt-4" id="productTitle">@Model.Product.Title</h1> 
+        <h1 class="larger-title pt-4" style="font-size: 4em" id="productTitle">@Model.Product.Title</h1> 
         <h5 class="font-weight-bold" id="placeNeighborhood">@Model.Product.Neighborhood</h5>
          <hr class="short-hr">
 
@@ -81,39 +81,48 @@
             <div class="col-lg-6 text-column">
                 <h3 class="copy-header">The Campus Corner Bench: A Window to Campus Life</h3> 
                 <div class="recopy-text">
-                    <p>Tucked away in the heart of the campus, the Campus Corner Bench is a prime spot for people watching. Overlooking the main walkway, yet shaded by mature trees, it's a favorite for students and faculty alike. It's not just a bench; it's a snapshot of campus life, a place where stories unfold, friendships form, and moments of solitude are cherished. From hurried students to leisurely chats, this bench sees it all, making it a special part of our campus community. As a bonus, the bench is surrounded by beautiful rhododendron blooms during the spring.</p>
+                    <p>Tucked away in the heart of the Seattle University campus, the Campus Corner Bench is a prime spot for people watching. Overlooking the main walkway, yet shaded by mature trees, it's a favorite for students and faculty alike. It's not just a bench; it's a snapshot of campus life, a place where stories unfold, friendships form, and moments of solitude are cherished. From hurried students to leisurely chats, this bench sees it all, making it a special part of our campus community. As a bonus, the bench is surrounded by beautiful rhododendron blooms during the spring.</p>
                 </div>
             </div>
         </div>
     </div>
-        <div class="custom-image-container">
-            <div class="custom-image-wrapper">
-                <img class="custom-cropped-img" src="/SiteImages/Benches/SUAutBench.jpeg" alt='Image for @Model.Product.Title'>
-            </div>
-            <div class="recopy-text caption">
-                <p>The bench in all its glory on an autumn day</p>
-            </div>
+    <div class="custom-image-container">
+        <div class="custom-image-wrapper">
+            <img class="custom-cropped-img" src="/SiteImages/Benches/SUAutBench.jpeg" alt='Image for @Model.Product.Title'>
         </div>
-
-    <h1 class="font-weight-bold mt-5"><strong>Where to find it:</strong> </h1>
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <div class="textbox pt-5 pb-5">
-                        Located along the walking path, this bench is on on the Upper Mall across from the entrance of the Administration Building
+        <div class="recopy-text caption">
+            <p>The bench in all its glory on an autumn day</p>
+        </div>
+    </div>
+    
+    <div class="container bottom-container mt-5 mb-2" style="position: relative;">
+        <!-- Color Band -->
+        <div class="color-band mt-5 mb-3">
+            <!-- Row for image and text, vertically centered -->
+            <div class="row align-items-center">
+                <!-- Image Column -->
+                <div class="col-lg-5 d-flex justify-content-center">
+                    <div class="circle-wrapper">
+                        <img src="Spotlight2.webp" alt="Illustration of space needle and bench, spotlighting as the feature of the month." class="img-fluid">
+                    </div>
+                </div>
+   
+                <!-- Text Column -->
+                <div class="col-lg-7">
+                    <div class="text-content mt-5" style="text-align: left; padding: 20px 15px; max-width: 100%;">
+                        <h1 class="sub-title" style="color: #ffffff;"><strong>Where to find it:</strong></h1>
+                        <p class="recopy-text" style="font-family: 'Lato', sans-serif; color: #ffffff;">Located along the walking path, this bench is on the Upper Mall across from the entrance of the Administration Building.</p>
                     </div>
                 </div>
             </div>
+        </div> 
+    </div>
+    <!-- Container for additional content below the main section -->
+        <div class="container pb-5 mt-0"> 
+            <div class="copy-img text-center"> 
+                <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
+            </div>
         </div>
-        <div class="map-container copy-img"> <!-- Reduced margin-top -->
-        <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
-    </div>
-    
-
-
-
     </div>
 
-        
-    
+
