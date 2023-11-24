@@ -69,9 +69,10 @@
                 <span>@voteCount @voteLabel</span>
             }
         }
-</div> 
-    <div class="container">
-        <div class="row align-items-end">
+    </div>
+    
+    <div class="container mb-sm-5">
+        <div class="row align-items-end mb-sm-5">
             <!-- Image Column -->
             <div class="col-lg-6">
                 <img src="SpotlightImage.webp" alt="illustration of space needle and bench" class="img-fluid">
@@ -86,20 +87,51 @@
             </div>
         </div>
     </div>
-    <div class="custom-image-container">
-        <div class="custom-image-wrapper">
-            <img class="custom-cropped-img" src="/SiteImages/Benches/SUAutBench.jpeg" alt='Image for @Model.Product.Title'>
+<div class="container mb-5">
+    <!-- Row for images on regular view -->
+    <div class="row d-none d-lg-flex align-items-center">
+        <!-- Column for the smaller images on regular view -->
+        <div class="col-lg-6">
+            <div style="opacity: 0.5;">
+                <img src="/BenchSketch.webp" alt="Black and white sketch of bench and rhododendrons view 1" class="img-fluid">
+            </div>
+            <div style="opacity: 0.5;">
+                <img src="/benchsketch2.webp" alt="Black and white sketch of bench and rhododendrons view 2" class="img-fluid">
+            </div>
         </div>
-        <div class="recopy-text caption pb-3">
-        <p class="pb-3" style="color: #000;">The bench in all its glory on an autumn day</p>
+
+        <!-- Column for the existing large image on regular view -->
+        <div class="col-lg-6">
+            <img src="/SiteImages/Benches/SUAutBench.webp" alt="Photo of bench in autumn surrounded by leaves" class="img-fluid" style=" border: 4px solid #29392EC6;">
+            <p class="text-center mt-2 recopy-text caption"style="color: #000">The bench in all its glory on an autumn day</p>
         </div>
     </div>
     
-    <div class="container bottom-container mt-3 mb-2" style="position: relative;">
+    <!-- Row for images on mobile view -->
+    <div class="row d-lg-none pb-sm-5">
+        <!-- Column for the smaller images side-by-side on mobile view -->
+            <div class="col-6" style="opacity: 0.5;">
+                <img src="/BenchSketch.webp" alt="Black and white sketch of bench and rhododendrons view 1" class="img-fluid">
+            </div>
+            <div class="col-6" style="opacity: 0.5;">
+                <img src="/benchsketch2.webp" alt="Black and white sketch of bench and rhododendrons view 2" class="img-fluid">
+            </div>
+            <!-- Column for the existing large image on mobile view -->
+            <div class="col-12">
+                <img src="/SiteImages/Benches/SUAutBench.webp" alt="Photo of bench in autumn surrounded by leaves" class="img-fluid" style=" border: 4px solid #29392EC6;">
+                <!-- Caption for mobile view -->
+                <p class="text-center mt-2 recopy-text caption"style="color: #000">The bench in all its glory on an autumn day</p>
+            </div>
+        </div>
+            <div class="pb-5"></div>
+</div>
+
+
+    <div class="container bottom-container mb-2" style="position: relative;">
         <!-- Color Band -->
-        <div class="color-band mt-5 mb-3">
+        <div class="color-band mb-3">
             <!-- Row for image and text, vertically centered -->
-            <div class="row align-items-center">
+            <div class="row align-items-center mb-5-sm">
                 <!-- Image Column -->
                 <div class="col-lg-5 d-flex justify-content-center">
                     <div class="circle-wrapper">
@@ -118,11 +150,11 @@
         </div> 
     </div>
     <!-- Container for additional content below the main section -->
-        <div class="container pb-5 mt-0"> 
-            <div class="copy-img text-center"> 
-                <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
-            </div>
+    <div class="container pb-5 mt-2"> 
+        <div class="copy-img text-center"> 
+            <iframe src="@Model.Product.MapURL" allowfullscreen></iframe>
         </div>
     </div>
+</div>
 
 
