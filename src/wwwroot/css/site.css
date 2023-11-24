@@ -190,12 +190,12 @@ body {
 
 .rectangle-text {
     font-family: 'Lato', sans-serif;
-    font-size: clamp(1rem, 2rem, 3rem);
+    font-size: clamp(1.5rem, 2vw, 3rem); /* Adjusted for better responsiveness */
     color: #cebac7;
-    white-space: nowrap; 
+    white-space: nowrap;
     padding: 1vw;
-    display: block; 
-    text-align: center; 
+    display: block;
+    text-align: center;
 }
 
 .rectangle-text {
@@ -986,7 +986,7 @@ h3.header-contactus {
 
 
 .larger-title {
-    font-size: clamp(.25em, 3em, 10em);
+    font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: bold;
     font-family: "Cardo", serif;
     color: #cebac7;
@@ -1448,8 +1448,8 @@ a.card-tab {
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
-    width: 25vw; 
-    height: 25vw; 
+    width: 22vw; 
+    height: 22vw; 
     border-radius: 50%; 
     overflow: hidden; 
     z-index: 2;
@@ -1467,7 +1467,7 @@ a.card-tab {
     position: relative; 
     background-color: #29392e; 
     width: 100%;
-    height: 18vw; 
+    height: 20vw; 
     display: flex; /* Use flexbox to center content vertically */
     align-items: center; /* Center the content vertically */
     justify-content: center; /* Center the content horizontally */
@@ -1476,8 +1476,8 @@ a.card-tab {
 /* Media query adjustments for different viewport sizes */
 @media (max-width: 768px) {
     .circle-wrapper {
-        width: 40vw; 
-        height: 40vw;
+        width: 35vw; 
+        height: 35vw;
         top: 60%;
     }
     
@@ -1504,26 +1504,21 @@ a.card-tab {
     .sub-title {
         padding-top: 8rem;
     }
-
-   
+    
 }
 
 @media (max-width: 480px) {
     .circle-wrapper {
-        width: 45vw; 
-        height: 45vw; 
+        width: 35vw; 
+        height: 35vw; 
         top: 60%;
     }
     .color-band {
-        height: 80vw;
+        height: 90vw;
+        padding-top: 2rem;
     }
 
     .sub-title {
-        padding-top: 3rem;
-    }
-
-    .color-band {
-        
-        padding-top: 2rem; 
+        padding-top: 8rem;
     }
 }
