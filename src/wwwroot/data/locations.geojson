@@ -64,5 +64,16 @@
       "type": "Point",
       "coordinates": [-122.31934863592895, 47.6100593154292]
     }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "LocationType": "restroom",
+      "Id": "starbucks-reserve"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-122.32832872642577, 47.614035476652816]
+    }
   }
 ]
