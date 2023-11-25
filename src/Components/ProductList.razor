@@ -3,9 +3,11 @@
 @using TakeABreak.WebSite.Models
 @using TakeABreak.WebSite.Services
 @using Microsoft.AspNetCore.Components.Web
+@using Microsoft.JSInterop
 @using TakeABreak.WebSite.Enums
 @using YourNamespace
 @inject JsonFileProductService ProductService
+@inject IJSRuntime JSRuntime
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="~/css/site.css" />
@@ -241,87 +243,97 @@
 
                     <div class="modal-footer">
                         <div class="container">
-                            <div class="row">
-                                <div class="index-textcontainer">
-                                    <!-- Sharingbutton Facebook -->
-                                    @{
-                                        string fblink = "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                    }
-                                    <a class="btn text-white" style="background-color: #3b5998;" href="@fblink" role="button">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-
-                                    <!-- Sharingbutton Twitter -->
-                                    @{
-                                        string tlink = "https://twitter.com/share?text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.&amp&url=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                    }
-                                    <a class="btn text-white" style="background-color: #55acee;" href="@tlink" role="button">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-
-                                    <!-- Sharingbutton E-Mail -->
-                                    @{
-                                        string elink = "mailto:?subject=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.&amp&body=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                    }
-                                    <a class="btn text-white" style="background-color: #332D2D;" href="@elink" role="button">
-                                        <i class="far fa-envelope"></i>
-                                    </a>
-
-                                    <!-- Sharingbutton Pinterest -->
-                                    @{
-                                        string plink = "https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id + "&amp";
-                                    }
-                                    <a class="btn text-white" style="background-color: #c61118;" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2Fabc&amp;media=@plink;description=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out." role="button">
-                                        <i class="fab fa-pinterest"></i>
-                                    </a>
-
-                                    <!-- Sharingbutton LinkedIn -->
-                                    @{
-                                        string llink = "https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                    }
-                                    <a class="btn text-white" style="background-color: #0082ca;" href="https://www.linkedin.com/sharing/share-offsite/?url=@llink&title=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out." role="button">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-
-                                    <!-- Sharingbutton WhatsApp -->
-                                    @{
-                                        string wlink = "https://api.whatsapp.com/send?text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.%20https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                    }
-                                    <a class="btn text-white" style="background-color: #25d366;" href="@wlink" role="button">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>
-
-                                    <!-- Sharingbutton Telegram -->
-                                    @{
-                                        string telegramLink = "https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F" + product.Id;
-                                    }
-                                    <a class="btn text-white" style="background-color: #229ED9;" href="https://t.me/share/url?url=@telegramLink&text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out." role="button">
-                                        <i class="fab fa-telegram"></i>
-                                    </a>
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div class="d-flex justify-content-start">
+                                        <!-- Social media toggle button on the left -->
+                                        <div>
+                                            <button @onclick="ToggleSocialIcons" test-id="ToggleSocialButtons" class="btn btn-primary btn-social" style="width: 50px;">
+                                                <i class="fa fa-share-alt fa-2x"></i>
+                                            </button>
+                                        </div>
+                    
+                                        <!-- Facebook sharing button (Initially hidden) -->
+                                        <div style="display: @(showSocialIcons ? "block" : "none");">
+                                            <button class="btn btn-primary btn-social mx-1" href="https://facebook.com/sharer/sharer.php?u=@GetProductUrl(_selectedProductId)" style="background-color: #3b5998;">
+                                                <i class="fab fa-facebook-f fa-2x"></i>
+                                            </button>
+                                        </div>
+                    
+                                        <!-- Twitter sharing buttons (Initially hidden) -->
+                                        <div style="display: @(showSocialIcons ? "block" : "none");">
+                                            <button class="btn btn-primary btn-social mx-1" href="https://twitter.com/share?text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.&amp;url=@GetProductUrl(_selectedProductId)" style="background-color: #55acee;">
+                                                <i class="fab fa-twitter fa-2x"></i>
+                                            </button>
+                                        </div>
+                                        
+                                        <!-- Email sharing button (Initially hidden) -->
+                                        <div style="display: @(showSocialIcons ? "block" : "none");">
+                                            <a class="btn btn-primary btn-social mx-1" href="mailto:?subject=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.&amp;body=@GetProductUrl(_selectedProductId)" style="background-color: #332D2D;">
+                                                <i class="far fa-envelope fa-2x"></i>
+                                            </a>
+                                        </div>
+                                        
+                                        <!-- Pinterest sharing button (Initially hidden) -->
+                                        <div style="display: @(showSocialIcons ? "block" : "none");">
+                                            <a class="btn btn-primary btn-social mx-1" href="https%3A%2F%2Ftakeabreak.azurewebsites.net%2FProduct%2FRead%2F + product.Id + &amp" style="background-color: #c61118;">
+                                                <i class="fab fa-pinterest fa-2x"></i>
+                                            </a>
+                                        </div>
+                                        
+                                        <!-- LinkedIn sharing button (Initially hidden) -->
+                                        <div style="display: @(showSocialIcons ? "block" : "none");">
+                                            <a class="btn btn-primary btn-social mx-1" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=@GetProductUrl(_selectedProductId)&amp;title=Check%20this%20out" style="background-color: #0082ca;">
+                                                <i class="fab fa-linkedin-in fa-2x"></i>
+                                            </a>
+                                        </div>
+                                        
+                                        <!-- WhatsApp sharing button (Initially hidden) -->
+                                        <div style="display: @(showSocialIcons ? "block" : "none");">
+                                            <a class="btn btn-primary btn-social mx-1" href="whatsapp://send?text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.%20@GetProductUrl(_selectedProductId)" style="background-color: #25d366;">
+                                                <i class="fab fa-whatsapp fa-2x"></i>
+                                            </a>
+                                        </div>
+                                        
+                                        <!-- Telegram sharing button (Initially hidden) -->
+                                        <div style="display: @(showSocialIcons ? "block" : "none");">
+                                            <a class="btn btn-primary btn-social mx-1" href="https://t.me/share/url?url=@GetProductUrl(_selectedProductId)&amp;text=Check%20this%20out%20on%20Telegram" style="background-color: #0088cc;">
+                                                <i class="fab fa-telegram fa-2x"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 d-flex justify-content-end align-items-end">
+                                    <!-- Votes container centered -->
+                                    <div class="d-flex align-items-center ml-auto"> <!-- Use ml-auto here -->
+                                        @if (product.Ratings == null || !product.Ratings.Any())
+                                        {
+                                            <span class="mr-2">Be the first to vote!</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="mr-2">@product.Ratings.Count() @(product.Ratings.Count() == 1 ? "Vote" : "Votes")</span>
+                                        }
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            var currentStar = i;
+                                            <span test-id="vote_button" class="fas fa-chair @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        @if (product.Ratings == null || !product.Ratings.Any())
-                        {
-                            <span>Be the first to vote!</span>
-                        }
-                        else
-                        {
-                            <span>@product.Ratings.Count() @(product.Ratings.Count() == 1 ? "Vote" : "Votes")</span>
-                        }
-                        <!--Updated the for loop to use product ID-->
-                        @for (int i = 1; i <= 5; i++)
-                        {
-                            var currentStar = i;
-                            <span test-id="vote_button" class="fas fa-chair @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
-                        }
                     </div>
-                </div>
+
+
+                </div> 
             </div>
-        </div>
+            </div>
+     
+     
     }
 </div>
+
 
 @code {
 
@@ -618,5 +630,27 @@
             .Name.ToString();
     }
     
+    [JSInvokable]
+    public string GetCurrentProductId()
+    {
+        return _selectedProductId;
+    }
 
+    private bool showSocialIcons = false;
+
+    // Method to toggle the visibility of social media sharing buttons
+    private async Task ToggleSocialIcons()
+    {
+        // Your code here
+        showSocialIcons = !showSocialIcons;
+    }
+
+    // Helper method to get the product URL based on the selected product ID
+    private string GetProductUrl(string productId)
+    {
+        // Construct URL to product 
+        string productUrl = $"https://takeabreak.azurewebsites.net/{productId}";
+
+        return Uri.EscapeUriString(productUrl);
+    }
 }
