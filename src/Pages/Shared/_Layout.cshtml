@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="icon" href="/BrowserBenchIcon.png" type="image/x-icon">
@@ -44,7 +44,9 @@
                 </div>
                 <div id="logo_container">
                     <div class="logo_header">
-                        <img class="img-logo" src="/Logo.png" alt="">
+                        <a asp-page ="/Index">
+                            <img class="img-logo" src="/Logo.png" alt="">
+                        </a>
                     </div>
                     <div id="nav"></div>
                     <div class="sidebar"></div>
@@ -55,11 +57,11 @@
     <main role="main">
         @RenderBody()
     </main>
-<footer class="border-top footer text-muted bg-footer">
-    <div class="container">
-        &copy; 2023 - TakeABreak.WebSite - <a asp-area="" asp-page="/Privacy">Privacy- </a>
-        <a href="https://github.com/Vandana-source/Team13-iWOMP"><i class="fa-brands fa-github" style="font-size:24px; vertical-align: middle;"></i></a>
-    </div>
+    <footer class="border-top footer text-muted bg-footer">
+        <div class="container">
+            &copy; 2023 - TakeABreak.WebSite - <a asp-area="" asp-page="/Privacy">Privacy- </a>
+            <a href="https://github.com/Vandana-source/Team13-iWOMP"><i class="fa-brands fa-github" style="font-size:24px; vertical-align: middle;"></i></a>
+        </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
