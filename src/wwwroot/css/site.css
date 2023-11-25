@@ -982,7 +982,13 @@ h3.header-contactus {
     }
 }
 
+.sub-image-overlay {
+    opacity: 0.8;
+}
 
+.sub-image-overlay2{
+    opacity: 0.5;
+}
 
 
 .larger-title {
@@ -1521,4 +1527,41 @@ a.card-tab {
     .sub-title {
         padding-top: 8rem;
     }
+}
+
+.btn-social {
+    cursor: pointer;
+    width: 51px;
+    height: 51px;
+    text-align: center;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    color: white;
+    max-width: 100%;
+    border-radius: 10px
+}
+
+
+
+.fixed-button {
+    position: relative;
+    z-index: 2;
+}
+
+.button-container {
+    position: relative;
+}
+
+.expanding-button {
+    position: absolute;
+    left: 100%; 
+    top: 0;
+}
+
+.btn-social:hover {
+    background-color: #29392EC6; 
+    box-shadow: 0 0 5px rgba(16, 21, 16, 0.22); 
 }
