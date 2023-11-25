@@ -1,2 +1,15 @@
 {
+  "type": "Feature",
+  "properties": {
+    "name": "Restroom Location",
+    "productID": "cal-anderson-park"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-122.31917696085239, 47.616484996832526]
+  }
 }
+
+
+
+
