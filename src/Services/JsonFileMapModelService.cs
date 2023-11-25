@@ -9,11 +9,12 @@ namespace TakeABreak.WebSite.Services
 {
     /// <summary>
     /// Service class to handle operations related to MapModelFeature.
+    /// Provides functionality to read, add, update, and delete map features from a JSON file.
     /// </summary>
     public class JsonFileMapService
     {
         /// <summary>
-        /// Constructor to set up the web hosting environment.
+        /// Initializes a new instance of the JsonFileMapService with the specified web hosting environment.
         /// </summary>
         /// <param name="webHostEnvironment">The web hosting environment.</param>
         public JsonFileMapService(IWebHostEnvironment webHostEnvironment)
@@ -25,14 +26,11 @@ namespace TakeABreak.WebSite.Services
         public IWebHostEnvironment WebHostEnvironment { get; }
 
         /// <summary>
-        /// Gets the file path for the JSON data file.
+        /// Gets the file path for the JSON data file containing map features.
         /// </summary>
         private string JsonFileName
         {
-            get
-            {
-                return Path.Combine(WebHostEnvironment.WebRootPath, "data", "maps.json");
-            }
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "maps.json"); }
         }
 
         /// <summary>
@@ -45,10 +43,7 @@ namespace TakeABreak.WebSite.Services
             {
                 return JsonSerializer.Deserialize<MapModelFeature[]>(
                     jsonFileReader.ReadToEnd(),
-                    new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
+                    new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             }
         }
 
@@ -71,7 +66,7 @@ namespace TakeABreak.WebSite.Services
         public MapModelFeature UpdateMapFeature(MapModelFeature mapFeature)
         {
             var mapFeatures = GetMapFeatures().ToList();
-            var index = mapFeatures.FindIndex(m => m.Properties.ProductID == mapFeature.Properties.ProductID);
+            var index = mapFeatures.FindIndex(m => m.Properties.Id == mapFeature.Properties.Id);
             if (index != -1)
             {
                 mapFeatures[index] = mapFeature;
@@ -81,28 +76,27 @@ namespace TakeABreak.WebSite.Services
         }
 
         /// <summary>
-        /// Deletes a map feature from the JSON data file based on the productID.
+        /// Deletes a map feature from the JSON data file based on the specified ID.
         /// </summary>
-        /// <param name="productID">The productID of the map feature to delete.</param>
-        public void DeleteMapFeature(string productID)
+        /// <param name="id">The ID of the map feature to delete.</param>
+        public void DeleteMapFeature(string id)
         {
             var mapFeatures = GetMapFeatures().ToList();
-            mapFeatures.RemoveAll(m => m.Properties.ProductID == productID);
+            mapFeatures.RemoveAll(m => m.Properties.Id == id);
             SaveData(mapFeatures);
         }
 
         /// <summary>
-        /// Saves all map features data back to the JSON data file.
+        /// Saves the updated collection of map features back to the JSON data file.
         /// </summary>
         /// <param name="mapFeatures">The collection of MapModelFeature objects to save.</param>
         private void SaveData(IEnumerable<MapModelFeature> mapFeatures)
         {
             using (var outputStream = File.Create(JsonFileName))
             {
-                JsonSerializer.Serialize<IEnumerable<MapModelFeature>>(
+                JsonSerializer.Serialize(
                     new Utf8JsonWriter(outputStream, new JsonWriterOptions { Indented = true }),
-                    mapFeatures
-                );
+                    mapFeatures);
             }
         }
     }
