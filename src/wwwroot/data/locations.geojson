@@ -1,27 +1,46 @@
-{
-  "type": "Feature",
-  "properties": {
-    "LocationType": "Restroom Location",
-    "Id": "cal-anderson-park"
+[
+  {
+    "type": "Feature",
+    "properties": {
+      "LocationType": "Restroom Location",
+      "Id": "cal-anderson-park"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-122.31917696085239, 47.616484996832526]
+    }
   },
-  "geometry": {
-    "type": "Point",
-    "coordinates": [-122.31917696085239, 47.616484996832526]
+  {
+    "type": "Feature",
+    "properties": {
+      "LocationType": "Restroom",
+      "Id": "cloudburst-brewing-ballard"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-122.34184127838036, 47.62111120344604]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "LocationType": "Restroom",
+      "Id": "columbia-tower-club"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-122.33047962238933, 47.60450164251074]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "LocationType": "restroom",
+      "Id": "la-dive-bar"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-122.32246138226097, 47.61394972733521]
+    }
   }
-}
- {
-   "type": "Feature",
-   "properties": {
-     "LocationType": "Restroom",
-     "Id": "cloudburst-brewing-ballard"
-   },
-   "geometry": {
-     "type": "Point",
-     "coordinates": [-122.34184127838036, 47.62111120344604]
-   }
- }
-}
-
-
-
-
+]
