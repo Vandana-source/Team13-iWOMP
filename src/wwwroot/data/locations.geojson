@@ -42,5 +42,27 @@
       "type": "Point",
       "coordinates": [-122.32246138226097, 47.61394972733521]
     }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "LocationType": "restroom",
+      "Id": "life-on-mars"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-122.34184127838036, 47.62111120344604]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "LocationType": "restroom",
+      "Id": "seattle-central-college"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-122.31934863592895, 47.6100593154292]
+    }
   }
 ]
