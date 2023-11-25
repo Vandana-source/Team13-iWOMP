@@ -75,5 +75,29 @@
       "type": "Point",
       "coordinates": [-122.32832872642577, 47.614035476652816]
     }
-  }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "LocationType": "restroom",
+      "Id": "u-village"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-122.29755297084812, 47.663471284436326]
+    }
+  },
+  
+  {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "restroom",
+        "Id": "stoup-brewing-cap-hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.3205461355618,47.61281682220044]
+      }
+    }
+  
 ]
