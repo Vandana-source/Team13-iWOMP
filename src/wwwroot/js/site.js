@@ -6,6 +6,12 @@
 ///<summary>
 /// map libre
 ///</summary>
+// Define a function to get the current product ID from Blazor
+function openWindowOrRedirect(url) {
+    // Open the URL in a new window or tab
+    window.open(url, '_blank');
+}
+
 const map = new maplibregl.Map({
 
     // container id
