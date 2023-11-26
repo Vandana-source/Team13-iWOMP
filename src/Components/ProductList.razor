@@ -60,7 +60,6 @@
                             }
                             @SelectedLocationType
                         }
-
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href='#' test-id="dropdown3" @onclick='() => UpdateLocationType(null)'>
@@ -317,7 +316,7 @@
                                         @for (int i = 1; i <= 5; i++)
                                         {
                                             var currentStar = i;
-                                            <span test-id="vote_button" class="fas fa-chair @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
+                                            <span test-id="vote_button" class="fas fa-chair mr-1 @(product.Ratings != null && i <= product.Ratings.Average() ? "checked" : "")" @onclick="(e => SubmitRating(product.Id, currentStar))"></span>
                                         }
                                     </div>
                                 </div>
