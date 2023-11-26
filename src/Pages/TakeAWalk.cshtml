@@ -1,14 +1,16 @@
 @page
 @model TakeAWalkModel
 
-
 @{
     ViewData["Title"] = "Take A Walk";
 }
 
+<!-- MapLibre GL CSS and JS -->
+<link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
 <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
-<link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" /> 
 
+<!-- Map container -->
+<div id="map" ></div> 
 
-<div id="map"></div>
-
+<!-- Custom map JavaScript file -->
+<script src="~/js/mapStuff.js"></script>
