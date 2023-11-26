@@ -1,6 +1,7 @@
 using TakeABreak.WebSite.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,6 +30,16 @@ namespace TakeABreak.WebSite
             services.AddControllers();
             services.AddTransient<JsonFileProductService>();
             services.AddTransient<JsonFileCustomerService>();
+            services.AddTransient<JsonFileMapService>();
+            
+            
+            services.Configure<StaticFileOptions>(options =>
+            {
+                var provider = new FileExtensionContentTypeProvider();
+                provider.Mappings[".geojson"] = "application/geo+json";
+                options.ContentTypeProvider = provider;
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,5 +77,7 @@ namespace TakeABreak.WebSite
                 // });
             });
         }
+        
+        
     }
 }
