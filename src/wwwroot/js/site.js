@@ -28,6 +28,30 @@ const map = new maplibregl.Map({
 });
 
 
+map.on('load', function() {
+    map.loadImage('https://cdn-icons-png.flaticon.com/512/684/684908.png', function (error, image) {
+        if (error) throw error;
+        map.addImage('Custom_icon', image);
+
+        // Assuming 'data' is in the 'wwwroot' directory and is accessible
+        map.addSource('myGeoJSON', {
+            type: 'geojson',
+            data: 'data/locations.geojson'
+        });
+
+        map.addLayer({
+            id: 'Restrooms',
+            type: 'symbol',
+            source: 'myGeoJSON',
+            layout: {
+                'icon-image': 'Custom_icon',
+                'icon-size': 0.05 // Adjust size as needed
+            }
+        });
+    });
+});
+
+
 
 // Adds the nav controls for the map 
 map.addControl(new maplibregl.NavigationControl());
