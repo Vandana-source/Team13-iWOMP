@@ -110,6 +110,17 @@
         "type": "Point",
         "coordinates": [ -122.29710286011866, 47.63953342797144 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Other",
+        "Id": "Aquarium"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.34269000000008, 47.607582118505746]
+      }
     }
   ]
 }
