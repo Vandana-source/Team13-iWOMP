@@ -165,6 +165,17 @@
         "type": "Point",
         "coordinates": [ -122.31991093635926, 47.619753913878725 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Other",
+        "Id": "LemieuxLibrary"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.31850913494385, 47.60910169683675 ]
+      }
     }
   ]
 }
