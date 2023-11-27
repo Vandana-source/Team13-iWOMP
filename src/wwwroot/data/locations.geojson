@@ -154,6 +154,17 @@
         "type": "Point",
         "coordinates": [ -122.34252500000001, 47.606430578046165 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Other",
+        "Id": "KubotaGardens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.31991093635926, 47.619753913878725 ]
+      }
     }
   ]
 }
