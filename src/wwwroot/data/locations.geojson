@@ -143,6 +143,17 @@
         "type": "Point",
         "coordinates": [ -122.32904343967459, 47.603930569843456 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Other",
+        "Id": "GreatWheel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.34252500000001, 47.606430578046165 ]
+      }
     }
   ]
 }
