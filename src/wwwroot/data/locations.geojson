@@ -187,6 +187,17 @@
         "type": "Point",
         "coordinates": [ -122.34185653868582, 47.609498630500504 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Other",
+        "Id": "PublicLibrary"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.29885537279854, 47.61480195192039 ]
+      }
     }
   ]
 }
