@@ -17,10 +17,7 @@ namespace TakeABreak.WebSite
 
         public IConfiguration Configuration { get; }
 
-
         
-
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -30,15 +27,8 @@ namespace TakeABreak.WebSite
             services.AddControllers();
             services.AddTransient<JsonFileProductService>();
             services.AddTransient<JsonFileCustomerService>();
-            services.AddTransient<JsonFileMapService>();
+            services.AddTransient<JsonFileMapModelService>();
             
-            
-            services.Configure<StaticFileOptions>(options =>
-            {
-                var provider = new FileExtensionContentTypeProvider();
-                provider.Mappings[".geojson"] = "application/geo+json";
-                options.ContentTypeProvider = provider;
-            });
 
         }
 
@@ -68,6 +58,7 @@ namespace TakeABreak.WebSite
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
                 endpoints.MapBlazorHub();
+                endpoints.MapControllers();
 
                 // endpoints.MapGet("/products", (context) => 
                 // {
