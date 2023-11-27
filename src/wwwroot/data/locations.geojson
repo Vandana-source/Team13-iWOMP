@@ -130,7 +130,18 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-122.31401369872042, 47.607448273445414 ]
+        "coordinates": [ -122.31401369872042, 47.607448273445414 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Other",
+        "Id": "Ferry"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.32904343967459, 47.603930569843456 ]
       }
     }
   ]
