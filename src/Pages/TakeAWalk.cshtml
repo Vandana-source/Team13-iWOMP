@@ -10,7 +10,13 @@
 <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
 
 <!-- Map container -->
-<div id="map" ></div> 
+<div id="map"></div> 
+
+<!-- Serialize the GeoJSON data to a JavaScript variable -->
+<script>
+    var geojsonData = @Html.Raw(Model.GeoJsonData);
+</script>
 
 <!-- Custom map JavaScript file -->
 <script src="~/js/mapStuff.js"></script>
+
