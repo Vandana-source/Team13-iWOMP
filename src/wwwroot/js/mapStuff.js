@@ -24,15 +24,17 @@ map.on('load', function () {
             data: geojsonData
         });
 
-        // Add a layer to display the GeoJSON features
+        // Add a layer to display the GeoJSON features specifically for restrooms
         map.addLayer({
-            id: 'Restrooms',
+            id: 'Restroom',
             type: 'symbol',
             source: 'myGeoJSON',
             layout: {
                 'icon-image': 'Custom_icon',
                 'icon-size': 0.05
-            }
+            },
+            // Case-insensitive filter for features with LocationType 'restroom'
+            filter: ['==', ['downcase', ['get', 'LocationType']], 'restroom']
         });
     });
 });
