@@ -198,6 +198,17 @@
         "type": "Point",
         "coordinates": [ -122.29885537279854, 47.61480195192039 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Other",
+        "Id": "Sinegal-Building"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.31683056696463, 47.61025883261315 ]
+      }
     }
   ]
 }
