@@ -12,9 +12,10 @@
 <!-- Map container -->
 <div id="map"></div> 
 
-<!-- Serialize the GeoJSON data to a JavaScript variable -->
+<!-- Serialize the GeoJSON data and Product Data to a JavaScript variable -->
 <script>
     var geojsonData = @Html.Raw(Model.GeoJsonData);
+    var productsData = @Html.Raw(Json.Serialize(Model.Products));
 </script>
 
 <!-- Custom map JavaScript file -->
