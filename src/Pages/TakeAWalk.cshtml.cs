@@ -1,27 +1,24 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using TakeABreak.WebSite.Services;
 
-namespace TakeABreak.WebSite.Pages
+namespace TakeABreak.WebSite.Pages;
+
+public class TakeAWalkModel : PageModel
 {
-    /// <summary>
-    /// Represents the code-behind for the Privacy Razor Page.
-    /// </summary>
-    public class TakeAWalkModel : PageModel
+    private readonly ILogger<TakeAWalkModel> _logger;
+    private readonly JsonFileMapModelService _mapService;
+
+    public string GeoJsonData { get; private set; } 
+
+    public TakeAWalkModel(ILogger<TakeAWalkModel> logger, JsonFileMapModelService mapService) 
     {
-        // Declare a private field to hold a logger instance
-        private readonly ILogger<TakeAWalkModel> _logger;
+        _logger = logger;
+        _mapService = mapService; 
+    }
 
-        // Constructor for PrivacyModel, takes a logger as a dependency
-        public TakeAWalkModel(ILogger<TakeAWalkModel> logger)
-        {
-            // Initialize the logger field with the injected logger
-            _logger = logger;
-        }
-
-        public void OnGet()
-        {
-            // This is the PageModel's method called when an HTTP GET request is made to this page.
-            // It is typically used to prepare data for display, but in this case, it's empty, so no specific action is taken.
-        }
+    public void OnGet()
+    {
+        GeoJsonData = _mapService.GetMapData(); 
     }
 }
