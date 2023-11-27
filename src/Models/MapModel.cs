@@ -16,6 +16,8 @@ namespace TakeABreak.WebSite.Models
         // Gets or sets the list of map features.
         public List<MapModelFeature> Features { get; set; }
         
+        
+        // Overrides the to string method
         public override string ToString() => JsonSerializer.Serialize<MapModel>(this);
         
     }
