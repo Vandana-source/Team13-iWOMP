@@ -1,5 +1,5 @@
-using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -8,55 +8,55 @@ namespace TakeABreak.WebSite.Models
     /// <summary>
     /// Represents a feature on a map, conforming to the GeoJSON standard.
     /// </summary>
-    public class MapModelFeature
+    public class MapModel
     {
-        // Specifies the type of the GeoJSON object, usually "Feature"
-        [JsonPropertyName("type")]
-        public string Type { get; set; } = "Feature";
-
-        // Contains descriptive properties of the feature, like location type and ID
-        [JsonPropertyName("properties")]
-        public MapModelProperties Properties { get; set; }
-
-        // Defines the geometry of the feature, such as type and coordinates
-        [JsonPropertyName("geometry")]
-        public MapModelGeometry Geometry { get; set; }
-
-        /// <summary>
-        /// Converts the object to its JSON string representation.
-        /// </summary>
-        /// <returns>JSON string representing the MapModelFeature object.</returns>
-        public override string ToString()
-        {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
-        }
+        // Gets or sets the type of the GeoJSON object, usually "Feature".
+        public string Type { get; set; }
+       
+        // Gets or sets the list of map features.
+        public List<MapModelFeature> Features { get; set; }
+        
+        public override string ToString() => JsonSerializer.Serialize<MapModel>(this);
+        
     }
 
     /// <summary>
-    /// Contains the properties of a map feature, like location type and ID.
+    /// Represents a map feature within a MapModel.
+    /// </summary>
+    public class MapModelFeature
+    {
+        // Gets or sets the type of the feature.
+        public string Type { get; set; }
+
+        // Gets or sets the properties of the map feature.
+        public MapModelProperties Properties { get; set; }
+
+        // Gets or sets the geometry information of the map feature.
+        public MapModelGeometry Geometry { get; set; }
+    }
+
+    /// <summary>
+    /// Represents the properties of a map feature.
     /// </summary>
     public class MapModelProperties
     {
-        // Defines the location type of the feature (e.g., "Restroom")
-        [JsonPropertyName("LocationType")]
+        // Gets or sets the location type of the feature (e.g., "Restroom").
         public string LocationType { get; set; }
 
-        // Unique identifier for the feature (e.g., "cal-anderson-park")
-        [JsonPropertyName("Id")]
+        // Gets or sets the unique identifier for the feature.
         public string Id { get; set; }
+
     }
 
     /// <summary>
-    /// Describes the geometry of a map feature, including its type and coordinates.
+    /// Represents the geometry of a map feature.
     /// </summary>
     public class MapModelGeometry
     {
-        // Specifies the geometry type (e.g., "Point")
-        [JsonPropertyName("type")]
-        public string Type { get; set; } = "Point";
+        // Gets or sets the geometry type (e.g., "Point").
+        public string Type { get; set; }
 
-        // An array representing the coordinates (longitude, latitude) of the feature
-        [JsonPropertyName("coordinates")]
+        // Gets or sets the array representing longitude and latitude.
         public double[] Coordinates { get; set; }
     }
 }
