@@ -119,7 +119,18 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-122.34269000000008, 47.607582118505746]
+        "coordinates": [ -122.34269000000008, 47.607582118505746 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Other",
+        "Id": "ESports"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.31401369872042, 47.607448273445414 ]
       }
     }
   ]
