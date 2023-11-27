@@ -176,6 +176,17 @@
         "type": "Point",
         "coordinates": [ -122.31850913494385, 47.60910169683675 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Other",
+        "Id": "PikePlaceMarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.34185653868582, 47.609498630500504 ]
+      }
     }
   ]
 }
