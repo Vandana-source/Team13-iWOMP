@@ -6,19 +6,21 @@ const map = new maplibregl.Map({
     zoom: 11
 });
 
-// Event handler when the map loads
+// Event handler when the map style loads
 map.on('load', function () {
+    console.log('Map loaded');
+
     // Load a custom icon image
-    map.loadImage('https://cdn-icons-png.flaticon.com/512/684/684908.png', function (error, image) {
+    map.loadImage('https://api.geoapify.com/v1/icon/?type=awesome&color=%233dd448&size=large&icon=restroom&scaleFactor=2&apiKey=1ca889777476478d8b34a21892745067', function (error, image) {
         if (error) {
-            throw error;
+            console.error('An error occurred while loading the image:', error);
+            return; // Exit the function if the image cannot be loaded
         }
 
         // Add the custom icon image to the map
         map.addImage('Custom_icon', image);
 
-        // Use the GeoJSON data passed from the Razor Page
-        // Make sure the geojsonData variable is declared in the Razor Page
+        // Add the GeoJSON source
         map.addSource('myGeoJSON', {
             type: 'geojson',
             data: geojsonData
@@ -31,10 +33,31 @@ map.on('load', function () {
             source: 'myGeoJSON',
             layout: {
                 'icon-image': 'Custom_icon',
+                'text-field': ['get', 'Title'], // Display the 'Title' property as text
+                'text-size': 12,
+                'text-offset': [0, 1.5],
                 'icon-size': 0.05
             },
-            // Case-insensitive filter for features with LocationType 'restroom'
             filter: ['==', ['downcase', ['get', 'LocationType']], 'restroom']
+        });
+
+        // Loop through your GeoJSON data to add markers
+        geojsonData.features.forEach(feature => {
+            if (feature.properties && feature.properties.LocationType && feature.geometry && feature.geometry.type === "Point") {
+                if (feature.properties.LocationType.toLowerCase() === 'restroom') {
+                    const coords = feature.geometry.coordinates;
+
+                    const restroomIcon = document.createElement('div');
+                    restroomIcon.className = 'restroom';
+
+                    new maplibregl.Marker(restroomIcon, {
+                        anchor: 'bottom',
+                        offset: [0, -34.5] // Adjust as needed for the marker's anchor point
+                    })
+                        .setLngLat(coords)
+                        .addTo(map);
+                }
+            }
         });
     });
 });
