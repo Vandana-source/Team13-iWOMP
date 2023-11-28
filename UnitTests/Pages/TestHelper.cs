@@ -36,6 +36,7 @@ namespace UnitTests
         public static TempDataDictionary TempData;
         public static PageContext PageContext;
         public static JsonFileProductService ProductService;
+        public static JsonFileMapModelService MapModelService;
 
         /// <summary>
         /// Default Constructor
@@ -68,6 +69,8 @@ namespace UnitTests
             };
 
             ProductService = new JsonFileProductService(MockWebHostEnvironment.Object);
+
+            MapModelService = new JsonFileMapModelService(MockWebHostEnvironment.Object);
 
             JsonFileProductService productService;
 
