@@ -1326,6 +1326,14 @@ a.card-tab {
     margin: 0 12px; 
 }
 
+.divider-blurry {
+    height: 380px;
+    width: 1px; /* Adjust the thickness of the divider here */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0.8) 80%, rgba(0, 0, 0, 0) 100%);
+    /* Adjust the color and opacity in rgba values as needed */
+}
+
+
 .button-line {
     display: flex; 
     justify-content: space-between; 
@@ -1564,4 +1572,16 @@ a.card-tab {
 .btn-social:hover {
     background-color: #29392EC6; 
     box-shadow: 0 0 5px rgba(16, 21, 16, 0.22); 
+}
+
+.padding-homepage-discover {
+    padding-inline: 28px;
+}
+
+.padding-homepage-highlight {
+    padding-inline: 44px;
+}
+
+.padding-homepage-route {
+    padding-inline: 42px
 }
