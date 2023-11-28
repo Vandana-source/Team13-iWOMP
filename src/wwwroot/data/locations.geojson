@@ -358,6 +358,10 @@
             "properties": {
                 "LocationType": "Bench",
                 "Id": "seattle-u-bench"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": []
             }
         }
     ]
