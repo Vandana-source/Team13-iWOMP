@@ -255,9 +255,8 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card {
-
-    border: 1px solid #cec1ba ;
-    box-shadow: 4px 8px 15px #d2cdcb;
+    border: 1px solid #19522c;
+    box-shadow: 1px 1px 5px -2px #19522c;
 }
 
 
