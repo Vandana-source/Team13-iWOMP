@@ -369,6 +369,10 @@
             "properties": {
                 "LocationType": "Bench",
                 "Id": "seattle-university-rhododendron"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ ]
             }
         }
     ]
