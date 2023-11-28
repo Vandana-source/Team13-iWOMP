@@ -319,6 +319,13 @@
                 "type": "Point",
                 "coordinates": [ -122.29407692854234, 47.63666902987922 ]
             }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Bench",
+                "Id": "broadway-bench"
+            }
         }
     ]
 }
