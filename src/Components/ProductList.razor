@@ -5,7 +5,6 @@
 @using Microsoft.AspNetCore.Components.Web
 @using Microsoft.JSInterop
 @using TakeABreak.WebSite.Enums
-@using YourNamespace
 @inject JsonFileProductService ProductService
 @inject IJSRuntime JSRuntime
 
@@ -35,10 +34,10 @@
                         <button class="dropdown-item" type="button" test-id="dropdown1" @onclick='() => UpdateNeighborhood(null)'>
                             All
                         </button>
-                        @foreach (SeattleNeighborhoods neighborhood in Enum.GetValues(typeof(SeattleNeighborhoods)))
+                        @foreach (var neighborhood in Neighborhoods)
                         {
-                            <button class="dropdown-item" type="button" test-id="dropdown2" @onclick="() => UpdateNeighborhood(GetDisplayName(neighborhood))">
-                                @GetDisplayName(neighborhood)
+                            <button class="dropdown-item" type="button" test-id="dropdown2" @onclick="() => UpdateNeighborhood(neighborhood)">
+                                @neighborhood
                             </button>
                         }
                     </div>
@@ -99,12 +98,15 @@
                         <button class="dropdown-item" type="button" test-id="dropdown8" @onclick="() => UpdateNoiseLevel(null)">
                             All
                         </button>
-                        @foreach (var name in Enum.GetNames(typeof(NoiseLevel)))
+                        @foreach (var name in Enum.GetNames(typeof(NoiseLevelEnum)))
                         {
-                            var displayName = GetDropdownDisplayText(Enum.Parse<NoiseLevel>(name));
-                            <button class="dropdown-item" type="button" test-id="dropdown9" @onclick="() => UpdateNoiseLevel(Enum.Parse<NoiseLevel>(name))">
-                                @displayName
-                            </button>
+                            if (name != "Undefined")
+                            {
+                                var displayName = GetDropdownDisplayText(Enum.Parse<NoiseLevelEnum>(name));
+                                <button class="dropdown-item" type="button" test-id="dropdown9" @onclick="() => UpdateNoiseLevel(Enum.Parse<NoiseLevelEnum>(name))">
+                                    @displayName
+                                </button>
+                            }
                         }
                     </div>
                 </div>
@@ -346,7 +348,7 @@
     string _selectedProductId;
     
     // Noise level integer originally set to null
-    private NoiseLevel? SelectedNoiseFilter = null;
+    private NoiseLevelEnum? SelectedNoiseFilter = null;
     
     // String to hold "Surprise" 
     string surpriseString = "Surprise";
@@ -366,6 +368,11 @@
         _selectedProductId = productId;
         _selectedProduct = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(_selectedProductId));
     }
+
+    private IEnumerable<string> Neighborhoods => Products
+        .Select(p => p.Neighborhood)
+        .Distinct()
+        .OrderBy(n => n);
 
     /// <summary>
     /// Checks if the Surprise link has been clicked.
@@ -649,7 +656,7 @@
     /// Updates noise level
     /// <param name="NoiseLevel"></param>
     /// </summary>
-    void UpdateNoiseLevel(NoiseLevel? noiseLevel)
+    void UpdateNoiseLevel(NoiseLevelEnum? noiseLevel)
     {
         SelectedNoiseFilter = noiseLevel;
 
@@ -672,10 +679,10 @@
     /// Gets the display name from the enum for the drop down
     /// /// <param name="selectedLevel"></param>
     /// </summary>
-    private string GetDropdownDisplayText(NoiseLevel? selectedLevel)
+    private string GetDropdownDisplayText(NoiseLevelEnum? selectedLevel)
     {
         
-        var enumType = typeof(NoiseLevel);
+        var enumType = typeof(NoiseLevelEnum);
         var enumValue = Enum.GetName(enumType, selectedLevel);
         var memberInfos = enumType.GetMember(enumValue);
         var enumValueMemberInfo = memberInfos.FirstOrDefault(m => m.DeclaringType == enumType);
@@ -684,18 +691,6 @@
 
         return displayAttribute.Name;
 
-    }
-    
-    /// <summary>
-    /// Returns the string from the enum 
-    /// </summary>
-    string GetDisplayName(SeattleNeighborhoods neighborhood)
-    {
-        return neighborhood.GetType()
-            .GetMember(neighborhood.ToString())
-            .First()
-            .GetCustomAttribute<DisplayAttribute>()
-            .Name.ToString();
     }
     
     /// <summary>
