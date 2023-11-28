@@ -33,10 +33,16 @@ namespace TakeABreak.WebSite.Pages.Product
         /// <summary>
         /// REST OnGet, return all data
         /// </summary>
-        public void OnGet(string id)
+        public IActionResult OnGet(string id)
         {
             // This method fetches all the data from the JsonFileProductService.cs
             Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+            if (Product == null)
+            {
+                this.ModelState.AddModelError("OnGet", "Update Onget Error");
+                return RedirectToPage("../Error");
+            }
+            return Page();
         }
 
         /// <summary>
