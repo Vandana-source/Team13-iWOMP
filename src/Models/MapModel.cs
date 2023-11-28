@@ -35,6 +35,9 @@ namespace TakeABreak.WebSite.Models
 
         // Gets or sets the geometry information of the map feature.
         public MapModelGeometry Geometry { get; set; }
+
+        // Overrides the to string method
+        public override string ToString() => JsonSerializer.Serialize<MapModelFeature>(this);
     }
 
     /// <summary>
@@ -48,6 +51,9 @@ namespace TakeABreak.WebSite.Models
         // Gets or sets the unique identifier for the feature.
         public string Id { get; set; }
 
+        // Overrides the to string method
+        public override string ToString() => JsonSerializer.Serialize<MapModelProperties>(this);
+
     }
 
     /// <summary>
@@ -60,5 +66,8 @@ namespace TakeABreak.WebSite.Models
 
         // Gets or sets the array representing longitude and latitude.
         public double[] Coordinates { get; set; }
+
+        // Overrides the to string method
+        public override string ToString() => JsonSerializer.Serialize<MapModelGeometry>(this);
     }
 }
