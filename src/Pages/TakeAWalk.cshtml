@@ -6,11 +6,38 @@
 }
 
 <!-- MapLibre GL CSS and JS -->
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
 <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
 <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
 
+
+<div class="container pb-3 pt-5">
+    <div class="dropdown">
+        <button class="btn btn-third dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fi fi-bs-map-marker-home" style="font-size: 20px; margin-right:6px;"></i>
+            <span id="selectedLocationType">Location Type</span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="dropdown-item" type="button" onclick='updateLocationType(null)'>All</button>
+            <button class="dropdown-item" type="button" onclick='updateLocationType("Bench")'><i class="fas fa-chair mr-2"></i> Bench</button>
+            <button class="dropdown-item" type="button" onclick='updateLocationType("Restroom")'><i class="fas fa-restroom mr-2"></i> Restroom</button>
+            <button class="dropdown-item" type="button" onclick='updateLocationType("Table")'><i class="fi fi-bs-table-picnic mr-2"></i> Table</button>
+            <button class="dropdown-item" type="button" onclick='updateLocationType("Other")'><i class="fas fa-ellipsis-h mr-2"></i> Other</button>
+        </div>
+    </div>
+</div>
+
+
 <!-- Map container -->
-<div id="map"></div> 
+<div class="container pb-3">
+<div class="map-libre-container">
+    <div id="map"></div>
+</div>
+</div>
 
 <!-- Serialize the GeoJSON data and Product Data to a JavaScript variable -->
 <script>
