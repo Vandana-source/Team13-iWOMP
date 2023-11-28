@@ -1552,7 +1552,13 @@ a.card-tab {
     border-radius: 10px
 }
 
-
+.restroom {
+    height: 69px;
+    width: 47px;
+    background-image: url(https://api.geoapify.com/v1/icon/?type=awesome&color=%2389bb8c&size=small&icon=restroom&scaleFactor=2&apiKey=1ca889777476478d8b34a21892745067);
+    background-size: contain;
+    cursor: pointer;
+}
 
 .fixed-button {
     position: relative;
