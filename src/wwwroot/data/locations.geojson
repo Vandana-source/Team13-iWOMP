@@ -341,6 +341,13 @@
                 "type": "Point",
                 "coordinates": [ -122.26627433862147, 47.513624596780986 ]
             }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Bench",
+                "Id": "louisa-boren-lookout"
+            }
         }
     ]
 }
