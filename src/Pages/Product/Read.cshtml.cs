@@ -41,7 +41,7 @@ namespace TakeABreak.WebSite.Pages.Product
             if (Product == null)
             {
                 this.ModelState.AddModelError("OnGet", "Read Onget Error");
-                return RedirectToPage("./Index"); // Probably should be an error message
+                return RedirectToPage("../Error"); // Probably should be an error message
             }
 
             return Page();
