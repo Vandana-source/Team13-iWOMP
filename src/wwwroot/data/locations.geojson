@@ -380,6 +380,10 @@
             "properties": {
                 "LocationType": "Bench",
                 "Id": "uw-maple-hell"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ ]
             }
         }
     ]
