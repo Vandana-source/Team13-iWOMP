@@ -9,7 +9,7 @@ namespace TakeABreak.WebSite.Enums
         public enum NoiseLevelEnum
         {
             [Display(Name = "Undefined")] 
-            Undefined = 0, // Added Undefined as the first entry
+            Undefined = 0, 
 
             [Display(Name = "Quiet")]
             Quiet = 1,
