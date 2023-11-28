@@ -71,10 +71,12 @@ namespace UnitTests.Pages.TakeAWalk
 
             var MockLoggerDirect = Mock.Of<ILogger<TakeAWalkModel>>();
             JsonFileProductService productService;
+            JsonFileMapModelService mapModelService;
 
             productService = new JsonFileProductService(mockWebHostEnvironment.Object);
+            mapModelService = new JsonFileMapModelService(mockWebHostEnvironment.Object);
 
-            pageModel = new TakeAWalkModel(MockLoggerDirect)
+            pageModel = new TakeAWalkModel(MockLoggerDirect, mapModelService, productService)
             {
                 PageContext = pageContext,
                 TempData = tempData,
@@ -99,6 +101,9 @@ namespace UnitTests.Pages.TakeAWalk
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.NotNull(pageModel.GeoJsonData);
+            Assert.NotNull(pageModel.Products);
+
         }
 
         #endregion OnGet
