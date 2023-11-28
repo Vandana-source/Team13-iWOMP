@@ -6,8 +6,11 @@ namespace TakeABreak.WebSite.Enums
     /// <summary>
     /// Enum for strings describing noise levels
     /// </summary>
-    public enum NoiseLevel
+    public enum NoiseLevelEnum
     {
+        [Display(Name = "Undefined")] 
+        Undefined = 0,
+
         [Display(Name = "Quiet")]
         Quiet = 1,
 
