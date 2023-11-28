@@ -27,7 +27,7 @@ namespace UnitTests.Enums
         public void Valid_Enum_Should_Return_Correct_Name()
         {
             // Arrange
-            NoiseLevel testEnum = NoiseLevel.VeryLoud;
+            NoiseLevelEnum testEnum = NoiseLevelEnum.VeryLoud;
 
             // Act
 
