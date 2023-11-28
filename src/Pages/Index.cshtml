@@ -44,8 +44,8 @@
         </div>
 
         <div class="container-fluid homepageformat py-3 d-flex flex-wrap justify-content-center">
-            <div class="d-flex flex-column flex-md-row justify-content-center button-container">
-                <a href="/Explore" class="btn btn-third d-flex align-items-center text-decoration-none">
+            <div class="d-flex flex-column flex-md-row justify-content-center button-container" style="width: fit-content">
+                <a href="/Explore" class="btn btn-third d-flex align-items-center text-decoration-none padding-homepage-discover">
                     <i class="fi fi-bs-map-marker" style="font-size: 1.8rem; color: #bacec1; margin-right: .7rem;"></i>
                     <div class="d-flex flex-column">
                         <span class="button-line">Ready to Explore?</span>
@@ -55,7 +55,7 @@
                     </div>
                 </a>
                 <span class="divider"></span>
-                <a href="/Spotlight" class="btn btn-third d-flex align-items-center text-decoration-none">
+                <a href="/Spotlight" class="btn btn-third d-flex align-items-center text-decoration-none padding-homepage-highlight">
                     <i class="fi fi-bs-calendar-heart" style="font-size: 1.8rem; color: #bacec1; margin-right: .7rem;"></i>
                     <div class="d-flex flex-column">
                         <span class="button-line">Spotlight of the Month</span>
@@ -75,7 +75,7 @@
                     </div>
                 </a>
                 <span class="divider"></span>
-                <a href="/TakeAWalk" class="btn btn-third d-flex align-items-center text-decoration-none">
+                <a href="/TakeAWalk" class="btn btn-third d-flex align-items-center text-decoration-none padding-homepage-route">
                     <i class="fi fi-bs-route" style="font-size: 1.8rem; color: #bacec1; margin-right: .5rem;"></i>
                     <div class="d-flex flex-column">
                         <span class="button-line">Walk This Way</span>
@@ -89,41 +89,44 @@
 
 
         <!-- Cards Section -->
-        <div class="row">
-            <!-- Each Card -->
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card card-custom card-img-bench">
-                    <div class="card-custom-content">
-                        <h2 class="card-custom-title">Benches</h2>
-                        <a asp-page="/Explore" asp-route-filter="Bench" class="btn btn-custom">Explore Benches</a>
+            <div class="row d-flex flex-column flex-md-row justify-content-center">
+                <!-- Each Card -->
+                <div class="justify-content-center">
+                    <div class="card card-custom card-img-bench">
+                        <div class="card-custom-content">
+                            <h2 class="card-custom-title">Benches</h2>
+                            <a asp-page="/Explore" asp-route-filter="Bench" class="btn btn-custom">Explore Benches</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider divider-blurry"></div>
+                <div class="justify-content-center">
+                    <div class="card card-custom card-img-restroom">
+                        <div class="card-custom-content">
+                            <h2 class="card-custom-title">Restrooms</h2>
+                            <a asp-page="/Explore" asp-route-filter="Restroom" class="btn btn-custom">Explore Restrooms</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider divider-blurry"></div>
+                <div class="align-items-center justify-content-center">
+                    <div class="card card-custom card-img-tables">
+                        <div class="card-custom-content">
+                            <h2 class="card-custom-title">Tables</h2>
+                            <a asp-page="/Explore" asp-route-filter="Table" class="btn btn-custom">Explore Tables</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider divider-blurry"></div>
+                <div class="justify-content-center">
+                    <div class="card card-custom card-img-others">
+                        <div class="card-custom-content">
+                            <h2 class="card-custom-title">Other</h2>
+                            <a asp-page="/Explore" asp-route-filter="Other" class="btn btn-custom">Explore Other Places</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card card-custom card-img-restroom">
-                    <div class="card-custom-content">
-                        <h2 class="card-custom-title">Restrooms</h2>
-                        <a asp-page="/Explore" asp-route-filter="Restroom" class="btn btn-custom">Explore Restrooms</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card card-custom card-img-tables">
-                    <div class="card-custom-content">
-                        <h2 class="card-custom-title">Tables</h2>
-                        <a asp-page="/Explore" asp-route-filter="Table" class="btn btn-custom">Explore Tables</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
-                <div class="card card-custom card-img-others">
-                    <div class="card-custom-content">
-                        <h2 class="card-custom-title">Other</h2>
-                        <a asp-page="/Explore" asp-route-filter="Other" class="btn btn-custom">Explore Other Places</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Scripts -->
         <script src="~/lib/jquery/dist/jquery.js"></script>
