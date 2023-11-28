@@ -374,6 +374,13 @@
                 "type": "Point",
                 "coordinates": [ -122.29342904043062, 47.63260904457189 ]
             }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Bench",
+                "Id": "uw-maple-hell"
+            }
         }
     ]
 }
