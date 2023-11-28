@@ -330,6 +330,13 @@
                 "type": "Point",
                 "coordinates": [ -122.32071800000001, 47.62289924580434 ]
             }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Bench",
+                "Id": "kubota-gardens-bench"
+            }
         }
     ]
 }
