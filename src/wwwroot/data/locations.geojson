@@ -347,7 +347,11 @@
             "properties": {
                 "LocationType": "Bench",
                 "Id": "louisa-boren-lookout"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ ]
             }
-        }
+        }   
     ]
 }
