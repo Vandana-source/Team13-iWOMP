@@ -1380,13 +1380,14 @@ a.card-tab {
 }
 
 .map-libre-container {
-    position: relative; 
-    height: 55vw; 
+    position: relative;
+    height: 50vw;
+    padding-bottom: 5vw;
 }
 
 #map {
     position: absolute;
-    height: 80vh; 
+    height: 45vw;
     width: 100%;
 
 }
