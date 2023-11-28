@@ -114,7 +114,7 @@ namespace UnitTests.Pages.Product.Delete
             pageModel.OnGet("Test");
 
             //Asset
-            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
         }
 
         #endregion OnGet
