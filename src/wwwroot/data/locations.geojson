@@ -385,6 +385,13 @@
                 "type": "Point",
                 "coordinates": [ -122.3158194855431, 47.655926360277626 ]
             }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Bench",
+                "Id": "woordworth-bench"
+            }
         }
     ]
 }
