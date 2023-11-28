@@ -1,313 +1,324 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Restroom",
-        "Id": "cal-anderson-park"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31917696085239, 47.616484996832526 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Restroom",
-        "Id": "cloudburst-brewing-ballard"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.38645536441888, 47.6680136125361 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Restroom",
-        "Id": "columbia-tower-club"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.33047962238933, 47.60450164251074 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "restroom",
-        "Id": "la-dive-bar"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.32246138226097, 47.61394972733521 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "restroom",
-        "Id": "life-on-mars"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.34184127838036, 47.62111120344604 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "restroom",
-        "Id": "seattle-central-college"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31934863592895, 47.6100593154292 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "restroom",
-        "Id": "starbucks-reserve"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.32832872642577, 47.614035476652816 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "restroom",
-        "Id": "u-village"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.29755297084812, 47.663471284436326 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "restroom",
-        "Id": "stoup-brewing-cap-hill"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.3205461355618, 47.61281682220044 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Bench",
-        "Id": "arboretum-bench"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.29710286011866, 47.63953342797144 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Other",
-        "Id": "Aquarium"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.34269000000008, 47.607582118505746 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Other",
-        "Id": "ESports"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31401369872042, 47.607448273445414 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Other",
-        "Id": "Ferry"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.32904343967459, 47.603930569843456 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Other",
-        "Id": "GreatWheel"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.34252500000001, 47.606430578046165 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Other",
-        "Id": "KubotaGardens"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31991093635926, 47.619753913878725 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Other",
-        "Id": "LemieuxLibrary"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31850913494385, 47.60910169683675 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Other",
-        "Id": "PikePlaceMarket"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.34185653868582, 47.609498630500504 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Other",
-        "Id": "PublicLibrary"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.29885537279854, 47.61480195192039 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Other",
-        "Id": "Sinegal-Building"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31683056696463, 47.61025883261315 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Table",
-        "Id": "GoldenGardens"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.4018529999997, 47.690327056041156 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Table",
-        "Id": "LincolnParkShelter5Table1"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.39682282697868, 47.52761923117322 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Table",
-        "Id": "RanchoBravoTable1"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31907800000094, 47.615071000000654 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Table",
-        "Id": "SAMOlympicSculptureParkTable1"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.35384872883552, 47.61625492893472 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Table",
-        "Id": "SculptureParkLoveandLossTable1"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.35558450772007, 47.616273044696385 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Table",
-        "Id": "SeattleUAdminBldTable1"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31974472883586, 47.61121276707124 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Table",
-        "Id": "SeattleUQuadTable1"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31974472883586, 47.61121276707124 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Table",
-        "Id": "SeattleURainGarden"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31789613234176, 47.611699256850954 ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "LocationType": "Table",
-        "Id": "UWReadingRoom"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ -122.31102525647938, 47.65489566189359 ]
-      }
-    }
-  ]
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Restroom",
+                "Id": "cal-anderson-park"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31917696085239, 47.616484996832526 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Restroom",
+                "Id": "cloudburst-brewing-ballard"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.38645536441888, 47.6680136125361 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Restroom",
+                "Id": "columbia-tower-club"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.33047962238933, 47.60450164251074 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "restroom",
+                "Id": "la-dive-bar"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.32246138226097, 47.61394972733521 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "restroom",
+                "Id": "life-on-mars"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.34184127838036, 47.62111120344604 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "restroom",
+                "Id": "seattle-central-college"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31934863592895, 47.6100593154292 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "restroom",
+                "Id": "starbucks-reserve"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.32832872642577, 47.614035476652816 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "restroom",
+                "Id": "u-village"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.29755297084812, 47.663471284436326 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "restroom",
+                "Id": "stoup-brewing-cap-hill"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.3205461355618, 47.61281682220044 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Bench",
+                "Id": "arboretum-bench"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.29710286011866, 47.63953342797144 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Other",
+                "Id": "Aquarium"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.34269000000008, 47.607582118505746 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Other",
+                "Id": "ESports"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31401369872042, 47.607448273445414 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Other",
+                "Id": "Ferry"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.32904343967459, 47.603930569843456 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Other",
+                "Id": "GreatWheel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.34252500000001, 47.606430578046165 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Other",
+                "Id": "KubotaGardens"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31991093635926, 47.619753913878725 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Other",
+                "Id": "LemieuxLibrary"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31850913494385, 47.60910169683675 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Other",
+                "Id": "PikePlaceMarket"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.34185653868582, 47.609498630500504 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Other",
+                "Id": "PublicLibrary"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.29885537279854, 47.61480195192039 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Other",
+                "Id": "Sinegal-Building"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31683056696463, 47.61025883261315 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Table",
+                "Id": "GoldenGardens"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.4018529999997, 47.690327056041156 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Table",
+                "Id": "LincolnParkShelter5Table1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.39682282697868, 47.52761923117322 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Table",
+                "Id": "RanchoBravoTable1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31907800000094, 47.615071000000654 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Table",
+                "Id": "SAMOlympicSculptureParkTable1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.35384872883552, 47.61625492893472 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Table",
+                "Id": "SculptureParkLoveandLossTable1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.35558450772007, 47.616273044696385 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Table",
+                "Id": "SeattleUAdminBldTable1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31974472883586, 47.61121276707124 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Table",
+                "Id": "SeattleUQuadTable1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31974472883586, 47.61121276707124 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Table",
+                "Id": "SeattleURainGarden"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31789613234176, 47.611699256850954 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Table",
+                "Id": "UWReadingRoom"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -122.31102525647938, 47.65489566189359 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "LocationType": "Bench",
+                "Id": "aroboretum-walk"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ ]
+            }
+        }
+    ]
 }
