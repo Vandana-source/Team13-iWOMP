@@ -209,6 +209,105 @@
         "type": "Point",
         "coordinates": [ -122.31683056696463, 47.61025883261315 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Table",
+        "Id": "GoldenGardens"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.4018529999997, 47.690327056041156 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Table",
+        "Id": "LincolnParkShelter5Table1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.39682282697868, 47.52761923117322 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Table",
+        "Id": "RanchoBravoTable1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.31907800000094, 47.615071000000654 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Table",
+        "Id": "SAMOlympicSculptureParkTable1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.35384872883552, 47.61625492893472 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Table",
+        "Id": "SculptureParkLoveandLossTable1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.35558450772007, 47.616273044696385 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Table",
+        "Id": "SeattleUAdminBldTable1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.31974472883586, 47.61121276707124 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Table",
+        "Id": "SeattleUQuadTable1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.31974472883586, 47.61121276707124 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Table",
+        "Id": "SeattleURainGarden"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.31789613234176, 47.611699256850954 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "LocationType": "Table",
+        "Id": "UWReadingRoom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [ -122.31102525647938, 47.65489566189359 ]
+      }
     }
   ]
 }
