@@ -32,14 +32,14 @@
                         }
                     </button>
                     <div class="dropdown-menu" aria-labelledby="neighborhoodDropdownButton">
-                        <a class="dropdown-item" href='#' test-id="dropdown1" @onclick='() => UpdateNeighborhood(null)'>
+                        <button class="dropdown-item" type="button" test-id="dropdown1" @onclick='() => UpdateNeighborhood(null)'>
                             All
-                        </a>
+                        </button>
                         @foreach (SeattleNeighborhoods neighborhood in Enum.GetValues(typeof(SeattleNeighborhoods)))
                         {
-                            <a class="dropdown-item" href="#" test-id="dropdown2" @onclick="() => UpdateNeighborhood(GetDisplayName(neighborhood))">
+                            <button class="dropdown-item" type="button" test-id="dropdown2" @onclick="() => UpdateNeighborhood(GetDisplayName(neighborhood))">
                                 @GetDisplayName(neighborhood)
-                            </a>
+                            </button>
                         }
                     </div>
                 </div>
@@ -62,22 +62,23 @@
                         }
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href='#' test-id="dropdown3" @onclick='() => UpdateLocationType(null)'>
+                        <button class="dropdown-item" type="button" test-id="dropdown3" @onclick='() => UpdateLocationType(null)'>
                             All
-                        </a>
-                        <a class="dropdown-item" href='#' test-id="dropdown4" @onclick='() => UpdateLocationType("Bench")'>
+                        </button>
+                        <button class="dropdown-item" type="button" test-id="dropdown4" @onclick='() => UpdateLocationType("Bench")'>
                             <i class="fas fa-chair mr-2"></i> Bench
-                        </a>
-                        <a class="dropdown-item" href='#' test-id="dropdown5" @onclick='() => UpdateLocationType("Restroom")'>
+                        </button>
+                        <button class="dropdown-item" type="button" test-id="dropdown5" @onclick='() => UpdateLocationType("Restroom")'>
                             <i class="fas fa-restroom mr-2"></i> Restroom
-                        </a>
-                        <a class="dropdown-item" href='#' test-id="dropdown6" @onclick='() => UpdateLocationType("Table")'>
+                        </button>
+                        <button class="dropdown-item" type="button" test-id="dropdown6" @onclick='() => UpdateLocationType("Table")'>
                             <i class="fi fi-bs-table-picnic mr-2"></i> Table
-                        </a>
-                        <a class="dropdown-item" href='#' test-id="dropdown7" @onclick='() => UpdateLocationType("Other")'>
+                        </button>
+                        <button class="dropdown-item" type="button" test-id="dropdown7" @onclick='() => UpdateLocationType("Other")'>
                             <i class="fas fa-ellipsis-h mr-2"></i> Other
-                        </a>
+                        </button>
                     </div>
+
                 </div>
             </div>
             
@@ -95,13 +96,15 @@
                         }
                     </button>
                     <div class="dropdown-menu" aria-labelledby="noiseLevelDropdownButton">
-                        <a class="dropdown-item" href="#" test-id="dropdown8" @onclick="() => UpdateNoiseLevel(null)">All</a>
+                        <button class="dropdown-item" type="button" test-id="dropdown8" @onclick="() => UpdateNoiseLevel(null)">
+                            All
+                        </button>
                         @foreach (var name in Enum.GetNames(typeof(NoiseLevel)))
                         {
                             var displayName = GetDropdownDisplayText(Enum.Parse<NoiseLevel>(name));
-                            <a class="dropdown-item" href="#" test-id="dropdown9" @onclick="() => UpdateNoiseLevel(Enum.Parse<NoiseLevel>(name))">
+                            <button class="dropdown-item" type="button" test-id="dropdown9" @onclick="() => UpdateNoiseLevel(Enum.Parse<NoiseLevel>(name))">
                                 @displayName
-                            </a>
+                            </button>
                         }
                     </div>
                 </div>
@@ -254,16 +257,16 @@
                     
                                         <!-- Facebook sharing button (Initially hidden) -->
                                         <div style="display: @(showSocialIcons ? "block" : "none");">
-                                            <button class="btn btn-primary btn-social mx-1" href="https://facebook.com/sharer/sharer.php?u=@GetProductUrl(_selectedProductId)" style="background-color: #3b5998;">
+                                            <a class="btn btn-primary btn-social mx-1" href="https://facebook.com/sharer/sharer.php?u=@GetProductUrl(_selectedProductId)" style="background-color: #3b5998;">
                                                 <i class="fab fa-facebook-f fa-2x"></i>
-                                            </button>
+                                            </a>
                                         </div>
                     
-                                        <!-- Twitter sharing buttons (Initially hidden) -->
+                                        <!-- Twitter sharing button (Initially hidden) -->
                                         <div style="display: @(showSocialIcons ? "block" : "none");">
-                                            <button class="btn btn-primary btn-social mx-1" href="https://twitter.com/share?text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.&amp;url=@GetProductUrl(_selectedProductId)" style="background-color: #55acee;">
+                                            <a class="btn btn-primary btn-social mx-1" href="https://twitter.com/share?text=Look%2C%20I%20found%20a%20good%20place%20to%20rest%20and%20Take%20a%20Break!!%20Check%20it%20out.&amp;url=@GetProductUrl(_selectedProductId)" style="background-color: #55acee;">
                                                 <i class="fab fa-twitter fa-2x"></i>
-                                            </button>
+                                            </a>
                                         </div>
                                         
                                         <!-- Email sharing button (Initially hidden) -->
@@ -335,27 +338,49 @@
 
 
 @code {
-
+    
+    // The selected product model 
     ProductModel _selectedProduct;
+    
+    // String that holds the product id 
     string _selectedProductId;
+    
+    // Noise level integer originally set to null
     private NoiseLevel? SelectedNoiseFilter = null;
+    
+    // String to hold "Surprise" 
     string surpriseString = "Surprise";
+    
+    // Set the check to false on initial load 
     bool surpriseCheck = false;
+    
+    // To hold the randomly selected product 
     ProductModel randomProduct;
 
+    /// <summary>
+    /// Selects a product based on the given product ID.
+    /// </summary>
+    /// <param name="productId">The ID of the product to select.</param>
     void SelectProduct(string productId)
     {
         _selectedProductId = productId;
         _selectedProduct = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(_selectedProductId));
     }
 
-    // bool check if the Surprise link has been clicked
+    /// <summary>
+    /// Checks if the Surprise link has been clicked.
+    /// </summary>
+    /// <returns>Returns true if the Surprise link is clicked.</returns>
     bool isSurprise()
     {
         surpriseCheck = true;
         return surpriseCheck;
     }
-
+    
+    /// <summary>
+    /// Stores the previously selected product.
+    /// </summary>
+    /// <param name="selectedProduct">The product to store as the previous selection.</param>
     public void storePrevious(ProductModel selectedProduct)
     {
         randomProduct = selectedProduct;
@@ -363,7 +388,10 @@
     // Variable to get all the products, Neighborhoods and LocationType (for drop down)
     private IEnumerable<ProductModel> Products => ProductService.GetProducts();
 
-    //List of Products which should be displayed on the explore page
+    // <summary>
+    /// Filters products based on the current filtering criteria.
+    /// </summary>
+    /// <returns>A list of filtered products.</returns>
     private List<ProductModel> FilterProducts()
     {
         //If the surprise link has been click, this should find and store a random location
@@ -374,13 +402,22 @@
             {
                 Random rand = new Random();
                 var items = ProductService.GetProducts();
-                var numberOfItemsinJson = items.Count(); // Number of random items you want to select
-                                                         //Generating random values
+                
+                // Number of random items you want to select
+                var numberOfItemsinJson = items.Count(); 
+    
+                //Generating random values
                 int randomIndex = rand.Next(numberOfItemsinJson);
+                
                 //Getting all the titles and checking for the random number index
                 List<string> titleList = ProductService.GetTitles();
+                
+                // To hold the title of the random product 
                 var randomItemTitle = titleList[randomIndex];
+                
+                // Select the product 
                 selectedProduct = Products.FirstOrDefault(m => m.Id.Equals(randomItemTitle));
+                
                 //Storing the value for once generated location
                 storePrevious(selectedProduct);
                 return new List<ProductModel> { selectedProduct };
@@ -395,25 +432,34 @@
             return Products.Where(IsProductMatch).ToList();
         }
     }
-
+    
+    /// <summary>
+    /// Checks if the given product matches the current filter criteria.
+    /// </summary>
+    /// <param name="product">The product to check against the filter criteria.</param>
+    /// <returns>True if the product matches the filter criteria.</returns>
     private bool IsProductMatch(ProductModel product)
     {
+        // Check for neighborhood match 
         if (IsNeighborhoodMatch(product) == false)
         {
             return false;
         }
-
+        
+        // Check for location-type match 
         if (IsLocationTypeMatch(product) == false)
         {
             return false;
         }
-
+        
+        // Check for noise level match 
         if (IsNoiseLevelMatch(product) == false)
         {
 
             return false;
         }
-
+        
+        // Check for product match 
         if (IsTitleMatch(product) == false)
         {
             return false;
@@ -434,11 +480,18 @@
 
     // The min noise level
     private int? SelectedNoiseLevelMin;
-
+    
+    // Set the filtered string to an empty string
     string _filterDataString = "";
+    
+    // Set filtered flag to false 
     bool _filterData = false;
 
-    // Computed method to get the filtered list of products
+    /// <summary>
+    /// Checks if the product's neighborhood matches the selected neighborhood.
+    /// </summary>
+    /// <param name="product">The product to check.</param>
+    /// <returns>True if the product's neighborhood matches or if no neighborhood is selected.</returns>
     private bool IsNeighborhoodMatch(ProductModel product)
     {
         if (string.IsNullOrWhiteSpace(SelectedNeighborhood))
@@ -446,7 +499,12 @@
 
         return product.Neighborhood.Equals(SelectedNeighborhood, StringComparison.OrdinalIgnoreCase);
     }
-
+    
+    /// <summary>
+    /// Checks if the product's location type matches the selected location type.
+    /// </summary>
+    /// <param name="product">The product to check.</param>
+    /// <returns>True if the product's location type matches or if no location type is selected.</returns>
     private bool IsLocationTypeMatch(ProductModel product)
     {
         if (string.IsNullOrWhiteSpace(SelectedLocationType))
@@ -456,9 +514,10 @@
     }
 
     /// <summary>
-    /// Checks to see if the noise level is a match (min or max)
-    /// <param name="product"></param>
+    /// Checks if the product's noise level matches the selected noise level range.
     /// </summary>
+    /// <param name="product">The product to check.</param>
+    /// <returns>True if the product's noise level is within the selected range.</returns>
     private bool IsNoiseLevelMatch(ProductModel product)
     {
         // Check if both min and max values are not set
@@ -477,9 +536,10 @@
     }
 
     /// <summary>
-    /// Checks to see if the title is a match
-    /// <param name="product"></param>
+    /// Checks if the product's title matches the filter text.
     /// </summary>
+    /// <param name="product">The product to check.</param>
+    /// <returns>True if the product's title contains the filter text.</returns>
     private bool IsTitleMatch(ProductModel product)
     {
         if (string.IsNullOrWhiteSpace(_filterDataString))
@@ -549,13 +609,19 @@
     {
         _filterDataString = text;
     }
-
+    
+    /// <summary>
+    /// Enables the filter 
+    /// </summary>
     void EnableFilterData()
     {
         // If the Filter is enabled, set the filter flag
         _filterData = true;
     }
-
+    
+    /// <summary>
+    /// Clears the filter 
+    /// </summary>
     void ClearFilterData()
     {
         // If the Filter is enabled, set the filter flag
@@ -620,6 +686,9 @@
 
     }
     
+    /// <summary>
+    /// Returns the string from the enum 
+    /// </summary>
     string GetDisplayName(SeattleNeighborhoods neighborhood)
     {
         return neighborhood.GetType()
@@ -629,22 +698,30 @@
             .Name.ToString();
     }
     
+    /// <summary>
+    /// Gets current product ID 
+    /// </summary>
     [JSInvokable]
     public string GetCurrentProductId()
     {
         return _selectedProductId;
     }
-
+    
+    // Sets the icon flag to false initially 
     private bool showSocialIcons = false;
 
-    // Method to toggle the visibility of social media sharing buttons
+    /// <summary>
+    /// Toggles social media button
+    /// </summary>
     private async Task ToggleSocialIcons()
     {
         // Your code here
         showSocialIcons = !showSocialIcons;
     }
 
-    // Helper method to get the product URL based on the selected product ID
+    /// <summary>
+    /// Helper method to get url  
+    /// </summary>
     private string GetProductUrl(string productId)
     {
         // Construct URL to product 
