@@ -1552,6 +1552,14 @@ a.card-tab {
     border-radius: 10px
 }
 
+.bench {
+    height: 69px;
+    width: 47px;
+    background-image: url(https://api.geoapify.com/v1/icon/?type=material&color=%234f3cfa&size=small&icon=chair&iconType=awesome&scaleFactor=2&apiKey=1ca889777476478d8b34a21892745067);
+    background-size: contain;
+    cursor: pointer;
+}
+
 .restroom {
     height: 69px;
     width: 47px;
