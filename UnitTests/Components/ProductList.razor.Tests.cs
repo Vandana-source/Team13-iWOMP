@@ -275,7 +275,7 @@ namespace UnitTests.Components
             var page = RenderComponent<ProductList>();
 
             //Find the Buttons (more info)
-            var buttonList = page.FindAll("Button");
+            var buttonList = page.FindAll("button");
 
             //Find the one that matches the ID looking for and click it
             var button = buttonList.First(m => m.OuterHtml.Contains("clear-button"));
@@ -306,14 +306,14 @@ namespace UnitTests.Components
             var page = RenderComponent<ProductList>();
 
             //Find the input
-            var selectList = page.FindAll("a");
+            var buttonList = page.FindAll("button");
 
 
             //Find the one that matches the ID looking for and click it
-            var select = selectList.First(m => m.OuterHtml.Contains("dropdown1"));
+            var button = buttonList.First(m => m.OuterHtml.Contains("dropdown1"));
 
             // Act - Simulate changing the filter text
-            select.Click();
+            button.Click();
 
             var pageMarkup = page.Markup;
             // Assert
@@ -335,13 +335,13 @@ namespace UnitTests.Components
             var page = RenderComponent<ProductList>();
 
             //Find the input
-            var anchorList = page.FindAll("a");
+            var buttonList = page.FindAll("button");
 
             //Find the one that matches the ID looking for and click it
-            var anchor = anchorList.First(m => m.OuterHtml.Contains("dropdown2"));
+            var button = buttonList.First(m => m.OuterHtml.Contains("dropdown2"));
 
             // Act - Simulate changing the filter text
-            anchor.Click();
+            button.Click();
 
             var pageMarkup = page.Markup;
             // Assert
@@ -363,14 +363,14 @@ namespace UnitTests.Components
             var page = RenderComponent<ProductList>();
 
             //Find the input
-            var selectList = page.FindAll("a");
+            var buttonList = page.FindAll("button");
 
 
             //Find the one that matches the ID looking for and click it
-            var select = selectList.First(m => m.OuterHtml.Contains("dropdown3"));
+            var button = buttonList.First(m => m.OuterHtml.Contains("dropdown3"));
 
             // Act - Simulate changing the filter text
-            select.Click();
+            button.Click();
 
             var pageMarkup = page.Markup;
             // Assert
@@ -392,13 +392,13 @@ namespace UnitTests.Components
             var page = RenderComponent<ProductList>();
 
             //Find the input
-            var selectList = page.FindAll("a");
+            var buttonList = page.FindAll("button");
 
             //Find the one that matches the ID looking for and click it
-            var select = selectList.First(m => m.OuterHtml.Contains("dropdown4"));
+            var button = buttonList.First(m => m.OuterHtml.Contains("dropdown4"));
 
             // Act - Simulate changing the filter text
-            select.Click();
+            button.Click();
 
             var pageMarkup = page.Markup;
             // Assert
@@ -420,13 +420,13 @@ namespace UnitTests.Components
             var page = RenderComponent<ProductList>();
 
             //Find the input
-            var selectList = page.FindAll("a");
+            var buttonList = page.FindAll("button");
 
             //Find the one that matches the ID looking for and click it
-            var select = selectList.First(m => m.OuterHtml.Contains("dropdown5"));
+            var button = buttonList.First(m => m.OuterHtml.Contains("dropdown5"));
 
             // Act - Simulate changing the filter text
-            select.Click();
+            button.Click();
 
             var pageMarkup = page.Markup;
             // Assert
@@ -448,14 +448,14 @@ namespace UnitTests.Components
             var page = RenderComponent<ProductList>();
 
             //Find the input
-            var selectList = page.FindAll("a");
+            var buttonList = page.FindAll("button");
 
 
             //Find the one that matches the ID looking for and click it
-            var select = selectList.First(m => m.OuterHtml.Contains("dropdown6"));
+            var button = buttonList.First(m => m.OuterHtml.Contains("dropdown6"));
 
             // Act - Simulate changing the filter text
-            select.Click();
+            button.Click();
 
             var pageMarkup = page.Markup;
             // Assert
@@ -477,14 +477,14 @@ namespace UnitTests.Components
             var page = RenderComponent<ProductList>();
 
             //Find the input
-            var selectList = page.FindAll("a");
+            var buttonList = page.FindAll("button");
 
 
             //Find the one that matches the ID looking for and click it
-            var select = selectList.First(m => m.OuterHtml.Contains("dropdown7"));
+            var button = buttonList.First(m => m.OuterHtml.Contains("dropdown7"));
 
             // Act - Simulate changing the filter text
-            select.Click();
+            button.Click();
 
             var pageMarkup = page.Markup;
             // Assert
@@ -506,13 +506,13 @@ namespace UnitTests.Components
             var page = RenderComponent<ProductList>();
 
             //Find the input
-            var selectList = page.FindAll("a");
+            var buttonList = page.FindAll("button");
 
             //Find the one that matches the ID looking for and click it
-            var select = selectList.First(m => m.OuterHtml.Contains("dropdown8"));
+            var button = buttonList.First(m => m.OuterHtml.Contains("dropdown8"));
 
             // Act - Simulate changing the filter text
-            select.Click(null);
+            button.Click(null);
 
             var pageMarkup = page.Markup;
             // Assert
@@ -534,13 +534,13 @@ namespace UnitTests.Components
             var page = RenderComponent<ProductList>();
 
             //Find the input
-            var selectList = page.FindAll("a");
+            var buttonList = page.FindAll("button");
 
             //Find the one that matches the ID looking for and click it
-            var select = selectList.First(m => m.OuterHtml.Contains("dropdown9"));
+            var button = buttonList.First(m => m.OuterHtml.Contains("dropdown9"));
 
             // Act - Simulate changing the filter text
-            select.Click();
+            button.Click();
 
             var pageMarkup = page.Markup;
             // Assert
