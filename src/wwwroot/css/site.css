@@ -1568,6 +1568,14 @@ a.card-tab {
     cursor: pointer;
 }
 
+.table {
+    height: 69px;
+    width: 47px;
+    background-image: url(    https://api.geoapify.com/v1/icon/?type=material&color=%23fa3c64&size=small&icon=table_bar&scaleFactor=2&apiKey=1ca889777476478d8b34a21892745067);
+    background-size: contain;
+    cursor: pointer;
+}
+
 .fixed-button {
     position: relative;
     z-index: 2;
