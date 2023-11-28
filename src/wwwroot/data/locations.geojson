@@ -4,7 +4,7 @@
     {
       "type": "Feature",
       "properties": {
-        "LocationType": "Restroom Location",
+        "LocationType": "Restroom",
         "Id": "cal-anderson-park"
       },
       "geometry": {
@@ -103,7 +103,7 @@
     {
       "type": "Feature",
       "properties": {
-        "LocationType": "Bench Location",
+        "LocationType": "Bench",
         "Id": "arboretum-bench"
       },
       "geometry": {
