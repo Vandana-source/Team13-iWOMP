@@ -482,10 +482,10 @@
     private int? SelectedNoiseLevelMin;
     
     // Set the filtered string to an empty string
-    string _filterDataString = "";
+    public string _filterDataString = "";
     
     // Set filtered flag to false 
-    bool _filterData = false;
+    public bool _filterData = false;
 
     /// <summary>
     /// Checks if the product's neighborhood matches the selected neighborhood.
@@ -494,7 +494,7 @@
     /// <returns>True if the product's neighborhood matches or if no neighborhood is selected.</returns>
     private bool IsNeighborhoodMatch(ProductModel product)
     {
-        if (string.IsNullOrWhiteSpace(SelectedNeighborhood))
+        if (string.IsNullOrWhiteSpace(SelectedNeighborhood) || product.Neighborhood == null)
             return true;
 
         return product.Neighborhood.Equals(SelectedNeighborhood, StringComparison.OrdinalIgnoreCase);
@@ -542,7 +542,7 @@
     /// <returns>True if the product's title contains the filter text.</returns>
     private bool IsTitleMatch(ProductModel product)
     {
-        if (string.IsNullOrWhiteSpace(_filterDataString))
+        if (string.IsNullOrWhiteSpace(_filterDataString) || product.Title == null)
             return true;
 
         if (_filterData)
@@ -684,15 +684,6 @@
 
         return displayAttribute.Name;
 
-    }
-    
-    /// <summary>
-    /// Gets current product ID 
-    /// </summary>
-    [JSInvokable]
-    public string GetCurrentProductId()
-    {
-        return _selectedProductId;
     }
     
     // Sets the icon flag to false initially 
