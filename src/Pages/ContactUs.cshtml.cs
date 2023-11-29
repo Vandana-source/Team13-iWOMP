@@ -56,28 +56,22 @@ namespace TakeABreak.WebSite.Pages
         /// <returns>ActionResult</returns>
         public IActionResult OnPost()
         {
-            try
+
+            if (!ModelState.IsValid)
             {
-                if (!ModelState.IsValid)
-                {
-                    return Page();
-                }
-                // Add to the database 
-                // Note: User data minimally vetted because it is not appearing on
-                //       the website immediately and goes to the database.  
-                CustomerService.AddCustomer(CustomerNomination);
-
-                // Thank the user for their submission 
-
-                TempData["SubmissionMessage"] = "Thank you for your submission";
-
-                return RedirectToPage("/ContactUs");
-                // Stay on the page
+                return Page();
             }
-            catch
-            {
-                return RedirectToPage("../Error");
-            }
+            // Add to the database 
+            // Note: User data minimally vetted because it is not appearing on
+            //       the website immediately and goes to the database.  
+            CustomerService.AddCustomer(CustomerNomination);
+
+            // Thank the user for their submission 
+
+            TempData["SubmissionMessage"] = "Thank you for your submission";
+
+            return RedirectToPage("/ContactUs");
+            // Stay on the page
         }
     }
 }
