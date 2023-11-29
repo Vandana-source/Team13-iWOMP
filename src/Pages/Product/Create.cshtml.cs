@@ -53,7 +53,7 @@ namespace TakeABreak.WebSite.Pages.Product
             if (!IsAllowedMapURL(Product.MapURL))
             {
                 // Display an error message and redirect back to the page.
-                ModelState.AddModelError("MapURL", "Please provide a valid Google Maps URL");
+                ModelState.AddModelError("MapURL", "Please provide a valid embed Google Maps URL i.e https://www.google.com/maps/embed?pb=!1m18!1m12!1m3");
                 return Page();
             }
 
