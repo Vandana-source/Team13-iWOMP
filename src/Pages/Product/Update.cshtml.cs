@@ -40,15 +40,22 @@ namespace TakeABreak.WebSite.Pages.Product
         /// </summary>
         public IActionResult OnGet(string id)
         {
-            Product = ProductService.GetProducts()
-                .FirstOrDefault(m => m.Id.Equals(id));
-            if (Product == null)
+            try
             {
-                this.ModelState.AddModelError("OnGet", "Update Onget Error");
+                Product = ProductService.GetProducts()
+                    .FirstOrDefault(m => m.Id.Equals(id));
+                if (Product == null)
+                {
+                    this.ModelState.AddModelError("OnGet", "Update Onget Error");
+                    return RedirectToPage("../Error");
+                }
+
+                return Page();
+            }
+            catch
+            {
                 return RedirectToPage("../Error");
             }
-
-            return Page();
         }
 
         /// <summary>
@@ -57,94 +64,100 @@ namespace TakeABreak.WebSite.Pages.Product
         /// </summary>
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return Page();
-            }
-            // To get the old filepath before replacing for later deletion 
-            var existingProduct = ProductService.GetProducts()
-                .FirstOrDefault(m => m.Id.Equals(Product.Id));
-
-            if (Product.MapURL != null)
-            {
-                // Validate the MapURL provided
-                if (!IsAllowedMapURL(Product.MapURL))
+                if (!ModelState.IsValid)
                 {
-                    // Display an error message and redirect back to the page.
-                    ModelState.AddModelError("MapURL", "Please provide a valid Google Maps URL");
                     return Page();
                 }
-            }
-            
-            if (Product.Image == null)
-            {
-                // Capture the old image path right after fetching the product
-                Product.Image = existingProduct.Image;
-            }
+                // To get the old filepath before replacing for later deletion 
+                var existingProduct = ProductService.GetProducts()
+                    .FirstOrDefault(m => m.Id.Equals(Product.Id));
 
-            // Capture the old image path right after fetching the product
-            string oldImagePath = existingProduct.Image;
-
-            // If the uploaded file works: save 
-            if (UploadedFile != null && UploadedFile.Length > 0)
-            {
-                string fileExtension = Path.GetExtension(UploadedFile.FileName).ToLower();
-                if (!IsAllowedImageExtension(fileExtension))
+                if (Product.MapURL != null)
                 {
-                    // Display an error message and redirect back to the page.
-                    ModelState.AddModelError("imageFile", "Please select a valid image file (jpg, jpeg, png, gif, or bmp).");
-                    return Page();
-                }
-                // Define the directory based on LocationType
-                string subDirectory = Product.LocationType switch
-                {
-                    "Table" => "Tables",
-                    "Bench" => "Benches",
-                    "Restroom" => "Restrooms",
-                    _ => "Others"
-                };
-
-                // Builds the correct file path based on LocationType
-                string uniqueFileName = Guid.NewGuid().ToString() + "_" +
-                                        UploadedFile.FileName;
-                string savePath = Path.Combine(_hostingEnvironment.WebRootPath,
-                    "SiteImages", subDirectory, uniqueFileName);
-
-                // Creates a directory if none exists 
-                Directory.CreateDirectory(Path.GetDirectoryName(savePath));
-
-                // Try to delete the old image using the captured path
-                if (!string.IsNullOrEmpty(oldImagePath))
-                {
-                    string fullPath = Path.Combine(
-                        _hostingEnvironment.WebRootPath,
-                        oldImagePath.TrimStart('/'));
-                    FileInfo fileInfo = new FileInfo(fullPath);
-
-                    if (fileInfo.Exists)
+                    // Validate the MapURL provided
+                    if (!IsAllowedMapURL(Product.MapURL))
                     {
-                        // Delete the file 
-                        fileInfo.Delete();
+                        // Display an error message and redirect back to the page.
+                        ModelState.AddModelError("MapURL", "Please provide a valid Google Maps URL");
+                        return Page();
+                    }
+                }
+
+                if (Product.Image == null)
+                {
+                    // Capture the old image path right after fetching the product
+                    Product.Image = existingProduct.Image;
+                }
+
+                // Capture the old image path right after fetching the product
+                string oldImagePath = existingProduct.Image;
+
+                // If the uploaded file works: save 
+                if (UploadedFile != null && UploadedFile.Length > 0)
+                {
+                    string fileExtension = Path.GetExtension(UploadedFile.FileName).ToLower();
+                    if (!IsAllowedImageExtension(fileExtension))
+                    {
+                        // Display an error message and redirect back to the page.
+                        ModelState.AddModelError("imageFile", "Please select a valid image file (jpg, jpeg, png, gif, or bmp).");
+                        return Page();
+                    }
+                    // Define the directory based on LocationType
+                    string subDirectory = Product.LocationType switch
+                    {
+                        "Table" => "Tables",
+                        "Bench" => "Benches",
+                        "Restroom" => "Restrooms",
+                        _ => "Others"
+                    };
+
+                    // Builds the correct file path based on LocationType
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" +
+                                            UploadedFile.FileName;
+                    string savePath = Path.Combine(_hostingEnvironment.WebRootPath,
+                        "SiteImages", subDirectory, uniqueFileName);
+
+                    // Creates a directory if none exists 
+                    Directory.CreateDirectory(Path.GetDirectoryName(savePath));
+
+                    // Try to delete the old image using the captured path
+                    if (!string.IsNullOrEmpty(oldImagePath))
+                    {
+                        string fullPath = Path.Combine(
+                            _hostingEnvironment.WebRootPath,
+                            oldImagePath.TrimStart('/'));
+                        FileInfo fileInfo = new FileInfo(fullPath);
+
+                        if (fileInfo.Exists)
+                        {
+                            // Delete the file 
+                            fileInfo.Delete();
+                        }
                     }
 
+                    // Creates a new filepath and saves it to the file 
+                    using var fileStream =
+                        new FileStream(savePath, FileMode.Create);
+                    UploadedFile.CopyTo(fileStream);
+
+                    Product.Image = Path.Combine("/SiteImages", subDirectory,
+                        uniqueFileName);
+                    ProductService.UpdateData(Product);
+
+                    // Returns to the index page 
+                    return RedirectToPage("./Index");
                 }
 
-                // Creates a new filepath and saves it to the file 
-                using var fileStream =
-                    new FileStream(savePath, FileMode.Create);
-                UploadedFile.CopyTo(fileStream);
-
-                Product.Image = Path.Combine("/SiteImages", subDirectory,
-                    uniqueFileName);
+                // Saves the updated data & return to index 
                 ProductService.UpdateData(Product);
-
-                // Returns to the index page 
                 return RedirectToPage("./Index");
             }
-
-            // Saves the updated data & return to index 
-            ProductService.UpdateData(Product);
-            return RedirectToPage("./Index");
+            catch
+            {
+                return RedirectToPage("../Error");
+            }
         }
 
         /// <summary>
@@ -170,7 +183,7 @@ namespace TakeABreak.WebSite.Pages.Product
         {
             // Valid pattern for the Maps URL
             string googleMapsPattern = @"^https://www\.google\.com/maps/embed\?pb=!.+$"; // Adjust the pattern as needed
-            
+
             // Regular expression of the pattern
             Regex regex = new Regex(googleMapsPattern);
 
