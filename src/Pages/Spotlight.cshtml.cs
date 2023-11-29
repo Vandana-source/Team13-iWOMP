@@ -55,8 +55,7 @@ namespace TakeABreak.WebSite.Pages
             }
             catch
             {
-                this.ModelState.AddModelError("OnGet", "Read Onget Error");
-                return RedirectToPage("./Index"); 
+                return RedirectToPage("../Error");
             }
         }
     }
