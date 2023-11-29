@@ -35,21 +35,15 @@ namespace TakeABreak.WebSite.Pages.Product
         /// </summary>
         public IActionResult OnGet(string id)
         {
-            try
+            // This method fetches all the data from the JsonFileProductService.cs
+            Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+            if (Product == null)
             {
-                // This method fetches all the data from the JsonFileProductService.cs
-                Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
-                if (Product == null)
-                {
-                    this.ModelState.AddModelError("OnGet", "Update Onget Error");
-                    return RedirectToPage("../Error");
-                }
-                return Page();
-            }
-            catch
-            {
+                this.ModelState.AddModelError("OnGet", "Update Onget Error");
                 return RedirectToPage("../Error");
             }
+            return Page();
+
         }
 
         /// <summary>
@@ -57,23 +51,15 @@ namespace TakeABreak.WebSite.Pages.Product
         /// </summary>
         public IActionResult OnPost()
         {
-            try
+            // This method will check if the Model is valid
+            if (!ModelState.IsValid)
             {
-                // This method will check if the Model is valid
-                if (!ModelState.IsValid)
-                {
-                    return Page();
-                }
-                // This method will call the JsonFileProductService.cs Delete method which will delete the product
-                ProductService.DeleteData(Product);
-                // This will redirect to the Index page once the data is deleted.
-                return RedirectToPage("./Index");
+                return Page();
             }
-            catch
-            {
-                return RedirectToPage("../Error");
-            }
+            // This method will call the JsonFileProductService.cs Delete method which will delete the product
+            ProductService.DeleteData(Product);
+            // This will redirect to the Index page once the data is deleted.
+            return RedirectToPage("./Index");
         }
     }
-
 }
