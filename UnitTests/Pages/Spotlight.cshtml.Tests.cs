@@ -124,7 +124,7 @@ namespace UnitTests.Pages.Spotlight
             var result = pageModel.OnGet() as RedirectToPageResult;
 
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
-            Assert.AreEqual("./Index", result.PageName);
+            Assert.AreEqual("../Error", result.PageName);
 
         }
 
