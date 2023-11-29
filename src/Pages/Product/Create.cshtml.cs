@@ -49,71 +49,64 @@ namespace TakeABreak.WebSite.Pages.Product
         /// <returns>An IActionResult representing the response to the POST request.</returns>
         public IActionResult OnPost()
         {
-            try
+            // Validate the MapURL provided
+            if (!IsAllowedMapURL(Product.MapURL))
             {
-                // Validate the MapURL provided
-                if (!IsAllowedMapURL(Product.MapURL))
-                {
-                    // Display an error message and redirect back to the page.
-                    ModelState.AddModelError("MapURL", "Please provide a valid Google Maps URL");
-                    return Page();
-                }
-
-                if (UploadedFile != null && UploadedFile.Length > 0)
-                {
-                    string fileExtension = Path.GetExtension(UploadedFile.FileName).ToLower();
-                    if (IsAllowedImageExtension(fileExtension))
-                    {
-                        // Define the directory based on LocationType
-                        string subDirectory = Product.LocationType switch
-                        {
-                            "Table" => "Tables",
-                            "Bench" => "Benches",
-                            "Restroom" => "Restrooms",
-                            _ => "Others"
-                        };
-
-                        // Create a unique filename for the uploaded file
-                        string uniqueFileName = Guid.NewGuid().ToString() + "_" +
-                                                UploadedFile.FileName;
-
-                        // Get the path for saving the file inside the SiteImages folder, then the desired subdirectory within wwwroot
-                        string savePath = Path.Combine(_hostingEnvironment.WebRootPath,
-                            "SiteImages", subDirectory, uniqueFileName);
-
-                        // Ensure the directory exists, if not, create it
-                        Directory.CreateDirectory(Path.GetDirectoryName(savePath));
-
-                        // Save the uploaded file to the server
-                        using var fileStream =
-                            new FileStream(savePath, FileMode.Create);
-                        UploadedFile
-                            .CopyTo(
-                                fileStream);
-
-                        // Update the Product.Image property with the relative path to the saved file
-                        Product.Image = Path.Combine("/SiteImages", subDirectory, uniqueFileName);
-
-                        // Save the product to the database (or in this case, the JSON file)
-                        ProductService.CreateData(Product);
-
-                        // Redirect to a success or product listing page after saving
-                        return RedirectToPage("Index");
-                    }
-                    else
-                    {
-                        // Display an error message for non-allowed image extensions.
-                        ModelState.AddModelError("imageFile", "Please select a valid image file (jpg, jpeg, png, gif, or bmp).");
-                    }
-                }
-
-                // Stay on the same page if no file was uploaded or there was an issue
+                // Display an error message and redirect back to the page.
+                ModelState.AddModelError("MapURL", "Please provide a valid Google Maps URL");
                 return Page();
             }
-            catch
+
+            if (UploadedFile != null && UploadedFile.Length > 0)
             {
-                return RedirectToPage("../Error");
+                string fileExtension = Path.GetExtension(UploadedFile.FileName).ToLower();
+                if (IsAllowedImageExtension(fileExtension))
+                {
+                    // Define the directory based on LocationType
+                    string subDirectory = Product.LocationType switch
+                    {
+                        "Table" => "Tables",
+                        "Bench" => "Benches",
+                        "Restroom" => "Restrooms",
+                        _ => "Others"
+                    };
+
+                    // Create a unique filename for the uploaded file
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" +
+                                            UploadedFile.FileName;
+
+                    // Get the path for saving the file inside the SiteImages folder, then the desired subdirectory within wwwroot
+                    string savePath = Path.Combine(_hostingEnvironment.WebRootPath,
+                        "SiteImages", subDirectory, uniqueFileName);
+
+                    // Ensure the directory exists, if not, create it
+                    Directory.CreateDirectory(Path.GetDirectoryName(savePath));
+
+                    // Save the uploaded file to the server
+                    using var fileStream =
+                        new FileStream(savePath, FileMode.Create);
+                    UploadedFile
+                        .CopyTo(
+                            fileStream);
+
+                    // Update the Product.Image property with the relative path to the saved file
+                    Product.Image = Path.Combine("/SiteImages", subDirectory, uniqueFileName);
+
+                    // Save the product to the database (or in this case, the JSON file)
+                    ProductService.CreateData(Product);
+
+                    // Redirect to a success or product listing page after saving
+                    return RedirectToPage("Index");
+                }
+                else
+                {
+                    // Display an error message for non-allowed image extensions.
+                    ModelState.AddModelError("imageFile", "Please select a valid image file (jpg, jpeg, png, gif, or bmp).");
+                }
             }
+
+            // Stay on the same page if no file was uploaded or there was an issue
+            return Page();
         }
 
         /// <summary>
