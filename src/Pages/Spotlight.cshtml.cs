@@ -38,18 +38,26 @@ namespace TakeABreak.WebSite.Pages
         /// <param name="id"></param>
         public IActionResult OnGet()
         {
-            string id = "seattle-university-rhododendron";
-            
-            // Fetches the product with the specified ID from the service.
-            Product  = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+            try
+            {
+                string id = "seattle-university-rhododendron";
 
-            if (Product == null)
+                // Fetches the product with the specified ID from the service.
+                Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+
+                if (Product == null)
+                {
+                    this.ModelState.AddModelError("OnGet", "Read Onget Error");
+                    return RedirectToPage("./Index");
+                }
+
+                return Page();
+            }
+            catch
             {
                 this.ModelState.AddModelError("OnGet", "Read Onget Error");
                 return RedirectToPage("./Index"); 
             }
-
-            return Page();
         }
     }
 }
