@@ -1,11 +1,9 @@
 ﻿using TakeABreak.WebSite.Services;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using NUnit.Framework;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using TakeABreak.WebSite.Components;
 using Bunit;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace UnitTests.Components
 {
@@ -199,6 +197,32 @@ namespace UnitTests.Components
         #region TextFilter
 
         /// <summary>
+        /// Test for filter button should return all products
+        /// </summary>
+        [Test]
+        public void Filters_Products_By_Title_And_Filter_Button_Should_Return_Products()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Act
+            var page = RenderComponent<ProductList>();
+
+            page.Instance._filterDataString = "Seattle";
+
+            //Find the Buttons
+            var buttonList = page.FindAll("button");
+
+            //Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains("filter-button"));
+
+            button.Click();
+
+            Assert.True(page.Instance._filterData);
+
+        }
+
+        /// <summary>
         /// Test for filter text "Seattle" should return matching products
         /// </summary>
         [Test]
@@ -218,42 +242,6 @@ namespace UnitTests.Components
 
             // Act - Simulate changing the filter text
             input.Change("Seattle");
-
-            //Get the markup to use for the assert
-            var pageMarkup = page.Markup;
-
-            // Assert - Verify that the filter function is called
-            Assert.AreEqual(true, pageMarkup.Contains("Seattle"));
-        }
-
-        /// <summary>
-        /// Test for filter button should return all products
-        /// </summary>
-        [Test]
-        public void Filters_Products_By_Title_And_Filter_Button_Should_Return_Products()
-        {
-            // Arrange
-            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
-
-            // Act
-            var page = RenderComponent<ProductList>();
-
-            //Find the input
-            var inputList = page.FindAll("input");
-
-            //Find the one that matches the ID looking for and click it
-            var input = inputList.First(m => m.OuterHtml.Contains("filter-input"));
-
-            // Act - Simulate changing the filter text
-            input.Change("Seattle");
-
-            //Find the Buttons (more info)
-            var buttonList = page.FindAll("button");
-
-            //Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains("filter-button"));
-
-            button.Click();
 
             //Get the markup to use for the assert
             var pageMarkup = page.Markup;
@@ -334,11 +322,9 @@ namespace UnitTests.Components
             // Act
             var page = RenderComponent<ProductList>();
 
-            //Find the input
-            var buttonList = page.FindAll("button");
+            const string neighborhood = "Ballard";
 
-            //Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains("dropdown2"));
+            var button = page.Find($"button[test-id=\"dropdown2\"]:contains('{neighborhood}')");
 
             // Act - Simulate changing the filter text
             button.Click();
@@ -571,5 +557,37 @@ namespace UnitTests.Components
         }
 
         #endregion SurpriseMe
+
+        #region SocialMedia
+
+        ///<summary>
+        /// Test social media code should return social media icons
+        /// </summary>
+        [Test]
+        public void SocialMedia_Should_Return_Social_Media_Icons()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Act
+            var page = RenderComponent<ProductList>();
+
+            //Find the input
+            var buttonList = page.FindAll("button");
+
+
+            //Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains("ToggleSocialButtons"));
+
+            // Act - Simulate changing the filter text
+            button.Click();
+
+            var pageMarkup = page.Markup;
+            // Assert
+            // Ensure the method OnNeighborhoodChanged was called with the correct value
+            Assert.AreEqual(true, pageMarkup.Contains("Lemieux Library"));
+        }
+
+        #endregion SocialMedia
     }
 }
