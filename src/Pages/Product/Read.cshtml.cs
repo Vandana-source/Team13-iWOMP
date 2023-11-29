@@ -35,16 +35,23 @@ namespace TakeABreak.WebSite.Pages.Product
         /// <param name="id"></param>
         public IActionResult OnGet(string id)
         {
-            // Fetches the product with the specified ID from the service.
-            Product  = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
-
-            if (Product == null)
+            try
             {
-                this.ModelState.AddModelError("OnGet", "Read Onget Error");
-                return RedirectToPage("../Error"); // Probably should be an error message
-            }
+                // Fetches the product with the specified ID from the service.
+                Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
 
-            return Page();
+                if (Product == null)
+                {
+                    this.ModelState.AddModelError("OnGet", "Read Onget Error");
+                    return RedirectToPage("../Error"); // Probably should be an error message
+                }
+
+                return Page();
+            }
+            catch
+            {
+                return RedirectToPage("../Error");
+            }
         }
     }
 }
